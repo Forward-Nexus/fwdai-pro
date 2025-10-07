@@ -182,8 +182,8 @@ MIT License with attribution requirements.
 
 **Trademarks:**
 - **FWD AI™** (ecosystem) is a trademark of ArcCar LLC dba ForwardNexus
-- **FWD PRO™** (module) is a trademark of ArcCar LLC dba ForwardNexus
-- All expert names (Genna, Denny, Ada, Lyna, Benji, Elle) are trademarks of ArcCar LLC dba ForwardNexus
+- **FWD PRO™** (product) is a trademark of ArcCar LLC dba ForwardNexus
+- **FWD PRO Expert System™** (including expert personas) is a trademark of ArcCar LLC dba ForwardNexus
 
 **Copyright:** © 2025 William "Ward" Prejean / ArcCar LLC dba ForwardNexus
 
