@@ -109,7 +109,8 @@ We hope FWD PRO carries forward your spirit of innovation while serving founders
 ---
 
 **Building together,**  
-Ward P. & The FWDNXS Community
+William "Ward" Prejean & The FWDNXS Community  
+ArcCar LLC dba ForwardNexus
 
 ---
 

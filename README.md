@@ -180,7 +180,12 @@ We're grateful for these systems and proud to build on their foundations.
 
 MIT License with attribution requirements.
 
-FWD PRO™ is a trademark of Ward Peeters / FWD AI.
+**Trademarks:**
+- **FWD AI™** (ecosystem) is a trademark of ArcCar LLC dba ForwardNexus
+- **FWD PRO™** (module) is a trademark of ArcCar LLC dba ForwardNexus
+- All expert names (Genna, Denny, Ada, Lyna, Benji, Elle) are trademarks of ArcCar LLC dba ForwardNexus
+
+**Copyright:** © 2025 William "Ward" Prejean / ArcCar LLC dba ForwardNexus
 
 See [LICENSE](LICENSE) for full details.
 
@@ -216,4 +221,4 @@ FWD PRO democratizes access to AI collaboration - not just for developers, but f
 
 ---
 
-Made with ❤️ by [Ward Peeters](https://github.com/wardbox)
+Made with ❤️ by [William "Ward" Prejean](https://github.com/wardbox) / ArcCar LLC dba ForwardNexus
