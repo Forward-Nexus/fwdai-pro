@@ -10,7 +10,7 @@ Thank you for your interest in contributing to FWD PRO! 🎉
 
 - **Universal First** - Works for restaurants, law firms, telecom, ANY business
 - **Non-Technical Friendly** - No coding knowledge required
-- **ADHD-Aware** - Clear structure without overwhelming
+- **Neurodivergent-Aware** - Clear structure without overwhelming
 - **Founder-Centric** - Built for solo founders and small teams
 - **Attribution Matters** - We credit our inspirations, please credit us too
 
@@ -20,7 +20,7 @@ Thank you for your interest in contributing to FWD PRO! 🎉
 
 Before contributing, please:
 
-1. **Read our vision** - Check `ADA_REBOOT_GUIDE.md` and `FWD-PRO-IMPLEMENTATION-GUIDE.md`
+1. **Read our vision** - Check the README and documentation in `pro-os/documentation/`
 2. **Discuss first** - Open an issue or discussion before big changes
 3. **Keep it universal** - Avoid software-specific features in core system
 
