@@ -41,8 +41,8 @@ Only the experts relevant to YOUR work are activated!
 ### 🌍 Universal
 Works for ANY business - not just software. Restaurant? Law firm? Telecom? FWD PRO adapts.
 
-### 🧠 ADHD-Aware
-Structure without walls of text. Clear action items. Works WITH your brain.
+### 🧠 Neurodivergent-Friendly
+Structure without walls of text. Clear action items. Works WITH how your brain works.
 
 ### 🎤 Dictation-Friendly
 Voice-to-text user? FWD PRO parses rambling and understands intent.
