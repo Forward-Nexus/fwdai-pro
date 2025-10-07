@@ -1,0 +1,13 @@
+# This folder is for YOUR symlinks to favorite commands
+
+Example setup:
+```bash
+ln -s ../pro-os/commands/quick/create-spec.md create-spec.md
+ln -s ../pro-os/commands/quick/create-feature.md create-feature.md
+ln -s ../pro-os/commands/quick/rt.md rt.md
+ln -s ../pro-os/commands/system/update-project.md update-project.md
+```
+
+Symlinks you create won't be tracked in git (see .gitignore).
+This keeps your setup personal!
+

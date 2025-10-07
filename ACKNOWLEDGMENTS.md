@@ -1,0 +1,117 @@
+# Acknowledgments
+
+**FWD PRO** stands on the shoulders of giants. This project was inspired by excellent prior work in AI-assisted development systems.
+
+---
+
+## 🙏 Inspirations
+
+### BMAD-METHOD™
+**By:** BMad Code, LLC  
+**Repository:** https://github.com/bmadcode/BMAD-METHOD  
+**License:** MIT
+
+**What we learned:**
+- Quality systems and checklists
+- Workflow patterns and standards
+- Story-based collaboration approach
+- Structured project management
+- Task decomposition strategies
+- Pre-flight and post-flight validation
+
+**How FWD PRO differs:**
+- Universal (any business type, not just software)
+- Expert collaboration vs task execution
+- Founder-centric vs developer-centric
+- Natural expert personalities vs utility agents
+
+---
+
+### Agent-OS
+**By:** CasJam Media LLC (Builder Methods)  
+**Repository:** https://github.com/coleam00/agent-os  
+**License:** MIT
+
+**What we learned:**
+- Context management and efficiency
+- Three-phase workflow pattern (Pre → Execute → Post)
+- Conditional context loading
+- Pre/post-flight patterns
+- Blocking and error handling (3-attempt rule)
+- Test-driven development patterns
+
+**How FWD PRO differs:**
+- Expert team collaboration vs spec-driven workflow
+- Roundtable transparency vs sequential execution
+- Multi-industry vs software-focused
+- Accessible to non-technical founders
+
+---
+
+## 🎯 FWD PRO's Unique Contribution
+
+While inspired by these excellent systems, FWD PRO takes a different approach:
+
+**Universal Applicability:**
+- Works for ANY business type (restaurants, law firms, telecom, consulting, etc.)
+- Not limited to software development
+- Experts adapt to your domain
+
+**Expert Collaboration Model:**
+- 6 expert personalities with distinct voices
+- Transparent roundtable workspace
+- Natural collaboration vs rigid workflows
+- Founder can see all work in progress
+
+**Accessibility:**
+- Designed for non-technical founders
+- ADHD-aware structure (clear without overwhelming)
+- Dictation-friendly
+- No coding knowledge required
+
+**Different Architecture:**
+- Built from conceptual inspiration, not copied code
+- Own implementation of learned patterns
+- Optimized for founder experience
+- Cross-industry by design
+
+---
+
+## 🤝 Community Spirit
+
+We believe in:
+- **Attribution** - Crediting those who came before
+- **Learning** - Building on proven concepts
+- **Innovation** - Taking ideas in new directions
+- **Gratitude** - Acknowledging our influences
+
+If BMAD-METHOD or Agent-OS inspired you as they inspired us, please check them out and give them credit too!
+
+---
+
+## 🌟 Special Thanks
+
+### Daniel Clifford
+**For believing in the vision and pointing the way.**
+
+Daniel introduced us to BMAD-METHOD and Agent-OS, recognizing that their concepts could be adapted to serve a broader audience. His guidance, encouragement, and belief in this project were instrumental in FWD PRO's creation. 
+
+Sometimes the most valuable contribution is showing someone where to look and believing they can build something meaningful. Thank you, Daniel.
+
+---
+
+## 💚 Thank You
+
+To the teams behind BMAD-METHOD and Agent-OS: **Thank you for pioneering AI-assisted development systems.** Your work showed us what was possible and inspired us to explore how these concepts could serve a broader audience.
+
+We hope FWD PRO carries forward your spirit of innovation while serving founders who might never have discovered your work otherwise.
+
+---
+
+**Building together,**  
+Ward (William Prejean) & The FWD PRO Community
+
+---
+
+*This document is included in all distributions of FWD PRO to ensure proper attribution and acknowledgment of our inspirations.*
+

@@ -1,0 +1,108 @@
+# FWD PRO Configuration
+# This file is generated during onboarding (npx @fwdai/pro install)
+# You can edit it anytime to adjust project settings
+
+# Project Information
+project:
+  name: "[PROJECT_NAME]"
+  type: "[new/existing]"
+  created: "[YYYY-MM-DD]"
+  
+# Founder Information
+founder:
+  name: "[FOUNDER_NAME]"
+  profile: "~/.fwdpro-global/[name]-profile.md"  # Global profile (reusable)
+  communication_style: "[a/b/c/d/e]"  # From onboarding Q5 - determines expert tone
+
+# Work Focus (determines active experts)
+work_types:
+  building_something: true/false  # Activates Denny + Ada
+  investor_materials: true/false  # Activates Lyna
+  marketing_content: true/false   # Activates Benji
+  legal_compliance: true/false    # Activates Elle
+  operations_strategy: true/false # Genna always active
+
+# Active Experts
+experts:
+  genna: true  # Chief Architect (always active)
+  denny: true  # Systems Architect (if building_something)
+  ada: true    # Lead Engineer (if building_something)
+  lyna: false  # Funding Strategist (if investor_materials)
+  benji: false # Growth Strategist (if marketing_content)
+  elle: false  # Legal Counsel (if legal_compliance or compliance detected)
+  domain: null # Domain expert name (if created): "[expert-name]"
+
+# Tech Stack (if building something)
+tech_stack:
+  detected: true/false  # Was tech stack auto-detected?
+  languages: []  # e.g., ["JavaScript", "Python"]
+  frameworks: [] # e.g., ["React Native", "Node.js"]
+  database: null # e.g., "PostgreSQL"
+  platform: null # e.g., "iOS/Android", "Web", "Desktop"
+
+# Code Locations (for multi-repo projects)
+repositories:
+  primary: "."  # This project
+  related: []   # Other repos: ["../app-code", "~/GitHub/backend"]
+
+# Project Structure
+structure:
+  roundtable: "roundtable/"
+  workspace: "roundtable/workspace/"
+  documents: "documents/"
+  project_kb: "project/"
+  system: "system/"  # Standards, checklists, etc. (from pro-os/system/)
+  agents: "agents/"  # Expert definitions (from pro-os/agents/)
+
+# Document Organization
+documents:
+  auto_categorize: true  # Let AI organize into categories
+  categories:
+    technical: "documents/technical/"
+    investor: "documents/investor-materials/"
+    legal: "documents/legal/"
+    marketing: "documents/marketing/"
+    operations: "documents/operations/"
+    domain: "documents/materials/"  # Domain-specific
+
+# AI Tool Configuration
+ai_tool:
+  name: "[cursor/vscode/claude/windsurf/other]"
+  cursor_optimizations: true/false  # Install .cursor/rules/?
+  ide_config_location: ".cursor/rules/"  # or ".vscode/", etc.
+
+# Workflow Preferences
+workflow:
+  workspace_archive_location: "roundtable/workspace/archive/"
+  archive_on_complete: true
+  archive_format: "YYYY-MM"  # Archive by month
+  recap_on_major_work: true  # Create system/recaps/ for big deliverables
+
+# Expert Behavior
+expert_settings:
+  tone: "[professional/conversational/casual/direct/supportive]"  # From founder profile
+  use_emojis: true/false  # Based on communication style
+  detail_level: "balanced"  # headlines/balanced/comprehensive/detailed
+  
+# Notifications (optional)
+notifications:
+  completion_sound: true  # Play sound when work complete?
+  platform: "[mac/windows/linux]"
+
+# FWD PRO System
+system:
+  version: "1.0.0"
+  pro_os_location: ".fwdpro/"  # Where FWD PRO system lives
+  global_profile_location: "~/.fwdpro-global/"
+
+# Multi-Project Support
+multi_project:
+  enabled: false  # Using FWD PRO across multiple projects?
+  projects: []    # List of project paths using this founder profile
+
+# Notes
+# - This file is generated from onboarding answers
+# - Edit anytime to adjust settings
+# - Experts read this to understand project context
+# - Changes take effect immediately (no restart needed)
+

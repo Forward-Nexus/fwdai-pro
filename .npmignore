@@ -1,0 +1,40 @@
+# NPM Ignore File
+# Only publish what's needed for the package to work
+
+# Development
+.github/
+.husky/
+.vscode/
+.idea/
+*.test.js
+*.spec.js
+test/
+tests/
+__tests__/
+
+# Git
+.git/
+.gitignore
+
+# Environment
+.env*
+
+# Docs that aren't needed
+documents/
+
+# IDE configs
+.eslintrc*
+.prettierrc*
+prettier.config.*
+eslint.config.*
+
+# Development scripts
+.DS_Store
+*.log
+*.swp
+*.swo
+*~
+
+# Everything is defined by package.json "files" array
+# This file is just a safety net
+

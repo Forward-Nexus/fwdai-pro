@@ -1,0 +1,52 @@
+MIT License
+
+Copyright (c) 2025 ArcCar LLC dba ForwardNexus (FWD AI)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+---
+
+ATTRIBUTION & ACKNOWLEDGMENTS:
+
+FWD PRO was inspired by and learned from excellent prior work:
+
+- BMAD-METHOD™ (https://github.com/bmadcode/BMAD-METHOD) by BMad Code, LLC
+  Learned from: Quality systems, workflow patterns, story-based collaboration,
+  and structured project management approaches.
+
+- Agent-OS (https://github.com/coleam00/agent-os) by CasJam Media LLC
+  Learned from: Context management, three-phase workflows, pre/post-flight 
+  patterns, and conditional context loading.
+
+FWD PRO builds on these concepts but takes a different approach focused on 
+universal applicability (any business type), expert collaboration (vs 
+task-driven), and founder accessibility (vs developer-centric). We built 
+our own implementation from their conceptual inspiration.
+
+TRADEMARK NOTICE:
+FWD AI and FWD PRO are unregistered trademarks of ArcCar LLC dba ForwardNexus. 
+All rights reserved.
+
+If you use, modify, or distribute this system, please:
+1. Acknowledge FWD PRO in your documentation
+2. Credit the original inspirations (BMAD-METHOD and Agent-OS)
+3. Clearly distinguish your derivative work from the original
+
+We believe in giving credit where credit is due and building on the shoulders 
+of giants. Please honor this spirit of attribution when building upon FWD PRO.

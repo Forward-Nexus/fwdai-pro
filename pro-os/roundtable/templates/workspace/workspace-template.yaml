@@ -1,0 +1,360 @@
+---
+# FWD PRO Workspace Template
+# Universal collaboration workspace for ANY deliverable type
+# Works for: specs, pitch decks, business plans, features, campaigns, legal docs, etc.
+# This is where ALL collaboration happens on ONE work item!
+
+template:
+  id: fwdpro-workspace-v1
+  name: Universal Workspace
+  version: 1.0.0
+  output:
+    format: markdown
+    filename: roundtable/workspace/{{workspace_name}}.md
+    title: "{{workspace_title}}"
+
+# Metadata Section
+metadata:
+  title: "[Work Item Name]"
+  type: "technical_spec | pitch_deck | business_plan | feature | campaign | legal_doc | marketing | domain_material | other"
+  status: "Draft | Approved | InProgress | Review | Done"
+  
+  # Tracking
+  created: "YYYY-MM-DD"
+  created_by: "[primary expert]"
+  updated: "YYYY-MM-DD"
+  updated_by: "[expert]"
+  
+  # Links & Organization
+  deliverable: "documents/[category]/[filename]"  # The clean output document
+  appears_on_whiteboard: true
+  
+  # Collaboration
+  collaborators: ["expert1", "expert2", "expert3"]
+  reviewers: ["expert1", "expert2"]
+  
+  # Project Context
+  project: "[project name from config]"
+  category: "technical | investor | marketing | legal | domain | other"
+  priority: "low | medium | high | critical"
+
+# Status Tracking (Workflow Progression)
+progress:
+  - phase: "Draft"
+    description: "Initial creation, not yet approved"
+    completed_by: ""
+    completed_date: ""
+    notes: ""
+  
+  - phase: "Approved"
+    description: "Reviewed and ready for next phase"
+    completed_by: ""
+    completed_date: ""
+    notes: ""
+  
+  - phase: "InProgress"
+    description: "Actively being worked on"
+    completed_by: ""
+    completed_date: ""
+    notes: ""
+  
+  - phase: "Review"
+    description: "Complete, waiting for QA/review"
+    completed_by: ""
+    completed_date: ""
+    notes: ""
+  
+  - phase: "Done"
+    description: "Fully complete and approved"
+    completed_by: ""
+    completed_date: ""
+    notes: ""
+
+# Work Breakdown
+tasks:
+  - task: "[Task 1 description]"
+    assigned_to: "[expert]"
+    status: "pending | in_progress | done"
+    notes: ""
+    created: "YYYY-MM-DD"
+  
+  - task: "[Task 2 description]"
+    assigned_to: "[expert]"
+    status: "pending | in_progress | done"
+    notes: ""
+    created: "YYYY-MM-DD"
+
+# Quality Assurance
+quality:
+  checklist_run: "none | quality | code | content | legal | spec"
+  checklist_passed: false
+  checklist_date: ""
+  checklist_notes: ""
+
+# Blockers & Issues
+blockers: []
+# Example blocker structure:
+# - blocker: "Need decision on session timeout duration"
+#   raised_by: "ada"
+#   raised_date: "2025-10-06"
+#   resolved: false
+#   resolution: ""
+#   resolution_date: ""
+#   approaches_tried:
+#     - "Researched industry standards (varies widely)"
+#     - "Checked project KB for requirements (not specified)"
+#     - "Reviewed similar features (no precedent)"
+#   needs: "Founder decision: 7-day, 30-day, or 90-day?"
+#   urgency: "low | medium | high | critical"
+
+# Cross-references
+references:
+  related_workspaces: []
+  related_deliverables: []
+  references_repos: []
+  external_resources: []
+
+# Change Log
+changelog:
+  - date: "YYYY-MM-DD"
+    by: "[expert]"
+    change: "[what changed]"
+    version: "0.1"
+
+---
+
+# {{workspace_title}}
+
+**Type:** {{type}}  
+**Status:** {{status}}  
+**Created:** {{created}} by {{created_by}}  
+**Deliverable:** [{{deliverable}}](../../{{deliverable}})
+
+---
+
+## 📊 Status Progress
+
+Track the workflow progression of this workspace:
+
+- [ ] **Draft** - [Expert] - [Date]
+  - Initial creation, planning phase
+  
+- [ ] **Approved** - [Expert] - [Date]
+  - Reviewed and ready for execution
+  
+- [ ] **InProgress** - [Expert] - [Date] ← **CURRENT**
+  - Active work happening
+  
+- [ ] **Review** - [Expert] - [Date]
+  - Ready for quality review
+  
+- [ ] **Done** - [Expert] - [Date]
+  - Complete and approved
+
+---
+
+## 🎯 Overview & Context
+
+**What we're building:**
+[Brief description of this deliverable and why it matters]
+
+**Key objectives:**
+- [Objective 1]
+- [Objective 2]
+- [Objective 3]
+
+**Success criteria:**
+- [What "done" looks like]
+
+---
+
+## 👥 Expert Collaboration
+
+### {{Primary Expert}}'s Work
+
+**Role:** [Primary responsibility for this deliverable]
+
+**Work completed:**
+[Main work content, decisions, progress notes - this can be LONG!]
+
+**Key decisions:**
+- [Decision 1 with rationale]
+- [Decision 2 with rationale]
+
+**Research & references:**
+- [Current best practices researched]
+- [Resources consulted]
+
+**Notes:**
+[Any important context, constraints, or considerations]
+
+---
+
+### Handoff to {{Next Expert}}
+
+Hey {{expert}}! [Status of work]. Here's everything you need:
+
+**Deliverable:** [Link to clean document]
+
+**Context:**
+[Complete handoff context - architecture, decisions, everything they need]
+[This can be LONG - that's the point! Give complete context.]
+
+**What's been done:**
+- [Completed work 1]
+- [Completed work 2]
+
+**What you need to do:**
+- [Next step 1]
+- [Next step 2]
+
+**Important considerations:**
+- [Thing to watch out for]
+- [Constraint or requirement]
+
+**Where to find things:**
+- [Resource 1]: [location]
+- [Resource 2]: [location]
+
+**Questions?** Tag me anytime! - {{handoff_from_expert}}
+
+---
+
+### {{Collaborator Expert}}'s Input
+
+**Role:** [Their contribution to this deliverable]
+
+**Feedback/Review:**
+[Their perspective, suggestions, concerns]
+
+**Approved:** [ ] Yes / [ ] No / [ ] With changes
+
+**Changes requested:**
+- [Change 1]
+- [Change 2]
+
+---
+
+### {{Another Expert}}'s Input
+
+**Role:** [Their contribution]
+
+**Work completed:**
+[Their additions, reviews, or modifications]
+
+**Notes:**
+[Context or decisions from this expert]
+
+---
+
+## ✅ Tasks
+
+Track specific tasks for this workspace:
+
+### Phase 1: [Phase Name]
+- [ ] Task 1 - [Description] - Assigned: [Expert]
+- [ ] Task 2 - [Description] - Assigned: [Expert]
+
+### Phase 2: [Phase Name]
+- [ ] Task 3 - [Description] - Assigned: [Expert]
+- [ ] Task 4 - [Description] - Assigned: [Expert]
+
+### Phase 3: [Phase Name]
+- [ ] Task 5 - [Description] - Assigned: [Expert]
+
+---
+
+## 🎯 Acceptance Criteria (If Applicable)
+
+What "done" looks like for this deliverable:
+
+1. [Criterion 1]
+2. [Criterion 2]
+3. [Criterion 3]
+
+---
+
+## ⚠️ Blockers & Issues
+
+**Current blockers:**
+[None currently / See blockers in YAML header]
+
+**Resolved blockers:**
+- [Blocker 1] - Resolved on [date] - [How it was resolved]
+
+---
+
+## 📝 Notes & Decisions
+
+**Key decisions made:**
+| Date | Decision | Rationale | Decided By |
+|------|----------|-----------|------------|
+| YYYY-MM-DD | [Decision] | [Why] | [Expert/Founder] |
+
+**Important context:**
+- [Context point 1]
+- [Context point 2]
+
+**Lessons learned:**
+- [Learning 1]
+- [Learning 2]
+
+---
+
+## 🔄 Roundtable Review (If Applicable)
+
+If this workspace goes through a Roundtable Audit (`@rt`), experts document their reviews here:
+
+### {{Expert 1}}'s Review
+**Date:** YYYY-MM-DD  
+**Verdict:** ✅ Approved / ⚠️ Needs changes / ❌ Concerns
+
+**Feedback:**
+[Their domain-specific feedback]
+
+**Changes requested:**
+- [Change 1]
+
+---
+
+### {{Expert 2}}'s Review
+[Same structure as above]
+
+---
+
+## 📚 References & Resources
+
+**Project context:**
+- [project/project-kb.md](../../project/project-kb.md)
+- [project/founder-profile.md](../../project/founder-profile.md)
+
+**Related workspaces:**
+- [Related workspace 1](./related-workspace.md)
+
+**Related deliverables:**
+- [Related deliverable 1](../../documents/category/file.md)
+
+**External resources:**
+- [Resource 1 name]: [URL]
+- [Resource 2 name]: [URL]
+
+---
+
+## 🎉 Completion Notes
+
+**When marking as Done:**
+- [ ] All tasks completed
+- [ ] Quality checklist passed
+- [ ] All expert reviews complete
+- [ ] Deliverable finalized in documents/
+- [ ] Whiteboards updated
+- [ ] Founder checklist updated if needed
+- [ ] Ready to archive
+
+**Final notes:**
+[Summary of what was accomplished, any follow-up work needed]
+
+---
+
+**Last updated:** {{updated}} by {{updated_by}}
+

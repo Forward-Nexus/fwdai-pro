@@ -1,0 +1,12 @@
+# This folder is for YOUR symlinks to favorite experts
+
+Example setup:
+```bash
+ln -s ../pro-os/experts/denny-systems-architect.md denny.md
+ln -s ../pro-os/experts/ada-implementation.md ada.md
+ln -s ../pro-os/experts/lyna-external-strategy.md lyna.md
+```
+
+Symlinks you create won't be tracked in git (see .gitignore).
+This keeps your setup personal!
+

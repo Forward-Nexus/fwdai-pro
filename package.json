@@ -1,0 +1,66 @@
+{
+  "name": "@fwdai/pro",
+  "version": "1.0.0",
+  "description": "FWD PRO - Universal AI expert collaboration system for founders building ANY type of business. Part of the FWD AI ecosystem.",
+  "type": "module",
+  "main": "tools/installer/index.js",
+  "bin": {
+    "fwdpro": "./bin/cli.js"
+  },
+  "scripts": {
+    "install-local": "node tools/installer/index.js",
+    "dev": "node tools/installer/index.js",
+    "test": "echo \"Tests coming soon\" && exit 0",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix ."
+  },
+  "keywords": [
+    "ai",
+    "collaboration",
+    "founder",
+    "startup",
+    "business",
+    "experts",
+    "assistant",
+    "roundtable"
+  ],
+  "author": "William Prejean <ward@fwdai.com> (ArcCar LLC dba ForwardNexus)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Forward-Nexus/fwdai-pro.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Forward-Nexus/fwdai-pro/issues"
+  },
+  "homepage": "https://fwdai.com",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "packageManager": "pnpm@8.0.0",
+  "files": [
+    "bin/",
+    "tools/",
+    "pro-os/",
+    "LICENSE",
+    "README.md",
+    "CHANGELOG.md",
+    "CONTRIBUTING.md",
+    "ACKNOWLEDGMENTS.md"
+  ],
+  "dependencies": {
+    "inquirer": "^9.2.12",
+    "chalk": "^5.3.0",
+    "boxen": "^7.1.1",
+    "ora": "^7.0.1",
+    "fs-extra": "^11.2.0",
+    "js-yaml": "^4.1.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.55.0",
+    "prettier": "^3.1.0"
+  }
+}
+
