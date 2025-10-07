@@ -10,7 +10,7 @@ FWD PRO gives you a complete team of specialized AI experts who collaborate tran
 
 ```bash
 # Install FWD PRO in your project
-npx @fwdnxs/pro install
+npx @fwd-ai/pro install
 
 # Answer 14-19 questions (depends on what you're building)
 # FWD PRO sets up everything automatically

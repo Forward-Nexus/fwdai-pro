@@ -1,6 +1,6 @@
 {
   "$schema": "https://json.schemastore.org/package.json",
-  "name": "@fwdnxs/pro",
+  "name": "@fwd-ai/pro",
   "version": "1.0.0",
   "description": "FWD PRO - Universal AI expert collaboration system for founders building ANY type of business. Part of the FWD AI ecosystem.",
   "type": "module",
