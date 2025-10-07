@@ -31,6 +31,7 @@ const __dirname = dirname(__filename);
 
 const GLOBAL_PROFILE_DIR = path.join(os.homedir(), '.fwdpro-global');
 const FWD_PRO_SOURCE = path.join(__dirname, '..', '..', 'pro-os');
+const TEMPLATES_SOURCE = path.join(__dirname, '..', '..', 'templates');
 
 /**
  * Main setup function
@@ -65,11 +66,15 @@ export async function setupProject(answers) {
   try {
     // Create .fwdpro directory structure
     const fwdproDir = path.join(projectPath, '.fwdpro');
-    await fs.ensureDir(path.join(fwdproDir, 'config'));
     
-    // Copy pro-os system INTO .fwdpro
+    // Copy pro-os system INTO .fwdpro (templates stay in package, not copied)
     const proOsTarget = path.join(fwdproDir, 'pro-os');
-    await fs.copy(FWD_PRO_SOURCE, proOsTarget);
+    await fs.copy(FWD_PRO_SOURCE, proOsTarget, {
+      filter: (src) => !src.includes('/templates') // Don't copy templates folder
+    });
+    
+    // Create pro-os/project/ folder for generated files
+    await fs.ensureDir(path.join(fwdproDir, 'pro-os', 'project'));
     
     spinner.succeed(chalk.green('✓ Project structure created'));
   } catch (error) {
@@ -83,21 +88,21 @@ export async function setupProject(answers) {
   try {
     const fwdproDir = path.join(projectPath, '.fwdpro');
     
-    // Generate 00-welcome.md in root .fwdpro folder (sorts to top!)
+    // Generate *welcome.md in root .fwdpro folder (sorts to top!)
     const welcomeDoc = await generateWelcomeDocument(aboutYou, aboutProject);
-    await fs.writeFile(path.join(fwdproDir, '00-welcome.md'), welcomeDoc);
+    await fs.writeFile(path.join(fwdproDir, '*welcome.md'), welcomeDoc);
     
-    // Generate config.yaml in config subfolder
+    // Generate files in pro-os/project/
+    const projectDir = path.join(fwdproDir, 'pro-os', 'project');
+    
     const config = await generateConfig(aboutYou, aboutProject);
-    await fs.writeFile(path.join(fwdproDir, 'config', 'config.yaml'), config);
+    await fs.writeFile(path.join(projectDir, 'config.yaml'), config);
     
-    // Generate project-kb.md in config subfolder
     const projectKB = await generateProjectKB(aboutYou, aboutProject);
-    await fs.writeFile(path.join(fwdproDir, 'config', 'project-kb.md'), projectKB);
+    await fs.writeFile(path.join(projectDir, 'project-kb.md'), projectKB);
     
-    // Generate founder-profile.md in config subfolder
     const founderProfile = await generateFounderProfile(aboutYou, aboutProject);
-    await fs.writeFile(path.join(fwdproDir, 'config', 'founder-profile.md'), founderProfile);
+    await fs.writeFile(path.join(projectDir, 'founder-profile.md'), founderProfile);
     
     // Generate tech-stack-guide.md in documents/tech/ (always created)
     const techDir = path.join(fwdproDir, 'documents', 'tech');
@@ -107,7 +112,7 @@ export async function setupProject(answers) {
     
     // Generate domain expert if requested
     if (aboutProject.domainExpert) {
-      const domainExpertResult = await generateDomainExpert(aboutProject.domainExpert, projectPath);
+      const domainExpertResult = await generateDomainExpert(aboutProject.domainExpert, TEMPLATES_SOURCE);
       const expertsDir = path.join(fwdproDir, 'pro-os', 'experts');
       await fs.writeFile(path.join(expertsDir, domainExpertResult.filename), domainExpertResult.content);
     }
@@ -122,7 +127,7 @@ export async function setupProject(answers) {
   spinner = ora('Initializing roundtable...').start();
   
   try {
-    await initializeRoundtable(projectPath, aboutYou, aboutProject);
+    await initializeRoundtable(projectPath, aboutYou, aboutProject, TEMPLATES_SOURCE);
     spinner.succeed(chalk.green('✓ Roundtable initialized'));
   } catch (error) {
     spinner.fail(chalk.red('Failed to initialize roundtable'));

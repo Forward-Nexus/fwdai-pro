@@ -13,7 +13,7 @@ import { dirname } from 'path';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-const TEMPLATES_DIR = path.join(__dirname, '..', '..', 'pro-os', 'project');
+const TEMPLATES_DIR = path.join(__dirname, '..', '..', 'templates', 'project');
 
 /**
  * Format roles for display
@@ -696,8 +696,8 @@ ${expertsList}
 ## 📍 Key Files to Know
 
 ### Must Read
-- **\`.fwdpro/config/founder-profile.md\`** - Your preferences and context
-- **\`.fwdpro/config/project-kb.md\`** - Your project knowledge base
+- **\`.fwdpro/pro-os/project/founder-profile.md\`** - Your preferences and context
+- **\`.fwdpro/pro-os/project/project-kb.md\`** - Your project knowledge base
 - **\`.fwdpro/0-roundtable/whiteboards.md\`** - Expert status board
 - **\`.fwdpro/0-roundtable/founder-checklist.md\`** - Items for your review
 
@@ -786,8 +786,8 @@ ${aboutProject.workTypes.includes('building') ? '- \`@denny I need a spec for [f
 /**
  * Generate domain expert from template
  */
-export async function generateDomainExpert(domainExpert, projectPath) {
-  const templatePath = path.join(projectPath, '.fwdpro', 'pro-os', 'documentation', 'DOMAIN-EXPERT-TEMPLATE.md');
+export async function generateDomainExpert(domainExpert, templatesSourcePath) {
+  const templatePath = path.join(templatesSourcePath, 'experts', 'DOMAIN-EXPERT-TEMPLATE.md');
   const template = await fs.readFile(templatePath, 'utf-8');
   
   const expertName = domainExpert.expertName;

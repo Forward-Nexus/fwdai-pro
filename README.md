@@ -65,22 +65,25 @@ After installation, your project has:
 
 ```
 your-project/
-├── roundtable/
-│   ├── whiteboards.md              ← Your dashboard
-│   ├── founder-checklist.md        ← Your todos
-│   └── workspace/                  ← Expert collaboration
 ├── .fwdpro/
-│   ├── config.yaml                 ← System config
-│   └── project/
-│       ├── project-kb.md           ← Project facts
-│       └── founder-profile.md      ← How you work
-├── pro-os/                         ← The expert system
-│   ├── experts/                    ← Expert personalities
-│   ├── commands/                   ← Commands you can use
-│   ├── documentation/              ← User guides
-│   └── system/                     ← Workflows & standards
-├── your-agents/                    ← Quick access to YOUR experts
-└── your-commands/                  ← Quick access to useful commands
+│   ├── *welcome.md                 ← Start here!
+│   ├── 0-roundtable/               ← Your dashboard
+│   │   ├── whiteboards.md          ← Expert whiteboards
+│   │   ├── founder-checklist.md    ← Your action items
+│   │   └── workspace/              ← Active collaboration
+│   ├── 0-your-experts/             ← Quick access to YOUR experts
+│   ├── 0-your-commands/            ← Quick access to commands
+│   ├── documents/                  ← Work outputs
+│   │   └── tech/                   ← Technical documentation
+│   └── pro-os/                     ← The expert system
+│       ├── experts/                ← Expert personalities
+│       ├── commands/               ← Available commands
+│       ├── documentation/          ← User guides
+│       ├── system/                 ← Workflows & standards
+│       └── project/                ← Your project info
+│           ├── config.yaml         ← System configuration
+│           ├── founder-profile.md  ← How you work
+│           └── project-kb.md       ← Project facts
 ```
 
 ---
