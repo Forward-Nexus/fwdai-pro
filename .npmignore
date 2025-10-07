@@ -19,8 +19,9 @@ __tests__/
 # Environment
 .env*
 
-# Docs that aren't needed
+# Docs that aren't needed by users
 documents/
+docs/
 
 # IDE configs
 .eslintrc*
@@ -37,4 +38,3 @@ eslint.config.*
 
 # Everything is defined by package.json "files" array
 # This file is just a safety net
-
