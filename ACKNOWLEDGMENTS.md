@@ -94,9 +94,9 @@ If BMAD-METHOD or Agent-OS inspired you as they inspired us, please check them o
 ### Daniel Clifford
 **For believing in the vision and pointing the way.**
 
-Daniel introduced us to BMAD-METHOD and Agent-OS, recognizing that their concepts could be adapted to serve a broader audience. His guidance, encouragement, and belief in this project were instrumental in FWD PRO's creation. 
+Danny introduced us to BMAD-METHOD and Agent-OS, recognizing that their concepts could be adapted to serve a broader audience. His guidance, encouragement, and belief in this project were instrumental in FWD PRO's creation. 
 
-Sometimes the most valuable contribution is showing someone where to look and believing they can build something meaningful. Thank you, Daniel.
+Sometimes the most valuable contribution is showing someone where to look and believing they can build something meaningful. Thank you, Danny!
 
 ---
 
@@ -109,7 +109,7 @@ We hope FWD PRO carries forward your spirit of innovation while serving founders
 ---
 
 **Building together,**  
-Ward (William Prejean) & The FWD PRO Community
+Ward P. & The FWDNXS Community
 
 ---
 

@@ -1,25 +1,41 @@
 # Dependencies
 node_modules/
-package-lock.json
 pnpm-lock.yaml
+bun.lock
+deno.lock
+package-lock.json
 yarn.lock
+
+# Logs
+logs/
+*.log
+npm-debug.log*
 
 # Build outputs
 dist/
 build/
-*.log
+*.txt
 
 # Environment
 .env
 .env.local
 .env.*.local
 
-# IDE
+# IDE and editor configs
 .vscode/
 .idea/
+.windsurf/
+.cursor/
 *.swp
 *.swo
 *~
+
+# AI assistant files
+CLAUDE.md
+.ai/*
+.claude
+.gemini
+.iflow
 
 # OS
 .DS_Store
@@ -28,9 +44,12 @@ Thumbs.db
 # Testing
 coverage/
 .nyc_output/
+test-project-install/
+sample-project/
 
 # Temporary
 tmp/
 temp/
 *.tmp
+*.stats.md
 
