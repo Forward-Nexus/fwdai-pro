@@ -41,6 +41,15 @@ cd your-project/
 npx @fwd-ai/pro install
 ```
 
+### Update Command
+
+```bash
+# Update to the latest version (preserves all your data)
+npx @fwd-ai/pro update
+```
+
+Updates work like app updates on your phone - your documents, workspace, and configuration are automatically preserved while system files (commands, experts, standards) are updated to the latest version.
+
 ### What Gets Installed
 
 ```

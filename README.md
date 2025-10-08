@@ -56,6 +56,15 @@ npx @fwd-ai/pro install
 
 That's it! You now have a team of AI experts ready to help.
 
+### 🔄 Keeping FWD PRO Updated
+
+```bash
+# Update to the latest version (preserves all your data)
+npx @fwd-ai/pro update
+```
+
+Updates work like app updates - your documents, workspace, and settings are automatically preserved while system files are updated.
+
 ---
 
 ## 📊 How It Works
