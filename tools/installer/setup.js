@@ -88,10 +88,10 @@ export async function setupProject(answers) {
   try {
     const fwdproDir = path.join(projectPath, '.fwdpro');
     
-    // Write version file for update tracking
+    // Write version file for update tracking in system folder
     const packageJson = await fs.readJson(path.join(__dirname, '..', '..', 'package.json'));
     await fs.writeFile(
-      path.join(fwdproDir, '.version'), 
+      path.join(fwdproDir, 'pro-os', 'system', '.version'), 
       packageJson.version
     );
     

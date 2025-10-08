@@ -126,9 +126,15 @@ export async function updateInstallation() {
     spinner = ora('Updating version...').start();
     
     await fs.writeFile(
-      path.join(fwdproDir, '.version'),
+      path.join(fwdproDir, 'pro-os', 'system', '.version'),
       packageVersion
     );
+    
+    // Remove old version file if it exists (migration from 1.1.1)
+    const oldVersionFile = path.join(fwdproDir, '.version');
+    if (await fs.pathExists(oldVersionFile)) {
+      await fs.remove(oldVersionFile);
+    }
 
     spinner.succeed(chalk.green('✓ Version updated'));
 

@@ -108,10 +108,16 @@ export async function hasInstallation(projectPath) {
  * Get installed version
  */
 export async function getInstalledVersion(projectPath) {
-  const versionFile = path.join(projectPath, '.fwdpro', '.version');
+  const versionFile = path.join(projectPath, '.fwdpro', 'pro-os', 'system', '.version');
   
   if (await fs.pathExists(versionFile)) {
     return (await fs.readFile(versionFile, 'utf-8')).trim();
+  }
+  
+  // Check old location (pre-1.1.2) for backwards compatibility
+  const oldVersionFile = path.join(projectPath, '.fwdpro', '.version');
+  if (await fs.pathExists(oldVersionFile)) {
+    return (await fs.readFile(oldVersionFile, 'utf-8')).trim();
   }
   
   // If no version file, assume pre-1.1.0
