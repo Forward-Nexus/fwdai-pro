@@ -49,7 +49,7 @@ Usage:
 Get started:
   npx @fwdai/pro install
 
-Learn more: https://fwdai.com
+Learn more: https://github.com/Forward-Nexus/fwdai-pro
     `);
     break;
 }

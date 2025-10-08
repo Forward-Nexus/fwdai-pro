@@ -94,12 +94,12 @@ e) Supportive/Encouraging
 ```
 Select all that apply:
 [ ] Uses dictation/voice-to-text
-[ ] Neurodivergent (ADHD-aware, please!)
-[ ] Prefers visual examples
-[ ] Needs detailed step-by-step
+[ ] Prefers visual examples (diagrams, screenshots)
+[ ] Needs detailed step-by-step explanations
+[ ] Prefers quick summaries with action items
 [ ] English is second language
 
-> I check: dictation, ADHD-aware, visual examples
+> I check: dictation, visual examples, quick summaries
 ```
 
 **Q5: Technical level?**

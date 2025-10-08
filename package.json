@@ -28,7 +28,7 @@
     "assistant",
     "roundtable"
   ],
-  "author": "William Prejean <ward@fwdai.com> (ArcCar LLC dba ForwardNexus)",
+  "author": "William Prejean <info@fwdnxs.com> (ArcCar LLC dba ForwardNexus)",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -37,7 +37,7 @@
   "bugs": {
     "url": "https://github.com/Forward-Nexus/fwdai-pro/issues"
   },
-  "homepage": "https://fwdai.com",
+  "homepage": "https://github.com/Forward-Nexus/fwdai-pro",
   "engines": {
     "node": ">=18.0.0"
   },
