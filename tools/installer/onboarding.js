@@ -522,6 +522,82 @@ async function askAboutProject() {
     }
   }
 
+  // Q17: Mission questions (opt-in)
+  const { wantsMissionInfo } = await inquirer.prompt([
+    {
+      type: 'confirm',
+      name: 'wantsMissionInfo',
+      message: '📝 Want to add mission details now? (you can use @update-mission later)',
+      default: false
+    }
+  ]);
+
+  let missionAnswers = {};
+  if (wantsMissionInfo) {
+    console.log(chalk.gray('\n→ Great! Let\'s build your mission document...\n'));
+    
+    missionAnswers = await inquirer.prompt([
+      {
+        type: 'input',
+        name: 'targetAudience',
+        message: 'Who is this for? (target audience/customer)',
+        default: '',
+        transformer: input => chalk.gray('Examples: "Small businesses", "People in recovery", "Restaurant owners"\n> ') + input
+      },
+      {
+        type: 'input',
+        name: 'problemSolving',
+        message: 'What problem are you solving?',
+        default: '',
+        transformer: input => chalk.gray('Example: "They can\'t track their goals effectively"\n> ') + input
+      },
+      {
+        type: 'input',
+        name: 'yourWhy',
+        message: 'Why does THIS project matter to YOU personally? (your "why")',
+        default: '',
+        transformer: input => chalk.gray('This helps experts understand your passion and motivation\n> ') + input
+      }
+    ]);
+  }
+
+  // Q18: People/Team questions (opt-in)
+  const { wantsTeamInfo } = await inquirer.prompt([
+    {
+      type: 'confirm',
+      name: 'wantsTeamInfo',
+      message: '👥 Want to add team/advisors now? (you can use @update-people later)',
+      default: false
+    }
+  ]);
+
+  let peopleInfo = null;
+  if (wantsTeamInfo) {
+    peopleInfo = await inquirer.prompt([
+      {
+        type: 'input',
+        name: 'advisors',
+        message: 'Any advisors or mentors helping you? (optional)',
+        default: '',
+        transformer: input => chalk.gray('Example: "Sarah (marketing mentor), John (technical advisor)"\n> ') + input
+      },
+      {
+        type: 'input',
+        name: 'investors',
+        message: 'Any investors or financial supporters? (optional)',
+        default: '',
+        transformer: input => chalk.gray('Example: "Angel investor Mike, Friends & family"\n> ') + input
+      },
+      {
+        type: 'input',
+        name: 'keyConnections',
+        message: 'Any other key people to mention? (optional)',
+        default: '',
+        transformer: input => chalk.gray('Example: "Early customer Lisa, Industry contact Tom"\n> ') + input
+      }
+    ]);
+  }
+
   return {
     projectType,
     aiTool,
@@ -535,7 +611,9 @@ async function askAboutProject() {
     constraints,
     domainExpert,
     scanFindings,
-    ...progressiveAnswers
+    ...progressiveAnswers,
+    ...missionAnswers,
+    peopleInfo
   };
 }
 

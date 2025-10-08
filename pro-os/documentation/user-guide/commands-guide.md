@@ -765,6 +765,85 @@ Look in `your-commands/` for shortcuts to commands you use often
 | @update-people | System | Genna | 15 min | People doc |
 | @update-onboarding | System | Genna | 30 min | Reconfigured |
 | @show-projects | System | Genna | Instant | Portfolio view |
+| @create-expert | System | Genna | 15-30 min | Custom expert |
+| @create-command | System | Genna | 15-30 min | Custom command |
+
+---
+
+## Customization Commands
+
+### @create-expert
+
+**Purpose:** Create a custom domain expert for your team
+
+**Use When:**
+- Need specialized expertise not covered by core experts
+- Industry-specific knowledge required
+- Want someone to review work through a specific lens
+
+**Example:**
+```
+@create-expert
+
+Genna will ask guided questions:
+- What's their name?
+- What's their domain/expertise?
+- Why do you need them?
+- What personality should they have?
+- What should they review?
+- What red flags should they catch?
+
+Then generates a complete expert profile with:
+- Personality and communication style
+- Specialized knowledge areas
+- Review frameworks
+- Quality standards
+- Example interactions
+```
+
+**Result:** Full expert file like Bonnie Jo (comprehensive, with personality, frameworks, and examples)
+
+**Location:** `.fwdpro/pro-os/experts/[expert-name-domain].md`
+
+**See Full Guide:** `pro-os/commands/system/create-expert.md`
+
+---
+
+### @create-command
+
+**Purpose:** Create a custom command workflow for your specific needs
+
+**Use When:**
+- Have a repetitive multi-step process
+- Custom industry workflow
+- Need multiple experts to collaborate in a specific order
+- Want consistent quality gates
+
+**Example:**
+```
+@create-command
+
+Genna will ask guided questions:
+- What should we call it?
+- What does it do?
+- When to use it?
+- What are the workflow steps?
+- Which experts are involved?
+- What quality checks?
+- What gets delivered?
+
+Then generates a complete command workflow with:
+- Step-by-step process
+- Expert collaboration pattern
+- Quality checklist
+- Example interactions
+```
+
+**Result:** Custom command file with your specific workflow
+
+**Location:** `.fwdpro/pro-os/commands/custom/[command-name].md`
+
+**See Full Guide:** `pro-os/commands/system/create-command.md`
 
 ---
 

@@ -1,81 +1,110 @@
-# Mission & Purpose
+# [PROJECT_NAME] - Mission & Vision
 
-**Purpose:** Why this project exists and what it aims to achieve  
-**Generated From:** Onboarding question "What's your why?" (optional)
-
----
-
-## Core Mission
-
-[PROJECT_NAME] is [ONE_SENTENCE_DESCRIPTION]
-
-Through [HOW_IT_WORKS], [PROJECT_NAME] helps [TARGET_AUDIENCE] [ACHIEVE_WHAT].
+**Last Updated:** [DATE]  
+**Purpose:** The WHY behind [PROJECT_NAME] - the mission, the vision, and what drives this work
 
 ---
 
-## What We're Solving
+## 🎯 Core Mission
 
-[TARGET_AUDIENCE] face [PROBLEM_DESCRIPTION]. Current solutions:
-- [CURRENT_SOLUTION_1] - [Why it falls short]
-- [CURRENT_SOLUTION_2] - [Why it falls short]
-- [CURRENT_SOLUTION_3] - [Why it falls short]
-
-**[PROJECT_NAME] fills the gap** with [YOUR_UNIQUE_APPROACH].
+**[PROJECT_NAME]** exists to [describe your mission - what problem are you solving and for whom?]
 
 ---
 
-## How [PROJECT_NAME] Works
+## 📖 The Story
 
-### [CORE_FEATURE_1]
-- [How it works]
-- [Why it matters]
-- [How it's different]
+### How This Started
+[Tell the story of why you started this project. What inspired it? What problem did you personally encounter?]
 
-### [CORE_FEATURE_2]
-- [How it works]
-- [Why it matters]
-- [How it's different]
+### The Realization
+[What insight or "aha moment" made you realize this needed to exist?]
 
-### [CORE_FEATURE_3]
-- [How it works]
-- [Why it matters]
-- [How it's different]
+💡 **Want to expand this section?**  
+Use `@update-mission` to add your founder story, or edit this file directly. The more context you provide, the better your AI experts can understand and support your vision.
 
 ---
 
-## Why [PROJECT_NAME] Matters
+## 🌍 Who We Serve
 
-> "[YOUR_PERSONAL_WHY_QUOTE]"
+### Primary Users
+[Who is this for? What are their needs?]
 
-[Expanded explanation of why this project matters to you and why it needs to exist in the world]
+### Why They Need This
+[What problem are they facing?]
 
----
+### What Success Looks Like
+[How will users' lives be better because of this?]
 
-## Current Status
-
-✅ **[MILESTONE_1]** - [Brief description]  
-✅ **[MILESTONE_2]** - [Brief description]  
-🔄 **[CURRENT_WORK]** - [What you're building now]  
-📅 **[NEXT_MILESTONE]** - [What's coming next]
-
----
-
-## What We're Building
-
-**Near-term:** [Immediate goals]  
-**Long-term:** [Big vision]
+💡 **Want to add more detail?**  
+Use `@update-mission` to expand on your target audience, their pain points, and how you're uniquely positioned to help them.
 
 ---
 
-**Philosophy:** [Core philosophy or tagline that captures your approach]
+## 🌟 What Makes This Different
+
+### Unique Approach
+[What makes your solution different from what already exists?]
+
+### Core Values
+[What principles guide your work?]
+
+💡 **Want to articulate your differentiation?**  
+Use `@update-mission` or work with `@benji` (marketing) and `@genna` (strategy) to refine your positioning.
 
 ---
 
-**Note for Experts:** This file helps us understand WHY the founder is building this, which informs:
-- Lyna's storytelling for investors and marketing
-- Benji's messaging and positioning strategy
-- Denny's technical decisions (what serves the mission)
-- Elle's risk assessment (founder's tolerance and priorities)
-- Domain Expert's authenticity reviews
-- Everyone's motivation to help make this succeed
+## 🎯 The Vision
 
+### Short-Term (Next 6-12 Months)
+- [What are your immediate goals?]
+- [Add more near-term milestones]
+
+### Medium-Term (1-3 Years)
+- [What does success look like in 1-3 years?]
+- [What metrics or milestones matter?]
+
+### Long-Term (3+ Years)
+- [What's the ultimate impact you want to make?]
+- [How does this scale or evolve?]
+
+💡 **Want to build out your roadmap?**  
+Use `@plan` or `@genna @plan` to create a detailed project plan. Your vision here helps guide that planning.
+
+---
+
+## 💚 Why This Matters
+
+[Why does THIS project matter to YOU personally? Your "why" helps experts understand your passion and make better decisions aligned with your vision.]
+
+---
+
+## 🔑 Key Messaging
+
+### The Tagline
+[Your one-line description - what do you tell people at a party?]
+
+### The Pitch
+[Your 2-3 sentence elevator pitch]
+
+### The Proof
+- [What traction or validation do you have?]
+- [Add metrics, testimonials, or early wins]
+
+💡 **Need help with messaging?**  
+Work with `@benji` (marketing) or `@lyna` (investor materials) to refine your pitch for different audiences.
+
+---
+
+## 🔄 Keep This Updated
+
+As your project evolves, update this file with:
+- New insights about your users
+- Pivots or strategic changes
+- Major milestones achieved
+- Evolved vision or goals
+
+Use `@update-mission` anytime to refresh this document, or tag `@genna` to discuss strategic changes.
+
+---
+
+**This file helps your AI experts understand WHY you're building this and WHO you're building it for. The more complete it is, the better they can help you succeed.** 💚

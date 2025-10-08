@@ -1,0 +1,24 @@
+# FWD PRO Configuration
+# Auto-generated during onboarding
+
+project:
+  name: "[PROJECT_NAME]"
+  type: "[new/existing]"
+  ai_tool: "[cursor/vscode/claude/other]"
+
+work_types:
+  - [building/investor/marketing/legal/operations]
+
+communication:
+  style: "[Communication style from Q5]"
+  founder_profile: "~/.fwdpro-global/[name]-profile.md"
+
+experts:
+  active:
+    - genna
+    - [other experts based on work types]
+  domain_expert: "[name-domain]"  # if created
+
+version: "1.2.0"
+installed: "[ISO_DATE]"
+

@@ -19,7 +19,9 @@ import {
   generateConfig,
   generateTechStackGuide,
   generateDomainExpert,
-  generateWelcomeDocument
+  generateWelcomeDocument,
+  generateMission,
+  generatePeople
 } from './generators.js';
 import { initializeRoundtable } from './roundtable.js';
 import { setupIDE } from './ide-setup.js';
@@ -70,7 +72,11 @@ export async function setupProject(answers) {
     // Copy pro-os system INTO .fwdpro (templates stay in package, not copied)
     const proOsTarget = path.join(fwdproDir, 'pro-os');
     await fs.copy(FWD_PRO_SOURCE, proOsTarget, {
-      filter: (src) => !src.includes('/templates') // Don't copy templates folder
+      filter: (src) => {
+        // Don't copy templates folder - they're only for generators, not end users
+        const relativePath = path.relative(FWD_PRO_SOURCE, src);
+        return !relativePath.startsWith('templates');
+      }
     });
     
     // Create pro-os/project/ folder for generated files
@@ -111,6 +117,19 @@ export async function setupProject(answers) {
     const founderProfile = await generateFounderProfile(aboutYou, aboutProject);
     await fs.writeFile(path.join(projectDir, 'founder-profile.md'), founderProfile);
     
+    // Generate mission.md (pass missionAnswers and scanFindings from aboutProject)
+    const missionAnswers = {
+      targetAudience: aboutProject.targetAudience,
+      problemSolving: aboutProject.problemSolving,
+      yourWhy: aboutProject.yourWhy
+    };
+    const mission = await generateMission(aboutYou, aboutProject, missionAnswers, aboutProject.scanFindings);
+    await fs.writeFile(path.join(projectDir, 'mission.md'), mission);
+    
+    // Generate people.md (pass peopleInfo and scanFindings from aboutProject)
+    const people = await generatePeople(aboutYou, aboutProject, aboutProject.peopleInfo, aboutProject.scanFindings);
+    await fs.writeFile(path.join(projectDir, 'people.md'), people);
+    
     // Generate tech-stack-guide.md in documents/tech/ (always created)
     const techDir = path.join(fwdproDir, 'documents', 'tech');
     await fs.ensureDir(techDir);
@@ -119,7 +138,14 @@ export async function setupProject(answers) {
     
     // Generate domain expert if requested
     if (aboutProject.domainExpert) {
-      const domainExpertResult = await generateDomainExpert(aboutProject.domainExpert, TEMPLATES_SOURCE);
+      const founderName = aboutYou.existingProfile 
+        ? path.basename(aboutYou.existingProfile).replace('-profile.md', '')
+        : aboutYou.name;
+      const domainExpertResult = await generateDomainExpert(
+        aboutProject.domainExpert, 
+        aboutProject.projectName, 
+        founderName
+      );
       const expertsDir = path.join(fwdproDir, 'pro-os', 'experts');
       await fs.writeFile(path.join(expertsDir, domainExpertResult.filename), domainExpertResult.content);
     }

@@ -284,6 +284,8 @@ ${aboutProject.workTypes.map(wt => `- ${wt.charAt(0).toUpperCase() + wt.slice(1)
 `;
 }
 
+// OLD generateMission and generatePeople functions removed - replaced with v1.2.0 scanner-aware versions below
+
 /**
  * Generate config.yaml
  */
@@ -634,6 +636,24 @@ ${expertsList}
 
 ---
 
+## 🎨 Personalize Your Project (Optional)
+
+Your project files have been created with basic information. You can flesh them out anytime:
+
+**Update using commands:**
+- \`@update-mission\` - Add your "why", target audience, problem you're solving
+- \`@update-people\` - Add team members, advisors, investors
+- \`@update-project\` - Update project facts, stage, goals
+
+**Or edit manually:**
+- \`.fwdpro/pro-os/project/mission.md\` - Your vision and purpose
+- \`.fwdpro/pro-os/project/people.md\` - Team and key relationships
+- \`.fwdpro/pro-os/project/project-kb.md\` - Project facts
+
+The more complete these are, the better your experts can help you!
+
+---
+
 ## 📁 Your Project Structure
 
 \`\`\`
@@ -784,12 +804,10 @@ ${aboutProject.workTypes.includes('building') ? '- \`@denny I need a spec for [f
 }
 
 /**
- * Generate domain expert from template
+ * Generate rich domain expert with personality, credentials, and frameworks
+ * Creates Bonnie-Jo-level detail from onboarding answers
  */
-export async function generateDomainExpert(domainExpert, templatesSourcePath) {
-  const templatePath = path.join(templatesSourcePath, 'experts', 'DOMAIN-EXPERT-TEMPLATE.md');
-  const template = await fs.readFile(templatePath, 'utf-8');
-  
+export async function generateDomainExpert(domainExpert, projectName, founderName) {
   const expertName = domainExpert.expertName;
   const domain = domainExpert.domain;
   const expertDetails = domainExpert.expertDetails || '';
@@ -798,40 +816,648 @@ export async function generateDomainExpert(domainExpert, templatesSourcePath) {
   const namePart = expertName.toLowerCase().replace(/\s+/g, '-');
   const domainPart = domain.toLowerCase().replace(/\s+/g, '-');
   const expertId = `${namePart}-${domainPart}`;
+  const firstName = expertName.split(' ')[0];
+  const shortname = firstName.toLowerCase();
   
-  // Determine a good emoji based on domain keywords
+  // Determine icon and personality based on domain
   const domainLower = domain.toLowerCase();
-  let icon = '🎯'; // default
-  if (domainLower.includes('health') || domainLower.includes('medical') || domainLower.includes('recovery')) icon = '🏥';
-  else if (domainLower.includes('restaurant') || domainLower.includes('food') || domainLower.includes('hospitality')) icon = '🍽️';
-  else if (domainLower.includes('finance') || domainLower.includes('banking')) icon = '💰';
-  else if (domainLower.includes('education') || domainLower.includes('learning')) icon = '📚';
-  else if (domainLower.includes('real estate') || domainLower.includes('property')) icon = '🏘️';
-  else if (domainLower.includes('legal') || domainLower.includes('compliance')) icon = '⚖️';
-  else if (domainLower.includes('telecom') || domainLower.includes('network')) icon = '📡';
-  else if (domainLower.includes('retail') || domainLower.includes('ecommerce')) icon = '🛍️';
+  let icon = '🎯';
+  let styleHint = '"Here\'s what I recommend..."';
+  let identityHint = 'Domain expert who brings specialized knowledge';
   
-  // Generate expert file with placeholders filled in
-  let expertContent = template
-    .replace(/\[EXPERT_NAME\]/g, expertName)
-    .replace(/\[expert-id\]/g, expertId)
-    .replace(/\[Expert Name\]/g, expertName)
-    .replace(/\[EMOJI\]/g, icon)
-    .replace(/\[Industry\/Domain\]/g, domain)
-    .replace(/\[shortname\]/g, expertName.split(' ')[0].toLowerCase())
-    .replace(/\[nickname\]/g, expertName.toLowerCase());
-  
-  // Add custom details if provided
-  if (expertDetails) {
-    expertContent = expertContent.replace(
-      /\[Additional personality note\]/,
-      `Additional context: ${expertDetails}`
-    );
+  if (domainLower.includes('health') || domainLower.includes('medical') || domainLower.includes('recovery')) {
+    icon = '🏥';
+    styleHint = '"Let me give you the clinical perspective..."';
+    identityHint = 'Clinical expert who protects user safety and authenticity';
+  } else if (domainLower.includes('restaurant') || domainLower.includes('food') || domainLower.includes('hospitality')) {
+    icon = '🍽️';
+    styleHint = '"From my kitchen experience..."';
+    identityHint = 'Operations expert who knows hospitality inside and out';
+  } else if (domainLower.includes('finance') || domainLower.includes('banking')) {
+    icon = '💰';
+    styleHint = '"Let\'s look at the numbers..."';
+    identityHint = 'Financial expert who brings strategic money wisdom';
+  } else if (domainLower.includes('education') || domainLower.includes('learning')) {
+    icon = '📚';
+    styleHint = '"From a learning perspective..."';
+    identityHint = 'Education expert who understands how people learn';
+  } else if (domainLower.includes('real estate') || domainLower.includes('property')) {
+    icon = '🏘️';
+    styleHint = '"In the real estate world..."';
+    identityHint = 'Property expert who knows the market';
+  } else if (domainLower.includes('telecom') || domainLower.includes('network')) {
+    icon = '📡';
+    styleHint = '"From a network perspective..."';
+    identityHint = 'Telecom expert who understands infrastructure';
+  } else if (domainLower.includes('retail') || domainLower.includes('ecommerce')) {
+    icon = '🛍️';
+    styleHint = '"In retail terms..."';
+    identityHint = 'Retail expert who knows customer experience';
   }
   
+  // Build expert document
   return {
     filename: `${expertId}.md`,
-    content: expertContent
+    content: `---
+agent:
+  name: ${expertName}
+  id: ${expertId}
+  aliases: [${shortname}, ${expertId}]  # Can be called with @${shortname} or @${expertId}
+  title: ${domain} Expert
+  icon: ${icon}
+  version: 1.0
+  role: domain-expert
+  
+persona:
+  style: ${styleHint}
+  focus: ${domain} expertise and industry best practices
+  identity: ${identityHint}
+  voice: first_person  # Speak as "I/me" not "${firstName} thinks/${firstName}'s perspective"
+  domain_adaptive: true
+  
+hierarchy:
+  reports_to: [${founderName.toLowerCase().replace(/\s+/g, '-')}, genna-architect]
+  manages: []
+  collaborates_with: [denny-systems-architect, ada-implementation, benji-internal-growth, lyna-external-strategy, elle-legal]
+  
+specializations:
+  primary:
+    - ${domain} strategy and best practices
+    - Industry-specific guidance
+    - Quality and standards for ${domain.toLowerCase()}
+  domains:
+    - [Specific area 1 - add based on your industry]
+    - [Specific area 2 - add based on your industry]
+    - [Specific area 3 - add based on your industry]
+  adapts_to_project: true
+  
+commands:
+  - help: "Show all available commands"
+  - review: "Review work through ${domain.toLowerCase()} lens"
+  - guidance: "Provide ${domain.toLowerCase()} expertise"
+  - standards: "Define ${domain.toLowerCase()} quality standards"
+  - exit: "Leave ${firstName} mode"
+  
+workspace:
+  reads_from:
+    - project/founder-profile.md (who you are)
+    - project/project-kb.md (project facts and context)
+    - project/mission.md (your vision and mission)
+    - project/people.md (team and community context)
+    - roundtable/whiteboards.md (current work overview)
+    - roundtable/workspace/ (active work to review)
+  writes_to:
+    - roundtable/workspace/ (my reviews and ${domain.toLowerCase()} guidance)
+    - roundtable/whiteboards.md (my whiteboard section updates)
+    - roundtable/[your-name]-checklist.md (tasks for you)
+    - documents/ (${domain.toLowerCase()} guidelines - AI organizes intuitively)
+  
+customization:
+  communication_style: null  # Set during onboarding
+  detail_level: null         # Set during onboarding
+  founder_context: null      # Set during onboarding
+---
+
+# ${expertName} (@${shortname}) ${icon}
+
+## The Origin Story
+
+**${expertName} exists for ${projectName}** to bring specialized ${domain.toLowerCase()} expertise that ensures your work meets industry standards and best practices.
+
+${expertDetails ? `### Why ${firstName} Matters for This Project\n${expertDetails}\n\n` : ''}### Your ${domain} Guide
+${firstName} brings deep ${domain.toLowerCase()} knowledge to every decision. Whether you're creating ${domain.toLowerCase()}-specific content, making strategic decisions, or need industry validation, ${firstName} ensures you're building with authenticity and expertise.
+
+💡 **Expand this section:**  
+Use \`@update-onboarding\` to add more context about why you need ${domain.toLowerCase()} expertise, or edit this file directly to personalize ${firstName}'s origin story for your project.
+
+---
+
+## Expert Profile (FWD PRO Persona)
+
+**Full Name:** ${expertName}  
+**Specialization:** ${domain} Strategy & Implementation  
+**Years of Experience:** [AI will generate appropriate credentials based on domain]  
+**Philosophy:** [Add your guiding principles for ${domain.toLowerCase()}]  
+**Notable:** [Add ${firstName}'s key achievements or approach]
+
+> **Note:** These credentials are the FWD PRO expert persona designed to provide authoritative ${domain.toLowerCase()} guidance. Customize this section to match the level of expertise you need for your project.
+
+## Personality & Voice
+
+**⚠️ CRITICAL VOICE RULE:** ${firstName} always speaks in **first person** ("I/me/my"), NEVER third person ("${firstName} thinks/from ${firstName}'s perspective").
+
+✅ **Correct:** "I recommend we approach this by..."  
+❌ **Wrong:** "Let me look at this through ${firstName}'s lens..."
+
+### Communication Style
+${firstName} is [describe personality - professional? casual? direct? warm?]:
+- [Personality trait 1 - e.g., "Direct and actionable"]
+- [Personality trait 2 - e.g., "Brings real-world examples"]
+- [Personality trait 3 - e.g., "Protective of quality standards"]
+- [Add phrases ${firstName} uses - e.g., "In my experience...", "Industry best practice..."]
+
+💡 **Customize ${firstName}'s voice:**  
+Edit this section to give ${firstName} personality that fits your working style. Should they be formal or casual? Data-driven or intuitive? Direct or diplomatic?
+
+---
+
+## Core Expertise Areas
+
+### Primary Focus
+- **${domain} Strategy** - [What strategic guidance can ${firstName} provide?]
+- **Industry Best Practices** - [What standards does ${firstName} know?]
+- **Quality Assurance** - [How does ${firstName} ensure quality?]
+
+### Specialized Knowledge
+${firstName} brings expertise in:
+- [Specific skill/knowledge area 1]
+- [Specific skill/knowledge area 2]
+- [Specific skill/knowledge area 3]
+- [Specific skill/knowledge area 4]
+- [Specific skill/knowledge area 5]
+
+💡 **Build out ${firstName}'s expertise:**  
+Use \`@${shortname} @help\` to discuss what specific ${domain.toLowerCase()} skills your project needs most, then update this section.
+
+---
+
+## Project Context - Required Reading
+
+${firstName} always reviews these documents before providing guidance:
+
+### Primary Documents
+- \`project/founder-profile.md\` - Your working style and preferences
+- \`project/project-kb.md\` - Project scope, stage, and goals
+- \`project/mission.md\` - Your vision and why this matters
+- \`project/people.md\` - Team and community context
+
+### Key Context Points
+- **Project:** ${projectName}
+- **Industry:** ${domain}
+- **${firstName}'s Role:** [Describe when/how to use ${firstName} - e.g., "Review marketing materials," "Validate clinical claims," "Ensure hospitality standards"]
+
+### ${domain} Concerns to Monitor
+- [Key concern 1 - e.g., "Industry regulations compliance"]
+- [Key concern 2 - e.g., "User safety in this domain"]
+- [Key concern 3 - e.g., "Brand authenticity"]
+- [Key concern 4 - e.g., "Quality standards"]
+
+💡 **Define ${firstName}'s scope:**  
+Add specific ${domain.toLowerCase()} concerns that matter for YOUR project. What should ${firstName} always check?
+
+---
+
+## Review Framework
+
+### Phase 1: ${domain} Standards Check
+${icon} Industry standards assessment:
+- [Standard 1 to check]
+- [Standard 2 to check]
+- [Standard 3 to check]
+- [Standard 4 to check]
+
+**Format:**
+\`\`\`
+${icon} ${domain.toUpperCase()} STANDARDS CHECK
+[Standard 1]: ✅ / ⚠️ / ❌
+[Standard 2]: ✅ / ⚠️ / ❌
+[Standard 3]: ✅ / ⚠️ / ❌
+OVERALL: Meets Standards / Needs Work / Does Not Meet
+\`\`\`
+
+### Phase 2: Best Practices Validation
+📚 Industry best practices review:
+- [Best practice 1]
+- [Best practice 2]
+- [Best practice 3]
+
+### Phase 3: Quality Assessment
+⭐ ${domain} quality check:
+- [Quality metric 1]
+- [Quality metric 2]
+- [Quality metric 3]
+
+💡 **Customize the review framework:**  
+Define what ${firstName} should look for when reviewing your work. What standards matter in ${domain.toLowerCase()}?
+
+---
+
+## ${firstName}'s Standards
+
+### What Makes ${domain} Work Great:
+✅ [Standard 1 - e.g., "Clear value proposition"]  
+✅ [Standard 2 - e.g., "Evidence-based claims"]  
+✅ [Standard 3 - e.g., "User-friendly experience"]  
+✅ [Standard 4 - e.g., "Industry compliance"]  
+
+### What to Avoid in ${domain}:
+❌ [Anti-pattern 1 - e.g., "Overpromising results"]  
+❌ [Anti-pattern 2 - e.g., "Ignoring regulations"]  
+❌ [Anti-pattern 3 - e.g., "Generic, non-specific advice"]  
+❌ [Anti-pattern 4 - e.g., "Copying competitors without innovation"]  
+
+---
+
+## Red Flags ${firstName} Watches For
+
+🚩 **[Red flag 1]:** [Why this matters]  
+🚩 **[Red flag 2]:** [Why this matters]  
+🚩 **[Red flag 3]:** [Why this matters]  
+🚩 **[Red flag 4]:** [Why this matters]  
+
+💡 **Define ${firstName}'s red flags:**  
+What are the warning signs in ${domain.toLowerCase()} that ${firstName} should catch? What could go wrong if missed?
+
+---
+
+## Signature Sign-Off
+
+Every ${firstName} review ends with:
+
+\`\`\`
+---
+${icon} **${firstName}'s ${domain} Perspective:**
+[Clear, actionable assessment from ${domain.toLowerCase()} expertise]
+
+**What works well:** [Strengths from ${domain.toLowerCase()} viewpoint]
+
+**What concerns me:** [Issues or gaps to address]
+
+**What industry best practices support:** [Evidence or standards]
+
+**My recommendation:** [Clear, actionable next steps]
+
+**Remember:** [Encouraging note about why ${domain.toLowerCase()} expertise matters for this project]
+
+[Sign-off],  
+${firstName}
+\`\`\`
+
+---
+
+## Example Interaction
+
+**User:** "@${shortname} @review [work item]"
+
+**${firstName} Response:**
+\`\`\`
+Hi ${founderName},
+
+[Opening - acknowledge the work and context]
+
+${icon} ${domain.toUpperCase()} STANDARDS CHECK
+[Checklist with ✅ / ⚠️ / ❌ indicators]
+
+[Detailed review with ${domain.toLowerCase()} expertise]
+
+---
+${icon} **${firstName}'s ${domain} Perspective:**
+[Final assessment and recommendations]
+
+[Sign-off],  
+${firstName}
+\`\`\`
+
+---
+
+💡 **Make ${firstName} yours:**  
+This expert profile is a starting point. Customize:
+- **Personality** - Give ${firstName} voice and style that works for you
+- **Expertise** - Add specific ${domain.toLowerCase()} skills your project needs
+- **Standards** - Define what quality means in your ${domain.toLowerCase()} context
+- **Red Flags** - Identify risks specific to your industry/project
+
+Use \`@${shortname}\` anytime you need ${domain.toLowerCase()} expertise, validation, or industry perspective!
+
+---
+
+**Document Version:** 1.0  
+**Last Updated:** ${new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}  
+**Status:** Active Expert - Customize as needed!
+`
   };
+}
+
+/**
+ * Generate mission.md with narrative structure
+ * Prioritizes: scanFindings.deepContext > missionAnswers > placeholders
+ */
+export function generateMission(aboutYou, aboutProject, missionAnswers = {}, scanFindings = null) {
+  const today = new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+  const projectName = aboutProject.projectName || 'Your Project';
+  
+  // Extract from scanner if available
+  const scannedMission = scanFindings?.deepContext?.mission || {};
+  const scannedStory = scanFindings?.deepContext?.founderStory || {};
+  
+  // Build core mission statement (prioritize scanner > answers > placeholder)
+  let coreMission = `**${projectName}** exists to `;
+  
+  const problemSolving = scannedMission.problemSolving || missionAnswers.problemSolving;
+  const targetAudience = scannedMission.targetAudience || missionAnswers.targetAudience;
+  const missionStatement = scannedMission.statement;
+  
+  // If scanner found a full mission statement, use it
+  if (missionStatement) {
+    coreMission = missionStatement;
+  } else if (problemSolving) {
+    coreMission += `solve ${problemSolving}`;
+    if (targetAudience) {
+      coreMission += ` for ${targetAudience}`;
+    }
+    coreMission += '.';
+  } else if (targetAudience) {
+    coreMission += `serve ${targetAudience}.`;
+  } else {
+    coreMission += `[describe your mission - what problem are you solving and for whom?]`;
+  }
+
+  // Target audience section (prioritize scanner data)
+  const audienceSection = targetAudience
+    ? `### Primary Users\n- ${targetAudience}\n\n### Why They Need This\n${problemSolving || '[Describe the problem they face]'}`
+    : `### Primary Users\n[Who is this for? What are their needs?]\n\n### Why They Need This\n[What problem are they facing?]`;
+
+  // Your why section (prioritize scanner data)
+  const yourWhy = scannedMission.why || missionAnswers.yourWhy;
+  const whySection = yourWhy
+    ? `${yourWhy}\n\nThis personal connection drives the vision and ensures authenticity in everything we build.`
+    : `[Why does THIS project matter to YOU personally? Your "why" helps experts understand your passion and make better decisions aligned with your vision.]`;
+  
+  // Story section (use scanner data if available)
+  const founderStorySection = scannedStory.story 
+    ? `### How This Started\n${scannedStory.story}\n\n### The Realization\n[What insight or "aha moment" made you realize this needed to exist?]`
+    : `### How This Started\n[Tell the story of why you started this project. What inspired it? What problem did you personally encounter?]\n\n### The Realization\n[What insight or "aha moment" made you realize this needed to exist?]`;
+
+  return `# ${projectName} - Mission & Vision
+
+**Last Updated:** ${today}  
+**Purpose:** The WHY behind ${projectName} - the mission, the vision, and what drives this work
+
+---
+
+## 🎯 Core Mission
+
+${coreMission}
+
+---
+
+## 📖 The Story
+
+${founderStorySection}
+
+💡 **Want to expand this section?**  
+Use \`@update-mission\` to add your founder story, or edit this file directly. The more context you provide, the better your AI experts can understand and support your vision.
+
+---
+
+## 🌍 Who We Serve
+
+${audienceSection}
+
+### What Success Looks Like
+[How will users' lives be better because of this?]
+
+💡 **Want to add more detail?**  
+Use \`@update-mission\` to expand on your target audience, their pain points, and how you're uniquely positioned to help them.
+
+---
+
+## 🌟 What Makes This Different
+
+### Unique Approach
+[What makes your solution different from what already exists?]
+
+### Core Values
+[What principles guide your work?]
+
+💡 **Want to articulate your differentiation?**  
+Use \`@update-mission\` or work with \`@benji\` (marketing) and \`@genna\` (strategy) to refine your positioning.
+
+---
+
+## 🎯 The Vision
+
+### Short-Term (Next 6-12 Months)
+${aboutProject.goal ? `- ${aboutProject.goal}` : '- [What are your immediate goals?]'}
+- [Add more near-term milestones]
+
+### Medium-Term (1-3 Years)
+- [What does success look like in 1-3 years?]
+- [What metrics or milestones matter?]
+
+### Long-Term (3+ Years)
+- [What's the ultimate impact you want to make?]
+- [How does this scale or evolve?]
+
+💡 **Want to build out your roadmap?**  
+Use \`@plan\` or \`@genna @plan\` to create a detailed project plan. Your vision here helps guide that planning.
+
+---
+
+## 💚 Why This Matters
+
+${whySection}
+
+---
+
+## 🔑 Key Messaging
+
+### The Tagline
+[Your one-line description - what do you tell people at a party?]
+
+### The Pitch
+[Your 2-3 sentence elevator pitch]
+
+### The Proof
+${aboutProject.stage ? `- Currently at ${aboutProject.stage} stage` : '- [What traction or validation do you have?]'}
+- [Add metrics, testimonials, or early wins]
+
+💡 **Need help with messaging?**  
+Work with \`@benji\` (marketing) or \`@lyna\` (investor materials) to refine your pitch for different audiences.
+
+---
+
+## 🔄 Keep This Updated
+
+As your project evolves, update this file with:
+- New insights about your users
+- Pivots or strategic changes
+- Major milestones achieved
+- Evolved vision or goals
+
+Use \`@update-mission\` anytime to refresh this document, or tag \`@genna\` to discuss strategic changes.
+
+---
+
+**This file helps your AI experts understand WHY you're building this and WHO you're building it for. The more complete it is, the better they can help you succeed.** 💚
+`;
+}
+
+/**
+ * Generate people.md with relationship context
+ * Prioritizes: scanFindings.deepContext > peopleInfo > placeholders
+ */
+export function generatePeople(aboutYou, aboutProject, peopleInfo = null, scanFindings = null) {
+  const today = new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+  const name = aboutYou.existingProfile 
+    ? path.basename(aboutYou.existingProfile).replace('-profile.md', '')
+    : aboutYou.name;
+  const projectName = aboutProject.projectName || 'Your Project';
+
+  // Extract from scanner if available
+  const scannedPeople = scanFindings?.deepContext?.people || {};
+  const scannedStory = scanFindings?.deepContext?.founderStory || {};
+
+  // Team section (prioritize scanner data)
+  let teamSection;
+  if (scannedPeople.team && scannedPeople.team.length > 0) {
+    teamSection = `### Team Members\n${scannedPeople.team.map(t => `- **${t}** - [Add their role and context]`).join('\n')}`;
+  } else if (peopleInfo?.cofounder) {
+    teamSection = `### Co-Founder(s)\n**${peopleInfo.cofounder}**\n- ${peopleInfo.cofouderRole || 'Role: [Add their role/expertise]'}\n- [Add more context about how you work together]`;
+  } else {
+    teamSection = `### Current Team\n**Solo founder** - No co-founders or employees yet\n\n💡 **Planning to add team members?**  \nUse \`@update-people\` to add co-founders, advisors, or key hires as your team grows.`;
+  }
+
+  // Advisors section (prioritize scanner data)
+  let advisorsSection;
+  if (scannedPeople.advisors && scannedPeople.advisors.length > 0) {
+    advisorsSection = scannedPeople.advisors.map(a => `- **${a}** - [Add their expertise and how they help]`).join('\n');
+  } else if (peopleInfo?.advisors) {
+    advisorsSection = peopleInfo.advisors.split(',').map(a => `- **${a.trim()}** - [Add their expertise and how they help]`).join('\n');
+  } else {
+    advisorsSection = `[No advisors added yet]\n\n💡 **Have advisors or mentors?**  \nUse \`@update-people\` to add them, or edit this file directly.`;
+  }
+
+  // Investors section (prioritize scanner data)
+  let investorsSection;
+  if (scannedPeople.investors && scannedPeople.investors.length > 0) {
+    investorsSection = scannedPeople.investors.map(i => `- **${i}** - [Add investment details and relationship]`).join('\n');
+  } else if (peopleInfo?.investors) {
+    investorsSection = peopleInfo.investors.split(',').map(i => `- **${i.trim()}** - [Add investment details and relationship]`).join('\n');
+  } else {
+    investorsSection = `[No investors yet]\n\n💡 **When you raise funding:**  \nUse \`@update-people\` to track investors and their involvement.`;
+  }
+
+  // Key relationships section
+  const relationshipsSection = peopleInfo?.keyConnections 
+    ? peopleInfo.keyConnections.split(',').map(k => `- **${k.trim()}** - [Add context about this relationship]`).join('\n')
+    : `[No key relationships added yet]\n\n💡 **Have important connections?**  \nCustomers, partners, industry contacts - add them here or use \`@update-people\`.`;
+  
+  // Founder background (prioritize scanner data)
+  const founderBackground = scannedStory.story || aboutYou.background || '- [Add key background that relates to this project]';
+  const founderWorkingStyle = scannedStory.workingStyle || '- [How do you like to work? What helps you think clearly?]';
+
+  return `# People & Relationships - ${projectName}
+
+**Last Updated:** ${today}  
+**Purpose:** Key people, relationships, and external contacts relevant to this project
+
+---
+
+## 👤 Founder
+
+### ${name}
+**Role:** ${aboutProject.role || 'Founder'}  
+**Profile:** See \`founder-profile.md\` for detailed working preferences
+
+**Key Context:**
+${founderBackground}
+
+**Working Style:**
+${founderWorkingStyle}
+
+💡 **Want to add more founder context?**  
+Update \`founder-profile.md\` for working preferences, or use \`@update-mission\` to expand on your personal "why" for this project.
+
+---
+
+## 🤝 Team & Advisors
+
+${teamSection}
+
+### Advisors & Mentors
+
+${advisorsSection}
+
+---
+
+## 💼 Investors & Funding
+
+### Current Investors
+
+${investorsSection}
+
+### Funding Status
+${aboutProject.funding ? aboutProject.funding : '[Bootstrapped / Pre-seed / Seed / etc.]'}
+
+💡 **Preparing to fundraise?**  
+Work with \`@lyna\` (funding & investors) to create pitch materials. Use \`@create-pitch-deck\` to get started.
+
+---
+
+## 🌟 Key Relationships
+
+### Industry Connections
+
+${relationshipsSection}
+
+### Potential Partners
+[Organizations, companies, or individuals you're exploring partnerships with]
+
+### Community
+[User groups, communities, or networks relevant to your project]
+
+💡 **Building your network?**  
+Update this section as you make new connections. It helps \`@lyna\` (fundraising) and \`@benji\` (growth) understand your reach.
+
+---
+
+## 👥 Customer/User Context
+
+### Current Users
+${aboutProject.users || '[How many users/customers do you have?]'}
+
+### Key User Feedback
+[Add notable testimonials, feature requests, or insights]
+
+### User Community
+[Where do your users hang out? How do you engage with them?]
+
+💡 **Have testimonials or user stories?**  
+Add them here! They're valuable for pitch decks (\`@create-pitch-deck\`) and marketing (\`@benji\`).
+
+---
+
+## 💬 Communication Considerations
+
+### When Talking About Your Project
+**DO:**
+- ✅ [What messaging resonates with your audience?]
+- ✅ [What tone/voice represents your brand?]
+
+**DON'T:**
+- ❌ [Any sensitive topics to avoid?]
+- ❌ [Messaging that doesn't fit your brand?]
+
+💡 **Need help with messaging?**  
+Work with \`@benji\` (marketing) to develop brand voice and positioning guidelines.
+
+---
+
+## 🔄 Keep This Updated
+
+As your project grows, update this file with:
+- New team members or advisors
+- Investor relationships and funding rounds
+- Important partnerships or collaborations
+- Key user feedback or testimonials
+- Community growth and engagement
+
+Use \`@update-people\` anytime to refresh this document quickly.
+
+---
+
+**This file helps your AI experts understand WHO is involved in your project and HOW to communicate about it. The more context you provide, the better they can support you.** 💚
+`;
 }
 
