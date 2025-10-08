@@ -9,8 +9,8 @@ Thank you for your interest in contributing to FWD PRO! 🎉
 ## 🌟 Our Philosophy
 
 - **Universal First** - Works for restaurants, law firms, telecom, ANY business
-- **Non-Technical Friendly** - No coding knowledge required
-- **Neurodivergent-Aware** - Clear structure without overwhelming
+- **Clear & Structured** - Well-organized without overwhelming complexity
+- **Adaptive** - Adjusts to different working styles and communication preferences
 - **Founder-Centric** - Built for solo founders and small teams
 - **Attribution Matters** - We credit our inspirations, please credit us too
 
@@ -38,7 +38,8 @@ Before contributing, please:
 - Use clear, accessible language
 - Avoid jargon when simpler words work
 - Remember: FWD PRO is for founders of ALL backgrounds
-- Consider neurodivergent users (ADHD, autism, dyslexia)
+- Design for flexibility and adaptability
+- Consider diverse cognitive styles, working preferences, and accessibility needs
 
 **Be Collaborative:**
 - Give credit where it's due
@@ -84,16 +85,16 @@ Before submitting a PR, please test:
 
 ```bash
 # Run linter
-npm run lint
+pnpm run lint
 
 # Run tests (if available)
-npm run test
+pnpm run test
 
 # Test installer locally
-npm run dev
+pnpm run dev
 
 # Or test the full flow
-npm link
+pnpm link
 cd /path/to/test-project
 npx @fwdai/pro install
 ```
@@ -109,8 +110,8 @@ If you're adding features for non-software use cases, test with examples like:
 1. Fork the repo
 2. Create a feature branch: `git checkout -b feature/your-feature`
 3. Make your changes
-4. Run linter and tests: `npm run lint && npm run test`
-5. Test locally (run `npm run dev` if touching installer)
+4. Run linter and tests: `pnpm run lint && pnpm run test`
+5. Test locally (run `pnpm run dev` if touching installer)
 6. Commit with clear messages: `feat: add X` or `fix: resolve Y`
 7. Push and open a PR
 8. Describe what, why, and how in PR description
@@ -132,8 +133,8 @@ Use conventional commits:
 - Follow existing patterns in the codebase
 - Use clear variable names (we're accessible, not cryptic)
 - Comment complex logic
-- Format with Prettier: `npm run format`
-- Lint with ESLint: `npm run lint`
+- Format with Prettier: `pnpm run format`
+- Lint with ESLint: `pnpm run lint`
 
 ---
 
@@ -142,7 +143,7 @@ Use conventional commits:
 **High Priority:**
 - Universal examples (non-software use cases)
 - Documentation improvements
-- Accessibility enhancements
+- Accessibility and usability enhancements
 - Bug fixes
 - Onboarding UX improvements
 
@@ -188,4 +189,3 @@ Every contribution makes FWD PRO better for founders everywhere. Whether you're 
 ---
 
 **Questions?** Open a discussion or issue - we're here to help!
-
