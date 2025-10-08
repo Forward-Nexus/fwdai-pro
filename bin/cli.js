@@ -27,6 +27,11 @@ switch (command) {
     import('../tools/installer/index.js');
     break;
 
+  case 'update':
+    // Dynamic import for ESM
+    import('../tools/installer/updater.js').then(mod => mod.updateInstallation());
+    break;
+
   case 'version': {
     const pkg = JSON.parse(
       readFileSync(join(__dirname, '..', 'package.json'), 'utf-8')

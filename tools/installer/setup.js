@@ -88,6 +88,13 @@ export async function setupProject(answers) {
   try {
     const fwdproDir = path.join(projectPath, '.fwdpro');
     
+    // Write version file for update tracking
+    const packageJson = await fs.readJson(path.join(__dirname, '..', '..', 'package.json'));
+    await fs.writeFile(
+      path.join(fwdproDir, '.version'), 
+      packageJson.version
+    );
+    
     // Generate *welcome.md in root .fwdpro folder (sorts to top!)
     const welcomeDoc = await generateWelcomeDocument(aboutYou, aboutProject);
     await fs.writeFile(path.join(fwdproDir, '*welcome.md'), welcomeDoc);
