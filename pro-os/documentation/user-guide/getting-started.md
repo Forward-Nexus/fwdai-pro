@@ -230,7 +230,7 @@ and can advise on peer support features.
 │   └── people.md               ← Team/advisors (optional, add later)
 ├── roundtable/
 │   ├── whiteboards.md          ← Expert collaboration space
-│   ├── founder-checklist.md    ← Your action items
+│   ├── [your-name]-checklist.md    ← Your action items
 │   └── workspace/              ← Work-in-progress files
 └── pro-os/
     └── config.yaml             ← System configuration
@@ -290,7 +290,7 @@ After onboarding completes, you'll see:
 📖 Learn more:
    - README.md - System overview
    - roundtable/whiteboards.md - Current work dashboard
-   - roundtable/founder-checklist.md - Your action items
+   - roundtable/[your-name]-checklist.md - Your action items
    - your-experts/README.md - How to add more expert shortcuts
    - your-commands/README.md - How to add more command shortcuts
 
@@ -410,7 +410,7 @@ Last updated: [timestamp]
 
 ## Check Your Checklist
 
-Open `.fwdpro/roundtable/founder-checklist.md`:
+Open `.fwdpro/roundtable/[your-name]-checklist.md`:
 
 ```markdown
 # Ward's Action Items
@@ -439,7 +439,7 @@ Open `.fwdpro/roundtable/founder-checklist.md`:
 ### Roundtable (Collaboration)
 - **whiteboards.md** - Expert notes, handoffs, blockers
 - **workspace/** - Drafts, work-in-progress
-- **founder-checklist.md** - Your action items
+- **[your-name]-checklist.md** - Your action items
 
 ### Documents (Final Outputs)
 - **Clean deliverables only**

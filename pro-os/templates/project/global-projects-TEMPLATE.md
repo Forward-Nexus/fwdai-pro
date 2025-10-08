@@ -44,7 +44,7 @@
 ### Quick Links
 - [Project KB](~/GitHub/my-app/.fwdpro/project/project-kb.md)
 - [Roundtable](~/GitHub/my-app/roundtable/whiteboards.md)
-- [Checklist](~/GitHub/my-app/roundtable/founder-checklist.md)
+- [Checklist](~/GitHub/my-app/roundtable/[your-name]-checklist.md)
 
 ---
 
@@ -77,7 +77,7 @@
 ### Quick Links
 - [Project KB](~/GitHub/telecom-tool/.fwdpro/project/project-kb.md)
 - [Roundtable](~/GitHub/telecom-tool/roundtable/whiteboards.md)
-- [Checklist](~/GitHub/telecom-tool/roundtable/founder-checklist.md)
+- [Checklist](~/GitHub/telecom-tool/roundtable/[your-name]-checklist.md)
 
 ---
 

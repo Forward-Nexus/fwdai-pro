@@ -30,7 +30,7 @@ When you choose VS Code during onboarding, FWD PRO will:
   "markdown.preview.doubleClickToSwitchToEditor": false,
   "workbench.editor.enablePreview": false,
   "files.exclude": {
-    "**/.fwdpro/pro-os/system/memory/**": true
+    "**/.fwdpro/pro-os/roundtable/workspace/**": true
   }
 }
 ```

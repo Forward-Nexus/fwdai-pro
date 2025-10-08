@@ -514,7 +514,7 @@ cat .fwdpro/.gitignore
 **Show them:**
 ```
 Check whiteboards.md daily
-Check founder-checklist.md for your tasks
+Check [your-name]-checklist.md for your tasks
 Use @create-spec, @create-feature commands
 ```
 

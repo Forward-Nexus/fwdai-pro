@@ -50,7 +50,7 @@ Structure: Clear, scannable, well-organized
 
 ### 4. Save & Share
 
-Save to: `system/memory/[expert]/handoffs/[topic]-research.md`
+Save to: `roundtable/workspace/[topic]-research.md`
 
 Update Roundtable with key findings.
 

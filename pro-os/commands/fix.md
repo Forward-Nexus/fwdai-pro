@@ -119,7 +119,7 @@ Clarify:
 [How to prevent similar issues]
 ```
 
-**Save to:** `system/memory/[expert]/handoffs/[problem]-fix.md`
+**Save to:** `roundtable/workspace/[problem]-fix.md`
 
 **Update Roundtable:**
 ```markdown

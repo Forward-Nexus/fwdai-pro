@@ -30,7 +30,7 @@ Clarify:
 
 Collect relevant data:
 - Project context (`project/` folder)
-- Previous work (`system/memory/` handoffs)
+- Previous work (`roundtable/workspace/` handoffs)
 - Roundtable discussions
 - External research (if needed)
 
@@ -50,7 +50,7 @@ Structure: Clear, actionable, evidence-based
 
 Use template from `templates/analysis-template.yaml` if available
 
-Save to: `system/memory/[expert]/handoffs/[name]-analysis.md`
+Save to: `roundtable/workspace/[name]-analysis.md`
 
 ### 5. Update & Document
 

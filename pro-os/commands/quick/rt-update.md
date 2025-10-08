@@ -28,7 +28,7 @@ Recommended: Weekly or bi-weekly
 **Check all locations:**
 - `roundtable/whiteboards.md` - High-level status
 - `roundtable/workspace/` - All active workspaces
-- `roundtable/founder-checklist.md` - Action items
+- `roundtable/[your-name]-checklist.md` - Action items
 
 ### 2. Analyze Each Workspace
 
@@ -438,7 +438,7 @@ Reviewing founder checklist...
 
 - Whiteboards: `roundtable/whiteboards.md`
 - Workspaces: `roundtable/workspace/`
-- Founder checklist: `roundtable/founder-checklist.md`
+- Founder checklist: `roundtable/[your-name]-checklist.md`
 - Workflow standards: `system/standards/workflow-standards.md`
 
 ---

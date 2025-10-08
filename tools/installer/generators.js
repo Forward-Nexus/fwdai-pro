@@ -642,7 +642,7 @@ ${expertsList}
 │
 ├── 0-roundtable/              # Where experts collaborate
 │   ├── whiteboards.md        # Expert status updates
-│   ├── founder-checklist.md  # Items for you to review
+│   ├── [your-name]-checklist.md  # Items for you to review
 │   └── workspace/            # Active work-in-progress
 │
 ├── 0-your-experts/            # Quick access to your active experts
@@ -699,7 +699,7 @@ ${expertsList}
 - **\`.fwdpro/pro-os/project/founder-profile.md\`** - Your preferences and context
 - **\`.fwdpro/pro-os/project/project-kb.md\`** - Your project knowledge base
 - **\`.fwdpro/0-roundtable/whiteboards.md\`** - Expert status board
-- **\`.fwdpro/0-roundtable/founder-checklist.md\`** - Items for your review
+- **\`.fwdpro/0-roundtable/[your-name]-checklist.md\`** - Items for your review
 
 ### Reference When Needed
 - **\`.fwdpro/0-your-experts/\`** - Expert bios and capabilities
@@ -722,7 +722,7 @@ The **roundtable** is where your experts collaborate:
    - Experts work together here
    - Contains handoffs, decisions, blockers
 
-3. **Founder Checklist** (\`0-roundtable/founder-checklist.md\`)
+3. **Founder Checklist** (\`0-roundtable/[your-name]-checklist.md\`)
    - Items that need your input
    - Decisions to approve
    - Reviews pending

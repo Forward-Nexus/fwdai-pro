@@ -13,7 +13,7 @@ When a thread gets too long and context starts degrading, use this command to pr
 
 **This command:**
 1. Updates your current work in Roundtable
-2. Saves your project-notes.md
+2. Saves your workspace files for collaboration
 3. Saves any work in progress
 4. Generates a copy-pasteable message for the new thread
 
@@ -43,7 +43,7 @@ When a thread gets too long and context starts degrading, use this command to pr
 
 ### Step 1: Save Current State
 - Update Roundtable with current status
-- Save `project-notes.md` with latest understanding
+- Save `workspace files for collaboration` with latest understanding
 - Save any work in progress to appropriate location
 - Update Checklist if needed
 
@@ -152,7 +152,7 @@ Ready to continue where we left off!
 Before generating the message, ensure:
 
 - [ ] Roundtable is updated with current work
-- [ ] Your project-notes.md reflects latest understanding
+- [ ] Your workspace files for collaboration reflects latest understanding
 - [ ] Any in-progress work is saved
 - [ ] Message is clear and actionable
 - [ ] File references use @ syntax

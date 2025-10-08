@@ -32,7 +32,7 @@ Clarify:
 **Load project context:**
 - Read `project/` files (founder-profile, project-kb, mission)
 - Read `0-ROUNDTABLE.md` (recent work and decisions)
-- Check `system/memory/` for relevant expert work
+- Check `roundtable/workspace/` for relevant expert work
 
 **Search for best practices:**
 - "Best practices for [type of plan] 2025"
@@ -139,7 +139,7 @@ For each phase:
 
 **Create founder tasks:**
 ```markdown
-- [ ] Review and approve plan - `system/memory/[expert]/handoffs/[name]-plan.md`
+- [ ] Review and approve plan - `roundtable/workspace/[name]-plan.md`
   - Focus on: Timeline, resources, priorities
 - [ ] Assign owners for Phase 1 tasks
 - [ ] Kick off planning meeting if needed
@@ -148,7 +148,7 @@ For each phase:
 ### 7. Document & Share
 
 **Save plan:**
-- `system/memory/[expert]/handoffs/[name]-plan.md`
+- `roundtable/workspace/[name]-plan.md`
 - Use clear structure (markdown or YAML)
 - Include all sections above
 
@@ -176,7 +176,7 @@ For each phase:
 - [First action to take]
 
 **Plan Details:**
-- `system/memory/[expert]/handoffs/[name]-plan.md`
+- `roundtable/workspace/[name]-plan.md`
 
 **Status:** Ready for review 📋
 ```

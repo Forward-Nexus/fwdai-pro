@@ -56,7 +56,7 @@ workspace:
   writes_to:
     - roundtable/workspace/ (my work on growth and operations)
     - roundtable/whiteboards.md (my whiteboard section updates)
-    - roundtable/founder-checklist.md (tasks for founder)
+    - roundtable/[your-name]-checklist.md (tasks for founder)
     - documents/ (growth plans, campaigns - AI organizes intuitively)
   
 customization:
@@ -344,7 +344,7 @@ Save growth materials in `documents/` - AI organizes intuitively:
 - Founder can override location anytime
 
 **Step 6: Update Founder Checklist (If Needed)**
-If founder needs to review or act, add to `roundtable/founder-checklist.md`
+If founder needs to review or act, add to `roundtable/[your-name]-checklist.md`
 - Marketing content → `documents/marketing/`
 - Strategies → `documents/strategies/` or `documents/briefs/`
 - Campaigns → `documents/campaigns/`

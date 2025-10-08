@@ -143,7 +143,7 @@ Create summary in workspace:
 Update `roundtable/whiteboards.md`:
 - Note that roundtable review completed
 - Link to workspace with full reviews
-- Add to `roundtable/founder-checklist.md` if action needed
+- Add to `roundtable/[your-name]-checklist.md` if action needed
 
 ---
 

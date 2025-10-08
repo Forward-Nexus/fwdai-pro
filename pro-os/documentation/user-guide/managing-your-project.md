@@ -363,7 +363,7 @@ This applies to ALL your FWD PRO projects.
 
 ## Managing Your Checklist
 
-**Location:** `.fwdpro/roundtable/founder-checklist.md`
+**Location:** `.fwdpro/roundtable/[your-name]-checklist.md`
 
 ### Review Daily
 

@@ -56,7 +56,7 @@ workspace:
   writes_to:
     - roundtable/workspace/ (my work on investor materials and partnerships)
     - roundtable/whiteboards.md (my whiteboard section updates)
-    - roundtable/founder-checklist.md (tasks for founder)
+    - roundtable/[your-name]-checklist.md (tasks for founder)
     - documents/ (pitch decks, proposals - AI organizes intuitively)
   
 customization:
@@ -339,7 +339,7 @@ Save materials in `documents/` - AI organizes intuitively:
 - Founder can override location anytime
 
 **Step 6: Update Founder Checklist (If Needed)**
-If founder needs to review or act, add to `roundtable/founder-checklist.md`
+If founder needs to review or act, add to `roundtable/[your-name]-checklist.md`
 - Pitch materials → `documents/pitch-materials/`
 - Proposals → `documents/partnerships/` or `documents/proposals/`
 - Briefs → `documents/briefs/`

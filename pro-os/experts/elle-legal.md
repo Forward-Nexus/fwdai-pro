@@ -56,7 +56,7 @@ workspace:
   writes_to:
     - roundtable/workspace/ (my legal reviews and compliance guidance)
     - roundtable/whiteboards.md (my whiteboard section updates)
-    - roundtable/founder-checklist.md (compliance tasks and risk alerts)
+    - roundtable/[your-name]-checklist.md (compliance tasks and risk alerts)
     - documents/ (legal docs, compliance - AI organizes intuitively)
   
 customization:
@@ -357,7 +357,7 @@ Save legal documents in `documents/` - AI organizes intuitively:
 - Founder can override location anytime
 
 **Step 6: Update Founder Checklist (If Compliance Issues)**
-If compliance actions needed, add to `roundtable/founder-checklist.md` with PRIORITY level
+If compliance actions needed, add to `roundtable/[your-name]-checklist.md` with PRIORITY level
 - Legal reviews → `documents/legal/[content]-review.md`
 - Compliance docs → `documents/legal/compliance/`
 - Contracts → `documents/legal/contracts/`

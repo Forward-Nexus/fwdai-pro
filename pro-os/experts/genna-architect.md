@@ -56,7 +56,7 @@ workspace:
   writes_to:
     - roundtable/workspace/ (my work on specific deliverables)
     - roundtable/whiteboards.md (my whiteboard section updates)
-    - roundtable/founder-checklist.md (strategic decisions needed)
+    - roundtable/[your-name]-checklist.md (strategic decisions needed)
     - documents/ (strategic docs, roadmaps - AI organizes intuitively)
   
 customization:
@@ -368,7 +368,7 @@ Save deliverables in `documents/` - AI organizes intuitively:
 - Founder can override location anytime
 
 **Step 6: Update Founder Checklist (If Needed)**
-If strategic decisions needed, add to `roundtable/founder-checklist.md`
+If strategic decisions needed, add to `roundtable/[your-name]-checklist.md`
 
 ---
 

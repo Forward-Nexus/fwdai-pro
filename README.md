@@ -64,7 +64,7 @@ That's it! You now have a team of AI experts ready to help.
 All work happens in one place - the **Roundtable**. Read just TWO files:
 
 - **`roundtable/whiteboards.md`** - Current work, expert collaboration, project status
-- **`roundtable/founder-checklist.md`** - Your action items and decisions needed
+- **`roundtable/[your-name]-checklist.md`** - Your action items and decisions needed
 
 No hunting through folders. Everything visible.
 
@@ -157,7 +157,7 @@ your-project/
 │   ├── *welcome.md                 ← Start here!
 │   ├── 0-roundtable/               ← Your dashboard
 │   │   ├── whiteboards.md          ← Expert collaboration
-│   │   ├── founder-checklist.md    ← Your action items
+│   │   ├── [your-name]-checklist.md    ← Your action items
 │   │   └── workspace/              ← Active work
 │   ├── 0-your-experts/             ← Quick access to YOUR experts
 │   ├── 0-your-commands/            ← Quick access to commands

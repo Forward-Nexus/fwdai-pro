@@ -116,7 +116,7 @@ Standard pitch deck flow (adapt based on research):
 
 **Step 7: Update Roundtable**
 - Update `roundtable/whiteboards.md` (Lyna's section)
-- Add to `roundtable/founder-checklist.md` for review
+- Add to `roundtable/[your-name]-checklist.md` for review
 
 ### 5. Deliverable Location
 

@@ -146,7 +146,7 @@ Run appropriate checklist from `system/checklists/`
 
 **Files/Deliverables:**
 - [List of files created/modified]
-- Saved to: `system/memory/[expert]/handoffs/[filename]`
+- Saved to: `roundtable/workspace/[filename]`
 
 **Next steps:**
 - **founder:** [What to do - test it? review it? approve it?]
@@ -157,7 +157,7 @@ Run appropriate checklist from `system/checklists/`
 
 ### 9. Save Deliverables
 
-Save to: `system/memory/[expert]/handoffs/[name]`
+Save to: `roundtable/workspace/[name]`
 
 If there are multiple files, document them clearly in the Roundtable update.
 
@@ -251,7 +251,7 @@ Whatever works best for you! 💪
 **User:** `@ada @execute implement the authentication feature`
 
 **Ada:**
-1. Reads `system/memory/denny/handoffs/auth-story.yaml`
+1. Reads `roundtable/workspace/denny/handoffs/auth-story.yaml`
 2. Creates feature branch
 3. Writes tests for login flow
 4. Implements login UI and logic
@@ -266,7 +266,7 @@ Whatever works best for you! 💪
 **User:** `@lyna @execute launch the investor outreach campaign`
 
 **Lyna:**
-1. Reads `system/memory/lyna/handoffs/investor-campaign-brief.md`
+1. Reads `roundtable/workspace/lyna/handoffs/investor-campaign-brief.md`
 2. Creates investor list (50 VCs)
 3. Crafts personalized outreach emails
 4. Sets up tracking spreadsheet

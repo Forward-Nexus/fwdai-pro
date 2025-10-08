@@ -457,7 +457,7 @@ cat .fwdpro/roundtable/whiteboards.md
 
 **3. Check Checklist:**
 ```bash
-cat .fwdpro/roundtable/founder-checklist.md
+cat .fwdpro/roundtable/[your-name]-checklist.md
 
 # Might be waiting for your approval
 ```

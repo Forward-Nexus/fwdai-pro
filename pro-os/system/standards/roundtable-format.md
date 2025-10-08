@@ -34,7 +34,7 @@ The Roundtable is where:
 - [Detail]
 
 **Deliverable(s):**
-- `system/memory/[expert]/handoffs/[filename]` - [Description]
+- `roundtable/workspace/[filename]` - [Description]
 
 **Next steps:**
 - **founder:** [What founder should do - review? approve? test?]
@@ -67,7 +67,7 @@ Focused on security while keeping UX simple.
 3. **Offline-friendly** - Cache auth state, handle token expiry gracefully
 
 **Deliverable:**
-- `system/memory/denny/handoffs/auth-spec.yaml` - Complete technical spec
+- `roundtable/workspace/denny/handoffs/auth-spec.yaml` - Complete technical spec
 
 **Next steps:**
 - **founder:** Review the biometric flow - does "after first login" feel right?
@@ -130,7 +130,7 @@ Deep dive on our positioning vs competitors. Found some interesting opportunitie
 - SMB churn could be higher (need strong retention)
 
 **Deliverable:**
-- `system/memory/genna/handoffs/positioning-analysis.md` - Full analysis
+- `roundtable/workspace/genna/handoffs/positioning-analysis.md` - Full analysis
 
 **Next steps:**
 - **founder:** Let's discuss positioning strategy - which opportunity resonates?
@@ -188,7 +188,7 @@ Created first draft of investor pitch deck. Need input from team!
 - **@benji:** Traction metrics - can you provide latest numbers?
 
 **Deliverable:**
-- `system/memory/lyna/handoffs/investor-deck-draft.md` - Current draft
+- `roundtable/workspace/lyna/handoffs/investor-deck-draft.md` - Current draft
 
 **Next steps:**
 - **founder:** Review overall narrative and messaging

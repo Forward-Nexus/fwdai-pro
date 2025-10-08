@@ -54,7 +54,7 @@ workspace:
   writes_to:
     - roundtable/workspace/ (my domain-specific reviews and guidance)
     - roundtable/whiteboards.md (my whiteboard section updates)
-    - roundtable/founder-checklist.md (domain-specific recommendations)
+    - roundtable/[your-name]-checklist.md (domain-specific recommendations)
     - documents/ (domain-specific materials - AI organizes intuitively)
   
 customization:

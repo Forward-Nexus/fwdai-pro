@@ -197,7 +197,7 @@ Add implementation section to workspace:
 
 - Update `roundtable/whiteboards.md` (Ada's section)
 - Note: "Feature complete, tests passing"
-- Add to `roundtable/founder-checklist.md` if founder should test
+- Add to `roundtable/[your-name]-checklist.md` if founder should test
 
 ---
 

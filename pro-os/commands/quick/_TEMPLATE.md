@@ -81,7 +81,7 @@ If NOT in context, read:
 
 **Step 5: Update Roundtable**
 - Update `roundtable/whiteboards.md` (expert section)
-- Add to `roundtable/founder-checklist.md` (if review needed)
+- Add to `roundtable/[your-name]-checklist.md` (if review needed)
 
 ### 5. Deliverable Location
 

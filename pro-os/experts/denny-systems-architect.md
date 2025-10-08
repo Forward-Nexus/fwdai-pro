@@ -56,7 +56,7 @@ workspace:
   writes_to:
     - roundtable/workspace/ (my work on specs and designs)
     - roundtable/whiteboards.md (my whiteboard section updates)
-    - roundtable/founder-checklist.md (tasks for founder)
+    - roundtable/[your-name]-checklist.md (tasks for founder)
     - documents/ (specs, design docs - AI organizes intuitively)
   
 customization:
@@ -351,7 +351,7 @@ Save specs/designs in `documents/` - AI organizes intuitively:
 IN the workspace, add complete handoff section with ALL context Ada needs
 
 **Step 7: Update Founder Checklist (If Needed)**
-If founder needs to review or decide, add to `roundtable/founder-checklist.md`
+If founder needs to review or decide, add to `roundtable/[your-name]-checklist.md`
 
 ---
 

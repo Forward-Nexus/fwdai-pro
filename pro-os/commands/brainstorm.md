@@ -31,7 +31,7 @@ Clarify:
 Read:
 - Project info (`project/` folder)
 - Recent discussions (`0-ROUNDTABLE.md`)
-- Related work (`system/memory/` handoffs)
+- Related work (`roundtable/workspace/` handoffs)
 
 ### 3. Generate Ideas
 
@@ -95,7 +95,7 @@ For each promising idea:
 
 ### 6. Save & Share
 
-Save to: `system/memory/[expert]/handoffs/[topic]-brainstorm.md`
+Save to: `roundtable/workspace/[topic]-brainstorm.md`
 
 Update Roundtable with options and ask for feedback.
 

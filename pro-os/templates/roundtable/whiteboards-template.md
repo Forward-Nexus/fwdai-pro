@@ -34,7 +34,7 @@ purpose: "High-level dashboard view of all expert activity and current work"
 
 **Quick Navigation:**
 - [All Workspaces](workspace/)
-- [Founder Checklist](founder-checklist.md)
+- [Founder Checklist]([your-name]-checklist.md)
 - [Workspace Archive](workspace/archive/)
 
 ---
@@ -311,7 +311,7 @@ Recent items added that need your attention:
 - **[Item 1]** - [Priority] - *Added by [Expert]* - [Date]
 - **[Item 2]** - [Priority] - *Added by [Expert]* - [Date]
 
-See complete list: [Founder Checklist](founder-checklist.md)
+See complete list: [Founder Checklist]([your-name]-checklist.md)
 
 ### ❓ Questions Waiting for You
 

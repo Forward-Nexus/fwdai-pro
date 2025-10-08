@@ -39,14 +39,17 @@ export async function initializeRoundtable(projectPath, aboutYou, aboutProject, 
     .replace(/\[Auto-timestamp\]/g, new Date().toISOString())
     .replace('YYYY-MM-DD HH:MM', new Date().toISOString().replace('T', ' ').split('.')[0]);
 
-  // Generate founder-checklist.md
+  // Generate [your-name]-checklist.md
   const checklist = checklistTemplate
     .replace(/\[FOUNDER_NAME\]/g, name)
     .replace(/\[PROJECT_NAME\]/g, aboutProject.projectName);
 
   // Write files
   await fs.writeFile(path.join(roundtablePath, 'whiteboards.md'), whiteboards);
-  await fs.writeFile(path.join(roundtablePath, 'founder-checklist.md'), checklist);
+  
+  // Use personalized checklist name
+  const checklistName = `${name.toLowerCase().replace(/\s+/g, '-')}-checklist.md`;
+  await fs.writeFile(path.join(roundtablePath, checklistName), checklist);
 
   // Create README in workspace folder
   const workspaceReadme = `# Workspace

@@ -117,7 +117,7 @@ your-project/
 │   │
 │   ├── roundtable/                 ← COLLABORATION ZONE (messy is okay!)
 │   │   ├── whiteboards.md          ← Expert collaboration dashboard
-│   │   ├── founder-checklist.md    ← Your action items
+│   │   ├── [your-name]-checklist.md    ← Your action items
 │   │   │
 │   │   └── workspace/              ← Work-in-progress files
 │   │       ├── [draft-files].md    ← Drafts, iterations
@@ -298,7 +298,7 @@ These are just shortcuts - the real files are in `pro-os/commands/`
 - Questions for you
 - Team coordination
 
-**founder-checklist.md** - Your action items
+**[your-name]-checklist.md** - Your action items
 - High priority items
 - Regular tasks
 - Ideas for later
@@ -428,7 +428,7 @@ These are just shortcuts - the real files are in `pro-os/commands/`
 - ✅ `your-commands/README.md` - Instructions
 - ✅ `project/` - Project context
 - ✅ `roundtable/whiteboards.md` - Team dashboard
-- ✅ `roundtable/founder-checklist.md` - Your todos
+- ✅ `roundtable/[your-name]-checklist.md` - Your todos
 - ✅ `documents/` - Final deliverables
 - ✅ `add-favorite.sh` - Helper script
 - ✅ `README.md` - Quick start
@@ -454,7 +454,7 @@ These are just shortcuts - the real files are in `pro-os/commands/`
 ### Don't Edit Directly:
 - ⚠️ `pro-os/` - Use commands to update instead
 - ⚠️ `roundtable/whiteboards.md` - Experts manage this
-- ⚠️ `roundtable/founder-checklist.md` - Experts manage this
+- ⚠️ `roundtable/[your-name]-checklist.md` - Experts manage this
 
 ### Read-Only Reference:
 - 📖 `pro-os/experts/*` - Expert definitions
@@ -481,7 +481,7 @@ These are just shortcuts - the real files are in `pro-os/commands/`
 - Check `roundtable/whiteboards.md`
 
 ### Looking for What You Need to Do?
-- Check `roundtable/founder-checklist.md`
+- Check `roundtable/[your-name]-checklist.md`
 
 ### Looking for a Final Deliverable?
 - Check `documents/[category]/`

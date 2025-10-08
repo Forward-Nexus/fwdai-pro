@@ -109,7 +109,7 @@ Update your section in `roundtable/whiteboards.md`:
 
 ### 7. Update Founder Checklist (If Needed)
 
-If founder needs to review/approve, add to `roundtable/founder-checklist.md`:
+If founder needs to review/approve, add to `roundtable/[your-name]-checklist.md`:
 
 ```markdown
 ## 🔴 High Priority
@@ -177,7 +177,7 @@ Your call - I'm here either way! 😊
 6. Documents decisions and approach IN workspace
 7. Runs `system/checklists/spec-checklist.md`
 8. Updates `roundtable/whiteboards.md` with his section
-9. Adds to `roundtable/founder-checklist.md` if review needed
+9. Adds to `roundtable/[your-name]-checklist.md` if review needed
 10. "Auth spec ready! Check `documents/technical/auth-spec.md`"
 
 ### Example 2: Creating a Pitch Deck
@@ -193,7 +193,7 @@ Your call - I'm here either way! 😊
 6. Documents strategy and decisions IN workspace
 7. Runs `system/checklists/content-checklist.md`
 8. Updates `roundtable/whiteboards.md` with her section
-9. Adds to `roundtable/founder-checklist.md` for review
+9. Adds to `roundtable/[your-name]-checklist.md` for review
 10. "Pitch deck ready! Check `documents/investor/pitch-deck.md`"
 
 ---

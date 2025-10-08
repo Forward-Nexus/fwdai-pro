@@ -56,7 +56,7 @@ export function generateWelcomeMessage(aboutYou, aboutProject) {
   message += chalk.bold('\n📖 Learn more:\n');
   message += chalk.gray('   - .fwdpro/documents/tech/tech-stack-guide.md - Tech stack help\n');
   message += chalk.gray('   - .fwdpro/0-roundtable/whiteboards.md - Current work dashboard\n');
-  message += chalk.gray('   - .fwdpro/0-roundtable/founder-checklist.md - Your action items\n');
+  message += chalk.gray('   - .fwdpro/0-roundtable/[your-name]-checklist.md - Your action items\n');
   message += chalk.gray('   - .fwdpro/0-your-experts/README.md - Expert team reference\n');
 
   // Get started

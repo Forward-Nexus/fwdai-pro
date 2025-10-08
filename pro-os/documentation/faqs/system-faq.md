@@ -54,7 +54,7 @@
 **1. Collaboration (Roundtable)**
 - `whiteboards.md` - Expert notes, blockers, handoffs
 - `workspace/` - Work-in-progress files
-- `founder-checklist.md` - Your action items
+- `[your-name]-checklist.md` - Your action items
 
 **2. Final Outputs (Documents)**
 - Clean deliverables

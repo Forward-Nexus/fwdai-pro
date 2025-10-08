@@ -51,7 +51,7 @@ Use this checklist before marking any work complete.
 
 - [ ] **Roundtable updated** - Summarized in 0-ROUNDTABLE.md
 - [ ] **Tasks created** - Added to 0-CHECKLIST.md for founder
-- [ ] **Saved properly** - In system/memory/[expert]/handoffs/
+- [ ] **Saved properly** - In roundtable/workspace/
 - [ ] **Context provided** - Enough information for others to understand
 - [ ] **Decisions documented** - Key choices and rationale explained
 

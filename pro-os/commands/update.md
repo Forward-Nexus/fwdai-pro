@@ -123,7 +123,7 @@ Use `checklists/quality-checklist.md` or domain-specific checklist.
 ### 7. Save & Communicate
 
 **Save updated version:**
-- Same location: `system/memory/[expert]/handoffs/[filename]`
+- Same location: `roundtable/workspace/[filename]`
 - Or create versioned copy if major changes: `[filename]-v2.yaml`
 
 **Update Roundtable:**
@@ -141,7 +141,7 @@ Use `checklists/quality-checklist.md` or domain-specific checklist.
 [What this affects or enables]
 
 **File:**
-- `system/memory/[expert]/handoffs/[filename]`
+- `roundtable/workspace/[filename]`
 
 **Next steps:**
 - **founder:** [Review changes? Test? Approve?]

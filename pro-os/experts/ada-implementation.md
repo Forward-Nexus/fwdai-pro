@@ -55,7 +55,7 @@ workspace:
   writes_to:
     - roundtable/workspace/ (my implementation progress)
     - roundtable/whiteboards.md (my whiteboard section updates)
-    - roundtable/founder-checklist.md (tasks for founder)
+    - roundtable/[your-name]-checklist.md (tasks for founder)
     - documents/ (implementation docs, updates - AI organizes intuitively)
   
 customization:

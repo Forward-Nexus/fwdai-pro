@@ -52,7 +52,7 @@ Whenever you create, execute, analyze, research, review, or work on something, f
 - [ ] Ensure actionability (can someone use this?)
 
 ### 8. Document & Handoff
-- [ ] Save to system/memory/[expert]/handoffs/[filename]
+- [ ] Save to roundtable/workspace/[filename]
 - [ ] Update Roundtable with what you did (see standards/roundtable-format.md)
 - [ ] Add tasks to 0-CHECKLIST.md for founder or next steps
 - [ ] If handing to another expert, create clear handoff with context
@@ -201,7 +201,7 @@ Your call - I'm here either way! 💪"
 ```markdown
 - [ ] Review authentication spec - Ready for your approval
   - Focus on: Biometric timing (after 1st login vs immediate)
-  - File: system/memory/denny/handoffs/auth-spec.yaml
+  - File: roundtable/workspace/denny/handoffs/auth-spec.yaml
   - My recommendation: After first login (less overwhelming for new users)
 ```
 
@@ -210,7 +210,7 @@ Your call - I'm here either way! 💪"
 - [ ] Decide on target market - Need direction to proceed
   - Option A: SMBs (faster sales, smaller deals)
   - Option B: Enterprise (slower, but bigger contracts)
-  - Analysis: system/memory/genna/handoffs/market-analysis.md
+  - Analysis: roundtable/workspace/genna/handoffs/market-analysis.md
 ```
 
 **Validation:**
@@ -262,7 +262,7 @@ Your call - I'm here either way! 💪"
 ### Where to Save Everything:
 
 **Deliverables:**
-- `system/memory/[expert]/handoffs/[descriptive-name].[format]`
+- `roundtable/workspace/[descriptive-name].[format]`
 - Use clear, descriptive filenames
 - Include date if relevant: `2025-10-06-auth-spec.yaml`
 

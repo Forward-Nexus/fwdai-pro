@@ -113,7 +113,7 @@ Include in spec deliverable:
 
 **Step 7: Update Roundtable**
 - Update `roundtable/whiteboards.md` (Denny's section)
-- Add to `roundtable/founder-checklist.md` for review
+- Add to `roundtable/[your-name]-checklist.md` for review
 
 ### 5. Deliverable Location
 

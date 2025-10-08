@@ -99,7 +99,7 @@ FWD PRO organizes work into three zones:
 **Contains:**
 - `whiteboards.md` - Expert notes, handoffs, blockers
 - `workspace/` - Work-in-progress files
-- `founder-checklist.md` - Your action items
+- `[your-name]-checklist.md` - Your action items
 
 **Think of it as:** A conference room with whiteboards
 
@@ -208,7 +208,7 @@ your-project/
 │   │
 │   ├── roundtable/             COLLABORATION ZONE
 │   │   ├── whiteboards.md      Expert collaboration dashboard
-│   │   ├── founder-checklist.md Your action items
+│   │   ├── [your-name]-checklist.md Your action items
 │   │   └── workspace/          Work-in-progress
 │   │       ├── [draft-files]
 │   │       └── archive/        Completed work
@@ -433,7 +433,7 @@ None currently!
 
 ## The Founder Checklist
 
-`founder-checklist.md` is where experts add items that need **your** input.
+`[your-name]-checklist.md` is where experts add items that need **your** input.
 
 ### Example:
 
