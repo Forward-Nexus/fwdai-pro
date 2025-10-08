@@ -105,7 +105,7 @@ Thanks for the input. Let's go with Denny's approach.
 
 ### Issue: Installation Fails
 
-**Error:** `npx @fwdai/pro install` fails
+**Error:** `npx @fwd-ai/pro install` fails
 
 **Solutions:**
 
@@ -118,7 +118,7 @@ node --version
 **2. Clear NPM Cache:**
 ```bash
 npm cache clean --force
-npx @fwdai/pro install
+npx @fwd-ai/pro install
 ```
 
 **3. Check Permissions:**
@@ -137,12 +137,12 @@ ls -la
 
 **1. Restart Onboarding:**
 ```bash
-npx @fwdai/pro install --reset
+npx @fwd-ai/pro install --reset
 ```
 
 **2. Skip Auto-Scan:**
 ```bash
-npx @fwdai/pro install --no-scan
+npx @fwd-ai/pro install --no-scan
 
 → Manual answers only
 ```
@@ -760,7 +760,7 @@ cp -r .fwdpro/project ~/fwdpro-backup/
 **2. Reinstall:**
 ```bash
 rm -rf .fwdpro/
-npx @fwdai/pro install
+npx @fwd-ai/pro install
 ```
 
 **3. Restore Data:**
@@ -787,7 +787,7 @@ rm -rf .fwdpro/
 
 **3. Reinstall Fresh:**
 ```bash
-npx @fwdai/pro install
+npx @fwd-ai/pro install
 ```
 
 ---

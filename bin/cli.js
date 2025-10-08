@@ -3,12 +3,12 @@
 /**
  * FWD PRO CLI
  * 
- * Entry point for npx @fwdai/pro commands
+ * Entry point for npx @fwd-ai/pro commands
  * 
  * Commands:
- *   npx @fwdai/pro install  - Run onboarding and setup
- *   npx @fwdai/pro update   - Update FWD PRO system files
- *   npx @fwdai/pro version  - Show version
+ *   npx @fwd-ai/pro install  - Run onboarding and setup
+ *   npx @fwd-ai/pro update   - Update FWD PRO system files
+ *   npx @fwd-ai/pro version  - Show version
  */
 
 import { fileURLToPath } from 'url';
@@ -41,13 +41,13 @@ switch (command) {
 FWD PRO - Universal AI Expert Collaboration System
 
 Usage:
-  npx @fwdai/pro install   Install and setup FWD PRO
-  npx @fwdai/pro update    Update system files
-  npx @fwdai/pro version   Show version
-  npx @fwdai/pro help      Show this help
+  npx @fwd-ai/pro install   Install and setup FWD PRO
+  npx @fwd-ai/pro update    Update system files
+  npx @fwd-ai/pro version   Show version
+  npx @fwd-ai/pro help      Show this help
 
 Get started:
-  npx @fwdai/pro install
+  npx @fwd-ai/pro install
 
 Learn more: https://github.com/Forward-Nexus/fwdai-pro
     `);

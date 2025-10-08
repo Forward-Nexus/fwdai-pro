@@ -201,7 +201,7 @@ This command is for convenience!
 
 - `@update-project` - Update project facts (stage, goals, etc.)
 - `@genna create domain expert` - Just add domain expert
-- CLI: `npx @fwdai/pro configure` - CLI version (future)
+- CLI: `npx @fwd-ai/pro configure` - CLI version (future)
 
 ---
 

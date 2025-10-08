@@ -38,7 +38,7 @@ You get:
 cd your-project/
 
 # Run installer
-npx @fwdai/pro install
+npx @fwd-ai/pro install
 ```
 
 ### What Gets Installed

@@ -65,7 +65,7 @@ Most AI coding tools automatically include workspace files - you're probably all
 If you want optimizations for your specific tool, run:
 
 ```bash
-npx @fwdai/pro setup-ide
+npx @fwd-ai/pro setup-ide
 ```
 
 We'll detect your IDE and add enhanced features!

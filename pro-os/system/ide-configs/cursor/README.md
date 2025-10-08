@@ -85,7 +85,7 @@ If you customize expert files in `.fwdpro/pro-os/experts/`, you'll need to copy 
 
 ```bash
 # Option 1: Re-run IDE setup
-npx @fwdai/pro setup-ide
+npx @fwd-ai/pro setup-ide
 
 # Option 2: Manual copy
 cp .fwdpro/pro-os/experts/denny-systems-architect.md .cursor/rules/

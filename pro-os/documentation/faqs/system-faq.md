@@ -95,7 +95,7 @@ Determines which experts activate!
 
 ## How FWD PRO Works
 
-1. **Install:** `npx @fwdai/pro install`
+1. **Install:** `npx @fwd-ai/pro install`
 2. **Onboard:** Answer questions, system configures
 3. **Tag experts:** `@denny create auth spec`
 4. **Experts collaborate:** Use Roundtable, create deliverables
@@ -147,7 +147,7 @@ Stored in: `~/.fwdpro-global/projects.md`
 
 ```bash
 # Install
-npx @fwdai/pro install
+npx @fwd-ai/pro install
 
 # First command
 @genna help me create a roadmap

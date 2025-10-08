@@ -47,7 +47,7 @@ FWD PRO works in **any AI coding tool** out of the box. These configurations are
 
 ## How This Works
 
-During `npx @fwdai/pro install`, the CLI:
+During `npx @fwd-ai/pro install`, the CLI:
 
 1. Detects your IDE (or asks)
 2. Copies `pro-os/` (core system - everyone gets this)
@@ -56,7 +56,7 @@ During `npx @fwdai/pro install`, the CLI:
 
 **Example:**
 ```bash
-npx @fwdai/pro install
+npx @fwd-ai/pro install
 
 → Detected: Cursor
 → Install Cursor optimizations? [Y/n]

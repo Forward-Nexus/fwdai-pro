@@ -184,7 +184,7 @@ This command reads from:
 ```
 
 **Auto-updated when:**
-- Create new project (`npx @fwdai/pro install`)
+- Create new project (`npx @fwd-ai/pro install`)
 - Run `@update-project` in any project
 - Complete major milestones
 - Use system commands
@@ -218,7 +218,7 @@ This command reads from:
 
 ### List Projects (CLI)
 ```bash
-npx @fwdai/pro list
+npx @fwd-ai/pro list
 
 → Terminal view of all projects
 → Quick status check

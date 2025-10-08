@@ -767,7 +767,7 @@ workflows:
 cp .fwdpro/pro-os/config.yaml ~/config-backup.yaml
 
 # Reset to defaults
-npx @fwdai/pro reset-config
+npx @fwd-ai/pro reset-config
 
 # Restore if needed
 cp ~/config-backup.yaml .fwdpro/pro-os/config.yaml

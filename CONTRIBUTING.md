@@ -96,7 +96,7 @@ pnpm run dev
 # Or test the full flow
 pnpm link
 cd /path/to/test-project
-npx @fwdai/pro install
+npx @fwd-ai/pro install
 ```
 
 If you're adding features for non-software use cases, test with examples like:

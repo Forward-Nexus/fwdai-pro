@@ -6,7 +6,7 @@
  * Universal AI expert collaboration system installer
  * Handles onboarding, project setup, and expert configuration
  * 
- * Usage: npx @fwdai/pro install
+ * Usage: npx @fwd-ai/pro install
  */
 
 import chalk from 'chalk';

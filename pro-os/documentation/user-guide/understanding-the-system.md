@@ -632,7 +632,7 @@ for ODAT since it's healthcare/HIPAA?
 FWD PRO updates automatically when you run:
 
 ```bash
-npx @fwdai/pro update
+npx @fwd-ai/pro update
 ```
 
 **What gets updated:**

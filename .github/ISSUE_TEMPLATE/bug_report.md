@@ -11,7 +11,7 @@ A clear and concise description of what the bug is.
 
 **Steps to Reproduce**
 Steps to recreate the bug:
-1. Run `npx @fwdai/pro install`
+1. Run `npx @fwd-ai/pro install`
 2. Answer questions with '...'
 3. See error at '...'
 

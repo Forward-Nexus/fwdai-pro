@@ -33,7 +33,7 @@ cd ~/projects/my-existing-project/
 ### Step 2: Run Installer
 
 ```bash
-npx @fwdai/pro install
+npx @fwd-ai/pro install
 ```
 
 ### Step 3: Onboarding with Existing Project
@@ -698,7 +698,7 @@ cp -r docs/planning/*.md .fwdpro/documents/planning/
 
 ### First Day Checklist
 
-- [ ] Install: `npx @fwdai/pro install`
+- [ ] Install: `npx @fwd-ai/pro install`
 - [ ] Complete onboarding (auto-scans project)
 - [ ] Review project-kb.md (correct any errors)
 - [ ] Add mission: `@update-mission`

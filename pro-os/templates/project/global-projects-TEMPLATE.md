@@ -149,7 +149,7 @@ Or check: `~/.fwdpro-global/projects.md`
 ## How This Works
 
 ### Auto-Updated When:
-- ✅ Create new project (`npx @fwdai/pro install`)
+- ✅ Create new project (`npx @fwd-ai/pro install`)
 - ✅ Run `@update-project` in any project
 - ✅ Complete major work (marks activity)
 - ✅ Use system commands
@@ -175,7 +175,7 @@ Or check: `~/.fwdpro-global/projects.md`
 - `@genna show my projects` - View this dashboard
 - `@genna switch to [project]` - Context switch helper
 - `@update-project` - Updates this dashboard
-- `npx @fwdai/pro list` - CLI view of projects
+- `npx @fwd-ai/pro list` - CLI view of projects
 
 ---
 
