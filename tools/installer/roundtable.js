@@ -18,12 +18,12 @@ export async function initializeRoundtable(projectPath, aboutYou, aboutProject, 
 
   // Read templates
   const whiteboardsTemplate = await fs.readFile(
-    path.join(templatesPath, 'whiteboards-template.md'),
+    path.join(templatesPath, 'roundtable', 'whiteboards-template.md'),
     'utf-8'
   );
 
   const checklistTemplate = await fs.readFile(
-    path.join(templatesPath, 'founder-checklist-template.md'),
+    path.join(templatesPath, 'roundtable', 'founder-checklist-template.md'),
     'utf-8'
   );
 

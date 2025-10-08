@@ -9,6 +9,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+---
+
+## [1.0.6] - 2025-10-08
+
+### Fixed
+- Fixed template path resolution - templates are now correctly located in `pro-os/templates/`
+- Fixed installer crash when generating project-kb files
+
+---
+
+## [1.0.5] - 2025-10-08
+
 ### Added
 - Complete CLI installer with progressive disclosure onboarding (Q1-16)
 - Existing project scanner (auto-fills tech stack, project info)

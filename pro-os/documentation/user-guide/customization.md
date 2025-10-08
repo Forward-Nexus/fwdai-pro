@@ -158,18 +158,96 @@ document_categories:
 
 ---
 
-## Custom Commands
+## Creating New Experts
 
-### Create Your Own Command
+### Method 1: Ask AI (Recommended)
 
-**1. Copy Template:**
+The easiest way to create a new domain expert is to ask Genna or Denny:
+
+```
+@genna I need a new domain expert for restaurant operations.
+They should help with menu design, kitchen workflows, and health compliance.
+```
+
+**What happens:**
+1. AI looks at existing experts in `pro-os/experts/` as examples
+2. Creates new expert file following the same pattern
+3. Saves to `pro-os/experts/new-expert-name.md`
+4. You can add a shortcut to `0-your-experts/` if you want
+
+### Method 2: Copy an Existing Expert
+
+**1. Choose a similar expert to copy:**
 
 ```bash
-cp .fwdpro/pro-os/commands/quick/_TEMPLATE.md \
+# List current experts
+ls .fwdpro/pro-os/experts/
+
+# Copy one as a template
+cp .fwdpro/pro-os/experts/benji-internal-growth.md \
+   .fwdpro/pro-os/experts/alex-restaurant-ops.md
+```
+
+**2. Edit the new expert:**
+
+Open `.fwdpro/pro-os/experts/alex-restaurant-ops.md` and customize:
+- Name and emoji
+- Role and specialization
+- Strengths and expertise areas
+- Communication style
+- When to tag them
+
+**3. Use your new expert:**
+
+```
+@alex help me design a new menu
+```
+
+**4. Optional - Add shortcut:**
+
+```bash
+# Create symlink in your-experts for quick access
+ln -s ../pro-os/experts/alex-restaurant-ops.md \
+      .fwdpro/0-your-experts/alex.md
+```
+
+### No Templates Needed!
+
+**Important:** You don't need template files for this. The existing expert files ARE the templates - just copy and modify any expert that's similar to what you need.
+
+---
+
+## Creating New Commands
+
+### Method 1: Ask AI (Recommended)
+
+```
+@denny I need a new command for generating weekly reports.
+It should collect metrics, summarize progress, and create a shareable doc.
+```
+
+**What happens:**
+1. AI looks at existing commands in `pro-os/commands/` as examples
+2. Creates new command following the same pattern
+3. Saves to `pro-os/commands/my-command.md`
+4. You can add a shortcut to `0-your-commands/`
+
+### Method 2: Copy an Existing Command
+
+**1. Find a similar command:**
+
+```bash
+# List available commands
+ls .fwdpro/pro-os/commands/quick/
+ls .fwdpro/pro-os/commands/system/
+ls .fwdpro/pro-os/commands/universal/
+
+# Copy one as starting point
+cp .fwdpro/pro-os/commands/quick/create-spec.md \
    .fwdpro/pro-os/commands/quick/my-workflow.md
 ```
 
-**2. Define Workflow:**
+**2. Define Your Workflow:**
 
 ```markdown
 # @my-workflow
@@ -196,11 +274,23 @@ cp .fwdpro/pro-os/commands/quick/_TEMPLATE.md \
 3. Post summary to whiteboards
 ```
 
-**3. Use It:**
+**3. Use your new command:**
 
 ```
 @my-workflow
 ```
+
+**4. Optional - Add shortcut:**
+
+```bash
+# Create symlink for quick access
+ln -s ../pro-os/commands/quick/my-workflow.md \
+      .fwdpro/0-your-commands/my-workflow.md
+```
+
+### No Templates Needed!
+
+**Important:** You don't need template files for this. The existing command files ARE the templates - just copy and modify any command that's similar to what you need.
 
 ### Example Custom Commands
 

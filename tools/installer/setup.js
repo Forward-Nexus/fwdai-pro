@@ -31,7 +31,7 @@ const __dirname = dirname(__filename);
 
 const GLOBAL_PROFILE_DIR = path.join(os.homedir(), '.fwdpro-global');
 const FWD_PRO_SOURCE = path.join(__dirname, '..', '..', 'pro-os');
-const TEMPLATES_SOURCE = path.join(__dirname, '..', '..', 'templates');
+const TEMPLATES_SOURCE = path.join(__dirname, '..', '..', 'pro-os', 'templates');
 
 /**
  * Main setup function
