@@ -24,6 +24,9 @@ documents/
 docs/
 _upgrade-notes/
 
+# FWD PRO installation (when repo uses itself for development)
+.fwdpro/
+
 # IDE configs
 .eslintrc*
 .prettierrc*

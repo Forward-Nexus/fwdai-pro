@@ -640,17 +640,42 @@ ${expertsList}
 
 Your project files have been created with basic information. You can flesh them out anytime:
 
-**Update using commands:**
-- \`@update-mission\` - Add your "why", target audience, problem you're solving
-- \`@update-people\` - Add team members, advisors, investors
-- \`@update-project\` - Update project facts, stage, goals
+**You just did quick onboarding. Now expand whenever you're ready!**
 
-**Or edit manually:**
-- \`.fwdpro/pro-os/project/mission.md\` - Your vision and purpose
-- \`.fwdpro/pro-os/project/people.md\` - Team and key relationships
-- \`.fwdpro/pro-os/project/project-kb.md\` - Project facts
+### Use These Commands:
 
-The more complete these are, the better your experts can help you!
+**\`@update-project\`** - **Mass update** (scans and updates everything)
+- Scans your project for changes
+- Updates project-kb, mission, people, config
+- Use after major milestones
+
+**\`@update-kb\`** - Quick fact updates (just project-kb)
+- User count, tech stack, stage
+- Quick, focused updates
+
+**\`@update-mission\`** - Expand your "why" and vision
+- Personal story and motivation
+- Target audience and problems
+- Unique solution and vision
+
+**\`@update-people\`** - Add team details
+- Advisors/mentors (why they matter)
+- Investors and their involvement
+- Key customers, partners
+
+**\`@update-fp\`** - Update your founder profile
+- Working preferences
+- Communication style
+
+### When to Update:
+
+- **Now:** \`@update-mission\` and \`@update-people\` if you have 10 min
+- **After milestones:** \`@update-project\` to scan and update everything
+- **Quick updates:** \`@update-kb\` for single facts
+- **Every 1-3 months:** \`@update-project\` to keep fresh
+- **Anytime:** Edit files directly in \`.fwdpro/pro-os/project/\`
+
+**More context = Better expert help!**
 
 ---
 

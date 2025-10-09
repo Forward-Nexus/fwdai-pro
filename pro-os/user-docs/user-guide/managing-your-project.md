@@ -90,7 +90,7 @@ You can also update project files manually.
 
 **What is this project?**
 Mobile app for addiction recovery support through daily check-ins,
-progress tracking, and LiNa (AI life navigator).
+progress tracking, and AI assistance.
 
 ← UPDATE when project description changes
 
@@ -180,7 +180,7 @@ People in recovery are alone between meetings. At 2am when you're
 struggling, there's nothing. You need something EVERY DAY.
 
 ## Our Solution
-LiNa - an AI life navigator who knows your story, celebrates day 3
+AI companion - who knows your story, celebrates day 3
 differently than day 300, and is WITH you one day at a time.
 
 ## Vision
@@ -188,7 +188,7 @@ Life navigation for everyone - recovery, mental health, grief, chronic
 illness. Anywhere you need to navigate life one day at a time.
 
 ## Success
-When someone says: "I made it through today because of LiNa."
+When someone says: "I made it through today because of this app."
 (Goal: 10,000 users by Q1 2026, but real metric is lives changed)
 ```
 

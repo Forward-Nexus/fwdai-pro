@@ -260,6 +260,30 @@ Add to appropriate priority section:
 
 **Only add to checklist if founder MUST do something** - don't clutter with FYI items.
 
+#### Team vs Individual Checklists
+
+**Individual Checklist** (`{{person-name}}-checklist.md`):
+- One specific person needs to do something
+- Decision from that person only
+- Action specific to their role
+- Their personal todo list
+
+**Team Checklist** (`team-checklist.md`):
+- Multiple people need to coordinate
+- Decision requires 2+ people
+- Handoff between team members
+- Blocking multiple people
+- Team meeting/discussion needed
+- Shared coordination items
+
+**Examples:**
+
+*Individual:* "Ward: Review campaign messaging" → `ward-checklist.md`  
+*Team:* "Ward + Sarah: Decide on auth provider" → `team-checklist.md`  
+*Team:* "Handoff: Denny → Ada (spec ready)" → `team-checklist.md`
+
+**Note:** Solo projects won't have `team-checklist.md` - everything goes to the founder's individual checklist.
+
 ---
 
 ## 🎨 Whiteboard Quick Reference
@@ -370,6 +394,108 @@ Add to appropriate priority section:
 4. Update status (Review or Done as appropriate)
 5. Update whiteboard: move to "Completed This Month"
 6. Add completion summary if final expert
+
+---
+
+## 🎯 Completion & Archival
+
+**CRITICAL RULE:** Experts NEVER mark work as ✅ Complete OR archive workspaces without explicit founder approval.
+
+### When Founder Approves Work:
+
+**Step 1: Clean the Deliverable**
+- Remove ALL progress notes
+- Remove "Notes (Remove when approved)" sections  
+- Update status: ✅ Complete
+- Add completion date and founder approval
+
+**Step 2: Update Workspace**
+
+**Multi-deliverable workspace:**
+- Move completed section to bottom under "✅ Completed Items"
+- Keep workspace active (no archival needed)
+- Continue with remaining work
+
+**Single-deliverable workspace:**
+- Mark workspace as complete
+- **ASK founder:** "This workspace is complete. Would you like me to archive it?"
+- **If founder says YES:** Move to `workspace/_archive/[name].md`
+- **If founder says NO:** Keep active for reference
+- **NEVER archive without explicit permission**
+
+**Step 3: Update Whiteboard**
+- Remove from active work
+- Add to "Completed This Month"
+- Update at-a-glance table (or let it be updated)
+
+**Step 4: Update Checklist**
+- Mark related checklist items as ✅ complete
+- Move to "Recently Completed" section
+
+### Why Ask Before Archiving?
+
+- Founder might want to reference it frequently
+- Founder might want to add notes later
+- **Founder might remember missing work** → Discovers new tasks!
+- Archival is OPTIONAL, not automatic
+
+**Example conversation:**
+```
+AI: "This workspace is complete. Archive it?"
+Founder: "Wait, did we handle password reset emails?"
+AI: "No, I'll add that task now!"
+→ One question revealed forgotten work
+```
+
+### Status Lifecycle:
+
+⚪ Draft → 🔄 InProgress → 📋 Review (Expert done, awaiting approval) → **Founder approves** → ✅ Complete → (Optional) Archive
+
+---
+
+## 🤝 Philosophy: Human-in-the-Loop
+
+**Why we ask before archiving/completing:**
+
+FWD PRO uses "strategic de-automation" - asking for approval on key decisions actually leads to MORE automation overall, not less.
+
+### The Paradox:
+- **More control = More trust**
+- **More trust = More delegation**  
+- **More delegation = More automation**
+
+### When AI Asks "Archive this?" or "Mark complete?"
+
+This isn't a limitation - it's a feature that:
+
+1. **Prevents errors** (like auto-archiving active work or auto-denying insurance claims)
+2. **Discovers missing work** (founder realizes more needs to be done)
+3. **Expands scope naturally** (conversation reveals hidden tasks)
+4. **Builds trust** (founder knows AI won't surprise them)
+
+### The Result:
+
+Founders who feel in control delegate MORE to AI, not less. Strategic check-ins lead to better outcomes than full automation.
+
+**Real Example:**
+```
+AI: "Archive auth workspace?"
+Founder: "No, we still need SSO, 2FA, and audit logging"
+AI: "Got it! Adding those three tasks now."
+```
+→ One question revealed 3 forgotten tasks. More work automated, better result.
+
+### The UnitedHealthcare Lesson:
+
+**Their mistake:**
+- AI auto-denies claims (no human review)
+- Result: Wrong decisions, lawsuits, deaths
+
+**FWD PRO approach:**
+- AI proposes, human approves
+- Result: Trust, better outcomes, more delegation
+
+**The insight:** Sometimes you need to SLOW DOWN one step to SPEED UP the whole process.
 
 ---
 

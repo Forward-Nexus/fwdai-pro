@@ -91,8 +91,8 @@ export async function updateInstallation() {
       'pro-os/commands',
       'pro-os/experts',
       'pro-os/system',
-      'pro-os/templates',
-      'pro-os/documentation'
+      'pro-os/user-docs'
+      // NOTE: templates are NOT updated - they're for generators only, not end users
     ];
 
     for (const updatePath of updatePaths) {
@@ -105,6 +105,23 @@ export async function updateInstallation() {
     }
 
     spinner.succeed(chalk.green('✓ System files updated'));
+
+    // Step 2.5: Clean up old folders that shouldn't exist
+    spinner = ora('Cleaning up old files...').start();
+    
+    const cleanupPaths = [
+      'pro-os/templates',      // Templates are for generators only
+      'pro-os/documentation'   // Renamed to user-docs
+    ];
+    
+    for (const cleanupPath of cleanupPaths) {
+      const targetPath = path.join(fwdproDir, cleanupPath);
+      if (await fs.pathExists(targetPath)) {
+        await fs.remove(targetPath);
+      }
+    }
+    
+    spinner.succeed(chalk.green('✓ Old files removed'));
 
     // Step 3: Run version-specific migrations
     await runMigrations(projectPath, installedVersion, packageVersion);

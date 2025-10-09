@@ -155,7 +155,7 @@ Person 2:
   > Met through AA, now reviewing clinical approach
 
   Value: [What they help with]
-  > Ensuring LiNa's recovery guidance is clinically sound, 
+  > Ensuring the app's recovery guidance is clinically sound, 
   reviewing Bonnie Jo's (domain expert) recommendations
 
   Contact: [Optional]

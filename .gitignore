@@ -56,3 +56,6 @@ temp/
 # Upgrade notes (for maintainers only)
 _upgrade-notes/
 
+# FWD PRO installation (when repo uses itself for development)
+.fwdpro/
+

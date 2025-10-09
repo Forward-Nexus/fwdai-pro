@@ -392,10 +392,10 @@ Last updated: Oct 6, 2024 4:30pm
 
 ## 🎯 Bonnie Jo's Recovery Expertise
 
-**Current Focus:** Clinical review of LiNa's language
+**Current Focus:** Clinical review of AI companion language
 
 **Notes:**
-- LiNa's tone is good - supportive without being preachy
+- AI companion's tone is good - supportive without being preachy
 - "One day at a time" messaging is on point
 - Suggest adding more sobriety date celebration
 
@@ -410,7 +410,7 @@ Last updated: Oct 6, 2024 4:30pm
 1. **Authentication spec** (Denny → Ward → Ada)
 2. **Pitch deck metrics** (Ward → Lyna)
 3. **HIPAA review** (Denny → Elle)
-4. **LiNa language review** (Bonnie Jo → Ward)
+4. **AI companion language review** (Bonnie Jo → Ward)
 
 ---
 
@@ -453,8 +453,8 @@ None currently!
 
 ## 📋 Regular Priority
 
-- [ ] **Review LiNa language** (from Bonnie Jo)
-  - Location: workspace/lina-language-review.md
+- [ ] **Review AI companion language** (from Bonnie Jo)
+  - Location: workspace/ai-language-review.md
   - When you have time
 
 - [ ] **Test new user profiles** (from Ada)
@@ -513,7 +513,7 @@ Experts can "talk" to each other on the whiteboards:
 workspace/
 ├── auth-spec-draft.md          (Denny working)
 ├── pitch-deck-outline-v1.md    (Lyna iterating)
-├── lina-language-review.md     (Bonnie Jo notes)
+├── ai-language-review.md       (Bonnie Jo notes)
 └── archive/
     └── old-roadmap-draft.md    (Completed, archived)
 ```

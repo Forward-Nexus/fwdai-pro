@@ -278,7 +278,7 @@ FWD PRO gives you 6 core experts + your custom domain expert. Each has a specifi
 ```
 @bonnie-jo is this language appropriate for recovery?
 @bonnie-jo what features help with relapse prevention?
-@bonnie-jo review LiNa's tone
+@bonnie-jo review AI companion tone
 @bonnie-jo is this clinically sound?
 ```
 

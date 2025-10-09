@@ -115,12 +115,12 @@ the hardest journey of their lives?
 
 What makes ODAT different from just "another recovery app"?
 
-> LiNa. She's not just an AI chatbot - she's a life navigator 
+> Your AI companion. It's not just a chatbot - it's a life navigator 
 who knows your story, meets you where you are, and helps you 
 navigate ONE DAY. She celebrates day 3 differently than day 300. 
 She remembers your triggers. She's WITH you.
 
-Beautiful. This is your differentiator - the LiNa concept.
+Beautiful. This is your differentiator - the life navigation concept.
 
 ═══════════════════════════════════════
 
@@ -129,7 +129,7 @@ Beautiful. This is your differentiator - the LiNa concept.
 If ODAT succeeds beyond your wildest dreams, what does that 
 look like?
 
-> Every person in recovery has a LiNa. Not just addiction - 
+> Every person in recovery has an AI companion. Not just addiction - 
 mental health, grief, chronic illness - anything where you 
 need to navigate life one day at a time. Life navigation 
 becomes accessible to everyone, not just people who can 
@@ -145,7 +145,7 @@ So ODAT is the first step toward "life navigation for all"?
 How will you know ODAT is working?
 
 > When I hear someone say "I made it through today because 
-of LiNa." That's it. If one person stays sober one more day 
+of this app." That's it. If one person stays sober one more day 
 because of this app, it's worth it.
 
 (Plus: 10,000 users by Q1 2026, but the real metric is lives changed)
@@ -184,7 +184,7 @@ journey and helps you navigate it.
 ## How ODAT Works
 
 ODAT provides daily companionship through the hardest journey 
-of your life. Through LiNa - your personal Life Navigator - 
+of your life. Through your personal AI companion - 
 ODAT offers:
 
 - **Daily check-ins** that meet you where you are
@@ -192,20 +192,20 @@ ODAT offers:
 - **Personalized support** that knows your story
 - **24/7 navigation** for the moments you need it most
 
-LiNa isn't just an AI chatbot. She's a life navigator who 
+The AI companion isn't just a chatbot. It's a life navigator that 
 knows your story, remembers your triggers, and celebrates 
 day 3 differently than day 300. She's WITH you.
 
 ## What Makes ODAT Different
 
-The LiNa concept: Life navigation, not just recovery tracking.
+The concept: Life navigation, not just recovery tracking.
 
 Most recovery apps are journals or meeting finders. ODAT is a 
 companion who navigates WITH you, one day at a time.
 
 ## Our Vision
 
-Every person in recovery has a Life Navigator. Then we expand 
+Every person in recovery has an AI companion. Then we expand 
 beyond recovery - to mental health, grief, chronic illness - 
 anything where you need to navigate life one day at a time.
 
@@ -216,7 +216,7 @@ people who can afford therapy.
 
 ## What Success Looks Like
 
-When someone says: "I made it through today because of LiNa."
+When someone says: "I made it through today because of this app."
 
 That's it. If one person stays sober one more day because of 
 this app, it's worth it.
@@ -253,7 +253,7 @@ This mission now helps:
   
   🚀 **Benji** - For marketing
     - Emotional hook (the struggle)
-    - Differentiation (LiNa concept)
+    - Differentiation (life navigation concept)
     - Success metrics (lives changed)
   
   👥 **Team onboarding**
