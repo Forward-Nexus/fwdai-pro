@@ -58,4 +58,6 @@ _upgrade-notes/
 
 # FWD PRO installation (when repo uses itself for development)
 .fwdpro/
+.fwdpro-backup/
+.fwdpro-merge-conflicts/
 

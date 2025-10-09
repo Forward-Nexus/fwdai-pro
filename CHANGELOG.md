@@ -11,30 +11,65 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [2.0.2] - 2025-10-09
+
+### 🔧 Three-Way Merge for Expert Customizations
+
+**Major Updater Enhancement:**
+- **Git-style merge conflicts** for customized expert files
+  - Detects when you've customized experts (beyond Project Context)
+  - Creates conflict markers: `<<<<<<< YOUR / ======= / >>>>>>> NEW`
+  - YOU decide what to keep, merge, or update
+  - Clean reference files saved in `.fwdpro-merge-conflicts/`
+  - Transparent and explicit - no silent data loss!
+  
+**Why This Matters:**
+- If you customized Ada's personality, commands, or workflow
+- You get updates/bug fixes while keeping your customizations
+- Industry-standard Git merge workflow (familiar to developers)
+- Full control over what changes you accept
+- Can't lose work - everything is backed up
+
+---
+
 ## [2.0.1] - 2025-10-09
 
-### 🧹 Installer Improvements & Simplification
+### 🧹 Installer & Updater Improvements
 
-**Removed:**
+**Installer Changes:**
 - Removed `.cursor/commands/` and `.cursor/rules/` setup (unnecessary complexity)
 - Removed `.mdc` files (confusing and redundant with `.md` files)
 - Removed hardcoded `use-pnpm.mdc` preference (was forcing creator's preference on all users)
 - Removed IDE-specific setup functions (not needed)
-
-**Fixed:**
 - Fixed outdated command examples in welcome message (`create-feature`, `create-spec` → `create-specflow`)
 - Fixed reference to non-existent `@show-projects` command
-- Updated installer documentation to reference correct command structure
 
-**Why:**
-- `.mdc` and `.md` files are treated identically by Cursor, causing confusion
+**Updater Improvements (Major Fix!):**
+- **Nuclear update approach:** Completely removes and replaces system folders
+- **Three-way merge with conflict markers:** Professional Git-style merge for customized experts
+  - Automatically merges "Project Context" sections (your project settings preserved)
+  - Detects if you've customized other parts of expert files
+  - Creates **Git-style conflict markers** (<<<<<<< / ======= / >>>>>>>)  
+  - Shows YOUR version vs NEW version side-by-side
+  - YOU choose what to keep, update, or merge
+  - Clean reference copies saved in `.fwdpro-merge-conflicts/`
+  - Transparent, explicit, and safe - no silent overwrites!
+- Ensures zero stale files from old versions (no more ghost commands!)
+- Auto-regenerates `0-your-commands/` and `0-your-experts/` shortcuts
+- Removes legacy `.cursor/` artifacts automatically
+- Safely preserves all user data (documents, workspace, config)
+
+**Why These Changes:**
+- `.mdc` and `.md` files are treated identically by Cursor (caused confusion)
 - Users can `@mention` files in `0-your-commands/` directly (simpler!)
 - Works universally across all IDEs (Cursor, VS Code, Windsurf, etc.)
 - No proprietary file formats - just standard markdown
 - Users choose their own package manager preferences
+- Nuclear update ensures clean state (no accumulation of old files)
 
 **Impact:**
 - Cleaner installation (no hidden `.cursor/` folder)
+- Updates now properly clean up old commands/docs
 - Less confusion for users
 - Better cross-IDE compatibility
 - Respects user preferences instead of forcing creator's choices
