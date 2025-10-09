@@ -11,17 +11,53 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [2.0.3] - 2025-10-09
+
+### 🔧 Surgical Updater (Nuclear → Surgical)
+
+**Changed Update Strategy:**
+- **Surgical approach** instead of nuclear (only overwrites files we ship)
+- Preserves ALL custom additions (commands, experts, docs)
+- Explicit cleanup of known deprecated files only
+- Much safer and more predictable
+
+**What's Protected:**
+- ✅ Custom domain experts (Bonnie Jo, etc.) - FULLY PRESERVED
+- ✅ Custom commands you create - FULLY PRESERVED
+- ✅ `0-your-commands/` and `0-your-experts/` shortcuts - PRESERVED
+- ✅ All user data and work - PRESERVED
+
+**What Gets Updated:**
+- System commands and flows (only files we ship)
+- Core 6 experts: Genna, Denny, Ada, Lyna, Benji, Elle (with smart merge)
+- System patterns, standards, checklists
+- User documentation
+
+---
+
 ## [2.0.2] - 2025-10-09
 
 ### 🔧 Three-Way Merge for Expert Customizations
 
-**Major Updater Enhancement:**
+**Major Updater Improvements:**
+- **Surgical update approach** (changed from nuclear!)
+  - Only overwrites files we ship in the package
+  - Preserves ALL custom additions (commands, experts, docs)
+  - Explicit cleanup of known deprecated files only
+  - Much safer and more predictable
 - **Git-style merge conflicts** for customized expert files
-  - Detects when you've customized experts (beyond Project Context)
+  - Detects when you've customized core experts (beyond Project Context)
   - Creates conflict markers: `<<<<<<< YOUR / ======= / >>>>>>> NEW`
   - YOU decide what to keep, merge, or update
   - Clean reference files saved in `.fwdpro-merge-conflicts/`
   - Transparent and explicit - no silent data loss!
+
+**Fixes:**
+- Fixed updater nuking `0-your-commands/` and `0-your-experts/` folders
+- Fixed updater deleting custom domain experts (like Bonnie Jo!)
+- Only CORE experts get updated (Genna, Denny, Ada, Lyna, Benji, Elle)
+- Your custom domain experts are now fully preserved
+- Symlinks stay intact - no need to regenerate
   
 **Why This Matters:**
 - If you customized Ada's personality, commands, or workflow
