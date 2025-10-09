@@ -63,6 +63,18 @@ That's it! You now have a team of AI experts ready to help.
 npx @fwd-ai/pro update
 ```
 
+**Or using your package manager:**
+```bash
+# Using pnpm
+pnpm update @fwd-ai/pro
+
+# Using npm
+npm update @fwd-ai/pro
+
+# Or force latest version
+pnpm add @fwd-ai/pro@latest
+```
+
 Updates work like app updates - your documents, workspace, and settings are automatically preserved while system files are updated.
 
 ---

@@ -686,6 +686,49 @@ vim .fwdpro/pro-os/config.yaml
 
 ---
 
+## Updating FWD PRO Itself
+
+**Keep FWD PRO up to date to get new features, improvements, and bug fixes.**
+
+### Quick Update
+
+```bash
+# Easiest way (preserves all your data)
+npx @fwd-ai/pro update
+```
+
+### Using Package Managers
+
+```bash
+# Using pnpm
+pnpm update @fwd-ai/pro
+
+# Using npm
+npm update @fwd-ai/pro
+
+# Force latest version
+pnpm add @fwd-ai/pro@latest
+```
+
+### What Gets Updated
+
+✅ **System files** - Commands, expert profiles, templates  
+✅ **Bug fixes** - Improvements and patches  
+✅ **New features** - Latest FWD PRO capabilities  
+
+❌ **Your data is preserved** - Documents, workspaces, settings stay intact
+
+### When to Update
+
+- 📢 When you see a new version announced
+- 🐛 When you encounter a bug that's been fixed
+- ✨ When you want new features
+- 🔄 Every few months to stay current
+
+**Updates are safe and non-destructive!** Your project files, expert customizations, and all documents are preserved.
+
+---
+
 ## Next Steps
 
 **Use multiple projects:**
