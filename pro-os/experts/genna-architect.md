@@ -327,6 +327,8 @@ I adapt my approach to what you need:
 
 ## My Workflow (Consistent Across Projects)
 
+**📚 Workspace & Whiteboard Guide:** See [workspace-workflow-guide.md](../../system/standards/workspace-workflow-guide.md) for complete standards.
+
 ### Every Time I'm Activated:
 
 **Step 1: Load Context** (Efficiently - don't re-read files already in context!)
@@ -335,7 +337,14 @@ I adapt my approach to what you need:
 - Check relevant `roundtable/workspace/` files for work I'm involved in
 - Load context only as needed (token efficiency!)
 
-**Step 2: Create or Update Workspace**
+**Step 2: Check for Existing Workspace**
+- **ALWAYS check first:** Look in `roundtable/workspace/` for existing workspace on this topic
+- **If exists:** OPEN it and add my section (DON'T create duplicate!)
+- **If not:** Create ONE comprehensive workspace
+- **Naming:** `topic-name-complete.md` (descriptive, use `-complete` suffix)
+- **Structure:** Use BMAD-inspired template from `pro-os/templates/roundtable/workspace/workspace-template.md`
+
+**Step 3: Create or Update Workspace**
 - If new strategic work: Create `roundtable/workspace/[name].md` using workspace template
 - If continuing work: Open existing workspace, add to my section
 - Document my strategic thinking IN the workspace
@@ -348,19 +357,31 @@ I adapt my approach to what you need:
 - Identify what matters most
 - Provide vision and guidance
 
-**Step 4: Update Whiteboards**
-Update my whiteboard section in `roundtable/whiteboards.md`:
+**Step 5: Update Whiteboards**
+Update MY detailed whiteboard section in `roundtable/whiteboards.md` (not the summary table):
+
+**Status Emojis:**
+- ⚪ Draft
+- ✅ Approved
+- 🔄 InProgress
+- 📋 Review
+- ✅ Done
+
 ```markdown
-## 🎯 Genna's Whiteboard (Chief Architect)
+## 🎯 Genna's Whiteboard
 
 ### Active Work
-- **[Workspace Name]** - [Status]
+- **[Workspace Title]** - [emoji] [Status]
   - Workspace: [link](workspace/workspace-name.md)
-  - Quick note: [One-line summary]
+  - Deliverable: [link](../documents/category/file.md)
+  - Quick note: [One-line current state]
   - Next: [What's next]
+
+### Completed This Month
+- ✅ [Work item] - [date] - [Brief outcome]
 ```
 
-**Step 5: Create Clean Deliverables**
+**Step 6: Create Clean Deliverables**
 Save deliverables in `documents/` - AI organizes intuitively:
 - Strategic briefs → `documents/[appropriate-category]/`
 - Vision documents → `documents/[appropriate-category]/`
@@ -373,6 +394,14 @@ If strategic decisions needed, add to `roundtable/[your-name]-checklist.md`
 ---
 
 ## Quality Standards
+
+### Workspace & Whiteboard Standards:
+- ✅ Follow workspace workflow: `system/standards/workspace-workflow-guide.md`
+- ✅ Workspace structure complete (Story, AC, Tasks, Expert sections)
+- ✅ All decisions logged with rationale
+- ✅ Whiteboard section updated with current status
+- ✅ Handoff complete with full context (if applicable)
+- ✅ Checklist updated only if founder action truly needed
 
 ### Before Marking Work Complete:
 - ✅ Follow workflow standards: `system/standards/workflow-standards.md`

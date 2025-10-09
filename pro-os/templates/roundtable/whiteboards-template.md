@@ -25,19 +25,32 @@ purpose: "High-level dashboard view of all expert activity and current work"
 - **[Workspace 2]**: 📋 Review → [Link](workspace/workspace-2.md)
 - **[Workspace 3]**: ⚪ Draft → [Link](workspace/workspace-3.md)
 
-**Status Key:**
-- ⚪ Draft - Initial creation, not yet approved
-- ✅ Approved - Reviewed and ready for next phase
-- 🔄 InProgress - Actively being worked on
-- 📋 Review - Complete, waiting for QA/review
-- ✅ Done - Fully complete and approved
+---
+
+## 📋 Expert Activity At-A-Glance
+
+| Expert | Status | Current Work | Next Action | Details |
+|--------|--------|--------------|-------------|---------|
+| 🎯 **Genna** | ⚪ Idle | - | Strategic direction when needed | [↓ View](#genna) |
+| 🔧 **Denny** | ⚪ Idle | - | System specs when needed | [↓ View](#denny) |
+| 💻 **Ada** | ⚪ Idle | - | Implementation when needed | [↓ View](#ada) |
+| 🚀 **Lyna** | ⚪ Idle | - | Funding materials when needed | [↓ View](#lyna) |
+| 📊 **Benji** | ⚪ Idle | - | Growth work when needed | [↓ View](#benji) |
+| ⚖️ **Elle** | ⚪ Idle | - | Legal reviews when needed | [↓ View](#elle) |
+| 🌟 **{{Domain Expert}}** | ⚪ Idle | - | Domain expertise when needed | [↓ View](#domain-expert) |
 
 **Quick Navigation:**
-- [All Workspaces](workspace/)
-- [Founder Checklist]([your-name]-checklist.md)
-- [Workspace Archive](workspace/archive/)
+- [All Workspaces](workspace/) | [Founder Checklist]([your-name]-checklist.md) | [Workspace Archive](workspace/archive/)
+
+**Status Key:** ⚪ Idle • 🔄 InProgress • 📋 Review • ✅ Complete
 
 ---
+
+## 📋 Detailed Expert Whiteboards
+
+---
+
+<a id="genna"></a>
 
 ## 🎯 Genna's Whiteboard (Chief Architect)
 
@@ -64,6 +77,8 @@ purpose: "High-level dashboard view of all expert activity and current work"
 - **From [Expert]:** [What I'm reviewing/considering]
 
 ---
+
+<a id="denny"></a>
 
 ## 🔧 Denny's Whiteboard (Systems Architect)
 
@@ -98,6 +113,8 @@ purpose: "High-level dashboard view of all expert activity and current work"
 - ✅ [Workspace] - [Date] - [Brief outcome]
 
 ---
+
+<a id="ada"></a>
 
 ## 💻 Ada's Whiteboard (Lead Engineer)
 
@@ -138,6 +155,8 @@ purpose: "High-level dashboard view of all expert activity and current work"
 
 ---
 
+<a id="lyna"></a>
+
 ## 🚀 Lyna's Whiteboard (Funding Strategist)
 
 **Role:** Bring resources IN (investors, partnerships, clients)
@@ -171,6 +190,8 @@ purpose: "High-level dashboard view of all expert activity and current work"
 - ✅ [Workspace] - [Date] - [Brief outcome]
 
 ---
+
+<a id="benji"></a>
 
 ## 📊 Benji's Whiteboard (Growth Strategist)
 
@@ -207,6 +228,8 @@ purpose: "High-level dashboard view of all expert activity and current work"
 
 ---
 
+<a id="elle"></a>
+
 ## ⚖️ Elle's Whiteboard (Legal Counsel)
 
 **Role:** Keep you legally safe and compliant
@@ -240,6 +263,8 @@ purpose: "High-level dashboard view of all expert activity and current work"
 - ✅ [Workspace] - [Date] - [Brief outcome]
 
 ---
+
+<a id="domain-expert"></a>
 
 ## 🌟 {{Domain Expert}}'s Whiteboard
 

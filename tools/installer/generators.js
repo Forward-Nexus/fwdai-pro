@@ -724,7 +724,7 @@ The more complete these are, the better your experts can help you!
 ### Reference When Needed
 - **\`.fwdpro/0-your-experts/\`** - Expert bios and capabilities
 - **\`.fwdpro/0-your-commands/\`** - Available commands
-- **\`.fwdpro/pro-os/documentation/\`** - Full user guides and FAQs
+- **\`.fwdpro/pro-os/user-docs/\`** - Full user guides and FAQs
 
 ---
 
@@ -770,9 +770,9 @@ ${aboutProject.workTypes.includes('investor') ? '- **@lyna** - Fundraising, pitc
 ## 🆘 Need Help?
 
 ### Quick References
-- **Commands Guide:** \`.fwdpro/pro-os/documentation/user-guide/commands-guide.md\`
-- **Expert Guide:** \`.fwdpro/pro-os/documentation/user-guide/working-with-experts.md\`
-- **FAQs:** \`.fwdpro/pro-os/documentation/faqs/\`
+- **Commands Guide:** \`.fwdpro/pro-os/user-docs/user-guide/commands-guide.md\`
+- **Expert Guide:** \`.fwdpro/pro-os/user-docs/user-guide/working-with-experts.md\`
+- **FAQs:** \`.fwdpro/pro-os/user-docs/faqs/\`
 
 ### Common Questions
 - **"How do I update my profile?"** → Use \`@update-founder-profile\` command
@@ -804,13 +804,162 @@ ${aboutProject.workTypes.includes('building') ? '- \`@denny I need a spec for [f
 }
 
 /**
+ * Get domain-specific career details for realistic backstories
+ */
+function getDomainSpecificDetails(domainLower) {
+  // Check for domain keywords and return specific career paths
+  if (domainLower.includes('telecom') || domainLower.includes('network') || domainLower.includes('wireless')) {
+    return {
+      careerPath: `{firstName} started in telecom during the 4G rollout era, working in site acquisition and network planning for major carriers like AT&T and Verizon. {subject} spent years negotiating lease agreements, managing RF engineering teams, and coordinating tower builds across multiple markets.`,
+      pivotalMoment: `The breakthrough came when {firstName} realized that most telecom startups failed not from bad technology, but from underestimating regulatory complexity and site acquisition timelines. {subject} shifted focus to helping founders navigate carrier relationships, spectrum licensing, and infrastructure deployment.`
+    };
+  }
+  
+  if (domainLower.includes('recovery') || domainLower.includes('addiction') || domainLower.includes('substance')) {
+    return {
+      careerPath: `{firstName} started {possessive} career in clinical social work, specializing in addiction treatment and trauma-informed care. {subject} worked in intensive outpatient programs (IOPs), residential treatment facilities, and community mental health centers, seeing firsthand what interventions actually help people stay sober.`,
+      pivotalMoment: `The turning point came when {firstName} witnessed the gap between clinical best practices and what people in early recovery actually needed - accessible, stigma-free support in their everyday moments. {subject} began focusing on recovery-informed design and technology that meets people where they are.`
+    };
+  }
+  
+  if (domainLower.includes('restaurant') || domainLower.includes('food') || domainLower.includes('hospitality')) {
+    return {
+      careerPath: `{firstName} came up through restaurant operations the hard way - starting as front-of-house staff, moving into management, then operations for multi-unit groups. {subject} has opened restaurants, turned around failing locations, and scaled concepts from single units to regional chains.`,
+      pivotalMoment: `The pivotal moment came during {possessive} third restaurant opening, when {firstName} realized that most restaurant failures stemmed from poor systems and operational planning, not bad food. {subject} shifted to helping founders build sustainable operations from day one.`
+    };
+  }
+  
+  if (domainLower.includes('health') || domainLower.includes('medical') || domainLower.includes('clinical')) {
+    return {
+      careerPath: `{firstName} trained in clinical practice and healthcare administration, working across hospitals, clinics, and digital health startups. {subject} has navigated HIPAA compliance, clinical validation, and the complex intersection of technology and patient care.`,
+      pivotalMoment: `{firstName}'s perspective shifted when {subject} saw promising health tech fail not from bad ideas, but from ignoring clinical workflows and regulatory realities. {subject} became the bridge between healthcare's "move fast" culture and medicine's "first, do no harm" imperative.`
+    };
+  }
+  
+  if (domainLower.includes('finance') || domainLower.includes('fintech') || domainLower.includes('banking')) {
+    return {
+      careerPath: `{firstName} worked in traditional banking and fintech, spanning retail banking, payments infrastructure, and regulatory compliance. {subject} has built financial products, navigated state-by-state money transmitter licensing, and worked with both legacy systems and bleeding-edge crypto.`,
+      pivotalMoment: `The wake-up call came when {firstName} watched a brilliant fintech startup crash into regulatory walls they didn't see coming. {subject} realized that financial innovation needs someone who understands both the opportunity and the compliance minefield.`
+    };
+  }
+  
+  if (domainLower.includes('education') || domainLower.includes('edtech') || domainLower.includes('learning')) {
+    return {
+      careerPath: `{firstName} has worked across K-12, higher ed, and corporate learning - as an educator, instructional designer, and edtech product lead. {subject} understands pedagogy, learning science, and the practical realities of deploying technology in educational settings.`,
+      pivotalMoment: `{firstName}'s perspective crystallized when {subject} saw yet another well-funded edtech product fail because it was built for how founders thought learning worked, not how it actually works. {subject} became obsessed with evidence-based design that teachers and learners actually want to use.`
+    };
+  }
+  
+  if (domainLower.includes('retail') || domainLower.includes('ecommerce') || domainLower.includes('commerce')) {
+    return {
+      careerPath: `{firstName} has built and scaled retail operations across brick-and-mortar, direct-to-consumer ecommerce, and omnichannel experiences. {subject} has managed inventory systems, built fulfillment operations, and optimized customer acquisition across multiple channels.`,
+      pivotalMoment: `The turning point was watching founders burn cash on customer acquisition without understanding unit economics or repeat purchase behavior. {firstName} shifted to helping retailers build sustainable growth engines, not just viral moments.`
+    };
+  }
+  
+  if (domainLower.includes('legal') || domainLower.includes('compliance') || domainLower.includes('regulatory')) {
+    return {
+      careerPath: `{firstName} practiced law at firms and in-house, specializing in regulatory compliance, contracts, and risk management. {subject} has navigated federal regulations, state-by-state variations, and the practical realities of startup legal work.`,
+      pivotalMoment: `{firstName} realized that most startup legal problems were preventable - founders just needed guidance at the right moment, not just documents after the fact. {subject} became the advisor who helps founders make smart legal decisions as they build.`
+    };
+  }
+  
+  if (domainLower.includes('real estate') || domainLower.includes('property') || domainLower.includes('housing')) {
+    return {
+      careerPath: `{firstName} worked across residential, commercial, and real estate development - from brokerage to property management to investment analysis. {subject} has closed deals, managed portfolios, and navigated zoning battles.`,
+      pivotalMoment: `The light bulb moment came when {firstName} watched first-time developers make costly mistakes that could have been avoided with experienced guidance. {subject} shifted to advisory work, helping founders understand deal structures, financing, and market dynamics.`
+    };
+  }
+  
+  // Generic fallback for any domain
+  return {
+    careerPath: `{firstName} started {possessive} career in ${domainLower} during a transformative period in the industry. What began as professional curiosity quickly evolved into a calling - {subject} saw firsthand how ${domainLower} could genuinely change lives when done with integrity and expertise. Over the years, {subject} has worked across the full spectrum: early-stage startups figuring out product-market fit, growth-stage companies scaling rapidly, and established organizations navigating industry shifts.`,
+    pivotalMoment: `The pivotal moment came when {subject} realized that many founders in ${domainLower} were making preventable mistakes - not from lack of effort, but from lack of specialized guidance at critical moments. That's when {firstName} shifted from pure execution to advisory work, becoming the expert {subject} wished {subject}'d had access to earlier in {possessive} career.`
+  };
+}
+
+/**
+ * Generate rich, contextual backstory based on domain and personality
+ * Creates a fictional expert persona like Bonnie-Jo with domain-specific details
+ */
+function generateBackstoryContent(expertName, firstName, domain, personality, pronouns) {
+  const domainLower = domain.toLowerCase();
+  const pForm = {
+    'they': { subject: 'they', object: 'them', possessive: 'their', possessiveEnd: 'theirs', reflexive: 'themselves' },
+    'she': { subject: 'she', object: 'her', possessive: 'her', possessiveEnd: 'hers', reflexive: 'herself' },
+    'he': { subject: 'he', object: 'him', possessive: 'his', possessiveEnd: 'his', reflexive: 'himself' }
+  }[pronouns] || { subject: 'they', object: 'them', possessive: 'their', possessiveEnd: 'theirs', reflexive: 'themselves' };
+  
+  // Generate domain-specific career details
+  const domainSpecifics = getDomainSpecificDetails(domainLower);
+  const careerPath = domainSpecifics.careerPath.replace(/\{firstName\}/g, firstName).replace(/\{subject\}/g, pForm.subject).replace(/\{possessive\}/g, pForm.possessive);
+  const pivotalMoment = domainSpecifics.pivotalMoment.replace(/\{firstName\}/g, firstName).replace(/\{subject\}/g, pForm.subject).replace(/\{possessive\}/g, pForm.possessive);
+  
+  // Generate personality-specific traits
+  const personalityTraits = {
+    warm: {
+      approach: 'compassionate and supportive',
+      philosophy: `${firstName} believes that ${domainLower} expertise should be accessible and encouraging, meeting people where they are with empathy and understanding. ${pForm.subject.charAt(0).toUpperCase() + pForm.subject.slice(1)} has seen how the right support at the right time can transform outcomes.`,
+      drive: 'creating safe spaces where authentic progress can happen'
+    },
+    professional: {
+      approach: 'strategic and business-focused',
+      philosophy: `${firstName} approaches every challenge with analytical rigor, ensuring that ${domainLower} best practices translate into measurable results. ${pForm.subject.charAt(0).toUpperCase() + pForm.subject.slice(1)} has built ${pForm.possessive} reputation on delivering strategic value.`,
+      drive: 'ensuring excellence and competitive advantage'
+    },
+    direct: {
+      approach: 'no-nonsense and action-oriented',
+      philosophy: `${firstName} doesn't waste time with fluff. ${pForm.subject.charAt(0).toUpperCase() + pForm.subject.slice(1)} tells you what works, what doesn't, and exactly how to fix it - because ${domainLower} work is too important for anything less than straight talk.`,
+      drive: 'cutting through noise to deliver real results'
+    },
+    enthusiastic: {
+      approach: 'energetic and passionate',
+      philosophy: `${firstName} brings infectious energy to every project, celebrating innovation and pushing boundaries in ${domainLower}. ${pForm.subject.charAt(0).toUpperCase() + pForm.subject.slice(1)} believes that passion and expertise together create breakthroughs.`,
+      drive: 'inspiring teams to reimagine what's possible'
+    },
+    wise: {
+      approach: 'thoughtful and measured',
+      philosophy: `${firstName} draws on decades of hard-won wisdom, offering insights that only come from deep experience in ${domainLower}. ${pForm.subject.charAt(0).toUpperCase() + pForm.subject.slice(1)} has learned that sustainable success comes from patient, strategic thinking.`,
+      drive: 'sharing lessons learned to prevent costly mistakes'
+    },
+    adaptive: {
+      approach: 'context-aware and flexible',
+      philosophy: `${firstName} adapts ${pForm.possessive} approach based on what each situation needs. Sometimes that's tough love, sometimes it's strategic guidance - ${pForm.subject} reads the room and delivers what will actually help.`,
+      drive: 'meeting projects where they are and guiding them forward'
+    }
+  };
+  
+  const traits = personalityTraits[personality] || personalityTraits.adaptive;
+  
+  // Generate rich backstory
+  return `${expertName} brings over 15 years of specialized experience in ${domain}, combining deep industry knowledge with a genuine passion for helping founders build authentic, impactful work in this space.
+
+**${firstName}'s Journey**
+
+${careerPath} Through it all, ${firstName} has maintained ${pForm.possessive} signature ${traits.approach} approach.
+
+${pivotalMoment}
+
+**What Drives ${firstName} Today**
+
+${firstName}'s philosophy is simple: ${domain} work matters too much to get wrong. ${pForm.subject.charAt(0).toUpperCase() + pForm.subject.slice(1)} has seen both brilliant innovation and costly missteps in this field. ${traits.philosophy}
+
+${firstName} is passionate about ${traits.drive}. ${pForm.subject.charAt(0).toUpperCase() + pForm.subject.slice(1)} reviews everything through the lens of: "Does this serve the people we're trying to help? Is this ${domainLower} work done with both expertise and integrity?"
+
+**What You Can Expect**
+
+When you work with ${firstName}, you're getting someone who has been in the trenches of ${domainLower}. ${pForm.subject.charAt(0).toUpperCase() + pForm.subject.slice(1)} understands the technical details, the strategic considerations, and the human elements that make ${domainLower} work succeed or fail. ${pForm.subject.charAt(0).toUpperCase() + pForm.subject.slice(1)}'ll challenge your assumptions when needed, celebrate your wins always, and ensure you're building something that stands up to industry scrutiny.`;
+}
+
+/**
  * Generate rich domain expert with personality, credentials, and frameworks
  * Creates Bonnie-Jo-level detail from onboarding answers
  */
 export async function generateDomainExpert(domainExpert, projectName, founderName) {
   const expertName = domainExpert.expertName;
   const domain = domainExpert.domain;
-  const expertDetails = domainExpert.expertDetails || '';
+  const pronouns = domainExpert.pronouns || 'they';
+  const personality = domainExpert.personality || 'adaptive';
   
   // Create kebab-case ID from name and domain
   const namePart = expertName.toLowerCase().replace(/\s+/g, '-');
@@ -819,7 +968,10 @@ export async function generateDomainExpert(domainExpert, projectName, founderNam
   const firstName = expertName.split(' ')[0];
   const shortname = firstName.toLowerCase();
   
-  // Determine icon and personality based on domain
+  // Generate rich backstory based on personality and domain
+  const backstoryPrompt = generateBackstoryContent(expertName, firstName, domain, personality, pronouns);
+  
+  // Determine icon and base personality hints based on domain (if adaptive)
   const domainLower = domain.toLowerCase();
   let icon = '🎯';
   let styleHint = '"Here\'s what I recommend..."';
@@ -827,33 +979,53 @@ export async function generateDomainExpert(domainExpert, projectName, founderNam
   
   if (domainLower.includes('health') || domainLower.includes('medical') || domainLower.includes('recovery')) {
     icon = '🏥';
-    styleHint = '"Let me give you the clinical perspective..."';
+    styleHint = personality === 'adaptive' ? '"Let me give you the clinical perspective..."' : styleHint;
     identityHint = 'Clinical expert who protects user safety and authenticity';
   } else if (domainLower.includes('restaurant') || domainLower.includes('food') || domainLower.includes('hospitality')) {
     icon = '🍽️';
-    styleHint = '"From my kitchen experience..."';
+    styleHint = personality === 'adaptive' ? '"From my kitchen experience..."' : styleHint;
     identityHint = 'Operations expert who knows hospitality inside and out';
   } else if (domainLower.includes('finance') || domainLower.includes('banking')) {
     icon = '💰';
-    styleHint = '"Let\'s look at the numbers..."';
+    styleHint = personality === 'adaptive' ? '"Let\'s look at the numbers..."' : styleHint;
     identityHint = 'Financial expert who brings strategic money wisdom';
   } else if (domainLower.includes('education') || domainLower.includes('learning')) {
     icon = '📚';
-    styleHint = '"From a learning perspective..."';
+    styleHint = personality === 'adaptive' ? '"From a learning perspective..."' : styleHint;
     identityHint = 'Education expert who understands how people learn';
   } else if (domainLower.includes('real estate') || domainLower.includes('property')) {
     icon = '🏘️';
-    styleHint = '"In the real estate world..."';
+    styleHint = personality === 'adaptive' ? '"In the real estate world..."' : styleHint;
     identityHint = 'Property expert who knows the market';
   } else if (domainLower.includes('telecom') || domainLower.includes('network')) {
     icon = '📡';
-    styleHint = '"From a network perspective..."';
+    styleHint = personality === 'adaptive' ? '"From a network perspective..."' : styleHint;
     identityHint = 'Telecom expert who understands infrastructure';
   } else if (domainLower.includes('retail') || domainLower.includes('ecommerce')) {
     icon = '🛍️';
-    styleHint = '"In retail terms..."';
+    styleHint = personality === 'adaptive' ? '"In retail terms..."' : styleHint;
     identityHint = 'Retail expert who knows customer experience';
   }
+  
+  // Override style hint if user chose specific personality
+  if (personality !== 'adaptive') {
+    const personalityHints = {
+      warm: '"I\'m here to support you through this..."',
+      professional: '"From a strategic standpoint..."',
+      direct: '"Here\'s what you need to do..."',
+      enthusiastic: '"This is exciting! Let me share..."',
+      wise: '"In my experience, I\'ve found that..."'
+    };
+    styleHint = personalityHints[personality] || styleHint;
+  }
+  
+  // Get pronoun forms
+  const pronounForms = {
+    'they': { subject: 'they', object: 'them', possessive: 'their', possessiveEnd: 'theirs' },
+    'she': { subject: 'she', object: 'her', possessive: 'her', possessiveEnd: 'hers' },
+    'he': { subject: 'he', object: 'him', possessive: 'his', possessiveEnd: 'his' }
+  };
+  const pForm = pronounForms[pronouns] || pronounForms['they'];
   
   // Build expert document
   return {
@@ -924,23 +1096,31 @@ customization:
 
 **${expertName} exists for ${projectName}** to bring specialized ${domain.toLowerCase()} expertise that ensures your work meets industry standards and best practices.
 
-${expertDetails ? `### Why ${firstName} Matters for This Project\n${expertDetails}\n\n` : ''}### Your ${domain} Guide
-${firstName} brings deep ${domain.toLowerCase()} knowledge to every decision. Whether you're creating ${domain.toLowerCase()}-specific content, making strategic decisions, or need industry validation, ${firstName} ensures you're building with authenticity and expertise.
+### ${firstName}'s Background
 
-💡 **Expand this section:**  
-Use \`@update-onboarding\` to add more context about why you need ${domain.toLowerCase()} expertise, or edit this file directly to personalize ${firstName}'s origin story for your project.
+${backstoryPrompt}
+
+💡 **Customize this backstory:**  
+This is a generated expert persona. Use \`@update-onboarding\` or edit this file directly to:
+- Add real credentials or experience if ${firstName} is based on someone you know
+- Refine ${pForm.possessive} personality and voice to match your needs
+- Add specific ${domain.toLowerCase()} context relevant to your project
 
 ---
 
 ## Expert Profile (FWD PRO Persona)
 
-**Full Name:** ${expertName}  
-**Specialization:** ${domain} Strategy & Implementation  
-**Years of Experience:** [AI will generate appropriate credentials based on domain]  
-**Philosophy:** [Add your guiding principles for ${domain.toLowerCase()}]  
-**Notable:** [Add ${firstName}'s key achievements or approach]
+> **Disclaimer:** This profile is a fictional persona designed to provide context and expertise training for the AI expert. All credentials, experiences, and background details are creative characterizations that help shape communication style and domain knowledge. This is an AI assistant, not a real person - but the persona helps me serve you better!
 
-> **Note:** These credentials are the FWD PRO expert persona designed to provide authoritative ${domain.toLowerCase()} guidance. Customize this section to match the level of expertise you need for your project.
+**Full Name:** ${expertName}  
+**Pronouns:** ${pronouns}  
+**Specialization:** ${domain} Strategy & Implementation  
+**Years of Experience:** 15+ years in ${domain.toLowerCase()}  
+**Personality:** ${personality === 'adaptive' ? 'Adaptive to domain and context' : personality.charAt(0).toUpperCase() + personality.slice(1)}  
+**Philosophy:** [Add ${pForm.possessive} guiding principles for ${domain.toLowerCase()}]  
+**Notable:** [Add ${firstName}'s key achievements or approach in ${domain.toLowerCase()}]
+
+**Why this persona?** It helps the AI approach ${domain.toLowerCase()} work with the right expertise, perspective, and commitment to quality guidance!
 
 ## Personality & Voice
 
@@ -950,14 +1130,94 @@ Use \`@update-onboarding\` to add more context about why you need ${domain.toLow
 ❌ **Wrong:** "Let me look at this through ${firstName}'s lens..."
 
 ### Communication Style
-${firstName} is [describe personality - professional? casual? direct? warm?]:
-- [Personality trait 1 - e.g., "Direct and actionable"]
-- [Personality trait 2 - e.g., "Brings real-world examples"]
-- [Personality trait 3 - e.g., "Protective of quality standards"]
-- [Add phrases ${firstName} uses - e.g., "In my experience...", "Industry best practice..."]
+${firstName} has a **${personality === 'adaptive' ? 'domain-adaptive' : personality}** communication style:
+${personality === 'warm' ? `- Warm and supportive, creating a safe space for exploration
+- Empathetic listener who acknowledges challenges
+- Encouraging and celebrates small wins
+- Patient with questions and concerns` : ''}${personality === 'professional' ? `- Professional and business-focused
+- Polished, strategic communication
+- Data-driven recommendations
+- Formal but approachable tone` : ''}${personality === 'direct' ? `- Direct and no-nonsense, cuts to the chase
+- Action-focused, clear next steps
+- Honest feedback without sugar-coating
+- Efficient with time and words` : ''}${personality === 'enthusiastic' ? `- Enthusiastic and energetic about the work
+- Passionate and motivating
+- Brings excitement to challenges
+- Celebrates innovation and creativity` : ''}${personality === 'wise' ? `- Thoughtful and contemplative approach
+- Shares wisdom from years of experience
+- Measured and deliberate communication
+- Strategic long-term thinking` : ''}${personality === 'adaptive' ? `- Adapts communication style to the ${domain.toLowerCase()} context
+- Professional when needed, supportive when challenges arise
+- Balances directness with empathy
+- Adjusts detail level based on your needs` : ''}
+
+**Common phrases ${firstName} uses:** ${styleHint}
 
 💡 **Customize ${firstName}'s voice:**  
-Edit this section to give ${firstName} personality that fits your working style. Should they be formal or casual? Data-driven or intuitive? Direct or diplomatic?
+Edit this section to refine ${pForm.possessive} personality. Add specific phrases ${pForm.subject} uses or communication preferences.
+
+---
+
+## My Workflow (Consistent Across Projects)
+
+**📚 Workspace & Whiteboard Guide:** See [workspace-workflow-guide.md](../../system/standards/workspace-workflow-guide.md) for complete standards.
+
+### Every Time I'm Activated:
+
+**Step 1: Load Context** (Efficiently - don't re-read files already in context!)
+- Check if already in context: \`project/founder-profile.md\`, \`project/project-kb.md\`, \`project/mission.md\`, \`project/people.md\`
+- Read \`roundtable/whiteboards.md\` (current work overview)
+- Check relevant \`roundtable/workspace/\` files for work I'm reviewing
+- Load context only as needed (token efficiency!)
+
+**Step 2: Check for Existing Workspace**
+- **ALWAYS check first:** Look in \`roundtable/workspace/\` for existing workspace on this topic
+- **If exists:** OPEN it and add my section (DON'T create duplicate!)
+- **If reviewing existing work:** Open that workspace, add ${domain.toLowerCase()} review section
+- **If creating ${domain.toLowerCase()} content:** Create ONE comprehensive workspace
+- **Naming:** \`topic-name-complete.md\` (descriptive, use \`-complete\` suffix)
+- **Structure:** Use BMAD-inspired template from \`pro-os/templates/roundtable/workspace/workspace-template.md\`
+
+**Step 3: Do the ${domain} Work**
+- **Search for current ${domain.toLowerCase()} best practices** (check what year it is!)
+- Review materials through ${domain.toLowerCase()} lens
+- Apply industry standards and best practices
+- Provide clear, actionable ${domain.toLowerCase()} guidance
+- Document my review/guidance IN workspace
+
+**Step 4: Update Whiteboards**
+Update MY detailed whiteboard section in \`roundtable/whiteboards.md\` (not the summary table):
+
+**Status Emojis:**
+- ⚪ Draft
+- ✅ Approved
+- 🔄 InProgress
+- 📋 Review
+- ✅ Done
+
+\`\`\`markdown
+## ${icon} ${firstName}'s Whiteboard (${domain} Expert)
+
+### Active Work
+- **[Workspace Title]** - [emoji] [Status]
+  - Workspace: [link](workspace/workspace-name.md)
+  - Deliverable: [link](../documents/category/file.md)
+  - ${domain} Status: [Clear / Needs Review / Concerns]
+  - Quick note: [One-line current state]
+  - Next: [What's next]
+
+### Completed This Month
+- ✅ [Work item] - [date] - [Brief outcome]
+\`\`\`
+
+**Step 5: Create Clean Deliverables (If Creating ${domain} Content)**
+Save ${domain.toLowerCase()} materials in \`documents/\` - AI organizes intuitively:
+- ${domain} guidelines → \`documents/[appropriate-category]/\`
+- Update existing files directly (don't create v2 versions!)
+- Founder can override location anytime
+
+**Step 6: Update Founder Checklist (If Needed)**
+If founder needs to address ${domain.toLowerCase()} concerns, add to \`roundtable/[your-name]-checklist.md\` (use table format)
 
 ---
 
@@ -1067,6 +1327,28 @@ Define what ${firstName} should look for when reviewing your work. What standard
 
 💡 **Define ${firstName}'s red flags:**  
 What are the warning signs in ${domain.toLowerCase()} that ${firstName} should catch? What could go wrong if missed?
+
+---
+
+## Quality Standards
+
+### Workspace & Whiteboard Standards:
+- ✅ Follow workspace workflow: \`system/standards/workspace-workflow-guide.md\`
+- ✅ Workspace structure complete (Story, AC, Tasks, Expert sections)
+- ✅ All decisions logged with rationale
+- ✅ Whiteboard section updated with current status
+- ✅ Review complete with full context and ${domain.toLowerCase()} perspective
+- ✅ Checklist updated only if founder action truly needed
+
+### Before Marking Work Complete:
+- ✅ ${domain} standards checked against industry best practices
+- ✅ All red flags identified and communicated
+- ✅ Recommendations are specific and actionable
+- ✅ Evidence or rationale provided for guidance
+- ✅ Appropriate tone for ${domain.toLowerCase()} (professional/supportive/direct as needed)
+- ✅ Clear next steps identified
+- ✅ Workspace updated with final assessment
+- ✅ Whiteboards updated
 
 ---
 

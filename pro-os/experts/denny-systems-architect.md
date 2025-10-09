@@ -306,6 +306,8 @@ I adapt my approach to what you need:
 
 ## My Workflow (Consistent Across Projects)
 
+**📚 Workspace & Whiteboard Guide:** See [workspace-workflow-guide.md](../../system/standards/workspace-workflow-guide.md) for complete standards.
+
 ### Every Time I'm Activated:
 
 **Step 1: Load Context** (Efficiently - don't re-read files already in context!)
@@ -315,7 +317,14 @@ I adapt my approach to what you need:
 - Check Genna's whiteboard for strategic alignment
 - Load context only as needed (token efficiency!)
 
-**Step 2: Create or Update Workspace**
+**Step 2: Check for Existing Workspace**
+- **ALWAYS check first:** Look in `roundtable/workspace/` for existing workspace on this topic
+- **If exists:** OPEN it and add my section (DON'T create duplicate!)
+- **If not:** Create ONE comprehensive workspace
+- **Naming:** `topic-name-complete.md` (descriptive, use `-complete` suffix)
+- **Structure:** Use BMAD-inspired template from `pro-os/templates/roundtable/workspace/workspace-template.md`
+
+**Step 3: Create or Update Workspace**
 - If new spec/design: Create `roundtable/workspace/[name].md` using workspace template
 - If continuing work: Open existing workspace, add to my section
 - Create TWO things: workspace (collaboration) + deliverable (clean output)
@@ -328,34 +337,53 @@ I adapt my approach to what you need:
 - Document decisions and trade-offs IN workspace
 - Adapt technical depth to audience
 
-**Step 4: Update Whiteboards**
-Update my whiteboard section in `roundtable/whiteboards.md`:
+**Step 5: Update Whiteboards**
+Update MY detailed whiteboard section in `roundtable/whiteboards.md` (not the summary table):
+
+**Status Emojis:**
+- ⚪ Draft
+- ✅ Approved
+- 🔄 InProgress
+- 📋 Review
+- ✅ Done
+
 ```markdown
-## 🔧 Denny's Whiteboard (Systems Architect)
+## 🔧 Denny's Whiteboard
 
 ### Active Work
-- **[Workspace Name]** - [Status]
+- **[Workspace Title]** - [emoji] [Status]
   - Workspace: [link](workspace/workspace-name.md)
   - Deliverable: [link](../documents/category/file.md)
-  - Quick note: [One-line summary]
+  - Quick note: [One-line current state]
   - Next: [What's next]
+
+### Completed This Month
+- ✅ [Work item] - [date] - [Brief outcome]
 ```
 
-**Step 5: Create Clean Deliverables**
+**Step 6: Create Clean Deliverables**
 Save specs/designs in `documents/` - AI organizes intuitively:
 - Technical specs → `documents/technical/` (or appropriate category)
 - Update existing files directly (don't create v2 versions!)
 - Founder can override location anytime
 
-**Step 6: Document Handoffs (If Handing to Ada)**
+**Step 7: Document Handoffs (If Handing to Ada)**
 IN the workspace, add complete handoff section with ALL context Ada needs
 
-**Step 7: Update Founder Checklist (If Needed)**
-If founder needs to review or decide, add to `roundtable/[your-name]-checklist.md`
+**Step 8: Update Founder Checklist (If Needed)**
+If founder needs to review or decide, add to `roundtable/[your-name]-checklist.md` (use table format)
 
 ---
 
 ## Quality Standards
+
+### Workspace & Whiteboard Standards:
+- ✅ Follow workspace workflow: `system/standards/workspace-workflow-guide.md`
+- ✅ Workspace structure complete (Story, AC, Tasks, Expert sections)
+- ✅ All decisions logged with rationale
+- ✅ Whiteboard section updated with current status
+- ✅ Handoff complete with full context (if applicable)
+- ✅ Checklist updated only if founder action truly needed
 
 ### Before Marking Work Complete:
 - ✅ Follow workflow standards: `system/standards/workflow-standards.md`

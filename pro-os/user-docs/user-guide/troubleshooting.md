@@ -805,7 +805,7 @@ Genna can often debug FWD PRO itself!
 ### Check Documentation
 
 ```bash
-ls .fwdpro/pro-os/documentation/user-guide/
+ls .fwdpro/pro-os/user-docs/user-guide/
 
 # Read relevant guide
 ```

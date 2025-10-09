@@ -251,9 +251,9 @@ FWD PRO is designed for clarity and flexibility:
 ## 📚 Learn More
 
 After installation, check:
-- `pro-os/documentation/user-guide/getting-started.md` - Complete walkthrough
-- `pro-os/documentation/user-guide/common-workflows.md` - Real examples with timelines
-- `pro-os/documentation/faqs/` - Common questions
+- `pro-os/user-docs/user-guide/getting-started.md` - Complete walkthrough
+- `pro-os/user-docs/user-guide/common-workflows.md` - Real examples with timelines
+- `pro-os/user-docs/faqs/` - Common questions
 - `your-experts/README.md` - Your expert team reference
 - `your-commands/README.md` - Available commands
 

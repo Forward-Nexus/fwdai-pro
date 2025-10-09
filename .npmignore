@@ -22,6 +22,7 @@ __tests__/
 # Docs that aren't needed by users
 documents/
 docs/
+_upgrade-notes/
 
 # IDE configs
 .eslintrc*

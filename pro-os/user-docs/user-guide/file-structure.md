@@ -459,7 +459,7 @@ These are just shortcuts - the real files are in `pro-os/commands/`
 ### Read-Only Reference:
 - 📖 `pro-os/experts/*` - Expert definitions
 - 📖 `pro-os/commands/*` - Command templates
-- 📖 `pro-os/documentation/*` - Documentation
+- 📖 `pro-os/user-docs/*` - Documentation
 
 ---
 
@@ -487,7 +487,7 @@ These are just shortcuts - the real files are in `pro-os/commands/`
 - Check `documents/[category]/`
 
 ### Looking for Documentation?
-- Check `pro-os/documentation/`
+- Check `pro-os/user-docs/`
 
 ---
 

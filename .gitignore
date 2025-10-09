@@ -53,3 +53,6 @@ temp/
 *.tmp
 *.stats.md
 
+# Upgrade notes (for maintainers only)
+_upgrade-notes/
+

@@ -29,52 +29,19 @@ purpose: "Your personalized action items from your expert team"
 
 ## ⚠️ High Priority - This Week
 
-**Important items that should be addressed soon:**
-
-### 📋 Reviews Needed
-- [ ] **Review [deliverable]** - [Why this needs your review]
-  - **From:** {{expert_name}}
-  - **Deliverable:** [link](documents/category/file.md)
-  - **What to check:** [Specific things to review]
-  - **Date added:** YYYY-MM-DD
-
-### 💬 Provide Input
-- [ ] **[Input needed on topic]** - [What experts need to know]
-  - **From:** {{expert_name}}
-  - **Context:** [Why this matters]
-  - **Workspace:** [link](roundtable/workspace/workspace-name.md)
-  - **Date added:** YYYY-MM-DD
-
-### ✅ Approve/Reject
-- [ ] **Approve [item]** - [What needs approval]
-  - **From:** {{expert_name}}
-  - **Details:** [What you're approving]
-  - **Workspace:** [link](roundtable/workspace/workspace-name.md)
-  - **Date added:** YYYY-MM-DD
+| ✓ | Task | From | What to Do | Link/Notes | Added |
+|---|------|------|------------|------------|-------|
+| ☐ | **[Task name]** | [Expert] | [Clear action required] | [Workspace or deliverable link] | YYYY-MM-DD |
+| ☐ | **[Task name]** | [Expert] | [Clear action required] | [Workspace or deliverable link] | YYYY-MM-DD |
 
 ---
 
 ## 📌 Medium Priority - This Month
 
-**Important but not blocking:**
-
-### 🎯 Strategic Decisions
-- [ ] **[Strategic decision]** - [What needs your direction]
-  - **From:** Genna
-  - **Context:** [Why this matters long-term]
-  - **Date added:** YYYY-MM-DD
-
-### 📚 Information to Provide
-- [ ] **[Information needed]** - [What experts need to know about your business]
-  - **From:** {{expert_name}}
-  - **Why needed:** [How this helps the work]
-  - **Date added:** YYYY-MM-DD
-
-### 🔍 Review When Convenient
-- [ ] **Review [deliverable]** - [Low-priority review]
-  - **From:** {{expert_name}}
-  - **Deliverable:** [link](documents/category/file.md)
-  - **Date added:** YYYY-MM-DD
+| ✓ | Task | From | What to Do | Link/Notes | Added |
+|---|------|------|------------|------------|-------|
+| ☐ | **[Task name]** | [Expert] | [Clear action required] | [Workspace or deliverable link] | YYYY-MM-DD |
+| ☐ | **[Task name]** | [Expert] | [Clear action required] | [Workspace or deliverable link] | YYYY-MM-DD |
 
 ---
 
@@ -122,15 +89,10 @@ purpose: "Your personalized action items from your expert team"
 
 ## 🎉 Recently Completed
 
-**Items you completed from this checklist:**
-
-- ✅ **[Completed item]** - Completed [Date]
-  - Result: [What happened after you did this]
-  - Expert: {{expert_name}}
-
-- ✅ **[Completed item]** - Completed [Date]
-  - Result: [What happened]
-  - Expert: {{expert_name}}
+| ✓ | Task | Expert | Result | Completed |
+|---|------|--------|--------|-----------|
+| ✅ | **[Completed task]** | [Expert] | [Outcome] | YYYY-MM-DD |
+| ✅ | **[Completed task]** | [Expert] | [Outcome] | YYYY-MM-DD |
 
 ---
 

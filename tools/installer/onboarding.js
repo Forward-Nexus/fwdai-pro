@@ -486,13 +486,6 @@ async function askAboutProject() {
   if (wantsDomainExpert) {
     domainExpert = await inquirer.prompt([
       {
-        type: 'input',
-        name: 'domain',
-        message: 'What should this expert specialize in?',
-        transformer: input => chalk.gray('Examples: Addiction recovery, Restaurant operations, Federal compliance\n> ') + input,
-        validate: input => input.trim() ? true : 'Please describe the specialization'
-      },
-      {
         type: 'list',
         name: 'expertNameChoice',
         message: 'What should we call this expert?',
@@ -509,10 +502,44 @@ async function askAboutProject() {
         validate: input => input.trim() ? true : 'Please enter a name'
       },
       {
+        type: 'list',
+        name: 'pronouns',
+        message: 'What pronouns should this expert use?',
+        choices: [
+          { name: 'They/them (neutral)', value: 'they' },
+          { name: 'She/her', value: 'she' },
+          { name: 'He/him', value: 'he' },
+          { name: 'Other (specify)', value: 'custom' }
+        ],
+        default: 'they'
+      },
+      {
         type: 'input',
-        name: 'expertDetails',
-        message: 'Any other details about what they should know or focus on? (optional)',
-        default: ''
+        name: 'pronounsCustom',
+        message: 'Enter preferred pronouns:',
+        when: answers => answers.pronouns === 'custom',
+        validate: input => input.trim() ? true : 'Please enter pronouns'
+      },
+      {
+        type: 'input',
+        name: 'domain',
+        message: 'What should this expert specialize in?',
+        transformer: input => chalk.gray('Examples: Addiction recovery, Restaurant operations, Federal compliance\n> ') + input,
+        validate: input => input.trim() ? true : 'Please describe the specialization'
+      },
+      {
+        type: 'list',
+        name: 'personality',
+        message: 'What personality should this expert have?',
+        choices: [
+          { name: 'Warm & supportive - Encouraging and empathetic', value: 'warm' },
+          { name: 'Professional & formal - Business-focused and polished', value: 'professional' },
+          { name: 'Direct & no-nonsense - Straight shooter, gets to the point', value: 'direct' },
+          { name: 'Enthusiastic & energetic - Passionate and motivating', value: 'enthusiastic' },
+          { name: 'Wise & thoughtful - Contemplative and measured', value: 'wise' },
+          { name: 'Let AI decide based on domain', value: 'adaptive' }
+        ],
+        default: 'adaptive'
       }
     ]);
     
@@ -520,6 +547,14 @@ async function askAboutProject() {
     if (domainExpert.expertNameChoice === 'default') {
       domainExpert.expertName = 'BJ';
     }
+    
+    // Set pronouns
+    if (domainExpert.pronouns === 'custom') {
+      domainExpert.pronouns = domainExpert.pronounsCustom;
+    }
+    
+    // AI will generate backstory from name, pronouns, domain, and personality
+    domainExpert.aiGenerateBackstory = true;
   }
 
   // Q17: Mission questions (opt-in)
