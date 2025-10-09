@@ -4,6 +4,12 @@
 
 Use this IN ADDITION to `quality-checklist.md` for any coding work.
 
+**For `@execute-specflow`:** This checklist is used in the mandatory QA phase (Phase 3).
+
+**Related patterns:**
+- `pro-os/system/patterns/spec.md` - Spec structure with TDD
+- `pro-os/system/patterns/universal.md` - Universal command workflow
+
 ---
 
 ## Functionality
@@ -18,11 +24,12 @@ Use this IN ADDITION to `quality-checklist.md` for any coding work.
 
 ## Testing
 
+- [ ] **TDD followed** - If using `@execute-specflow`, tests were written FIRST
 - [ ] **Tests written** - Unit tests for core logic
-- [ ] **Tests pass** - All tests green
-- [ ] **Good coverage** - Key paths and edge cases tested
+- [ ] **Tests pass** - All tests green (100%)
+- [ ] **Good coverage** - Key paths and edge cases tested (80%+ minimum)
 - [ ] **Integration tested** - Works with other parts of system
-- [ ] **Manually tested** - Actually used the feature
+- [ ] **Manually tested** - Actually used the feature (all AC verified)
 - [ ] **No regressions** - Existing functionality still works
 
 ---

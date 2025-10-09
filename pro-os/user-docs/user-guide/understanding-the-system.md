@@ -38,7 +38,7 @@ Benefits:
 ### 1. You Make a Request
 
 ```
-@create-feature user authentication
+@create-specflow + @execute-specflow user authentication
 ```
 
 ### 2. Experts Activate
@@ -82,7 +82,7 @@ You answer, Denny creates technical spec in `workspace/`
 
 Clean code goes to your codebase.  
 Clean spec goes to `documents/technical/auth-spec.md`.  
-All the collaboration notes stay in `roundtable/`.
+All the collaboration notes stay in `0-roundtable/`.
 
 ---
 
@@ -92,7 +92,7 @@ FWD PRO organizes work into three zones:
 
 ### Zone 1: Roundtable (Collaboration)
 
-**Location:** `.fwdpro/roundtable/`
+**Location:** `.fwdpro/0-roundtable/`
 
 **Purpose:** Where experts collaborate
 
@@ -117,7 +117,7 @@ FWD PRO organizes work into three zones:
 **Purpose:** Clean, shareable deliverables
 
 **Contains:**
-- `technical/` - Specs, architecture docs
+- `tech/` - Specs, architecture docs
 - `investor/` - Pitch decks, financial models
 - `marketing/` - Content, campaigns
 - `legal/` - Contracts, policies
@@ -141,7 +141,12 @@ FWD PRO organizes work into three zones:
 - `experts/` - Expert definitions
 - `commands/` - Command templates
 - `system/` - Core system files
-- `config.yaml` - Configuration
+- `project/` - Project context and configuration
+  - `config.yaml` - Configuration
+  - `project-kb.md` - Knowledge base
+  - `founder-profile.md` - Link to global profile
+  - `mission.md` - Your "why"
+  - `people.md` - Team/advisors
 
 **Think of it as:** The operating system
 
@@ -159,8 +164,10 @@ FWD PRO organizes work into three zones:
 your-project/
 ├── .fwdpro/                    FWD PRO system
 │   │
+│   ├── *welcome.md             ← START HERE (sorts to top!)
+│   │
 │   ├── pro-os/                 SYSTEM CORE
-│   │   ├── agents/             Expert definitions
+│   │   ├── experts/            Expert definitions
 │   │   │   ├── genna-architect.md
 │   │   │   ├── denny-systems-architect.md
 │   │   │   ├── ada-implementation.md
@@ -173,40 +180,50 @@ your-project/
 │   │   │   ├── create.md       Universal commands
 │   │   │   ├── execute.md
 │   │   │   ├── analyze.md
-│   │   │   ├── quick/          Optimized workflows
-│   │   │   │   ├── create-spec.md
-│   │   │   │   ├── create-feature.md
+│   │   │   ├── flows/          Structured workflows
+│   │   │   │   ├── create-specflow.md
+│   │   │   │   ├── execute-specflow.md
 │   │   │   │   └── rt.md
-│   │   │   └── system/         System management
-│   │   │       ├── update-project.md
-│   │   │       ├── show-projects.md
-│   │   │       └── update-onboarding.md
+│   │   │   ├── system/         System management
+│   │   │   │   ├── update-project.md
+│   │   │   │   ├── update-fp.md
+│   │   │   │   ├── update-kb.md
+│   │   │   │   ├── update-mission.md
+│   │   │   │   ├── update-people.md
+│   │   │   │   ├── create-expert.md
+│   │   │   │   └── create-flow.md
+│   │   │   └── custom/         Your custom workflows
 │   │   │
 │   │   ├── system/             System files
-│   │   │   ├── templates/      File templates
+│   │   │   ├── patterns/       Workflow patterns
+│   │   │   ├── standards/      Code & doc standards
+│   │   │   ├── checklists/     Quality checklists
 │   │   │   └── ide-configs/    IDE integrations
 │   │   │
-│   │   └── config.yaml         System configuration
+│   │   ├── user-docs/          Documentation
+│   │   │   ├── user-guide/     User guides
+│   │   │   └── faqs/           Quick reference
+│   │   │
+│   │   └── project/            PROJECT CONTEXT
+│   │       ├── config.yaml     System configuration
+│   │       ├── project-kb.md   Project knowledge base
+│   │       ├── founder-profile.md  Link to global profile
+│   │       ├── mission.md      Your "why"
+│   │       └── people.md       Team, advisors, investors
 │   │
-│   ├── your-experts/            YOUR FAVORITES (shortcuts)
+│   ├── 0-your-experts/         YOUR FAVORITES (shortcuts)
 │   │   ├── README.md
 │   │   ├── genna.md → ../pro-os/experts/genna-architect.md
 │   │   ├── denny.md → ../pro-os/experts/denny-systems-architect.md
 │   │   └── ...                 (symlinks to active experts)
 │   │
-│   ├── your-commands/          YOUR FAVORITES (shortcuts)
+│   ├── 0-your-commands/        YOUR FAVORITES (shortcuts)
 │   │   ├── README.md
 │   │   ├── update-project.md → ../pro-os/commands/system/update-project.md
-│   │   ├── create-spec.md → ../pro-os/commands/quick/create-spec.md
+│   │   ├── create-specflow.md → ../pro-os/commands/flows/create-specflow.md
 │   │   └── ...                 (symlinks to useful commands)
 │   │
-│   ├── project/                PROJECT CONTEXT
-│   │   ├── project-kb.md       Project knowledge base
-│   │   ├── founder-profile.md  Link to global profile
-│   │   ├── mission.md          Your "why"
-│   │   └── people.md           Team, advisors, investors
-│   │
-│   ├── roundtable/             COLLABORATION ZONE
+│   ├── 0-roundtable/           COLLABORATION ZONE
 │   │   ├── whiteboards.md      Expert collaboration dashboard
 │   │   ├── [your-name]-checklist.md Your action items
 │   │   └── workspace/          Work-in-progress
@@ -214,7 +231,7 @@ your-project/
 │   │       └── archive/        Completed work
 │   │
 │   └── documents/              FINAL OUTPUTS
-│       ├── technical/          Specs, architecture
+│       ├── tech/               Specs, architecture
 │       ├── investor/           Pitch decks, financials
 │       ├── marketing/          Content, campaigns
 │       ├── legal/              Contracts, policies
@@ -222,7 +239,7 @@ your-project/
 │
 └── ~/.fwdpro-global/           GLOBAL PROFILE (outside project)
     ├── [name]-profile.md       Your personal profile
-    └── projects.md             All your FWD PRO projects
+    └── global-projects.md      All your FWD PRO projects
 ```
 
 ---
@@ -238,14 +255,14 @@ your-project/
 ### 2. Expert Reads Context
 
 Denny automatically reads:
-- `project/project-kb.md` - What this project is
-- `project/mission.md` - Why you're building it
-- `roundtable/whiteboards.md` - Current work
+- `pro-os/project/project-kb.md` - What this project is
+- `pro-os/project/mission.md` - Why you're building it
+- `0-roundtable/whiteboards.md` - Current work
 - `~/.fwdpro-global/[name]-profile.md` - How you like to work
 
 ### 3. Expert Works
 
-Denny creates `workspace/auth-spec-draft.md`
+Denny creates `0-roundtable/workspace/auth-spec-draft.md`
 
 Updates his whiteboard:
 ```markdown
@@ -267,13 +284,13 @@ Updates his whiteboard:
 
 ### 4. You Review & Approve
 
-You check `workspace/auth-spec-draft.md`, give feedback.
+You check `0-roundtable/workspace/auth-spec-draft.md`, give feedback.
 
 Denny revises based on your input.
 
 ### 5. Expert Finalizes
 
-Denny moves spec to `documents/technical/auth-spec.md`
+Denny moves spec to `documents/tech/auth-spec.md`
 
 Updates his whiteboard:
 ```markdown
@@ -500,7 +517,7 @@ Experts can "talk" to each other on the whiteboards:
 
 ### Workspace (Drafts)
 
-**Location:** `roundtable/workspace/`
+**Location:** `0-roundtable/workspace/`
 
 **Contents:**
 - First drafts
@@ -513,7 +530,7 @@ Experts can "talk" to each other on the whiteboards:
 workspace/
 ├── auth-spec-draft.md          (Denny working)
 ├── pitch-deck-outline-v1.md    (Lyna iterating)
-├── ai-language-review.md       (Bonnie Jo notes)
+├── ai-language-review.md       (Domain expert notes)
 └── archive/
     └── old-roadmap-draft.md    (Completed, archived)
 ```
@@ -537,7 +554,7 @@ workspace/
 **Example:**
 ```
 documents/
-├── technical/
+├── tech/
 │   ├── auth-spec.md            (Final, from Denny)
 │   └── architecture.md
 ├── investor/
@@ -559,18 +576,18 @@ documents/
 
 ### Project Knowledge Base
 
-`project/project-kb.md` stores:
+`pro-os/project/project-kb.md` stores:
 - What this project is
 - Current stage
 - Goals
 - Tech stack
 - Challenges
 
-**Updated with:** `@update-project`
+**Updated with:** `@update-project` or `@update-kb`
 
 ### Mission
 
-`project/mission.md` stores:
+`pro-os/project/mission.md` stores:
 - Why you're building this
 - Your personal story
 - Vision
@@ -580,7 +597,7 @@ documents/
 
 ### People
 
-`project/people.md` stores:
+`pro-os/project/people.md` stores:
 - Team members
 - Advisors
 - Investors
@@ -596,7 +613,7 @@ documents/
 - Working preferences
 - Applies to ALL projects
 
-**Updated with:** `@update-founder-profile`
+**Updated with:** `@update-fp`
 
 ---
 
@@ -616,14 +633,14 @@ Hey! I see you built authentication in your telecom-tool project.
 That was JWT with 7-day refresh tokens, right?
 
 Want to use a similar approach here? Or different requirements
-for ODAT since it's healthcare/HIPAA?
+for ODAT since it's healthcare-focused?
 ```
 
 **Denny knows about your other project!**
 
-**How:** Experts read `~/.fwdpro-global/projects.md`
+**How:** Experts read `~/.fwdpro-global/global-projects.md`
 
-**See:** `multi-project-usage.md` for more
+**See:** `working-with-existing-projects.md` for more
 
 ---
 
@@ -636,26 +653,27 @@ npx @fwd-ai/pro update
 ```
 
 **What gets updated:**
-- ✅ Expert definitions
-- ✅ Command templates
-- ✅ System files
+- ✅ Expert definitions (`pro-os/experts/`)
+- ✅ Command templates (`pro-os/commands/`)
+- ✅ System files (`pro-os/system/`)
+- ✅ Documentation (`pro-os/user-docs/`)
 
 **What stays unchanged:**
-- ✅ Your project context
-- ✅ Your work in roundtable/
-- ✅ Your documents/
-- ✅ Your configuration
+- ✅ Your project context (`pro-os/project/`)
+- ✅ Your work in `0-roundtable/`
+- ✅ Your `documents/`
+- ✅ Your shortcuts (`0-your-experts/`, `0-your-commands/`)
 
 ---
 
 ## Key Principles
 
 **1. Separation of Concerns**
-- Workspace = Messy collaboration
-- Documents = Clean outputs
+- `0-roundtable/workspace/` = Messy collaboration
+- `documents/` = Clean outputs
 
 **2. Persistent Context**
-- Project knowledge survives sessions
+- Project knowledge in `pro-os/project/` survives sessions
 - Experts remember your project
 
 **3. Expert Specialization**
@@ -663,7 +681,7 @@ npx @fwd-ai/pro update
 - They collaborate with each other
 
 **4. Transparent Collaboration**
-- You can see expert thinking
+- You can see expert thinking on `0-roundtable/whiteboards.md`
 - Handoffs are explicit
 - Nothing hidden
 
@@ -685,8 +703,8 @@ npx @fwd-ai/pro update
 **Explore commands:**
 → Read `commands-guide.md`
 
-**Dive deeper:**
-→ Read `file-structure.md` for complete file reference
+**Manage your project:**
+→ Read `managing-your-project.md` for updates and maintenance
 
 ---
 

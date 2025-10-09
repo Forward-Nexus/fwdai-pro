@@ -55,11 +55,12 @@ Updates work like app updates on your phone - your documents, workspace, and con
 ```
 your-project/
 ├── .fwdpro/              ← FWD PRO system (hidden folder)
+│   ├── *welcome.md       ← Start here!
 │   ├── pro-os/           ← Core system
-│   ├── your-experts/      ← Your favorite experts (shortcuts)
-│   ├── your-commands/    ← Your favorite commands (shortcuts)
-│   ├── project/          ← Project context
-│   ├── roundtable/       ← Collaboration space
+│   │   └── project/      ← Project context (config, KB, mission, people)
+│   ├── 0-your-experts/   ← Your favorite experts (shortcuts)
+│   ├── 0-your-commands/  ← Your favorite commands (shortcuts)
+│   ├── 0-roundtable/     ← Collaboration space
 │   └── documents/        ← Clean final outputs
 ├── src/                  ← Your existing code (untouched!)
 ├── package.json
@@ -85,63 +86,87 @@ These create your **global profile** - used across ALL your FWD PRO projects.
 
 **Q2: Where are you?**
 ```
-> Austin, TX
+> Tyler, TX
 ```
 
 **Q3: Communication style?**
 ```
-a) Professional/Formal
-b) Conversational/Friendly
-c) Casual/Enthusiastic
-d) Direct/No-Fluff
-e) Supportive/Encouraging
+How do you prefer AI experts to communicate with you? (select all that apply)
 
-> c (I like creative energy and emojis!)
+[ ] Professional/formal - Respectful business language
+[ ] Conversational/friendly - Like helpful colleagues
+[ ] Casual/enthusiastic - Creative energy with emojis
+[ ] Direct/no-fluff - Straight to the point, action-focused
+[ ] Encouraging - Positive reinforcement, celebrates progress
+
+> I select: Conversational/friendly, Casual/enthusiastic
 ```
 
-**Q4: Working preferences?**
+**Q4: Working style?**
 ```
-Select all that apply:
-[ ] Uses dictation/voice-to-text
-[ ] Prefers visual examples (diagrams, screenshots)
-[ ] Needs detailed step-by-step explanations
-[ ] Prefers quick summaries with action items
-[ ] English is second language
+How do you work best? (select all that apply)
 
-> I check: dictation, visual examples, quick summaries
+[ ] I use voice dictation/voice-to-text
+[ ] I prefer visual examples (diagrams, screenshots)
+[ ] I prefer detailed step-by-step explanations
+[ ] I prefer quick summaries with clear action items
+[ ] I'm neurodivergent (ADHD, autism, dyslexia, etc.)
+[ ] English is my second language
+
+> I select: dictation, visual, summaries
 ```
 
 **Q5: Technical level?**
 ```
-a) Non-technical (explain everything)
-b) Technical through AI (I code via AI tools)
-c) Technical developer (I write code myself)
-d) Very technical (I'm a senior dev)
+How comfortable are you with technical concepts?
 
-> b (I use AI to code but understand what's happening)
+a) Not technical (I focus on business/creative, no coding)
+b) AI-assisted builder (I use AI to code, but can't code myself)
+c) Semi-technical (I understand concepts, some coding experience)
+d) Technical (I code regularly without AI)
+e) Very technical (I design systems and write complex code)
+
+> b (AI-assisted builder)
 ```
 
-**Q6: Team situation?**
+**Q6: Your role?**
+```
+What best describes your role? (select all that apply)
+
+[ ] Founder/entrepreneur
+[ ] Business person/operator
+[ ] Creative/designer
+[ ] Developer/engineer
+[ ] Technical leader/architect
+
+> I select: Founder/entrepreneur
+```
+
+**Q7: Industries?**
+```
+What industries do you work in? (select all that apply)
+
+[ ] Technology / SaaS
+[ ] Healthcare / Medical
+[ ] Finance / Fintech
+[ ] E-commerce / Retail
+[ ] Education / EdTech
+[ ] Other (please specify)
+
+> I select: Technology / SaaS, Healthcare / Medical
+```
+
+**Q8: Team situation?**
 ```
 a) Solo founder (just me)
 b) Small team (2-5 people)
-c) Growing team (6-20)
-d) Larger org (20+)
+c) Growing team (6-20 people)
+d) Larger organization (20+)
 
 > a (solo right now)
 ```
 
-**Q7: Industries/interests?**
-```
-> recovery/wellness, tech, mobile apps
-```
-
-**Q8: Anything else?**
-```
-> I'm 11 months sober, building ODAT (recovery app)
-```
-
-### Part 2: This Project (7 questions)
+### Part 2: This Project (5-11 questions)
 
 These create your **project-specific knowledge base**.
 
@@ -155,17 +180,7 @@ These create your **project-specific knowledge base**.
 > Mobile app for addiction recovery support
 ```
 
-**Q11: Current stage?**
-```
-a) Idea
-b) MVP
-c) Launched
-d) Scaling
-
-> c (Launched with 1,200 users!)
-```
-
-**Q12: What are you working on?** (Activates experts!)
+**Q11: What are you working on?** (Activates experts!)
 ```
 Select all that apply:
 [ ] Building something (Denny + Ada)
@@ -177,46 +192,75 @@ Select all that apply:
 > I check: Building something, Investor materials
 ```
 
-**Q13: Current goals?**
+**Q12a-d: Progressive questions based on work types**
+
+If you selected "Building something":
+```
+→ What exactly are you building?
+> Mobile app for addiction recovery support
+
+→ Do you know what tech stack you need?
+> Yes, I know what I'm using
+
+→ What technologies are you using?
+> React Native, TypeScript, Supabase, Expo
+```
+
+If you selected "Investor materials":
+```
+→ What's your focus?
+> Seed fundraising ($500K - $2M)
+```
+
+**Q13: Main goal?**
 ```
 > 10,000 users by Q1 2026, raise seed round
 ```
 
-**Q14: Tech stack?**
+**Q14: Constraints? (optional)**
 ```
-Detected from your project:
-  - React Native
-  - TypeScript
-  - Supabase
-  - Expo
-
-Correct? [Yes/Edit]
-> Yes
-```
-
-**Q15: Biggest challenges?**
-```
-> User retention, fundraising, scaling infrastructure
+> Need HIPAA compliance for health data
 ```
 
 ### Part 3: Domain Expert (Optional)
 
-**Q16: Want to create a custom expert?**
+**Q15: Want to create a custom expert?**
 ```
-Do you need a domain expert for your industry?
-[Yes] [No, maybe later]
+🎯 Want to create a specialized expert for your project?
+[Yes] [No]
 
 > Yes
 
-Great! What should we call this expert?
-> Bonnie Jo
+What should we call this expert?
+a) BJ (default)
+b) Custom name (I'll choose)
 
-What's their specialty?
+> b (Custom name)
+
+Enter expert name:
+> Dr. Sarah
+
+What pronouns should this expert use?
+a) They/them (neutral)
+b) She/her
+c) He/him
+
+> b (She/her)
+
+What should this expert specialize in?
 > Addiction recovery, peer support, clinical best practices
 
-Perfect! I'll create Bonnie Jo (Recovery Specialist) for you.
-She'll understand recovery-specific language, clinical protocols,
-and can advise on peer support features.
+What personality should this expert have?
+a) Warm & supportive - Encouraging and empathetic
+b) Professional & formal - Business-focused and polished
+c) Direct & no-nonsense - Straight shooter
+d) Enthusiastic & energetic - Passionate and motivating
+e) Wise & thoughtful - Contemplative and measured
+f) Let AI decide based on domain
+
+> a (Warm & supportive)
+
+✓ Perfect! I'll create Dr. Sarah (Recovery Specialist) for you.
 ```
 
 ---
@@ -232,37 +276,38 @@ and can advise on peer support features.
 ### Project Files
 ```
 .fwdpro/
-├── project/
-│   ├── project-kb.md           ← Project knowledge base
-│   ├── founder-profile.md      ← Link to global profile
-│   ├── mission.md              ← Your "why" (optional, add later)
-│   └── people.md               ← Team/advisors (optional, add later)
-├── roundtable/
-│   ├── whiteboards.md          ← Expert collaboration space
-│   ├── [your-name]-checklist.md    ← Your action items
-│   └── workspace/              ← Work-in-progress files
-└── pro-os/
-    └── config.yaml             ← System configuration
+├── pro-os/
+│   └── project/
+│       ├── config.yaml             ← System configuration
+│       ├── project-kb.md           ← Project knowledge base
+│       ├── founder-profile.md      ← Link to global profile
+│       ├── mission.md              ← Your "why" (optional, add later)
+│       └── people.md               ← Team/advisors (optional, add later)
+└── 0-roundtable/
+    ├── whiteboards.md              ← Expert collaboration space
+    ├── [your-name]-checklist.md    ← Your action items
+    └── workspace/                  ← Work-in-progress files
 ```
 
 ### Your Favorites (Shortcuts)
 ```
-your-experts/
-├── genna.md           → pro-os/experts/genna-architect.md
-├── denny.md           → pro-os/experts/denny-systems-architect.md
-├── ada.md             → pro-os/experts/ada-implementation.md
-├── lyna.md            → pro-os/experts/lyna-external-strategy.md
-└── bonnie-jo.md       → pro-os/experts/bonnie-jo.md
-
-your-commands/
-├── update-project.md  → pro-os/commands/system/update-project.md
-├── create-spec.md     → pro-os/commands/quick/create-spec.md
-├── create-feature.md  → pro-os/commands/quick/create-feature.md
-├── create-pitch-deck.md → pro-os/commands/quick/create-pitch-deck.md
-└── rt.md              → pro-os/commands/quick/rt.md
+.fwdpro/
+├── 0-your-experts/
+│   ├── genna.md           → ../pro-os/experts/genna-architect.md
+│   ├── denny.md           → ../pro-os/experts/denny-systems-architect.md
+│   ├── ada.md             → ../pro-os/experts/ada-implementation.md
+│   ├── lyna.md            → ../pro-os/experts/lyna-external-strategy.md
+│   └── dr-sarah.md        → ../pro-os/experts/dr-sarah-healthtech.md
+│
+└── 0-your-commands/
+    ├── create-specflow.md    → ../pro-os/commands/flows/create-specflow.md
+    ├── execute-specflow.md   → ../pro-os/commands/flows/execute-specflow.md
+    └── rt.md                 → ../pro-os/commands/flows/rt.md
 ```
 
 **These are shortcuts (symlinks) to the real files - always up-to-date!**
+
+**Note:** Which commands appear depends on your work types (e.g., "building" adds spec/execute flows)
 
 ---
 
@@ -274,7 +319,7 @@ After onboarding completes, you'll see:
 🎉 FWD PRO is ready for ODAT!
 
 ✅ System configured for:
-   - Communication: Casual/enthusiastic (c)
+   - Communication: Conversational/friendly, Casual/enthusiastic
    - Focus: Building something, Investor materials
 
 👥 Your team:
@@ -282,32 +327,30 @@ After onboarding completes, you'll see:
    - Denny (Systems Architect) - Technical specs
    - Ada (Lead Engineer) - Implementation
    - Lyna (External Strategy) - Fundraising
-   - Bonnie Jo (Recovery Specialist) - Domain expert
+   - Dr. Sarah (Recovery Specialist) - Domain expert
 
 🔖 Quick access folders created:
-   - your-experts/ - Shortcuts to 5 active experts
-   - your-commands/ - Shortcuts to 5 useful commands
-   (These are symlinks to the real files - always up-to-date!)
+   - 0-your-experts/ - Shortcuts to 5 active experts
+   - 0-your-commands/ - Shortcuts to 5 useful commands
+   (These are symlinks - always up-to-date!)
 
-⚡ Quick commands ready:
-   - @create-spec - Technical specifications
-   - @create-feature - Full spec → implementation
-   - @create-pitch-deck - Investor materials
-   - @rt - Roundtable review
-   - @update-project - Update project context
+⚡ Flow commands ready:
+   - @create-specflow - Create technical spec (TDD structure)
+   - @execute-specflow - Implement spec (TDD + QA enforced)
+   - @rt - Roundtable review (multi-expert)
 
 📖 Learn more:
-   - README.md - System overview
-   - roundtable/whiteboards.md - Current work dashboard
-   - roundtable/[your-name]-checklist.md - Your action items
-   - your-experts/README.md - How to add more expert shortcuts
-   - your-commands/README.md - How to add more command shortcuts
+   - *welcome.md - Start here guide
+   - 0-roundtable/whiteboards.md - Current work dashboard
+   - 0-roundtable/[your-name]-checklist.md - Your action items
+   - 0-your-experts/README.md - How to add more expert shortcuts
+   - 0-your-commands/README.md - How to add more command shortcuts
 
 🚀 Get started:
 Try: "@denny let's review the current architecture"
-Try: "@create-feature [feature name]"
+Try: "@create-specflow [feature name]" (for building)
 
-💡 Pro tip: Check your-experts/ and your-commands/ for quick access!
+💡 Pro tip: Check 0-your-experts/ and 0-your-commands/ for quick access!
 ```
 
 ---
@@ -326,20 +369,20 @@ Let's run your first command!
 1. Genna (Chief Architect) responds
 2. Asks clarifying questions about your goals
 3. Creates a strategic roadmap
-4. Saves to `roundtable/workspace/roadmap-draft.md`
+4. Saves to `0-roundtable/workspace/roadmap-draft.md`
 5. When finalized, moves to `documents/planning/roadmap.md`
 
 ### Option 2: Create a Technical Spec
 
 ```
-@create-spec authentication system
+@create-specflow authentication system
 ```
 
 **What happens:**
 1. Denny asks about your auth requirements
 2. Creates detailed technical specification
 3. Other experts review and comment
-4. Final spec goes to `documents/technical/auth-spec.md`
+4. Final spec goes to `documents/tech/auth-spec.md`
 
 ### Option 3: Get Investor Pitch Help
 
@@ -357,89 +400,119 @@ Let's run your first command!
 
 ## Check Your Roundtable
 
-Open `.fwdpro/roundtable/whiteboards.md` to see:
+Open `.fwdpro/0-roundtable/whiteboards.md` to see:
 
 ```markdown
-# FWD PRO Roundtable - ODAT
+# Whiteboards: MyProject
 
-Last updated: [timestamp]
+**Last Updated:** 2024-10-09  
+**Founder:** Ward  
+**Quick Dashboard View** - For complete details, check individual workspace files
 
 ---
 
-## 🎯 Genna's Strategic Whiteboard
+## 📊 Current Status Overview
 
-**Current Focus:**
-- Roadmap for Q4 2024
+**What's Happening Right Now:**
+
+Project just set up! All experts ready and waiting for work.
 
 **Active Workspaces:**
-- roadmap-draft.md (In Progress)
-
-**Notes:**
-- Ward wants to hit 10K users by Q1 2026
-- Need to balance product development with fundraising
-
-**Handoffs:**
-- [ ] Need Lyna's input on fundraising timeline
+- No workspaces yet (experts will create them as you work together)
 
 ---
 
-## 🏗️ Denny's Architecture Whiteboard
+## 📋 Expert Activity At-A-Glance
 
-**Current Focus:**
-- Reviewing authentication system
+| Expert | Status | Current Work | Next Action |
+|--------|--------|--------------|-------------|
+| 🎯 **Genna** | ⚪ Idle | - | Strategic direction when needed |
+| 🔧 **Denny** | ⚪ Idle | - | System specs when needed |
+| 💻 **Ada** | ⚪ Idle | - | Implementation when needed |
+| 🚀 **Lyna** | ⚪ Idle | - | Funding materials when needed |
+| 📊 **Benji** | ⚪ Idle | - | Growth work when needed |
+| ⚖️ **Elle** | ⚪ Idle | - | Legal reviews when needed |
 
-**Notes:**
-- Current auth is basic, may need to scale
-- Should plan for multi-platform (iOS, Android, Web)
-
----
-
-## 💻 Ada's Implementation Board
-
-**Status:** Waiting for specs from Denny
+**Status Key:** ⚪ Idle • 🔄 InProgress • 📋 Review • ✅ Complete
 
 ---
 
-## 📊 Lyna's External Strategy
+## 🎯 Genna's Whiteboard (Chief Architect)
 
-**Current Focus:**
-- Pitch deck preparation
+**Active Work:** None yet
 
-**Notes:**
-- Ward launching, 1,200 users - good traction story!
-- Recovery/mental health is hot sector
-- Need to quantify user retention metrics
+**Ready for:** Strategic planning, roadmaps, architecture reviews
+
+---
+
+## 🔧 Denny's Whiteboard (Systems Architect)
+
+**Active Work:** None yet
+
+**Ready for:** Technical specs, system design, architecture
 
 ---
 ```
 
 **This is your collaboration dashboard!**
 
+Experts update this as they work - workspaces link here, status changes show progress, and you can see everything at a glance.
+
 ---
 
 ## Check Your Checklist
 
-Open `.fwdpro/roundtable/[your-name]-checklist.md`:
+Open `.fwdpro/0-roundtable/[your-name]-checklist.md`:
 
 ```markdown
-# Ward's Action Items
+# Ward's Action Checklist
 
-## 🔥 High Priority
-- [ ] Review roadmap draft from Genna
-- [ ] Provide user retention metrics to Lyna
-
-## 📋 Regular Priority
-- [ ] Test authentication flow on iOS
-
-## 💡 For Later
-- [ ] Consider which VCs to approach (Lyna's suggestion)
+**Project:** MyProject  
+**Last Updated:** 2024-10-09  
+**Your Expert Team:** Genna, Denny, Ada, Lyna, Benji, Elle
 
 ---
 
-**Last updated:** [timestamp]
+## 🚨 Urgent - Needs Your Decision
+
+**No urgent items yet**
+
+---
+
+## ⚠️ High Priority - This Week
+
+| ✓ | Task | From | What to Do | Added |
+|---|------|------|------------|-------|
+| ☐ | **Welcome!** | System | Start by tagging an expert or trying a command | 2024-10-09 |
+
+---
+
+## 📌 Medium Priority - This Month
+
+**No items yet**
+
+---
+
+## 💡 Nice to Have - Optional
+
+- [ ] **Consider expanding mission.md** - Add your founder story and "why"
+  - **Benefit:** Helps experts understand your deeper motivation
+  - **Command:** @update-mission
+
+---
+
+## 🎉 Recently Completed
+
+| ✓ | Task | Expert | Result | Completed |
+|---|------|--------|--------|-----------|
+| ✅ | **Initial setup** | System | FWD PRO installed and configured | 2024-10-09 |
+
+---
 ```
 
 **Experts add items here when they need your input!**
+
+As you work together, experts will add decisions they need, reviews to approve, or questions they have. You respond by checking them off and replying in the linked workspaces.
 
 ---
 
@@ -469,18 +542,18 @@ Open `.fwdpro/roundtable/[your-name]-checklist.md`:
 
 ### Try Common Workflows
 - Read `common-workflows.md` - Workflows for different work types
-- Try: `@create-feature [feature name]`
+- Try: `@create-specflow [feature name]` then `@execute-specflow [feature name]`
 - Try: `@rt` to get all experts to review something
 
 ### Explore Commands
 - Read `commands-guide.md` - All available commands
-- Check `your-commands/` for your shortcuts
-- Try: `@update-project` when things change
+- Check `0-your-commands/` for your flow command shortcuts
+- System commands always available in `pro-os/commands/system/`
 
 ### Customize
-- Read `customization.md` - Advanced configuration
-- Add more favorite experts/commands
-- Create custom commands
+- Add more favorite experts/commands (just ask AI!)
+- Create custom commands with `@create-flow`
+- Update project context as needed
 
 ---
 
@@ -493,17 +566,17 @@ Open `.fwdpro/roundtable/[your-name]-checklist.md`:
 @lyna review my pitch
 ```
 
-**Use quick commands:**
+**Use flow commands:**
 ```
-@create-spec authentication
-@create-feature user profiles
+@create-specflow authentication
+@execute-specflow authentication
 @rt review this spec
 ```
 
-**Check status regularly:**
+**Update project context:**
 ```
-@rt-update
-→ Weekly roundtable check-in
+@update-project
+→ Keep context current as project evolves
 ```
 
 **Update context as you go:**
@@ -529,9 +602,9 @@ Can someone implement this feature?
 - Experts → `working-with-experts.md`
 
 **Quick facts:**
-- Commands → `documentation/faqs/commands-faq.md`
-- Experts → `documentation/faqs/experts-faq.md`
-- System → `documentation/faqs/system-faq.md`
+- Commands → `user-docs/faqs/commands-faq.md`
+- Experts → `user-docs/faqs/experts-faq.md`
+- System → `user-docs/faqs/system-faq.md`
 
 **Ask Genna:**
 ```

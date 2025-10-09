@@ -30,7 +30,7 @@ Run `@update-project` when:
 @update-project
 ```
 
-**Genna's Process:**
+**Process:**
 
 1. **Scans Your Project:**
    - README.md for description changes
@@ -57,15 +57,17 @@ Run `@update-project` when:
    ```
 
 4. **Updates Files:**
-   - `project/project-kb.md`
-   - `pro-os/config.yaml`
-   - Activates/deactivates experts if needed
+   - `pro-os/project/project-kb.md`
+   - `pro-os/project/config.yaml`
+   - Updates expert shortcuts in `0-your-experts/` if work types changed
 
 5. **Notifies Experts:**
    ```
    ✅ Project context updated!
-   All experts now know about your tech stack changes.
+   All experts now have current information.
    ```
+
+**Note:** ALL experts are ALWAYS available to tag! Work type changes just update which expert shortcuts appear in `0-your-experts/` for convenience.
 
 ---
 
@@ -75,7 +77,7 @@ You can also update project files manually.
 
 ### Updating project-kb.md
 
-**File:** `.fwdpro/project/project-kb.md`
+**File:** `.fwdpro/pro-os/project/project-kb.md`
 
 **Sections to Update:**
 
@@ -135,9 +137,9 @@ progress tracking, and AI assistance.
 
 ## Work Focus
 **Current Work Types:**
-- Building features (Denny + Ada active)
-- Investor materials (Lyna active)
-- Marketing/growth (Benji active)
+- Building features (Denny + Ada shortcuts in 0-your-experts/)
+- Investor materials (Lyna shortcut in 0-your-experts/)
+- Marketing/growth (Benji shortcut in 0-your-experts/)
 
 ← UPDATE when focus shifts
 ```
@@ -158,7 +160,7 @@ No command needed.
 @update-mission
 ```
 
-**When Genna asks:**
+**When AI asks:**
 - Why this project matters to YOU
 - The problem you're solving
 - Your solution and what makes it different
@@ -169,9 +171,9 @@ No command needed.
 
 **Example Output:**
 ```markdown
-# ODAT Mission & Purpose
+# Your Project Mission & Purpose
 
-## Why ODAT Exists
+## Why This Project Exists
 After 14 years trying to get sober, I finally made it on 9/26/24.
 I built what I needed - daily support for the hardest journey of my life.
 
@@ -180,7 +182,7 @@ People in recovery are alone between meetings. At 2am when you're
 struggling, there's nothing. You need something EVERY DAY.
 
 ## Our Solution
-AI companion - who knows your story, celebrates day 3
+AI companion who knows your story, celebrates day 3
 differently than day 300, and is WITH you one day at a time.
 
 ## Vision
@@ -207,7 +209,7 @@ When someone says: "I made it through today because of this app."
 @update-people
 ```
 
-**Genna asks about:**
+**AI asks about:**
 - Team members
 - Advisors/mentors
 - Investors
@@ -236,7 +238,7 @@ Value: Reviews Denny's architecture, scaling strategy
 
 **Creates:** `project/people.md`
 
-**Experts Can Now Say:**
+**Experts Can Now Reference:**
 ```
 @denny: "Have Sarah (your designer) create the UI for this"
 @genna: "Want to run this by John (your technical advisor)?"
@@ -247,49 +249,90 @@ Value: Reviews Denny's architecture, scaling strategy
 
 ## Updating Founder Profile
 
-### Using @update-founder-profile
+### Your Global Profile
 
+**Location:** `~/.fwdpro-global/[your-name]-profile.md`
+
+This profile is created during onboarding and applies to ALL your FWD PRO projects.
+
+### What It Contains
+
+```yaml
+About You:
+- Name and location
+- Communication style preferences
+- Working preferences
+- Technical level
+- Team situation
+- Industries you work in
 ```
-@update-founder-profile
+
+### When to Update
+
+Update when your preferences change:
+- Communication style evolved
+- Working style changed
+- Technical skills increased
+- Team situation different (solo → hired team)
+
+### How to Update
+
+**Option 1: Edit directly**
+```bash
+# Edit your global profile
+vim ~/.fwdpro-global/[your-name]-profile.md
 ```
 
-**Updates your GLOBAL profile** (applies to all projects!)
-
-**When to Update:**
-- Communication style changed
-- Working preferences evolved
-- Technical level increased
-- Team situation changed (solo → hired people)
-- Life changes affecting work
-
-**Example:**
+**Option 2: Ask AI**
 ```
-Current communication style: Casual/enthusiastic (c)
-Want to change? [No] [Yes, update]
-> Yes
-
-New style:
-d) Direct/no-fluff - Straight to the point
-
-Confirmed! All experts will now be more direct.
-This applies to ALL your FWD PRO projects.
+I want to update my communication preferences - I prefer more direct communication now
 ```
+
+The AI will help update your profile.
+
+**Changes apply to ALL your FWD PRO projects!**
 
 ---
 
 ## Regular Maintenance
 
+### Daily Tasks
+
+**Check your checklist:**
+```bash
+# Open your action items
+open .fwdpro/0-roundtable/[your-name]-checklist.md
+```
+
+**Look for:**
+- 🔥 High priority items needing your decision
+- 📋 Regular tasks from experts
+- Questions experts have for you
+
+**Check whiteboards:**
+```bash
+# See what experts are working on
+open .fwdpro/0-roundtable/whiteboards.md
+```
+
+**Look for:**
+- What each expert is working on
+- Handoffs between experts
+- Blockers or questions
+- Progress updates
+
 ### Weekly Tasks
 
-**Every Monday:**
+**Review progress:**
 ```
-@rt-update
+Open .fwdpro/0-roundtable/whiteboards.md
+```
 
-→ Team status check
-→ What got done last week
-→ What's planned this week
-→ Any blockers
-```
+See:
+- What got completed this week
+- What's in progress
+- What's blocked
+- What's planned for next week
 
 ### Monthly Tasks
 
@@ -318,27 +361,18 @@ This applies to ALL your FWD PRO projects.
 
 → Strategic planning
 → Set priorities
-→ Align team
-```
-
-**Review:**
-```
-@update-founder-profile
-
-→ Has working style changed?
-→ Team situation different?
-→ Communication preferences evolved?
+→ Align on goals
 ```
 
 ---
 
 ## Keeping Whiteboards Current
 
-**Experts manage whiteboards automatically**, but you can help:
+**Experts manage whiteboards automatically**, but you should check them regularly.
 
 ### Check Whiteboards Daily
 
-**Location:** `.fwdpro/roundtable/whiteboards.md`
+**Location:** `.fwdpro/0-roundtable/whiteboards.md`
 
 **Look for:**
 - What experts are working on
@@ -351,7 +385,7 @@ This applies to ALL your FWD PRO projects.
 **On whiteboards, experts post questions:**
 
 **Denny:**
-> "Ward, should we use JWT or session-based auth?"
+> "Should we use JWT or session-based auth?"
 
 **You respond:**
 > "@denny let's go with JWT - we'll need mobile + web"
@@ -363,37 +397,46 @@ This applies to ALL your FWD PRO projects.
 
 ## Managing Your Checklist
 
-**Location:** `.fwdpro/roundtable/[your-name]-checklist.md`
+**Location:** `.fwdpro/0-roundtable/[your-name]-checklist.md`
 
 ### Review Daily
 
+**Example checklist:**
 ```markdown
 # Your Action Items
 
-## 🔥 High Priority
-- [ ] Approve auth spec (Denny needs this)
-- [ ] Provide user metrics (Lyna waiting)
+## 🔥 High Priority - Needs Your Decision
+| ✓ | Task | From | What to Do | Added |
+|---|------|------|------------|-------|
+| ☐ | **Approve auth spec** | Denny | Review and approve spec for Ada | Oct 9 |
+| ☐ | **Provide user metrics** | Lyna | Need MAU, retention for pitch | Oct 9 |
 
-## 📋 Regular Priority
-- [ ] Test staging deployment (Ada)
-- [ ] Review landing page copy (Benji)
+## 📋 Regular Priority - This Week
+| ✓ | Task | From | What to Do | Added |
+|---|------|------|------------|-------|
+| ☐ | **Test staging** | Ada | New feature ready to test | Oct 8 |
+| ☐ | **Review copy** | Benji | Landing page needs approval | Oct 8 |
 
-## 💡 For Later
-- [ ] Consider 90-day milestone feature
-- [ ] Think about which VCs to approach
+## 💡 Nice to Have - Optional
+- [ ] Consider 90-day milestone feature (Bonnie Jo's suggestion)
+- [ ] Think about which VCs to approach (Lyna)
 ```
 
 ### Complete Items
 
-**Check them off:**
+**Check them off in the file:**
 ```markdown
-- [x] Approve auth spec ✅ Approved!
+| ✓ | Task | From | What to Do | Added |
+|---|------|------|------------|-------|
+| ✅ | **Approve auth spec** | Denny | Approved! | Oct 9 |
 ```
 
-**Experts see your completion:**
+**Or tell the AI:**
 ```
-Denny: Great! Handing off to Ada now.
+I approved the auth spec - let Denny know
 ```
+
+**Experts see your completion and can proceed with their work.**
 
 ---
 
@@ -403,9 +446,9 @@ Denny: Great! Handing off to Ada now.
 
 **Monthly cleanup:**
 ```bash
-# Move completed drafts to archive
-mv .fwdpro/roundtable/workspace/old-spec-draft.md \
-   .fwdpro/roundtable/workspace/archive/
+# Move completed workspaces to archive
+mv .fwdpro/0-roundtable/workspace/old-spec-draft.md \
+   .fwdpro/0-roundtable/workspace/archive/
 ```
 
 ### What to Keep
@@ -416,9 +459,9 @@ mv .fwdpro/roundtable/workspace/old-spec-draft.md \
 - ✅ Work in progress
 
 **Move to archive/:**
-- ❌ Completed drafts
-- ❌ Old versions
-- ❌ Superseded work
+- 📦 Completed workspaces (after founder approval)
+- 📦 Old versions
+- 📦 Superseded work
 
 ### What to Delete
 
@@ -426,6 +469,11 @@ mv .fwdpro/roundtable/workspace/old-spec-draft.md \
 - Very old archived files (6+ months)
 - Duplicate files
 - Test files
+
+**Don't delete:**
+- Current workspaces
+- Recent archives (may need reference)
+- Completed deliverables in `documents/`
 
 ---
 
@@ -477,9 +525,9 @@ git log -- .fwdpro/documents/investor/pitch-deck.md
 ### What is Context Drift?
 
 **Problem:** Over time, FWD PRO's knowledge gets stale
-- Goals changed, but experts don't know
-- Tech stack evolved, specs are outdated
-- Team grew, but experts don't reference them
+- Goals changed, but project-kb.md is outdated
+- Tech stack evolved, specs reflect old stack
+- Team grew, but people.md isn't updated
 
 **Solution:** Regular updates!
 
@@ -500,49 +548,48 @@ git log -- .fwdpro/documents/investor/pitch-deck.md
 
 **Monthly review:**
 ```
-@rt-update
+Check .fwdpro/0-roundtable/whiteboards.md
 → Are we aligned?
-→ Any drift detected?
+→ Any confusion from experts?
 ```
 
 ---
 
 ## Multi-Project Management
 
-**See:** `multi-project-usage.md`
+### Working on Multiple Projects
 
-**Quick version:**
+If you have multiple projects using FWD PRO:
 
-### Switch Projects
-
-```bash
-cd ~/projects/odat-app/
-@genna catch me up
+**Each project is separate:**
+```
+~/projects/odat-app/.fwdpro/          # Project A
+~/projects/telecom-tool/.fwdpro/      # Project B
 ```
 
-```bash
-cd ~/projects/telecom-tool/
-@genna catch me up
+**Your global profile is shared:**
+```
+~/.fwdpro-global/[your-name]-profile.md
+→ Communication preferences apply to all projects
 ```
 
-### View Portfolio
+### Switching Between Projects
 
+**Open different workspace/window:**
+- Each project has its own IDE workspace
+- Open the project you want to work on
+- Experts automatically load that project's context
+
+**Example (in your IDE):**
 ```
-@show-projects
+File → Open Workspace → ~/projects/odat-app/
+→ Work on ODAT, experts see ODAT context
 
-→ See all projects
-→ Which needs attention?
-→ Where are experts allocated?
+File → Open Workspace → ~/projects/telecom-tool/
+→ Work on telecom tool, experts see that context
 ```
 
-### Update Across Projects
-
-```
-@update-founder-profile
-
-→ Changes apply to ALL projects
-→ Communication style, preferences, etc.
-```
+**Projects are isolated** - working on one doesn't affect the other.
 
 ---
 
@@ -556,17 +603,17 @@ cd ~/projects/telecom-tool/
 → Scans and refreshes
 ```
 
-**Solution 2: Start fresh**
+**Solution 2: Start new conversation**
 ```
-@newthread
-→ Clears conversation
-→ Project context remains
+Start a new conversation in your IDE
+→ Fresh context
+→ Project files remain intact
 ```
 
 **Solution 3: Manually correct**
 ```
 @genna FYI - we pivoted from B2C to B2B last month
-→ Genna updates context
+→ Expert updates their understanding
 ```
 
 ### Experts Have Old Info?
@@ -574,7 +621,7 @@ cd ~/projects/telecom-tool/
 **Check:**
 ```bash
 # When was project-kb.md last updated?
-ls -la .fwdpro/project/project-kb.md
+ls -la .fwdpro/pro-os/project/project-kb.md
 ```
 
 **Update:**
@@ -591,13 +638,14 @@ ls -la .fwdpro/project/project-kb.md
 Don't wait until experts are confused!
 
 **Set reminders:**
-- Weekly: Check whiteboards & checklist
+- Daily: Check whiteboards & checklist
+- Weekly: Review progress and blockers
 - Monthly: `@update-project`
 - Quarterly: Review all context files
 
 ### 2. Communicate Major Changes
 
-When something big happens:
+When something big happens, tell the experts:
 ```
 @genna FYI - we just raised $500K seed round
 @genna FYI - hired 2 engineers
@@ -625,7 +673,7 @@ Add team, advisors, investors as you go:
 ### 5. Clean Up Regularly
 
 Don't let workspace get cluttered:
-- Archive old drafts
+- Archive old drafts (with founder approval)
 - Delete duplicates
 - Keep documents organized
 
@@ -639,26 +687,16 @@ Don't let workspace get cluttered:
 
 ```bash
 # Edit project knowledge base
-vim .fwdpro/project/project-kb.md
+vim .fwdpro/pro-os/project/project-kb.md
 
 # Edit mission
-vim .fwdpro/project/mission.md
+vim .fwdpro/pro-os/project/mission.md
 
 # Edit people
-vim .fwdpro/project/people.md
+vim .fwdpro/pro-os/project/people.md
 ```
 
 **Experts see changes immediately!**
-
-### Configuration Editing
-
-**Advanced users can edit config:**
-
-```bash
-vim .fwdpro/pro-os/config.yaml
-```
-
-**See:** `customization.md` for details
 
 ---
 
@@ -669,20 +707,25 @@ vim .fwdpro/pro-os/config.yaml
 | Command | Updates | Frequency |
 |---------|---------|-----------|
 | @update-project | Project context | Every 2-4 weeks |
-| @update-founder-profile | Your preferences (global) | Every 3-6 months |
 | @update-mission | Your "why" | Every 6 months |
 | @update-people | Team/advisors | As changes happen |
-| @rt-update | Team status | Every Monday |
 
 ### Files to Keep Current
 
 | File | What | How |
 |------|------|-----|
-| project-kb.md | Project facts | @update-project |
-| mission.md | Your "why" | @update-mission |
-| people.md | Team/network | @update-people |
-| founder-profile.md | Your preferences | @update-founder-profile |
-| whiteboards.md | Team status | Experts manage |
+| project-kb.md | Project facts | @update-project or edit directly |
+| mission.md | Your "why" | @update-mission or edit directly |
+| people.md | Team/network | @update-people or edit directly |
+| founder-profile.md | Your preferences (global) | Edit `~/.fwdpro-global/[name]-profile.md` |
+| whiteboards.md | Team status | Experts manage automatically |
+
+### Daily Checks
+
+| File | Why |
+|------|-----|
+| `0-roundtable/whiteboards.md` | See what experts are working on |
+| `0-roundtable/[your-name]-checklist.md` | See what needs your attention |
 
 ---
 
@@ -731,19 +774,15 @@ pnpm add @fwd-ai/pro@latest
 
 ## Next Steps
 
-**Use multiple projects:**
-→ Read `multi-project-usage.md`
-
 **Work with existing projects:**
 → Read `working-with-existing-projects.md`
-
-**Customize your system:**
-→ Read `customization.md`
 
 **Fix issues:**
 → Read `troubleshooting.md`
 
+**Learn all commands:**
+→ Read `commands-guide.md`
+
 ---
 
 **Keep your project context current - experts work better with fresh info! 🎯**
-

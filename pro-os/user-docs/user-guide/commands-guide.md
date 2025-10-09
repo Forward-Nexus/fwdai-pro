@@ -6,38 +6,87 @@
 
 ## Understanding Commands
 
-Commands are pre-built workflows that tell experts what to do. Think of them as templates for common tasks.
+Commands are pre-built workflows that help you work with experts efficiently. Think of them as structured templates for common tasks.
 
 ### Three Types:
 
-1. **Universal Commands** - General-purpose (create, execute, analyze)
-2. **Quick Commands** - Optimized workflows (create-spec, create-feature)
-3. **System Commands** - Manage FWD PRO itself (update-project, show-projects)
+1. **Universal Commands** - Flexible, AI-inferred workflows (create, execute, analyze, update, fix, research, brainstorm, plan)
+2. **Flow Commands** - Structured, pattern-based workflows with enforced quality gates (create-specflow, execute-specflow, rt)
+3. **System Commands** - Manage FWD PRO itself (update-project, create-expert, create-flow, etc.)
+
+**What's the difference?**
+- **Universal** = AI figures out the structure based on your request, flexible and adaptive
+- **Flow** = Follows a specific predefined pattern with mandatory quality checks for consistency
+
+---
+
+## How Commands Work with Experts
+
+**IMPORTANT:** Universal commands work with ANY expert. They don't "route" automatically.
+
+**How to use commands:**
+
+### Option 1: Tag an expert + command
+```
+@denny @create authentication spec
+@ada @fix the login bug
+@lyna @research seed funding landscape
+```
+
+### Option 2: Just describe what you need
+```
+I need a technical spec for authentication
+Can someone fix the login bug?
+Help me research the seed funding landscape
+```
+
+The AI will understand and engage the right expert based on context.
+
+### Option 3: Use command standalone
+```
+@create authentication spec
+@fix login bug
+```
+
+The AI will determine which expert should handle it based on your project context and active experts.
+
+**Key principle:** YOU control who does the work by tagging them, or let AI route based on context.
 
 ---
 
 ## Universal Commands
 
+Universal commands are flexible workflows that ANY expert can use. The expert you tag (or that AI selects) will adapt the command to fit the task.
+
+---
+
 ### @create
 
 **Purpose:** Create new deliverables
 
-**Expert:** Routes to appropriate expert
+**Works with:** Any expert (you choose, or AI routes based on what you're creating)
 
 **Examples:**
 ```
-@create technical spec for authentication
-@create pitch deck for seed round
-@create marketing plan for launch
-@create privacy policy
-@create roadmap for Q1
+@denny @create technical spec for authentication
+@lyna @create pitch deck for seed round
+@benji @create marketing plan for launch
+@elle @create privacy policy
+@genna @create roadmap for Q1
+```
+
+**Or just:**
+```
+@create authentication spec
+→ AI routes to appropriate expert (likely Denny for tech spec)
 ```
 
 **What Happens:**
-1. AI determines what you're creating
-2. Routes to right expert (Denny for specs, Lyna for pitch, etc.)
-3. Expert creates deliverable
-4. Final output in `documents/`
+1. Expert asks clarifying questions
+2. Researches best practices
+3. Creates deliverable in workspace
+4. Finalizes clean version in `documents/`
+5. Updates whiteboards
 
 **Use When:** You need something created from scratch
 
@@ -47,21 +96,21 @@ Commands are pre-built workflows that tell experts what to do. Think of them as 
 
 **Purpose:** Build/implement something
 
-**Expert:** Routes to Ada (or appropriate expert)
+**Works with:** Any expert (commonly Ada for code, but others can execute plans/strategies)
 
 **Examples:**
 ```
-@execute the auth spec Denny created
-@execute this feature design
-@execute migration to new database
+@ada @execute the auth spec Denny created
+@ada @execute this feature design
+@benji @execute the marketing campaign we planned
 ```
 
 **What Happens:**
-1. Ada (or expert) reviews what to build
+1. Expert reviews what to build
 2. Asks clarifying questions
-3. Implements
-4. Tests
-5. Delivers code + docs
+3. Implements according to spec/plan
+4. Tests/validates
+5. Delivers result + documentation
 
 **Use When:** You have a spec/plan and need implementation
 
@@ -69,26 +118,26 @@ Commands are pre-built workflows that tell experts what to do. Think of them as 
 
 ### @analyze
 
-**Purpose:** Research and analyze
+**Purpose:** Research and analyze data, situations, or options
 
-**Expert:** Routes to appropriate expert
+**Works with:** Any expert
 
 **Examples:**
 ```
-@analyze our competitors in recovery apps
-@analyze which database is best for our use case
-@analyze user feedback from last month
-@analyze fundraising landscape for mental health tech
+@benji @analyze our competitors in recovery apps
+@denny @analyze which database is best for our use case
+@lyna @analyze fundraising landscape for mental health tech
+@genna @analyze whether we should pivot to B2B
 ```
 
 **What Happens:**
-1. Expert researches topic
-2. Gathers data
+1. Expert researches topic thoroughly
+2. Gathers data and sources
 3. Analyzes findings
 4. Provides recommendations
 5. Saves analysis to `documents/`
 
-**Use When:** You need research or analysis
+**Use When:** You need research or analysis on a topic
 
 ---
 
@@ -96,23 +145,25 @@ Commands are pre-built workflows that tell experts what to do. Think of them as 
 
 **Purpose:** Review work and provide feedback
 
-**Expert:** Routes to appropriate expert(s)
+**Works with:** Any expert (tag specific expert for their domain expertise)
 
 **Examples:**
 ```
-@review this code implementation
-@review my pitch deck draft
-@review our marketing copy
-@review technical architecture
+@denny @review this code architecture
+@lyna @review my pitch deck draft
+@benji @review our marketing copy
+@elle @review this contract
 ```
 
 **What Happens:**
-1. Expert(s) review the work
-2. Provide feedback and suggestions
-3. Note what's good and what needs work
-4. Post review on whiteboards
+1. Expert reviews the work
+2. Provides feedback and suggestions
+3. Notes strengths and areas for improvement
+4. Documents review in workspace
 
 **Use When:** You want expert feedback on something
+
+**Note:** For multi-expert review, use `@rt` (roundtable) instead.
 
 ---
 
@@ -120,13 +171,13 @@ Commands are pre-built workflows that tell experts what to do. Think of them as 
 
 **Purpose:** Update existing deliverables
 
-**Expert:** Routes to original creator or appropriate expert
+**Works with:** Any expert (often original creator, but can be anyone)
 
 **Examples:**
 ```
-@update the auth spec with social login
-@update pitch deck with new metrics
-@update privacy policy for GDPR
+@denny @update the auth spec with social login
+@lyna @update pitch deck with new metrics
+@elle @update privacy policy for GDPR
 ```
 
 **What Happens:**
@@ -134,6 +185,7 @@ Commands are pre-built workflows that tell experts what to do. Think of them as 
 2. Asks what needs updating
 3. Makes changes
 4. Updates version in `documents/`
+5. Documents changes in workspace
 
 **Use When:** Existing work needs changes
 
@@ -143,23 +195,24 @@ Commands are pre-built workflows that tell experts what to do. Think of them as 
 
 **Purpose:** Fix bugs, errors, problems
 
-**Expert:** Routes to Ada (or appropriate expert)
+**Works with:** Any expert (commonly Ada for code bugs, but others fix process/content issues)
 
 **Examples:**
 ```
-@fix login flow bug
-@fix typos in pitch deck
-@fix broken link in documentation
+@ada @fix login flow bug
+@lyna @fix low conversion rate on pitch
+@benji @fix the hiring bottleneck
+@denny @fix the slow database queries
 ```
 
 **What Happens:**
 1. Expert investigates issue
 2. Identifies root cause
-3. Fixes problem
+3. Fixes problem properly (not just quick patch)
 4. Tests to verify
-5. Suggests prevention
+5. Suggests prevention measures
 
-**Use When:** Something's broken
+**Use When:** Something's broken or not working
 
 ---
 
@@ -167,14 +220,14 @@ Commands are pre-built workflows that tell experts what to do. Think of them as 
 
 **Purpose:** Deep research on any topic
 
-**Expert:** Routes to appropriate expert
+**Works with:** Any expert
 
 **Examples:**
 ```
-@research best practices for authentication
-@research mental health app market size
-@research HIPAA compliance requirements
-@research competitor pricing strategies
+@denny @research best practices for authentication
+@lyna @research venture capital firms in our space
+@benji @research hiring platforms for technical roles
+@elle @research HIPAA compliance requirements
 ```
 
 **What Happens:**
@@ -192,288 +245,233 @@ Commands are pre-built workflows that tell experts what to do. Think of them as 
 
 **Purpose:** Generate ideas and explore options
 
-**Expert:** Routes to appropriate expert (often Genna)
+**Works with:** Any expert (commonly Genna for strategic brainstorming)
 
 **Examples:**
 ```
-@brainstorm features for v2.0
-@brainstorm marketing channels to try
-@brainstorm ways to improve retention
-@brainstorm potential pivot options
+@genna @brainstorm features for v2.0
+@benji @brainstorm marketing channels to try
+@lyna @brainstorm ways to improve pitch
+@denny @brainstorm potential pivot options
 ```
 
 **What Happens:**
 1. Expert explores the problem space
 2. Generates multiple ideas
-3. Evaluates each option
-4. Presents with pros/cons
-5. Doesn't decide - gives you options
+3. Evaluates each option with pros/cons
+4. Presents options (doesn't decide for you)
+5. Documents in workspace
 
-**Use When:** You need creative ideas
+**Use When:** You need creative ideas or want to explore options
 
 ---
 
 ### @plan
 
-**Purpose:** Create project plans and roadmaps
+**Purpose:** Create project plans, roadmaps, timelines
 
-**Expert:** Routes to Genna (strategy)
+**Works with:** Any expert (commonly Genna for strategic plans)
 
 **Examples:**
 ```
-@plan roadmap for Q1 2025
-@plan launch strategy
-@plan fundraising timeline
-@plan hiring plan for next 6 months
+@genna @plan roadmap for Q1 2025
+@lyna @plan fundraising campaign
+@benji @plan team expansion
+@ada @plan technical migration
 ```
 
 **What Happens:**
-1. Genna reviews goals and constraints
-2. Consults relevant experts
-3. Creates comprehensive plan
-4. Includes timeline, milestones, dependencies
+1. Expert reviews goals and constraints
+2. Researches best practices for this type of plan
+3. Creates comprehensive plan with timeline
+4. Includes milestones, resources, risks
 5. Saves to `documents/planning/`
 
-**Use When:** You need strategic planning
+**Use When:** You need strategic planning or roadmapping
 
 ---
 
-### @newthread
+## Flow Commands
 
-**Purpose:** Start fresh context
+Flow commands follow predefined patterns from `pro-os/system/patterns/` for consistent, high-quality workflows. They enforce specific structures like TDD and mandatory QA.
 
-**Expert:** System command (no specific expert)
-
-**Examples:**
-```
-@newthread
-The AI seems confused, let's start fresh
-```
-
-**What Happens:**
-1. Clears conversation context
-2. Starts new thread
-3. System still remembers project context (from files)
-4. Good for when conversation gets tangled
-
-**Use When:** AI seems confused or off-track
+**When to use Flow vs Universal:**
+- **Flow** = Need rigorous structure and enforced quality gates
+- **Universal** = Need flexibility and quick iteration
 
 ---
 
-## Quick Commands
+### @create-specflow
 
-Pre-built optimized workflows for common tasks.
+**Purpose:** Create technical specification with TDD structure enforcement
 
-### @create-spec
-
-**Purpose:** Create technical specification
-
-**Expert:** Denny (with expert reviews)
+**Pattern:** `patterns/spec.md`  
+**Primary Expert:** Denny (but any technical expert can run it)
 
 **Usage:**
 ```
-@create-spec authentication
-@create-spec payment processing
-@create-spec real-time notifications
+@create-specflow authentication system
+@create-specflow payment processing
+@denny @create-specflow real-time notifications
 ```
 
-**Workflow:**
-1. Denny asks clarifying questions
-2. Creates detailed technical spec
-3. Other experts review (Elle for security, Ada for feasibility)
-4. Denny finalizes
-5. Spec saved to `documents/technical/[name]-spec.md`
+**Workflow (3 Phases):**
 
-**Output:** Professional technical specification
+**Phase 1 - Pre-Flight:**
+1. Load context (project files, existing specs)
+2. Clarify requirements with founder
+3. Search current best practices (always uses current year!)
+4. Identify expert collaboration needs
 
-**Timeline:** Same day to 1 day
+**Phase 2 - Execution:**
+1. Create spec with TDD task structure
+2. Define acceptance criteria
+3. Document technical decisions
+4. Get expert reviews (security, feasibility)
+5. Update based on feedback
+
+**Phase 3 - Post-Flight:**
+1. Quality check against `spec-checklist.md`
+2. Update workspace file with complete context
+3. Mark ready for `@execute-specflow`
+
+**Output:** 
+- `documents/tech/[name]-spec.md` - Comprehensive technical specification
+- TDD task structure (test requirements defined BEFORE implementation)
+- Ready for Ada (or any implementer) to execute
+
+**Key Difference from @create:**
+- Enforces TDD structure (tests first!)
+- Mandatory expert reviews
+- Structured quality gates
+- Ready for direct execution
 
 ---
 
-### @create-pitch-deck
+### @execute-specflow
 
-**Purpose:** Create investor pitch deck
+**Purpose:** Implement technical specification with TDD + mandatory QA
 
-**Expert:** Lyna (with Benji for messaging)
+**Pattern:** `patterns/spec.md` + `patterns/expert-tech.md`  
+**Primary Expert:** Ada (but any implementer can run it)
 
 **Usage:**
 ```
-@create-pitch-deck
-@create-pitch-deck for seed round
+@execute-specflow auth-spec
+@ada @execute-specflow payment-processing
 ```
 
-**Workflow:**
-1. Lyna reviews mission, traction, goals
-2. Asks about fundraising (amount, timeline, target investors)
-3. Creates deck outline
-4. Benji reviews messaging
-5. Lyna creates full deck
-6. Deck saved to `documents/investor/pitch-deck.md`
+**Workflow (3 Phases):**
 
-**Output:** Slide-by-slide investor pitch deck
+**Phase 1 - Pre-Flight:**
+1. Load and review spec
+2. Clarify any ambiguities
+3. Set up test environment
+4. Plan implementation order
 
-**Timeline:** 2-3 days
+**Phase 2 - Execution (TDD ENFORCED):**
+1. **Write tests FIRST** (for each task)
+2. Run tests (they should fail initially)
+3. Implement code
+4. Run tests (until they pass)
+5. Refactor if needed
+6. Update progress in workspace
+
+**Phase 3 - Post-Flight (MANDATORY QA):**
+1. Run full test suite (must have 80%+ coverage)
+2. Quality check against `code-checklist.md`
+3. Linter/formatter checks
+4. Update documentation
+5. Mark complete in workspace
+
+**Output:**
+- Fully tested, production-ready code
+- 80%+ test coverage
+- Documentation updated
+- QA completed
+
+**Key Difference from @execute:**
+- TDD strictly enforced (tests absolutely first!)
+- Mandatory QA phase (cannot skip)
+- Must pass quality gates
+- Higher confidence in code quality
 
 ---
 
-### @create-feature
+### @rt (Roundtable Review)
 
-**Purpose:** Full feature development workflow
+**Purpose:** Multi-expert collaborative review
 
-**Expert:** Genna → Denny → Ada (coordinated)
-
-**Usage:**
-```
-@create-feature user authentication
-@create-feature payment integration
-@create-feature real-time chat
-```
-
-**Workflow:**
-1. Genna coordinates overall feature
-2. Denny creates technical spec
-3. Experts review spec
-4. Ada implements feature
-5. Denny reviews implementation
-6. Ada delivers code
-7. Spec in `documents/technical/`, code in your repo
-
-**Output:** Complete feature (spec + code)
-
-**Timeline:** 3-5 days
-
----
-
-### @rt
-
-**Purpose:** Roundtable review (all experts weigh in)
-
-**Expert:** All active experts
+**Pattern:** `patterns/expert-collaboration.md`  
+**Experts:** ALL relevant experts participate
 
 **Usage:**
 ```
-@rt review this product spec
-@rt what do you think of this approach?
+@rt review the pitch deck
+@rt review authentication spec
 @rt should we pivot to B2B?
 ```
 
-**Workflow:**
-1. All active experts review the question/work
-2. Each provides their perspective:
-   - Genna: Strategic
-   - Denny: Technical
-   - Ada: Implementation
-   - Lyna: Investor angle
-   - Benji: Market fit
+**What Happens:**
+1. All relevant experts load context
+2. Each reviews from their domain perspective:
+   - Genna: Strategic fit, big picture
+   - Denny: Technical feasibility
+   - Ada: Implementation complexity
+   - Lyna: Investor/external appeal
+   - Benji: Market fit, growth potential
    - Elle: Legal/compliance
-   - Domain expert: Industry-specific
-3. Genna synthesizes feedback
-4. You get comprehensive view
+   - Your domain expert: Industry best practices
+3. Collaborative discussion in workspace
+4. Synthesized recommendations
+5. Documented review in workspace
 
-**Output:** Multi-perspective feedback
+**Use When:**
+- Major decisions requiring multiple perspectives
+- Cross-domain review needed
+- High-stakes deliverable
+- Want to catch issues from all angles
 
-**Timeline:** Same day
-
----
-
-### @rt-update
-
-**Purpose:** Weekly status check
-
-**Expert:** All active experts
-
-**Usage:**
-```
-@rt-update
-```
-
-**Workflow:**
-1. Each expert reports:
-   - What they completed
-   - What they're working on
-   - Any blockers
-   - What they need from you
-2. Genna facilitates discussion
-3. Priorities identified for next week
-4. Updates posted on whiteboards
-
-**Output:** Team status update
-
-**Timeline:** 15-30 minutes
-
-**Tip:** Run this every Monday!
+**Output:**
+- Comprehensive multi-perspective feedback
+- Consensus and dissenting views documented
+- Clear next steps
+- All reviews in workspace
 
 ---
 
 ## System Commands
 
-Commands that manage FWD PRO itself.
+Commands that manage FWD PRO itself. These can be run standalone or with any expert you're currently working with.
 
-### @update-project ⭐ Most Common
+---
 
-**Purpose:** Scan project and update context
+### @update-project
 
-**Expert:** Genna
+**Purpose:** Scan project and update context after things have changed
 
 **Usage:**
 ```
 @update-project
+@denny @update-project
+@ada @update-project
 ```
 
-**Workflow:**
-1. Genna scans your project:
-   - README.md for description changes
-   - package.json/requirements.txt for tech stack
-   - git commits for major changes
-   - New files for work type changes
-2. Identifies potential updates
-3. Asks you to confirm:
-   - "Tech stack changed from X to Y?"
-   - "New goal detected: [goal]?"
-   - "Should we activate [expert]?"
-4. Updates:
-   - project/project-kb.md
-   - pro-os/config.yaml
-   - Activates/deactivates experts
-5. All experts notified of changes
+**Works with:** Any expert (or standalone)
+
+**What It Does:**
+1. Scans your project for changes (README, package.json, git commits)
+2. Identifies potential updates (stage, goals, tech stack, team)
+3. Asks you to confirm changes
+4. Updates `project/project-kb.md`, `project/people.md`, etc.
+5. Notifies all experts of changes
 
 **When to Use:**
 - After major milestones
 - When tech stack changes
 - When goals shift
+- Team member hired/left
 - Every few weeks (keep context current)
-
-**Timeline:** 10-15 minutes
-
----
-
-### @update-founder-profile
-
-**Purpose:** Update your personal preferences
-
-**Expert:** Genna
-
-**Usage:**
-```
-@update-founder-profile
-```
-
-**Workflow:**
-1. Reviews your current global profile
-2. Asks what changed:
-   - Communication style?
-   - Working preferences?
-   - Technical level?
-   - Team situation?
-3. Updates `~/.fwdpro-global/[name]-profile.md`
-4. Changes apply to ALL your projects
-5. All experts adapt immediately
-
-**When to Use:**
-- Communication style evolved
-- Team situation changed (solo → hired people)
-- Working preferences changed
-- Every 3-6 months
 
 **Timeline:** 10-15 minutes
 
@@ -483,30 +481,26 @@ Commands that manage FWD PRO itself.
 
 **Purpose:** Update project mission and vision
 
-**Expert:** Genna
-
 **Usage:**
 ```
 @update-mission
+@genna @update-mission
 ```
 
-**Workflow:**
+**Works with:** Any expert (commonly Genna for strategic work)
+
+**What It Does:**
 1. Reviews current mission (or starts fresh)
-2. Asks deep questions:
-   - "Why does THIS matter to YOU?"
-   - "What problem are you solving?"
-   - "What makes you different?"
-   - "What does success look like?"
+2. Asks deep questions about your "why"
 3. Creates compelling mission narrative
 4. Saves to `project/mission.md`
-5. Lyna uses for investor materials
-6. Benji uses for marketing
+5. Other experts use for context (Lyna for pitches, Benji for marketing)
 
 **When to Use:**
-- Vision clarified
-- Story deepened
+- Vision clarified or evolved
 - Preparing for investors
 - Onboarding team
+- Annual reflection
 
 **Timeline:** 30 minutes to 1 hour
 
@@ -516,334 +510,223 @@ Commands that manage FWD PRO itself.
 
 **Purpose:** Update team, advisors, investors
 
-**Expert:** Genna
-
 **Usage:**
 ```
 @update-people
 ```
 
-**Workflow:**
+**Works with:** Any expert
+
+**What It Does:**
 1. Reviews current `project/people.md`
-2. Asks what changed:
-   - Hired someone?
-   - Got an advisor?
-   - Raised money?
-   - Key customer?
+2. Asks what changed (hired, got advisor, raised money)
 3. Adds new people with context
-4. Experts can now reference them:
-   - "Have Sarah (your designer) do the UI"
-   - "Run this by John (your technical advisor)"
+4. Experts can now reference them in their work
 
 **When to Use:**
 - Hired team member
 - Got advisor/mentor
 - Raised money
-- Important customer/partner
+- Important customer/partner joined
 
 **Timeline:** 10-15 minutes
 
 ---
 
-### @update-onboarding
-
-**Purpose:** Re-run onboarding wizard
-
-**Expert:** Genna
-
-**Usage:**
-```
-@update-onboarding
-```
-
-**Workflow:**
-1. Explains impact (will overwrite sections)
-2. Asks what to update:
-   - Global profile (Q1-Q8)?
-   - Project details (Q9-Q15)?
-   - Domain expert (Q16)?
-3. Re-runs relevant questions
-4. Updates appropriate files
-5. Activates/deactivates experts if work types changed
-
-**When to Use:**
-- Work types changed dramatically
-- Want to add domain expert
-- Major project pivot
-- Need to reconfigure everything
-
-**Timeline:** 15-30 minutes
-
----
-
-### @show-projects
-
-**Purpose:** View all your FWD PRO projects
-
-**Expert:** Genna
-
-**Usage:**
-```
-@show-projects
-```
-
-**Output:**
-```
-📊 Your FWD PRO Project Portfolio
-
-You have 3 projects using FWD PRO:
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-🔥 PROJECT 1: ODAT App (MOST ACTIVE)
-Location: ~/GitHub/odat-app/
-Stage: Launched | Goal: 10K users by Q1 2026
-Active: 5 days ago
-
-Current Work:
-  • authentication-feature (Ada - InProgress)
-  • pitch-deck-v2 (Lyna - Draft)
-
-Active Experts: Genna, Denny, Ada, Lyna
-Quick Link: ~/GitHub/odat-app/.fwdpro/roundtable/whiteboards.md
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-📱 PROJECT 2: Telecom Tool
-Location: ~/GitHub/telecom-tool/
-Stage: MVP | Goal: 5 pilot customers
-Active: 8 days ago
-
-... [additional projects]
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-📊 CROSS-PROJECT INSIGHTS
-Most Active: ODAT App
-Expert Distribution: [breakdown]
-Recent Activity: [timeline]
-```
-
-**When to Use:**
-- Morning check: what needs attention?
-- Before switching projects
-- Portfolio review
-- After being away
-
-**Timeline:** Instant
-
----
-
-## Creating Custom Commands
-
-You can create your own commands!
-
-### Template Location:
-`.fwdpro/pro-os/commands/quick/_TEMPLATE.md`
-
-### Steps:
-
-1. **Copy template:**
-```bash
-cp pro-os/commands/quick/_TEMPLATE.md pro-os/commands/quick/my-workflow.md
-```
-
-2. **Define your workflow:**
-```markdown
-# @my-workflow
-
-**Purpose:** [What this does]
-
-**Expert:** [Who runs it]
-
-**Workflow:**
-
-### Phase 1: Preparation
-- [Steps]
-
-### Phase 2: Execution
-- [Steps]
-
-### Phase 3: Completion
-- [Steps]
-```
-
-3. **Use it:**
-```
-@my-workflow
-```
-
-### Example Custom Commands:
-
-**@weekly-review:**
-- Review last week's work
-- Plan next week
-- Update stakeholders
-
-**@launch-checklist:**
-- Technical readiness (Denny/Ada)
-- Legal docs (Elle)
-- Marketing ready (Benji)
-- PR plan (Lyna)
-
-**@monthly-investor-update:**
-- Gather metrics
-- Lyna creates update
-- Benji adds marketing wins
-
----
-
-## Command Tips
-
-### 1. Start Simple
-
-```
-@create-spec authentication
-→ Better than trying to explain everything upfront
-```
-
-### 2. Commands Can Be Plain Language
-
-```
-@create pitch deck
-@create-pitch-deck
-@lyna create pitch deck
-
-→ All work!
-```
-
-### 3. Check Your Favorites
-
-Look in `your-commands/` for shortcuts to commands you use often
-
-### 4. Add Favorites
-
-```bash
-./add-favorite.sh
-→ Add any command to your-commands/
-```
-
-### 5. Combine with Expert Tags
-
-```
-@create-spec authentication
-→ Then: @ada implement this spec
-```
-
-### 6. Use System Commands Regularly
-
-```
-@update-project  # Every few weeks
-@rt-update       # Every Monday
-@show-projects   # When switching contexts
-```
-
----
-
-## Command Reference Table
-
-| Command | Type | Expert | Timeline | Output |
-|---------|------|--------|----------|--------|
-| @create | Universal | Routes | Varies | Deliverable |
-| @execute | Universal | Ada | 1-3 days | Code |
-| @analyze | Universal | Routes | 1 day | Analysis |
-| @review | Universal | Routes | Same day | Feedback |
-| @update | Universal | Original | 1 day | Updated doc |
-| @fix | Universal | Ada | Hours | Fixed code |
-| @research | Universal | Routes | 1 day | Research doc |
-| @brainstorm | Universal | Genna | Hours | Ideas |
-| @plan | Universal | Genna | 1-2 days | Plan/roadmap |
-| @newthread | Universal | System | Instant | Fresh context |
-| @create-spec | Quick | Denny | 1 day | Technical spec |
-| @create-pitch-deck | Quick | Lyna | 2-3 days | Pitch deck |
-| @create-feature | Quick | Multi | 3-5 days | Spec + code |
-| @rt | Quick | All | Same day | Feedback |
-| @rt-update | Quick | All | 30 min | Status report |
-| @update-project | System | Genna | 15 min | Updated context |
-| @update-founder-profile | System | Genna | 15 min | Updated profile |
-| @update-mission | System | Genna | 1 hour | Mission doc |
-| @update-people | System | Genna | 15 min | People doc |
-| @update-onboarding | System | Genna | 30 min | Reconfigured |
-| @show-projects | System | Genna | Instant | Portfolio view |
-| @create-expert | System | Genna | 15-30 min | Custom expert |
-| @create-command | System | Genna | 15-30 min | Custom command |
-
----
-
-## Customization Commands
-
 ### @create-expert
 
 **Purpose:** Create a custom domain expert for your team
 
-**Use When:**
-- Need specialized expertise not covered by core experts
-- Industry-specific knowledge required
-- Want someone to review work through a specific lens
-
-**Example:**
+**Usage:**
 ```
 @create-expert
+@genna @create-expert
+```
 
-Genna will ask guided questions:
+**Works with:** Any expert (commonly Genna)
+
+**What It Does:**
+Walks you through creating a specialized expert with guided questions:
 - What's their name?
 - What's their domain/expertise?
-- Why do you need them?
 - What personality should they have?
 - What should they review?
 - What red flags should they catch?
 
-Then generates a complete expert profile with:
-- Personality and communication style
-- Specialized knowledge areas
-- Review frameworks
-- Quality standards
-- Example interactions
-```
+Then generates a complete expert profile.
 
-**Result:** Full expert file like Bonnie Jo (comprehensive, with personality, frameworks, and examples)
+**Result:** Full expert file in `pro-os/experts/[expert-name-domain].md`
 
-**Location:** `.fwdpro/pro-os/experts/[expert-name-domain].md`
+**When to Use:**
+- Need specialized industry expertise
+- Standard experts don't understand your domain
+- Want someone to review work through specific lens
 
 **See Full Guide:** `pro-os/commands/system/create-expert.md`
 
 ---
 
-### @create-command
+### @create-flow
 
-**Purpose:** Create a custom command workflow for your specific needs
+**Purpose:** Create a custom flow command workflow
 
-**Use When:**
-- Have a repetitive multi-step process
-- Custom industry workflow
-- Need multiple experts to collaborate in a specific order
-- Want consistent quality gates
-
-**Example:**
+**Usage:**
 ```
-@create-command
+@create-flow
+@genna @create-flow
+```
 
-Genna will ask guided questions:
+**Works with:** Any expert (commonly Genna)
+
+**What It Does:**
+Walks you through creating a custom structured workflow:
 - What should we call it?
 - What does it do?
-- When to use it?
 - What are the workflow steps?
 - Which experts are involved?
-- What quality checks?
+- What quality checks are required?
 - What gets delivered?
 
-Then generates a complete command workflow with:
-- Step-by-step process
-- Expert collaboration pattern
-- Quality checklist
-- Example interactions
+Then generates:
+- Flow command file in `pro-os/commands/flows/[your-flow].md`
+- Pattern file in `pro-os/system/patterns/[your-pattern].md` (if workflow is unique)
+
+**When to Use:**
+- Have a repetitive multi-step process
+- Need specific quality enforcement
+- Domain-specific workflow
+- Team coordination in specific order
+
+**How It Works:**
+1. AI walks you through workflow design
+2. Decides if existing pattern fits OR creates new pattern
+3. Generates flow command that references pattern
+4. You can then use: `@your-flow [item]`
+
+**Note:** This is NOT about copying templates manually - it's a guided AI-driven creation process.
+
+**See Full Guide:** `pro-os/commands/system/create-flow.md`
+
+---
+
+## Tips for Using Commands
+
+### 1. Tag the Expert You Want
+
+```
+@denny @create auth spec
+@ada @fix the bug
+@lyna @research VCs
 ```
 
-**Result:** Custom command file with your specific workflow
+Clear and explicit - you control who does the work.
 
-**Location:** `.fwdpro/pro-os/commands/custom/[command-name].md`
+### 2. Or Let AI Route
 
-**See Full Guide:** `pro-os/commands/system/create-command.md`
+```
+@create auth spec
+→ AI routes to appropriate expert based on context
+```
+
+### 3. Plain Language Works
+
+```
+I need a technical specification for authentication
+Help me research seed funding
+Can someone fix this bug?
+```
+
+Commands are helpful but not required - just describe what you need!
+
+### 4. Add Context
+
+```
+@denny @create auth spec for mobile app, need social login (Google/Apple), must be HIPAA compliant
+```
+
+More context = better output.
+
+### 5. Use Flows for Rigor
+
+```
+@create-specflow authentication
+@execute-specflow authentication
+```
+
+When you need bulletproof quality with enforced gates.
+
+### 6. Add Favorites (Just Ask!)
+
+Want quick access to commands?
+
+```
+"Add @create-specflow to my favorites"
+"Add @update-project to my favorites"
+```
+
+AI will create shortcuts in `your-commands/` for you.
+
+---
+
+## Command Reference Table
+
+| Command | Type | Works With | Timeline | Output |
+|---------|------|------------|----------|--------|
+| @create | Universal | Any expert | Varies | Deliverable |
+| @execute | Universal | Any expert | 1-3 days | Implementation |
+| @analyze | Universal | Any expert | 1 day | Analysis |
+| @review | Universal | Any expert | Same day | Feedback |
+| @update | Universal | Any expert | Hours-1 day | Updated doc |
+| @fix | Universal | Any expert | Hours-1 day | Fixed issue |
+| @research | Universal | Any expert | 1 day | Research doc |
+| @brainstorm | Universal | Any expert | Hours | Ideas |
+| @plan | Universal | Any expert | 1-2 days | Plan/roadmap |
+| @create-specflow | Flow | Any tech expert | 1 day | Technical spec |
+| @execute-specflow | Flow | Any implementer | 3-5 days | Spec + code |
+| @rt | Flow | Multiple experts | Same day | Multi-perspective feedback |
+| @update-project | System | Any expert | 15 min | Updated context |
+| @update-mission | System | Any expert | 1 hour | Mission doc |
+| @update-people | System | Any expert | 15 min | People doc |
+| @create-expert | System | Any expert | 15-30 min | Custom expert |
+| @create-flow | System | Any expert | 15-30 min | Custom flow |
+
+---
+
+## Common Workflows
+
+### Build a Feature (Full Cycle)
+```
+1. @create-specflow user-authentication
+2. @execute-specflow user-authentication
+3. @rt review authentication implementation
+```
+
+### Get Strategic Help
+```
+1. @genna @plan roadmap for Q1
+2. @rt review the roadmap
+3. @genna @update-project (after milestones)
+```
+
+### Create Investor Materials
+```
+1. @lyna @create pitch deck for seed round
+2. @rt review pitch deck
+3. @lyna @update pitch deck with feedback
+```
+
+### Fix a Bug
+```
+1. @ada @fix the login bug
+2. @denny @review the fix for architecture concerns
+```
+
+### Research & Decide
+```
+1. @research best authentication approaches
+2. @brainstorm authentication options
+3. @rt should we use OAuth or custom?
+```
 
 ---
 
@@ -852,30 +735,27 @@ Then generates a complete command workflow with:
 ### Command Not Working?
 
 **Try:**
-1. Use full command name: `@create-spec` not `@spec`
-2. Give more context: `@create-spec authentication for mobile app`
-3. Tag expert directly: `@denny create auth spec`
+1. Tag an expert explicitly: `@denny @create auth spec`
+2. Give more context: `@create auth spec for mobile app with social login`
+3. Use plain language: `I need a technical specification for authentication`
 
-### Wrong Expert Responded?
+### Not Sure Which Command?
 
-**Fix:**
+Just describe what you need:
 ```
-Actually, @denny this is more your area
-```
-
-### Need to Cancel?
-
-**Say:**
-```
-@genna never mind, let's not do that
+"I need help with authentication"
+"Can someone fix this bug?"
+"Help me create a pitch deck"
 ```
 
-### Command Taking Too Long?
+The AI will figure it out!
 
-**Check:**
+### Want to Change Approach Mid-Way?
+
+Just say so:
 ```
-@genna status on [command]?
-@denny where are we on the spec?
+"Actually, let's use @create-specflow instead for more structure"
+"Can @lyna take over this research instead?"
 ```
 
 ---
@@ -891,10 +771,9 @@ Actually, @denny this is more your area
 **Try workflows:**
 → Read `common-workflows.md`
 
-**Explore files:**
-→ Read `file-structure.md`
+**Understand the system:**
+→ Read `understanding-the-system.md`
 
 ---
 
-**You now know all the commands! Start building! 🚀**
-
+**Commands make collaboration structured and efficient - but plain language works too! Just tell the experts what you need.** 🚀

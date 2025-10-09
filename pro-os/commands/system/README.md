@@ -15,7 +15,7 @@ System commands manage your FWD PRO setup, not your project work. They handle:
 
 **These are different from:**
 - **Universal commands** (@create, @execute, @analyze) - For doing work
-- **Quick commands** (@create-spec, @create-pitch-deck) - Optimized workflows
+- **Flow commands** (@create-specflow, @execute-specflow) - Structured workflows
 
 ---
 
@@ -45,28 +45,27 @@ System commands manage your FWD PRO setup, not your project work. They handle:
 
 ---
 
-### **@update-onboarding**
+### **@update-kb** 
 **Expert:** Genna  
-**Purpose:** Re-run onboarding wizard to reconfigure FWD PRO
+**Purpose:** Quick update to project knowledge base
 
 **Use when:**
-- Work types changed (started fundraising, stopped coding)
-- Communication style changed globally
-- Need to add domain expert
-- Major project pivot
-- Want to reconfigure everything
+- Need to update project facts quickly
+- Single section changes
+- Minor corrections to KB
 
 **What it does:**
-- Re-runs onboarding questions (quick or full)
-- Updates configuration
-- Activates/deactivates experts
-- Preserves all your work
+- Reviews current project-kb.md
+- Asks what changed
+- Updates specific sections
+- Faster than full @update-project scan
 
 **Plain language works too:**
-- "re-run onboarding"
-- "reconfigure FWD PRO"
-- "I want to change my work types"
-- "add domain expert"
+- "update my KB"
+- "update project knowledge base"
+- "change project facts"
+
+**Note:** For comprehensive updates, use `@update-project` instead
 
 ---
 
@@ -151,29 +150,46 @@ System commands manage your FWD PRO setup, not your project work. They handle:
 
 ---
 
-### **@show-projects**
+### **@create-expert**
 **Expert:** Genna  
-**Purpose:** View all your FWD PRO projects in one dashboard
+**Purpose:** Create a custom domain expert for your project
 
 **Use when:**
-- Want to see all projects at once
-- Switching between projects
-- Checking what's active
-- Portfolio review
-- See expert distribution
+- Need specialized expertise not covered by core experts
+- Industry-specific knowledge required
+- Want expert to review work through specific lens
 
 **What it does:**
-- Shows all projects using your founder profile
-- Current activity across projects
-- Expert allocation
-- Quick links to any project
-- Recent activity timeline
+- Asks guided questions about the expert (name, domain, personality)
+- Generates complete expert profile
+- Creates expert file in pro-os/experts/
+- Can add to 0-your-experts/ for quick access
 
 **Plain language works too:**
-- "show my projects"
-- "what am I working on"
-- "list my projects"
-- "portfolio view"
+- "create domain expert"
+- "I need a custom expert"
+- "add a specialized expert"
+
+---
+
+### **@create-flow**
+**Expert:** Genna  
+**Purpose:** Create custom workflow command
+
+**Use when:**
+- Have repetitive multi-step process
+- Custom industry workflow
+- Need specific expert collaboration pattern
+
+**What it does:**
+- Asks about workflow steps
+- Which experts involved
+- Quality checks needed
+- Generates command file in pro-os/commands/custom/
+
+**Plain language works too:**
+- "create custom command"
+- "make my own workflow"
 
 ---
 
@@ -193,9 +209,9 @@ FWD PRO experts understand plain language! You don't need exact command syntax:
 
 **These all work:**
 ```
-@update-onboarding
-@genna re-run onboarding
-@genna I want to change my work types
+@update-founder-profile
+@genna update my founder profile
+@genna change how you talk to me
 ```
 
 **Command files help AI understand:**
@@ -210,13 +226,13 @@ FWD PRO experts understand plain language! You don't need exact command syntax:
 
 | You Want To... | Use This Command |
 |----------------|------------------|
-| Update project facts (stage, goals, tech) | `@update-project` |
-| Change work types (add/remove experts) | `@update-onboarding` |
-| Change communication style | `@update-onboarding` or `@update-founder-profile` |
-| Add domain expert | `@update-onboarding` |
+| Update project facts (stage, goals, tech) | `@update-project` or `@update-kb` |
+| Quick KB fact updates | `@update-kb` |
+| Change communication style | `@update-founder-profile` |
+| Change work types | `@update-project` |
+| Add domain expert | `@create-expert` |
 | Update team/advisors/investors | `@update-people` |
 | Update vision/purpose | `@update-mission` |
-| Full reconfiguration | `@update-onboarding` (full) |
 
 ---
 
@@ -236,8 +252,8 @@ FWD PRO experts understand plain language! You don't need exact command syntax:
 
 **Example:**
 ```
-@update-project              ← System command (update setup)
-@create-spec authentication  ← Work command (create deliverable)
+@update-project                  ← System command (update setup)
+@create-specflow authentication  ← Work command (create deliverable)
 ```
 
 ---
@@ -277,7 +293,7 @@ pro-os/commands/system/
 
 - **User Guide:** `user-guide/managing-your-project.md`
 - **Commands Guide:** `user-guide/commands-guide.md`
-- **Quick Commands:** `commands/quick/`
+- **Flow Commands:** `commands/flows/`
 - **Universal Commands:** `commands/`
 
 ---

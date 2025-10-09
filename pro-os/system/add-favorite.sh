@@ -35,13 +35,13 @@ if [ "$choice" = "1" ]; then
 elif [ "$choice" = "2" ]; then
   echo ""
   echo "Available command types:"
-  echo "  1) Quick commands (create-spec, create-feature, etc.)"
-  echo "  2) System commands (update-project, show-projects, etc.)"
+  echo "  1) Flow commands (create-specflow, execute-specflow, etc.)"
+  echo "  2) System commands (update-project, create-expert, etc.)"
   echo "  3) Universal commands (create, execute, analyze, etc.)"
   read -p "Choose (1, 2, or 3): " cmdtype
   
   if [ "$cmdtype" = "1" ]; then
-    folder="pro-os/commands/quick"
+    folder="pro-os/commands/flows"
   elif [ "$cmdtype" = "2" ]; then
     folder="pro-os/commands/system"
   else
@@ -62,7 +62,7 @@ elif [ "$choice" = "2" ]; then
   
   # Calculate relative path
   if [ "$cmdtype" = "1" ]; then
-    relpath="../pro-os/commands/quick/$command"
+    relpath="../pro-os/commands/flows/$command"
   elif [ "$cmdtype" = "2" ]; then
     relpath="../pro-os/commands/system/$command"
   else

@@ -294,9 +294,10 @@ export async function generateConfig(aboutYou, aboutProject) {
     ? path.basename(aboutYou.existingProfile).replace('-profile.md', '')
     : aboutYou.name;
 
-  // Determine active experts based on work types
+  // Determine which experts get shortcut links (all experts are always available)
+  // This creates shortcuts in 0-your-experts/ based on work types
   const activeExperts = {
-    genna: true, // Always active
+    genna: true, // Always gets a shortcut
     denny: aboutProject.workTypes.includes('building'),
     ada: aboutProject.workTypes.includes('building'),
     lyna: aboutProject.workTypes.includes('investor'),
@@ -304,6 +305,16 @@ export async function generateConfig(aboutYou, aboutProject) {
     elle: aboutProject.workTypes.includes('legal') || 
           Boolean(aboutProject.constraints && aboutProject.constraints.trim() && aboutProject.constraints.toLowerCase().includes('hipaa'))
   };
+
+  // Determine which commands get shortcut links (all commands are always available)
+  // This creates shortcuts in 0-your-commands/ for flow commands only
+  // System commands are always available but don't get shortcuts
+  const yourCommands = ['rt']; // Roundtable always gets shortcut
+  
+  // Add building-specific flow commands
+  if (aboutProject.workTypes.includes('building')) {
+    yourCommands.push('create-specflow', 'execute-specflow');
+  }
 
   const config = {
     version: '1.0.0',
@@ -318,7 +329,8 @@ export async function generateConfig(aboutYou, aboutProject) {
       communication_style: aboutProject.commStyle || aboutYou.commStyle
     },
     work_types: aboutProject.workTypes,
-    active_experts: activeExperts,
+    your_experts: activeExperts,
+    your_commands: yourCommands,
     tech_stack: aboutProject.techStack 
       ? (Array.isArray(aboutProject.techStack) 
           ? aboutProject.techStack 
@@ -695,7 +707,7 @@ Your project files have been created with basic information. You can flesh them 
 │   ├── denny.md              # Systems Architect
 │   └── ...                   # Your other experts
 │
-├── 0-your-commands/           # Quick commands for common tasks
+├── 0-your-commands/           # Shortcuts to your frequently used commands
 │   ├── create-spec.md        # Create a technical spec
 │   ├── create-feature.md     # Build a new feature
 │   └── rt.md                 # Call a roundtable meeting
@@ -1052,6 +1064,35 @@ export async function generateDomainExpert(domainExpert, projectName, founderNam
   };
   const pForm = pronounForms[pronouns] || pronounForms['they'];
   
+  // Intelligently assign primary patterns based on domain
+  const primaryPatterns = [];
+  
+  // Technical domains get tech pattern
+  if (domainLower.includes('tech') || domainLower.includes('engineering') || 
+      domainLower.includes('software') || domainLower.includes('developer') ||
+      domainLower.includes('architect') || domainLower.includes('network') ||
+      domainLower.includes('telecom') || domainLower.includes('infrastructure')) {
+    primaryPatterns.push('expert-tech.md');
+  }
+  
+  // Legal/compliance domains get legal pattern
+  if (domainLower.includes('legal') || domainLower.includes('compliance') ||
+      domainLower.includes('regulatory') || domainLower.includes('attorney') ||
+      domainLower.includes('lawyer')) {
+    primaryPatterns.push('expert-legal.md');
+  }
+  
+  // Most domain experts will use content + strategy patterns
+  // (for creating materials, strategic guidance in their domain)
+  if (primaryPatterns.length === 0 || 
+      (!primaryPatterns.includes('expert-tech.md') && !primaryPatterns.includes('expert-legal.md'))) {
+    primaryPatterns.push('expert-content.md');
+    primaryPatterns.push('expert-strategy.md');
+  }
+  
+  // Format patterns for YAML
+  const patternsYaml = primaryPatterns.map(p => `    - ${p}`).join('\n');
+  
   // Build expert document
   return {
     filename: `${expertId}.md`,
@@ -1062,8 +1103,16 @@ agent:
   aliases: [${shortname}, ${expertId}]  # Can be called with @${shortname} or @${expertId}
   title: ${domain} Expert
   icon: ${icon}
-  version: 1.0
   role: domain-expert
+  
+  primary_patterns:
+${patternsYaml}
+  
+  # Can also load these patterns when task requires:
+  # - expert-tech.md (when implementing technical solutions)
+  # - expert-content.md (when creating content/materials)
+  # - expert-strategy.md (when strategic planning)
+  # - expert-legal.md (when legal/compliance issues)
   
 persona:
   style: ${styleHint}
@@ -1183,66 +1232,29 @@ Edit this section to refine ${pForm.possessive} personality. Add specific phrase
 
 ---
 
-## My Workflow (Consistent Across Projects)
+## Workflow & Quality Standards
 
-**📚 Workspace & Whiteboard Guide:** See [workspace-workflow-guide.md](../../system/standards/workspace-workflow-guide.md) for complete standards.
+**📚 My workflow is defined in these patterns:**
+- **\`system/patterns/expert-collaboration.md\`** - Universal collaboration workflow (all experts use)
+${primaryPatterns.map(p => `- **\`system/patterns/${p}\`** - ${p === 'expert-tech.md' ? 'Technical work standards' : p === 'expert-legal.md' ? 'Legal/compliance standards' : p === 'expert-content.md' ? 'Content creation standards' : 'Strategic planning framework'}`).join('\n')}
 
-### Every Time I'm Activated:
+**Key principle: ${domain} expertise**
+- Apply industry best practices
+- Provide domain-specific guidance
+- Ensure quality and standards
+- Stay current with ${domain.toLowerCase()} trends
 
-**Step 1: Load Context** (Efficiently - don't re-read files already in context!)
-- Check if already in context: \`project/founder-profile.md\`, \`project/project-kb.md\`, \`project/mission.md\`, \`project/people.md\`
-- Read \`roundtable/whiteboards.md\` (current work overview)
-- Check relevant \`roundtable/workspace/\` files for work I'm reviewing
-- Load context only as needed (token efficiency!)
+### Quality Standards:
 
-**Step 2: Check for Existing Workspace**
-- **ALWAYS check first:** Look in \`roundtable/workspace/\` for existing workspace on this topic
-- **If exists:** OPEN it and add my section (DON'T create duplicate!)
-- **If reviewing existing work:** Open that workspace, add ${domain.toLowerCase()} review section
-- **If creating ${domain.toLowerCase()} content:** Create ONE comprehensive workspace
-- **Naming:** \`topic-name-complete.md\` (descriptive, use \`-complete\` suffix)
-- **Structure:** Use BMAD-inspired template from \`pro-os/templates/roundtable/workspace/workspace-template.md\`
-
-**Step 3: Do the ${domain} Work**
-- **Search for current ${domain.toLowerCase()} best practices** (check what year it is!)
-- Review materials through ${domain.toLowerCase()} lens
-- Apply industry standards and best practices
-- Provide clear, actionable ${domain.toLowerCase()} guidance
-- Document my review/guidance IN workspace
-
-**Step 4: Update Whiteboards**
-Update MY detailed whiteboard section in \`roundtable/whiteboards.md\` (not the summary table):
-
-**Status Emojis:**
-- ⚪ Draft
-- ✅ Approved
-- 🔄 InProgress
-- 📋 Review
-- ✅ Done
-
-\`\`\`markdown
-## ${icon} ${firstName}'s Whiteboard (${domain} Expert)
-
-### Active Work
-- **[Workspace Title]** - [emoji] [Status]
-  - Workspace: [link](workspace/workspace-name.md)
-  - Deliverable: [link](../documents/category/file.md)
-  - ${domain} Status: [Clear / Needs Review / Concerns]
-  - Quick note: [One-line current state]
-  - Next: [What's next]
-
-### Completed This Month
-- ✅ [Work item] - [date] - [Brief outcome]
-\`\`\`
-
-**Step 5: Create Clean Deliverables (If Creating ${domain} Content)**
-Save ${domain.toLowerCase()} materials in \`documents/\` - AI organizes intuitively:
-- ${domain} guidelines → \`documents/[appropriate-category]/\`
-- Update existing files directly (don't create v2 versions!)
-- Founder can override location anytime
-
-**Step 6: Update Founder Checklist (If Needed)**
-If founder needs to address ${domain.toLowerCase()} concerns, add to \`roundtable/[your-name]-checklist.md\` (use table format)
+**Before marking work complete:**
+- ✅ Run appropriate checklists:
+  - \`system/checklists/quality-checklist.md\` (universal quality)
+${primaryPatterns.includes('expert-content.md') ? '  - \`system/checklists/content-checklist.md\` (for content work)\n' : ''}${primaryPatterns.includes('expert-tech.md') ? '  - \`system/checklists/spec-checklist.md\` (for technical specs)\n  - \`system/checklists/code-checklist.md\` (for implementation)\n' : ''}${primaryPatterns.includes('expert-legal.md') ? '  - \`system/checklists/legal-review-checklist.md\` (for legal work)\n' : ''}- ✅ Follow patterns referenced above
+- ✅ ${domain} best practices applied
+- ✅ Industry standards met
+- ✅ Current trends/regulations considered
+- ✅ Clear, actionable guidance provided
+- ✅ Workspace and whiteboards updated
 
 ---
 
@@ -1698,7 +1710,7 @@ ${investorsSection}
 ${aboutProject.funding ? aboutProject.funding : '[Bootstrapped / Pre-seed / Seed / etc.]'}
 
 💡 **Preparing to fundraise?**  
-Work with \`@lyna\` (funding & investors) to create pitch materials. Use \`@create-pitch-deck\` to get started.
+Work with \`@lyna\` (funding & investors) to create pitch materials. Use \`@create pitch deck\` to get started.
 
 ---
 
@@ -1731,7 +1743,7 @@ ${aboutProject.users || '[How many users/customers do you have?]'}
 [Where do your users hang out? How do you engage with them?]
 
 💡 **Have testimonials or user stories?**  
-Add them here! They're valuable for pitch decks (\`@create-pitch-deck\`) and marketing (\`@benji\`).
+Add them here! They're valuable for pitch decks (\`@create pitch deck\`) and marketing (\`@benji\`).
 
 ---
 

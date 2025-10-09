@@ -11,10 +11,14 @@ purpose: Ensure specifications are complete, clear, and actionable
 This checklist ensures technical specifications (and similar planning documents) are complete, clear, and ready for implementation.
 
 Use this when:
-- Creating technical specifications
+- Creating technical specifications (especially with `@create-specflow`)
 - Creating architecture documents
 - Creating system design documents
 - Planning technical work
+
+**Related patterns:**
+- `pro-os/system/patterns/spec.md` - Comprehensive spec structure with TDD
+- `pro-os/system/patterns/universal.md` - Universal command workflow
 
 ---
 
@@ -52,6 +56,8 @@ Go through each section systematically. Mark items as:
 - [ ] Naming conventions defined
 - [ ] Breaking complex work into clear tasks/phases
 - [ ] Priority/sequence of implementation clear
+- [ ] Tasks follow TDD structure (test → implement → verify) if using `@create-specflow`
+- [ ] QA phase included (mandatory for flow commands)
 
 **Notes on missing items:**
 [Explain any [ ] or [N/A] items]
@@ -128,12 +134,15 @@ Go through each section systematically. Mark items as:
 ## 6. Quality Standards 📋
 
 - [ ] Follows FWD PRO workflow standards
+- [ ] Follows spec pattern (`pro-os/system/patterns/spec.md`) if using flow commands
+- [ ] TDD structure enforced (every task: test → implement → verify) if flow command
+- [ ] Mandatory QA phase included if flow command
 - [ ] Security considerations addressed
 - [ ] Performance requirements specified
 - [ ] Accessibility considerations (if user-facing)
 - [ ] Error handling approach defined
 - [ ] Logging/monitoring approach specified (if applicable)
-- [ ] Testing strategy outlined
+- [ ] Testing strategy outlined (or TDD structure if flow command)
 
 **Notes on quality:**
 [Any quality concerns?]
@@ -209,7 +218,7 @@ Go through each section systematically. Mark items as:
 [Brief summary of what will be built based on this spec]
 
 **Ready for:** 
-- [ ] Implementation (Ada)
+- [ ] Implementation (Ada - can use `@execute-specflow` if TDD structure present)
 - [ ] Review (Genna/Elle/other)
 - [ ] Founder approval
 - [ ] Further refinement (explain why)

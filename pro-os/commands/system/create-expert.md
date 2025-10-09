@@ -115,12 +115,19 @@ Generated:
 - ✅ Expert profile with credentials
 - ✅ Personality and communication style  
 - ✅ Specialized knowledge areas
+- ✅ Primary patterns assigned (based on domain)
+- ✅ Workflow standards referenced
 - ✅ Review framework for their domain
 - ✅ Quality standards and red flags
 - ✅ Example interactions
 - ✅ Signature sign-off format
 
 📁 Saved to: .fwdpro/pro-os/experts/[expert-name-domain].md
+
+**Patterns automatically assigned:**
+- Technical domains → expert-tech.md
+- Legal domains → expert-legal.md
+- Most other domains → expert-content.md + expert-strategy.md
 
 You can now use @[shortname] anytime you need [domain] expertise!
 
@@ -193,6 +200,7 @@ Your new expert will have:
 1. **Agent Metadata** (YAML front matter)
    - Name, ID, aliases
    - Role and hierarchy
+   - **Primary patterns** (intelligently assigned based on domain)
    - Specializations
    - Commands they respond to
 
@@ -209,28 +217,33 @@ Your new expert will have:
    - Phrases they use
    - How they interact
 
-5. **Core Expertise Areas**
+5. **Workflow & Quality Standards**
+   - References to universal patterns (expert-collaboration.md)
+   - References to domain-specific patterns (expert-tech.md, expert-content.md, etc.)
+   - Quality checklist references
+
+6. **Core Expertise Areas**
    - Primary focus areas
    - Specialized knowledge
    - Domain-specific skills
 
-6. **Review Framework**
+7. **Review Framework**
    - Standards checklist
    - Best practices validation
    - Quality assessment process
 
-7. **Standards & Red Flags**
+8. **Standards & Red Flags**
    - What makes work great in this domain
    - What to avoid
    - Warning signs to catch
 
-8. **Signature Sign-Off**
+9. **Signature Sign-Off**
    - Consistent review format
    - How they deliver feedback
 
-9. **Example Interaction**
-   - Shows how to work with them
-   - Sample review output
+10. **Example Interaction**
+    - Shows how to work with them
+    - Sample review output
 
 ---
 

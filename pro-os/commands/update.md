@@ -64,7 +64,7 @@ Find and read the existing work:
 
 ### 4. Make the Updates
 
-**Follow workflow standards** (`checklists/workflow-standards.md`)
+**Follow workflow standards** (`checklists/patterns/universal.md`)
 
 **Update approach:**
 - Preserve what's working (don't change unnecessarily)
@@ -122,9 +122,22 @@ Use `checklists/quality-checklist.md` or domain-specific checklist.
 
 ### 7. Save & Communicate
 
-**Save updated version:**
-- Same location: `roundtable/workspace/[filename]`
-- Or create versioned copy if major changes: `[filename]-v2.yaml`
+**Update files directly (no v2 versions!):**
+- Update the existing workspace: `roundtable/workspace/[filename].md`
+- Update the existing deliverable: `documents/[category]/[filename].md`
+- Document changes in the file itself (change history section)
+
+**TWO files updated:**
+1. `roundtable/workspace/[filename].md` - Updated with process notes
+2. `documents/[category]/[filename].md` - Updated deliverable
+
+### 8. Update Whiteboards
+
+Update your section in `roundtable/whiteboards.md` with update summary.
+
+---
+
+## Original Roundtable Update Example
 
 **Update Roundtable:**
 ```markdown
@@ -166,7 +179,7 @@ Use `checklists/quality-checklist.md` or domain-specific checklist.
 - **Test thoroughly** - Especially for code updates
 - **Preserve what works** - Don't change unnecessarily
 - **Communicate changes** - Update Roundtable clearly
-- **Follow standards** - Use workflow-standards.md pattern
+- **Follow standards** - Use patterns/universal.md pattern
 
 ### ❌ DON'T:
 - **Don't change blindly** - Understand the impact

@@ -67,7 +67,7 @@ When work is complete, workspaces are archived to \`archive/YYYY-MM/\`.
 
 The clean deliverables live in \`/documents/\`.
 
-See: pro-os/roundtable/templates/workspace/workspace-template.yaml for structure.
+See: pro-os/templates/roundtable/workspace/workspace-template.yaml for structure.
 `;
 
   await fs.writeFile(path.join(roundtablePath, 'workspace', 'README.md'), workspaceReadme);

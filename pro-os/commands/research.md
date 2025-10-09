@@ -48,11 +48,30 @@ Structure: Clear, scannable, well-organized
 4. **Recommendations** - What to do with this information
 5. **Sources** - Where you got the info
 
-### 4. Save & Share
+### 4. Create Workspace + Deliverable
 
-Save to: `roundtable/workspace/[topic]-research.md`
+**A. Create Workspace**
+- Save as: `roundtable/workspace/[topic]-research-complete.md`
+- Document research process, all sources checked, notes
+- Include raw findings before synthesis
+- Track research decisions and why certain sources were prioritized
 
-Update Roundtable with key findings.
+**B. Create Clean Deliverable**
+- Save as: `documents/research/[topic]-findings.md` (or appropriate category)
+- Format: Executive Summary, Detailed Findings, Options/Alternatives, Recommendations, Sources
+- This is the clean research report
+
+**TWO files created:**
+1. `roundtable/workspace/[topic]-research-complete.md` - Research process, all sources, raw notes
+2. `documents/research/[topic]-findings.md` - Clean research report
+
+### 5. Update Whiteboards
+
+Update your section in `roundtable/whiteboards.md` with workspace and deliverable links.
+
+### 6. Update Founder Checklist (If Needed)
+
+If founder needs to review findings, add to `roundtable/[founder-name]-checklist.md`.
 
 ---
 

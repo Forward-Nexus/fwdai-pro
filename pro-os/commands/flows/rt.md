@@ -352,7 +352,7 @@ Approval: Approved with minor edits
 ## References
 
 - Individual review: `commands/review.md`
-- Workflow standards: `system/standards/workflow-standards.md`
+- Workflow standards: `system/patterns/universal.md`
 - Quality checklists: `system/checklists/`
 
 ---

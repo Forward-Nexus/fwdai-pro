@@ -4,6 +4,11 @@
 
 Use this checklist before marking any work complete.
 
+**Related patterns:**
+- `pro-os/system/patterns/universal.md` - Universal command workflow (all commands follow three-phase pattern)
+- `pro-os/system/patterns/spec.md` - For technical specs
+- `pro-os/system/patterns/workspace.md` - For workspace structures
+
 ---
 
 ## Completeness

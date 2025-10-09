@@ -43,9 +43,9 @@
 **Custom experts YOU create during onboarding**
 
 Examples:
-- Bonnie Jo (Recovery Specialist) - For addiction recovery apps
-- Dr. Martinez (Clinical Psychology) - For mental health platforms
-- Sarah (E-commerce) - For retail/shopping features
+- Dr. Sarah Chen (HealthTech Expert) - For healthcare/medical apps
+- Alex Rodriguez (FinTech Expert) - For banking/payments apps
+- Jamie Parker (EdTech Expert) - For education/learning platforms
 
 **Tag:** `@[expert-name]`  
 **When:** Domain-specific questions, specialized knowledge, industry best practices
@@ -76,64 +76,84 @@ FWD PRO routes to the right expert automatically!
 
 **ALL experts are always available to tag!**
 
-**During onboarding, based on your work types, shortcuts are created in `your-experts/`:**
+**Where to find them:**
+- All 6 core experts: `pro-os/experts/` (can @mention any anytime)
+- Your shortcuts: `0-your-experts/` (convenient quick access)
+
+**During onboarding, based on your work types, shortcuts are created in `0-your-experts/`:**
 - Building something → Denny + Ada shortcuts
 - Investor materials → Lyna shortcut
 - Marketing/content → Benji shortcut
 - Legal/compliance → Elle shortcut
 - Genna always gets a shortcut (chief architect)
 
-**You can still tag ANY expert even if they don't have a shortcut!**
+**Want to add/remove shortcuts?**
+Just ask! Examples:
+- "Add a shortcut to @elle in my experts folder"
+- "Remove the @benji shortcut"
+
+The AI will create/remove symlinks for you!
 
 ---
 
-## Multiple Experts
+## Expert Collaboration
+
+### Workspaces:
+```
+Experts collaborate in workspace files:
+- roundtable/workspace/[feature-name].md
+- All experts can work in the same workspace
+- Progress tracked in real-time
+- Decisions and context documented
+```
 
 ### Roundtable Review:
 ```
 @rt review this feature spec
 
-→ All active experts weigh in
+→ Multiple experts weigh in
 → Each provides their perspective
-→ Comprehensive feedback
+→ Comprehensive feedback in workspace
 ```
 
-### Handoffs:
+### How Experts Work Together:
 ```
-@denny create auth spec
-→ Denny creates spec
-→ Automatically hands off to Ada for implementation
+You: @denny create auth spec
+→ Denny creates spec in workspace
+→ Updates progress in workspace file
 
-@ada implement this
-→ Ada builds it
-→ Suggests Denny for review
+You: @ada implement the auth spec
+→ Ada reads Denny's workspace
+→ Implements based on spec
+→ Documents progress in workspace
 ```
 
 ---
 
 ## Where Experts Live
 
-- **Core team:** `pro-os/experts/`
-- **Domain experts:** `pro-os/experts/[name].md`
-- **Your favorites:** `your-experts/` (shortcuts!)
+- **All 6 core experts:** `pro-os/experts/` (always available)
+- **Your shortcuts:** `0-your-experts/` (convenient quick access)
+- **Domain experts:** Created with `@create-expert` (also in `pro-os/experts/`)
 
 ---
 
-## Adding/Removing Experts
+## Pattern System
 
-**Add to favorites:**
-```bash
-./add-favorite.sh
-```
+**Experts use pattern files for workflows:**
+- All patterns in: `pro-os/system/patterns/`
+- Universal pattern: `expert-collaboration.md` (all experts use)
+- Domain patterns: `expert-tech.md`, `expert-content.md`, `expert-strategy.md`, `expert-legal.md`
 
-**Activate/deactivate:**
-```
-@update-onboarding
-→ Change work types
-→ Experts activate/deactivate automatically
-```
+**Experts load patterns based on the task:**
+- Technical work → `expert-tech.md`
+- Content/marketing → `expert-content.md`
+- Strategic planning → `expert-strategy.md`
+- Legal work → `expert-legal.md`
+
+**For more details:** See `user-docs/user-guide/understanding-the-system.md`
 
 ---
 
-**For detailed guides, see:** `documentation/user-guide/`
+**For detailed guides, see:** `user-docs/user-guide/`
 

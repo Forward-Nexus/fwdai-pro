@@ -261,9 +261,9 @@ FWD PRO gives you 6 core experts + your custom domain expert. Each has a specifi
 **Role:** Industry-specific expertise (you create this!)
 
 **Examples:**
-- Bonnie Jo (Recovery Specialist) - Addiction recovery apps
-- Dr. Martinez (Clinical Psychology) - Mental health platforms
-- Sarah (E-commerce) - Retail/shopping features
+- Dr. Sarah Chen (HealthTech Expert) - Healthcare/medical apps
+- Alex Rodriguez (FinTech Expert) - Banking/payments apps
+- Jamie Parker (EdTech Expert) - Education/learning platforms
 - Alex (EdTech) - Educational technology
 - Jamie (FinTech) - Financial services
 
@@ -274,12 +274,12 @@ FWD PRO gives you 6 core experts + your custom domain expert. Each has a specifi
 - Compliance in your industry
 - Terminology and language
 
-**Example Requests (using Bonnie Jo):**
+**Example Requests (using domain expert):**
 ```
-@bonnie-jo is this language appropriate for recovery?
-@bonnie-jo what features help with relapse prevention?
-@bonnie-jo review AI companion tone
-@bonnie-jo is this clinically sound?
+@sarah-chen is this HIPAA compliant?
+@sarah-chen what clinical workflows should we support?
+@sarah-chen review patient privacy in this feature
+@sarah-chen is this medical terminology correct?
 ```
 
 **Your Domain Expert's Value:**
@@ -333,7 +333,7 @@ Experts work together, not in isolation.
 
 ### Example: Feature Development
 
-**You:** `@create-feature user authentication`
+**You:** `@create-specflow + @execute-specflow user authentication`
 
 **Genna:** Kicks off the workflow
 > "Authentication feature - Denny will spec, Ada will implement, Elle should review for security."
@@ -441,34 +441,42 @@ Each expert has a unique personality:
 
 ---
 
-## Activating/Deactivating Experts
+## Managing Expert Shortcuts
 
-### Which Experts Are Active?
+### How Expert Shortcuts Work
 
-Based on your work types (from onboarding):
-- **Building something** → Denny + Ada
-- **Investor materials** → Lyna
-- **Marketing/content** → Benji
-- **Legal/compliance** → Elle
-- **Strategic planning** → Genna (always)
+**Important:** ALL experts are ALWAYS available to tag, regardless of your work types!
 
-### Change Active Experts
+Based on your work types (from onboarding), shortcuts are created in `0-your-experts/`:
+- **Building something** → Denny + Ada shortcuts
+- **Investor materials** → Lyna shortcut
+- **Marketing/content** → Benji shortcut
+- **Legal/compliance** → Elle shortcut
+- **Strategic planning** → Genna (always has shortcut)
 
-```
-@update-onboarding
-
-→ Re-run work types questions
-→ Experts activate/deactivate automatically
-```
-
-### All Experts Available
-
-Even if not "active," you can still tag them:
+**This is just for convenience!** You can always tag any expert directly:
 
 ```
 @elle do I need a privacy policy?
 
-→ Elle responds even if not actively working on your project
+→ Elle responds even without a shortcut in 0-your-experts/
+```
+
+### Update Your Shortcuts
+
+```
+@update-project
+
+→ If your work types change
+→ Expert shortcuts in 0-your-experts/ update automatically
+```
+
+You can also add shortcuts anytime:
+
+```
+"Add Elle to my expert favorites"
+
+→ AI creates shortcut for you
 ```
 
 ---
@@ -509,7 +517,7 @@ Even if not "active," you can still tag them:
 ### Create a Feature
 
 ```
-@create-feature user authentication
+@create-specflow + @execute-specflow user authentication
 
 → Genna coordinates
 → Denny specs
@@ -622,10 +630,11 @@ See what experts are working on, what they need from you.
 
 ### Expert Doesn't Understand
 
-**Solution:** Start fresh context
+**Solution:** Start a new conversation
 ```
-@newthread
+Start a new conversation in your IDE
 → Clears confusion, starts over
+→ Project files remain intact
 ```
 
 ### Wrong Expert Responded
@@ -662,9 +671,9 @@ Actually, @denny this is more your area
 
 ### Example Domain Experts
 
-**Recovery/Mental Health:**
-- Bonnie Jo (Recovery Specialist)
-- Clinical language, relapse prevention, peer support
+**HealthTech:**
+- Dr. Sarah Chen (HealthTech Expert)
+- HIPAA compliance, clinical workflows, patient privacy
 
 **E-commerce:**
 - Sarah (E-commerce Expert)
@@ -683,7 +692,7 @@ Actually, @denny this is more your area
 During onboarding (Q16) or later:
 
 ```
-@update-onboarding
+@update-kb or @update-project
 
 → Answer Q16: Create domain expert
 → Name, specialty, domain knowledge
@@ -695,10 +704,10 @@ During onboarding (Q16) or later:
 
 ## Expert Favorites (Shortcuts)
 
-Your most-used experts are in `your-experts/`:
+Your most-used experts are in `0-your-experts/`:
 
 ```
-your-experts/
+0-your-experts/
 ├── genna.md → pro-os/experts/genna-architect.md
 ├── denny.md → pro-os/experts/denny-systems-architect.md
 └── ada.md → pro-os/experts/ada-implementation.md
@@ -708,16 +717,18 @@ your-experts/
 
 ### Add More Favorites
 
-```bash
-./add-favorite.sh
+Just ask the AI:
 
-→ Choose expert
-→ Shortcut created in your-experts/
+```
+"Add Elle to my expert favorites"
+"Add Lyna to my shortcuts"
+
+→ AI creates shortcut in 0-your-experts/ for you
 ```
 
 ---
 
-## Expert Profiles
+## Expert Profiles (v4.0 Pattern System)
 
 Want to read an expert's full profile?
 
@@ -725,12 +736,38 @@ Want to read an expert's full profile?
 
 **Contains:**
 - Role and responsibilities
+- Identity and personality
 - When to tag them
 - Strengths and specialties
+- **Primary patterns** (workflow references)
 - Example requests
 - Working style
 
-**Read these to understand each expert better!**
+**What Changed in v4.0:**
+
+Experts now use a **pattern-based workflow system**. Instead of duplicating workflows in each expert file, they reference shared patterns:
+
+**Universal Pattern (All Experts):**
+- `expert-collaboration.md` - Context loading, workspace updates, collaboration
+
+**Domain Patterns (Task-Specific):**
+- `expert-tech.md` - Technical work (Denny, Ada)
+- `expert-content.md` - Content/marketing (Lyna, Benji, Genna)
+- `expert-strategy.md` - Strategic planning (Genna, Lyna, Benji)
+- `expert-legal.md` - Legal/compliance (Elle)
+
+**How It Works:**
+1. Each expert has `primary_patterns` in their profile
+2. Experts dynamically load patterns based on your task
+3. Example: Ask Denny (tech expert) to write content → he loads `expert-content.md` too!
+
+**Benefits:**
+- Cleaner expert files (~12% smaller)
+- Single source of truth for workflows
+- Easier to maintain and update
+- Experts can work across domains when needed
+
+**Pattern Files Location:** `.fwdpro/pro-os/system/patterns/`
 
 ---
 
@@ -742,8 +779,8 @@ Want to read an expert's full profile?
 **Learn commands:**
 → Read `commands-guide.md`
 
-**Understand file structure:**
-→ Read `file-structure.md`
+**Understand the system:**
+→ Read `understanding-the-system.md`
 
 ---
 

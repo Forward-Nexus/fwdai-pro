@@ -105,17 +105,17 @@ Multiple specialized experts collaborate transparently:
 
 ## 👥 Your Expert Team
 
-When you install FWD PRO, you get experts for YOUR specific needs:
+When you install FWD PRO, you get **all 6 core experts** plus optional domain experts:
 
 - **Genna** (Chief Architect) - Vision, strategy, big-picture thinking
-- **Denny** (Systems Architect) - Technical design and architecture *(if building software)*
-- **Ada** (Lead Engineer) - Implementation, testing, code review *(if building software)*
-- **Lyna** (External Strategy) - Fundraising, pitch decks, investor relations *(if raising money)*
-- **Benji** (Internal Growth) - Marketing, operations, growth strategy *(if scaling)*
-- **Elle** (Legal Counsel) - Compliance, contracts, legal guidance *(if needed)*
+- **Denny** (Systems Architect) - Technical design and architecture
+- **Ada** (Lead Engineer) - Implementation, testing, code review
+- **Lyna** (External Strategy) - Fundraising, pitch decks, investor relations
+- **Benji** (Internal Growth) - Marketing, operations, growth strategy
+- **Elle** (Legal Counsel) - Compliance, contracts, legal guidance
 - **[Custom Expert]** - Optional domain expert for YOUR industry
 
-**Only the experts relevant to YOUR work are activated!**
+**ALL experts are always available!** Based on your work types, certain experts get quick-access shortcuts in the `0-your-experts/` folder, but you can @mention any expert anytime from `pro-os/experts/`.
 
 Experts adapt to your communication style: professional, friendly, casual, direct, or supportive.
 
@@ -123,20 +123,25 @@ Experts adapt to your communication style: professional, friendly, casual, direc
 
 ## 💡 Real Workflows
 
-### Building a Feature
+### Building a Feature (with TDD)
 ```bash
-@create-feature user authentication
+@denny @create-specflow user authentication
 ```
 **Timeline:** 1-2 weeks
-- Denny creates technical spec
+- Denny creates technical spec with TDD structure
 - Elle reviews security/compliance
-- Ada implements with tests
-- Denny reviews architecture
+- Ada implements with tests-first approach
+- Mandatory QA phase before completion
 - Feature complete!
+
+**Alternative (flexible):**
+```bash
+@denny @create spec for user authentication
+```
 
 ### Creating Pitch Deck
 ```bash
-@create-pitch-deck
+@lyna @create pitch deck for [investor type]
 ```
 **Timeline:** 2-3 days
 - Lyna reviews your mission and traction
@@ -147,7 +152,7 @@ Experts adapt to your communication style: professional, friendly, casual, direc
 
 ### Launching Marketing Campaign
 ```bash
-@benji plan launch campaign for [product]
+@benji @plan launch campaign for [product]
 ```
 **Timeline:** 1-2 days
 - Research target audience and channels
@@ -161,7 +166,7 @@ Experts adapt to your communication style: professional, friendly, casual, direc
 @rt [anything to review]
 ```
 **Timeline:** Same day
-- All active experts review
+- All relevant experts review
 - Each provides specialized perspective
 - Genna synthesizes consensus
 - You decide next steps!
@@ -175,26 +180,32 @@ After installation, your project has:
 ```
 your-project/
 ├── .fwdpro/
-│   ├── *welcome.md                 ← Start here!
-│   ├── 0-roundtable/               ← Your dashboard
-│   │   ├── whiteboards.md          ← Expert collaboration
+│   ├── *welcome.md                     ← Start here!
+│   ├── 0-roundtable/                   ← Your dashboard
+│   │   ├── whiteboards.md              ← Expert collaboration
 │   │   ├── [your-name]-checklist.md    ← Your action items
-│   │   └── workspace/              ← Active work
-│   ├── 0-your-experts/             ← Quick access to YOUR experts
-│   ├── 0-your-commands/            ← Quick access to commands
-│   ├── documents/                  ← Finished deliverables
-│   │   ├── investor/               ← Pitch decks, business plans
-│   │   ├── technical/              ← Specs, architecture docs
-│   │   ├── marketing/              ← Campaigns, content
-│   │   └── legal/                  ← Policies, compliance
-│   └── pro-os/                     ← The expert system
-│       ├── experts/                ← Expert personalities
-│       ├── commands/               ← Available commands
-│       ├── documentation/          ← User guides
-│       └── project/                ← Your project info
-│           ├── config.yaml         ← System configuration
-│           ├── founder-profile.md  ← How you work
-│           └── project-kb.md       ← Project facts
+│   │   └── workspace/                  ← Active work
+│   ├── 0-your-experts/                 ← Quick access to YOUR experts
+│   ├── 0-your-commands/                ← Quick access to commands
+│   ├── documents/                      ← Finished deliverables
+│   │   └── [AI organizes intuitively by type]
+│   └── pro-os/                         ← The expert system
+│       ├── experts/                    ← Expert personalities (6 core + custom)
+│       ├── commands/                   ← Available commands
+│       │   ├── [universal commands]    ← create, execute, analyze, etc.
+│       │   ├── flows/                  ← Structured workflows (TDD, roundtable)
+│       │   └── system/                 ← System management commands
+│       ├── system/                     ← Workflow patterns & standards
+│       │   ├── patterns/               ← Workflow guides
+│       │   ├── standards/              ← Formatting & style
+│       │   └── checklists/             ← Quality validation
+│       ├── user-docs/                  ← User guides & FAQs
+│       └── project/                    ← Your project context
+│           ├── config.yaml             ← System configuration
+│           ├── founder-profile.md      ← How you work
+│           ├── project-kb.md           ← Project facts
+│           ├── mission.md              ← Product vision
+│           └── people.md               ← Team, advisors, investors
 ```
 
 ---
@@ -238,14 +249,14 @@ FWD PRO learns how YOU work:
 
 Experts adapt to YOU, not the other way around.
 
-### **Work-Based Activation**
-FWD PRO activates experts based on what you're doing:
-- Building something? → Denny + Ada activated
-- Raising money? → Lyna activated
-- Marketing? → Benji activated
-- Legal needs? → Elle activated
+### **Work-Based Shortcuts**
+FWD PRO creates quick-access shortcuts based on what you're doing:
+- Building something? → Denny + Ada get shortcuts
+- Raising money? → Lyna gets a shortcut
+- Marketing? → Benji gets a shortcut
+- Legal needs? → Elle gets a shortcut
 
-You only see what you need.
+All experts are always available - shortcuts just make the most relevant ones easier to find.
 
 ---
 
@@ -263,11 +274,14 @@ FWD PRO is designed for clarity and flexibility:
 ## 📚 Learn More
 
 After installation, check:
-- `pro-os/user-docs/user-guide/getting-started.md` - Complete walkthrough
-- `pro-os/user-docs/user-guide/common-workflows.md` - Real examples with timelines
-- `pro-os/user-docs/faqs/` - Common questions
-- `your-experts/README.md` - Your expert team reference
-- `your-commands/README.md` - Available commands
+- `.fwdpro/*welcome.md` - Start here! Quick orientation
+- `.fwdpro/pro-os/user-docs/user-guide/getting-started.md` - Complete walkthrough
+- `.fwdpro/pro-os/user-docs/user-guide/common-workflows.md` - Real examples with timelines
+- `.fwdpro/pro-os/user-docs/faqs/` - Common questions
+- `.fwdpro/0-your-experts/README.md` - Your expert team reference
+- `.fwdpro/0-your-commands/README.md` - Available commands
+- `.fwdpro/pro-os/experts/README.md` - All experts (core + custom)
+- `.fwdpro/pro-os/commands/` - All available commands
 
 ---
 

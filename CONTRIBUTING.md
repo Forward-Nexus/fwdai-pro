@@ -20,9 +20,10 @@ Thank you for your interest in contributing to FWD PRO! 🎉
 
 Before contributing, please:
 
-1. **Read our vision** - Check the README and documentation in `pro-os/user-docs/`
-2. **Discuss first** - Open an issue or discussion before big changes
-3. **Keep it universal** - Avoid software-specific features in core system
+1. **Read our vision** - Check the README and user guides in `.fwdpro/pro-os/user-docs/`
+2. **Understand the system** - Review patterns in `.fwdpro/pro-os/system/patterns/`
+3. **Discuss first** - Open an issue or discussion before big changes
+4. **Keep it universal** - Avoid software-specific features in core system
 
 ---
 

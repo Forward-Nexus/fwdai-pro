@@ -52,7 +52,7 @@ Use `@update-people` to track investors and their involvement.
 [Bootstrapped / Pre-seed / Seed / etc.]
 
 💡 **Preparing to fundraise?**  
-Work with `@lyna` (funding & investors) to create pitch materials. Use `@create-pitch-deck` to get started.
+Work with `@lyna` (funding & investors) to create pitch materials. Use `@create pitch deck` to get started.
 
 ---
 
@@ -88,7 +88,7 @@ Update this section as you make new connections. It helps `@lyna` (fundraising) 
 [Where do your users hang out? How do you engage with them?]
 
 💡 **Have testimonials or user stories?**  
-Add them here! They're valuable for pitch decks (`@create-pitch-deck`) and marketing (`@benji`).
+Add them here! They're valuable for pitch decks (`@create pitch deck`) and marketing (`@benji`).
 
 ---
 

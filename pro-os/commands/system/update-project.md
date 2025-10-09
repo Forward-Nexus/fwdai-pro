@@ -272,8 +272,8 @@ Experts automatically see changes!
 ## Related Commands
 
 - `@genna review project context` - Review without updating
-- `@create-pitch-deck` - If adding investor work
-- `@rt-update` - Weekly status check (different focus)
+- `@create pitch deck` - If adding investor work
+- `@rt check status` - Weekly status check (different focus)
 
 ---
 

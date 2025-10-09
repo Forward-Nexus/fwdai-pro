@@ -12,46 +12,56 @@ FWD PRO shines when you use workflows that leverage multiple experts. This guide
 
 ## Building Features
 
-### Workflow: Full Feature Development
+### Workflow: Full Feature Development (Spec → Implementation)
 
 **Best for:** New features that need spec → implementation → review
 
-**Command:** `@create-feature [feature name]`
+**Commands:** `@create-specflow` then `@execute-specflow`
 
 **Steps:**
 
-1. **You initiate:**
+1. **Create the spec:**
 ```
-@create-feature user authentication
+@create-specflow user authentication
 ```
 
-2. **Genna coordinates:**
-> "Authentication feature - I'll have Denny spec it, then Ada implement."
-
-3. **Denny creates spec:**
+2. **Denny asks questions:**
 > "What type of auth? JWT? OAuth? Social login needed?"
 
-4. **You answer questions**
+3. **You answer questions**
 
-5. **Denny finalizes spec:**
-> workspace/auth-spec-draft.md → documents/technical/auth-spec.md
+4. **Denny creates spec with TDD structure:**
+> - Story & acceptance criteria
+> - Tasks with test requirements
+> - Technical design
+> - Saved to: `documents/tech/specs/user-authentication/spec.md`
 
-6. **Experts review:**
+5. **Experts review:**
 - Elle: Security/compliance check
 - Ada: Implementation feasibility
 
-7. **Ada implements:**
-> "Starting Monday. Will take 3 days."
+6. **Execute the spec:**
+```
+@execute-specflow user-authentication
+```
 
-8. **Ada delivers:**
-> Code in your repo + implementation notes
+7. **Ada implements with TDD:**
+> - Writes tests FIRST (for each task)
+> - Implements code
+> - Verifies tests pass
+> - Updates progress in spec
 
-9. **Denny reviews:**
-> Architecture approval
+8. **Mandatory QA phase:**
+> - Full test suite (80%+ coverage required)
+> - Linter/code quality checks
+> - Manual testing against AC
 
-10. **Feature complete!**
+9. **Feature complete!**
+> Code + tests + documentation all delivered
 
-**Timeline:** 3-5 days (depending on complexity)
+**Timeline:** 2-4 days (enforced quality gates)
+
+**Key Difference:** TDD is enforced, QA is mandatory, can't skip quality checks!
 
 ---
 
@@ -59,13 +69,13 @@ FWD PRO shines when you use workflows that leverage multiple experts. This guide
 
 **Best for:** You just need a technical spec, will implement yourself
 
-**Command:** `@create-spec [feature name]`
+**Command:** `@create-specflow [feature name]`
 
 **Steps:**
 
 1. **You initiate:**
 ```
-@create-spec payment processing
+@create-specflow payment processing
 ```
 
 2. **Denny asks questions:**
@@ -153,7 +163,7 @@ Location: src/auth/
 
 **Best for:** Fundraising, need investor materials
 
-**Command:** `@create-pitch-deck`
+**Command:** `@lyna create pitch deck for [purpose]`
 
 **Steps:**
 
@@ -458,26 +468,30 @@ Location: workspace/product-spec-draft.md
 
 **Best for:** Regular check-ins with the team
 
-**Command:** `@rt-update`
-
 **Steps:**
 
-1. **You initiate:**
-```
-@rt-update
+1. **Check whiteboards:**
+```bash
+open .fwdpro/0-roundtable/whiteboards.md
 ```
 
-2. **Each expert reports:**
+See all expert activity:
 - What they completed this week
 - What they're working on
 - Any blockers
 - What they need from you
 
-3. **Genna facilitates:**
-> Identifies priorities for next week
+2. **Ask specific questions if needed:**
+```
+@genna what's the status on all active work?
+```
 
-4. **Update on whiteboards:**
-> Current status visible to all
+3. **Review your checklist:**
+```bash
+open .fwdpro/0-roundtable/[your-name]-checklist.md
+```
+
+See what needs your attention
 
 **Timeline:** 15-30 minutes
 
@@ -509,10 +523,10 @@ Location: workspace/product-spec-draft.md
 5. **Genna updates:**
 - project-kb.md
 - config.yaml
-- Activates/deactivates relevant experts
+- Updates expert shortcuts if work types changed
 
-6. **Experts notified:**
-> All experts now have current context
+6. **All experts notified:**
+> All experts now have current context (ALL experts are always available!)
 
 **Timeline:** 10-15 minutes
 
@@ -604,7 +618,7 @@ Location: workspace/product-spec-draft.md
 
 ### Create Your Own!
 
-See: `.fwdpro/pro-os/commands/quick/_TEMPLATE.md`
+Use: `@create-flow` command
 
 **Example custom workflows:**
 - Your specific industry process
@@ -613,19 +627,22 @@ See: `.fwdpro/pro-os/commands/quick/_TEMPLATE.md`
 - Recurring monthly tasks
 
 **Steps:**
-1. Copy `_TEMPLATE.md`
-2. Define your workflow phases
-3. Specify which experts do what
-4. Save as `your-workflow.md`
-5. Use: `@your-workflow`
+1. Use `@create-flow` command
+2. Genna will ask guided questions about:
+   - What the flow should do
+   - Which experts are involved
+   - What the workflow steps are
+   - Quality checks needed
+3. Flow command file gets generated
+4. Use: `@your-workflow`
 
 ---
 
 ## Workflow Tips
 
-### 1. Start with Quick Commands
+### 1. Start with Flow Commands
 
-Use `@create-spec`, `@create-feature`, `@rt` - they're optimized!
+Use `@create-specflow`, `@create-specflow + @execute-specflow`, `@rt` - they're optimized!
 
 ### 2. Tag Multiple Experts
 
@@ -660,8 +677,8 @@ Experts tell you what they need from you
 **Learn all commands:**
 → Read `commands-guide.md`
 
-**Understand files:**
-→ Read `file-structure.md`
+**Understand the system:**
+→ Read `understanding-the-system.md`
 
 **Manage your project:**
 → Read `managing-your-project.md`

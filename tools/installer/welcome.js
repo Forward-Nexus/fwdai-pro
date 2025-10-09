@@ -8,12 +8,13 @@ import chalk from 'chalk';
 import boxen from 'boxen';
 
 export function generateWelcomeMessage(aboutYou, aboutProject) {
-  const { commStyle } = aboutYou.existingProfile ? { commStyle: 'friendly' } : aboutYou;
+  const { commStyle } = aboutYou.existingProfile ? { commStyle: ['friendly'] } : aboutYou;
   const { projectName, workTypes, goal } = aboutProject;
 
-  // Emoji based on communication style
-  const emoji = commStyle === 'casual' ? '🎉' : 
-                commStyle === 'supportive' ? '✨' : 
+  // Emoji based on communication style (check if array includes casual or encouraging)
+  const styles = Array.isArray(commStyle) ? commStyle : [commStyle];
+  const emoji = styles.includes('casual') ? '🎉' : 
+                styles.includes('encouraging') ? '✨' : 
                 '';
 
   let message = '';
@@ -23,7 +24,7 @@ export function generateWelcomeMessage(aboutYou, aboutProject) {
 
   // Configuration summary
   message += chalk.bold('✅ System configured:\n');
-  message += chalk.gray(`   - Communication: ${getCommStyleName(commStyle)}\n`);
+  message += chalk.gray(`   - Communication: ${formatCommStyles(commStyle)}\n`);
   message += chalk.gray(`   - Focus: ${formatWorkTypes(workTypes)}\n`);
   message += chalk.gray(`   - Goal: ${goal}\n\n`);
 
@@ -40,17 +41,15 @@ export function generateWelcomeMessage(aboutYou, aboutProject) {
   message += chalk.gray('   - .fwdpro/0-your-commands/ - Shortcuts to useful commands\n');
   message += chalk.dim('   (These are symlinks - always up-to-date!)\n');
 
-  // Quick commands
-  message += chalk.bold('\n⚡ Quick commands ready:\n');
+  // Flow commands
+  message += chalk.bold('\n⚡ Flow commands ready:\n');
   if (workTypes.includes('building')) {
-    message += chalk.gray('   - @create-spec - Technical specifications\n');
-    message += chalk.gray('   - @create-feature - Full spec → implementation\n');
+    message += chalk.gray('   - @create-specflow - Create technical spec (TDD structure)\n');
+    message += chalk.gray('   - @execute-specflow - Implement spec (TDD + QA enforced)\n');
   }
-  if (workTypes.includes('investor')) {
-    message += chalk.gray('   - @create-pitch-deck - Investor materials\n');
-  }
-  message += chalk.gray('   - @rt - Roundtable review (all experts)\n');
+  message += chalk.gray('   - @rt - Roundtable review (multi-expert)\n');
   message += chalk.gray('   - @update-project - Update project context\n');
+  message += chalk.gray('   - @create-expert - Create new domain expert\n');
 
   // Learn more
   message += chalk.bold('\n📖 Learn more:\n');
@@ -72,15 +71,19 @@ export function generateWelcomeMessage(aboutYou, aboutProject) {
   return message;
 }
 
-function getCommStyleName(style) {
+function formatCommStyles(styles) {
   const names = {
     professional: 'Professional/formal',
     friendly: 'Conversational/friendly',
     casual: 'Casual/enthusiastic',
     direct: 'Direct/no-fluff',
-    supportive: 'Supportive/encouraging'
+    encouraging: 'Encouraging'
   };
-  return names[style] || 'Friendly';
+  
+  // Handle both single value (legacy) and array (current)
+  const styleArray = Array.isArray(styles) ? styles : [styles];
+  const formatted = styleArray.map(s => names[s] || s).join(', ');
+  return formatted || 'Friendly';
 }
 
 function formatWorkTypes(workTypes) {

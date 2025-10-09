@@ -31,7 +31,7 @@ Clarify:
 
 **Load project context:**
 - Read `project/` files (founder-profile, project-kb, mission)
-- Read `0-ROUNDTABLE.md` (recent work and decisions)
+- Read `roundtable/whiteboards.md` (recent work and decisions)
 - Check `roundtable/workspace/` for relevant expert work
 
 **Search for best practices:**
@@ -65,7 +65,7 @@ Phase 3: Launch (Weeks 7-8)
 
 ### 4. Create the Plan
 
-**Follow workflow standards** (`checklists/workflow-standards.md`)
+**Follow workflow standards** (`checklists/patterns/universal.md`)
 
 **Plan should include:**
 
@@ -145,12 +145,40 @@ For each phase:
 - [ ] Kick off planning meeting if needed
 ```
 
-### 7. Document & Share
+### 7. Create Workspace + Deliverable
 
-**Save plan:**
-- `roundtable/workspace/[name]-plan.md`
-- Use clear structure (markdown or YAML)
-- Include all sections above
+**A. Create Workspace**
+- Save as: `roundtable/workspace/[name]-plan-complete.md`
+- Document planning process, research, decisions
+- Include all considered options and why you chose this approach
+- Track changes and updates to the plan
+
+**B. Create Clean Deliverable**
+- Save as: `documents/plans/[name]-plan.md` (or appropriate category)
+- Include all sections from Step 4 (Executive Summary, Phases, Timeline, etc.)
+- This is the clean plan the team will follow
+
+**TWO files created:**
+1. `roundtable/workspace/[name]-plan-complete.md` - Planning process, research, decisions
+2. `documents/plans/[name]-plan.md` - Clean final plan
+
+### 8. Update Whiteboards
+
+Update your section in `roundtable/whiteboards.md` with workspace and deliverable links.
+
+### 9. Update Founder Checklist
+
+Add review task to `roundtable/[founder-name]-checklist.md`:
+```markdown
+- [ ] Review and approve [name] plan
+  - Workspace: `roundtable/workspace/[name]-plan-complete.md`
+  - Deliverable: `documents/plans/[name]-plan.md`
+  - Focus on: Timeline, resources, priorities
+```
+
+---
+
+## Original Roundtable Update Example
 
 **Update Roundtable:**
 ```markdown

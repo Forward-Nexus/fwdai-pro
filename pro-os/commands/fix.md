@@ -69,7 +69,7 @@ Clarify:
 
 ### 5. Implement the Fix
 
-**Follow workflow standards** (`checklists/workflow-standards.md`)
+**Follow workflow standards** (`checklists/patterns/universal.md`)
 
 **For code fixes:**
 - Create a branch
@@ -97,29 +97,30 @@ Clarify:
 
 **Test thoroughly** - bugs that come back are embarrassing!
 
-### 7. Document & Prevent
+### 7. Create Workspace + Deliverable
 
-**Document the fix:**
-```markdown
-## Bug Fix: [Problem Description]
+**A. Create Workspace**
+- Save as: `roundtable/workspace/[problem]-fix-complete.md`
+- Document debugging process, all things tried, root cause analysis
+- Include test results and validation steps
+- Track what worked and what didn't
 
-**Problem:**
-[What was broken]
+**B. Create Clean Deliverable** (if applicable)
+- For bugs: The fix is in the code itself (no separate doc needed)
+- For process problems: Save as `documents/processes/[problem]-solution.md`
+- Include: Problem, Root Cause, Solution, Testing, Prevention
 
-**Root Cause:**
-[Why it was broken]
+**Files created:**
+1. `roundtable/workspace/[problem]-fix-complete.md` - Debugging process, all attempts, full context
+2. Code changes (for code bugs) OR process document (for process problems)
 
-**Solution:**
-[What was changed]
+### 8. Update Whiteboards
 
-**Testing:**
-[How it was verified]
+Update your section in `roundtable/whiteboards.md` with workspace link and fix summary.
 
-**Prevention:**
-[How to prevent similar issues]
-```
+---
 
-**Save to:** `roundtable/workspace/[problem]-fix.md`
+## Original Roundtable Update Example
 
 **Update Roundtable:**
 ```markdown

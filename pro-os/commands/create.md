@@ -2,6 +2,30 @@
 
 **Purpose:** Universal command for creating anything - specs, designs, documents, content, strategies, briefs, etc.
 
+**Type:** Flexible workflow (AI infers structure based on context)
+
+**Pattern:** This command follows `pro-os/system/patterns/universal.md` (three-phase workflow with adaptive intelligence)
+
+**Alternative:** For structured technical specs with TDD enforcement, use `@create-specflow` instead.
+
+---
+
+## When to Use This vs Flow Commands
+
+### Use `@create` (this command) when:
+- ✅ Flexible creation (content, strategy, documents)
+- ✅ No strict TDD requirements
+- ✅ AI should infer structure
+- ✅ Non-technical deliverables
+
+### Use `@create-specflow` when:
+- ✅ Technical specification needed
+- ✅ Want TDD enforced (tests first, always)
+- ✅ Want mandatory QA phase
+- ✅ Bulletproof quality requirements
+
+**Both are valid! Choose based on needs.**
+
 ---
 
 ## How This Works
@@ -9,11 +33,11 @@
 When founder says: `@[expert] @create [thing]`
 
 **Examples:**
-- `@denny @create spec about authentication`
-- `@lyna @create pitch deck for investors`
-- `@genna @create product vision document`
-- `@benji @create marketing campaign brief`
-- `@ada @create login feature` (creates implementation)
+- `@denny @create spec about authentication` → Creates spec (can also use `@create-specflow` for TDD enforcement)
+- `@lyna @create pitch deck for investors` → Creates pitch deck
+- `@genna @create product vision document` → Creates vision doc
+- `@benji @create marketing campaign brief` → Creates campaign brief
+- `@ada @create login feature` → Creates implementation
 
 ---
 
@@ -57,7 +81,7 @@ If anything is unclear or missing:
 
 ### 4. Create Workspace + Deliverable
 
-Follow expert workflow from `system/standards/workflow-standards.md`:
+Follow expert workflow from `system/patterns/universal.md` and `system/patterns/expert-collaboration.md`:
 
 **A. Create Workspace**
 - Use template: `roundtable/templates/workspace-template.yaml`
@@ -81,7 +105,7 @@ Follow expert workflow from `system/standards/workflow-standards.md`:
 ### 5. Quality Check
 
 Before marking complete:
-- ✅ Follow `system/standards/workflow-standards.md`
+- ✅ Follow `system/patterns/universal.md`
 - ✅ Run appropriate checklist from `system/checklists/`:
   - Spec → `spec-checklist.md`
   - Code → `code-checklist.md`
@@ -173,12 +197,12 @@ Your call - I'm here either way! 😊
 2. Asks: "What type of auth? (OAuth, email/password, biometric?)"
 3. Searches "current year authentication best practices"
 4. Creates workspace: `roundtable/workspace/auth-spec.md`
-5. Creates deliverable: `documents/technical/auth-spec.md`
+5. Creates deliverable: `documents/tech/auth-spec.md`
 6. Documents decisions and approach IN workspace
 7. Runs `system/checklists/spec-checklist.md`
 8. Updates `roundtable/whiteboards.md` with his section
 9. Adds to `roundtable/[your-name]-checklist.md` if review needed
-10. "Auth spec ready! Check `documents/technical/auth-spec.md`"
+10. "Auth spec ready! Check `documents/tech/auth-spec.md`"
 
 ### Example 2: Creating a Pitch Deck
 
@@ -205,6 +229,25 @@ Your call - I'm here either way! 😊
 - **Deliverable = clean output** - What founder sees/uses/shares
 - **Stay adaptable** - Create value even if there's no specific workflow for something
 - **Quality matters** - Don't rush, do it right
+
+---
+
+## Related Commands & Patterns
+
+**Flow Commands (Structured Workflows):**
+- `@create-specflow [feature]` - Create technical spec with TDD enforcement
+- `@execute-specflow [feature]` - Execute spec with mandatory QA
+
+**Patterns (Reference):**
+- `pro-os/system/patterns/universal.md` - Universal command workflow (this command follows this)
+- `pro-os/system/patterns/spec.md` - Comprehensive spec pattern (includes TDD)
+- `pro-os/system/patterns/workspace.md` - Simple vs Complex workspaces
+
+**Universal Commands (Flexible Workflows):**
+- `@execute` - Execute/implement anything
+- `@analyze` - Deep analysis
+- `@review` - Review work
+- `@update` - Modify existing work
 
 ---
 

@@ -2,6 +2,30 @@
 
 **Purpose:** Universal command for building, implementing, or running anything - features, campaigns, processes, designs, operations, etc.
 
+**Type:** Flexible workflow (AI adapts execution to context)
+
+**Pattern:** This command follows `pro-os/system/patterns/universal.md` (three-phase workflow with adaptive intelligence)
+
+**Alternative:** For executing technical specs with TDD enforcement, use `@execute-specflow` instead.
+
+---
+
+## When to Use This vs Flow Commands
+
+### Use `@execute` (this command) when:
+- ✅ Flexible execution (campaigns, processes, designs)
+- ✅ No strict TDD requirements
+- ✅ AI should adapt to context
+- ✅ Non-technical implementations
+
+### Use `@execute-specflow` when:
+- ✅ Technical spec exists (from `@create-specflow`)
+- ✅ Want TDD enforced (tests first, always)
+- ✅ Want mandatory QA phase
+- ✅ Bulletproof quality requirements
+
+**Both are valid! Choose based on needs.**
+
 ---
 
 ## How This Works
@@ -9,10 +33,10 @@
 When a user says: `@[expert] @execute [thing]`
 
 Example:
-- `@ada @execute build the login feature`
-- `@lyna @execute launch the fundraising campaign`
-- `@benji @execute run the hiring process`
-- `@denny @execute implement the new database schema`
+- `@ada @execute build the login feature` → Flexible implementation (can also use `@execute-specflow` if spec exists)
+- `@lyna @execute launch the fundraising campaign` → Campaign execution
+- `@benji @execute run the hiring process` → Process execution
+- `@denny @execute implement the new database schema` → Database work
 
 ---
 
@@ -155,11 +179,23 @@ Run appropriate checklist from `system/checklists/`
 **Status:** [Ready for review / Ready to ship / Needs testing] ✅
 ```
 
-### 9. Save Deliverables
+### 9. Create/Update Workspace + Deliverable
 
-Save to: `roundtable/workspace/[name]`
+**A. Update Workspace**
+- Open existing workspace: `roundtable/workspace/[feature]-complete.md`
+- Add your execution section with progress, decisions, issues encountered
+- Document what was done and how
 
-If there are multiple files, document them clearly in the Roundtable update.
+**B. Create/Update Deliverable**
+- For code: The code itself is the deliverable (committed to repo)
+- For campaigns: Save as `documents/campaigns/[name]-execution-report.md`
+- For processes: Save as `documents/processes/[name]-implementation.md`
+
+**Files involved:**
+1. `roundtable/workspace/[feature]-complete.md` - Execution process, issues, decisions
+2. Code (for features) OR execution report (for campaigns/processes)
+
+**Update whiteboards:** Update your section in `roundtable/whiteboards.md` with execution status.
 
 ---
 
@@ -251,7 +287,7 @@ Whatever works best for you! 💪
 **User:** `@ada @execute implement the authentication feature`
 
 **Ada:**
-1. Reads `roundtable/workspace/denny/handoffs/auth-story.yaml`
+1. Reads `roundtable/workspace/auth-feature-complete.md` (Denny's section)
 2. Creates feature branch
 3. Writes tests for login flow
 4. Implements login UI and logic
@@ -266,7 +302,7 @@ Whatever works best for you! 💪
 **User:** `@lyna @execute launch the investor outreach campaign`
 
 **Lyna:**
-1. Reads `roundtable/workspace/lyna/handoffs/investor-campaign-brief.md`
+1. Reads `roundtable/workspace/investor-campaign-complete.md` (Lyna's section)
 2. Creates investor list (50 VCs)
 3. Crafts personalized outreach emails
 4. Sets up tracking spreadsheet
@@ -284,6 +320,25 @@ Whatever works best for you! 💪
 - **Test as you go** - don't wait until the end
 - **Communicate actively** - keep founder informed
 - **Handle problems fast** - blockers compound if ignored
+
+---
+
+## Related Commands & Patterns
+
+**Flow Commands (Structured Workflows):**
+- `@execute-specflow [feature]` - Execute technical spec with TDD enforcement and mandatory QA
+- `@create-specflow [feature]` - Create spec before executing
+
+**Patterns (Reference):**
+- `pro-os/system/patterns/universal.md` - Universal command workflow (this command follows this)
+- `pro-os/system/patterns/spec.md` - Comprehensive spec pattern (includes TDD: test → implement → verify)
+- `pro-os/system/patterns/workspace.md` - Simple vs Complex workspaces
+
+**Universal Commands (Flexible Workflows):**
+- `@create` - Create anything
+- `@analyze` - Deep analysis
+- `@review` - Review work
+- `@update` - Modify existing work
 
 ---
 

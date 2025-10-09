@@ -24,29 +24,23 @@
 
 **@plan** - Create project plans and roadmaps
 
-**@newthread** - Start fresh context (when AI seems confused)
-
 ---
 
-## Quick Commands
+## Flow Commands
 
-**@create-spec** - Technical specification (Denny creates, experts review)
+**@create-specflow** - Create technical specification with TDD structure
 
-**@create-pitch-deck** - Investor pitch deck (Lyna creates)
-
-**@create-feature** - Full feature workflow (Denny → Ada → QA)
+**@execute-specflow** - Implement spec with TDD enforcement and mandatory QA
 
 **@rt** - Roundtable review (all experts weigh in)
-
-**@rt-update** - Weekly status check (progress, blockers, priorities)
 
 ---
 
 ## System Commands
 
-**@update-project** - Scan project and update context (most common!)
+**@update-project** - Scan project and update ALL project documents (kb, mission, people, config)
 
-**@update-onboarding** - Re-run onboarding wizard
+**@update-kb** - Update just the knowledge base document
 
 **@update-founder-profile** - Update your personal preferences (global)
 
@@ -54,7 +48,9 @@
 
 **@update-people** - Update team, advisors, investors
 
-**@show-projects** - Portfolio view (all your FWD PRO projects)
+**@create-expert** - Create custom domain expert for your project
+
+**@create-flow** - Create custom workflow command
 
 ---
 
@@ -64,7 +60,7 @@
 ```
 @command-name do the thing
 @denny create auth spec
-@create-feature user authentication
+@create-specflow + @execute-specflow user authentication
 ```
 
 ### Plain Language Works Too:
@@ -78,20 +74,37 @@ update my project context
 
 ## Where Commands Live
 
-- **Universal:** `pro-os/commands/`
-- **Quick:** `pro-os/commands/quick/`
-- **System:** `pro-os/commands/system/`
-- **Your favorites:** `your-commands/` (shortcuts!)
+**ALL commands are always available!**
+
+**Where to find them:**
+- Universal commands: `pro-os/commands/` (create, execute, analyze, etc.)
+- Flow commands: `pro-os/commands/flows/` (create-specflow, rt, etc.)
+- System commands: `pro-os/commands/system/` (update-project, create-expert, etc.)
+- Your shortcuts: `0-your-commands/` (convenient quick access)
+
+**During onboarding, based on your work types, shortcuts are created in `0-your-commands/`:**
+- Roundtable (always): rt
+- Building-specific flow commands: create-specflow, execute-specflow
+
+**System commands don't get shortcuts** - they're always available in `pro-os/commands/system/`
+
+**Want to add/remove shortcuts?**
+Just ask! Examples:
+- "Add a shortcut to @analyze in my commands folder"
+- "Add @research to my command shortcuts"
+- "Remove the create-specflow shortcut"
+
+The AI will create/remove symlinks for you!
 
 ---
 
 ## Creating Custom Commands
 
-See: `pro-os/commands/quick/_TEMPLATE.md`
+See: `pro-os/commands/system/create-flow.md`
 
 Build your own optimized workflows!
 
 ---
 
-**For detailed guides, see:** `documentation/user-guide/`
+**For detailed guides, see:** `user-docs/user-guide/`
 

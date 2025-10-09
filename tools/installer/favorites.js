@@ -95,50 +95,25 @@ export async function createFavorites(projectPath, workTypes, domainExpert) {
   // === COMMANDS ===
   const commandsToLink = [];
 
-  // System commands (always)
-  commandsToLink.push(
-    {
-      source: '../pro-os/commands/system/update-project.md',
-      target: path.join(yourCommandsPath, 'update-project.md')
-    },
-    {
-      source: '../pro-os/commands/system/show-projects.md',
-      target: path.join(yourCommandsPath, 'show-projects.md')
-    }
-  );
-
-  // Quick commands based on work types
+  // Flow commands based on work types
   if (workTypes.includes('building')) {
     commandsToLink.push(
       {
-        source: '../pro-os/commands/quick/create-spec.md',
-        target: path.join(yourCommandsPath, 'create-spec.md')
+        source: '../pro-os/commands/flows/create-specflow.md',
+        target: path.join(yourCommandsPath, 'create-specflow.md')
       },
       {
-        source: '../pro-os/commands/quick/create-feature.md',
-        target: path.join(yourCommandsPath, 'create-feature.md')
+        source: '../pro-os/commands/flows/execute-specflow.md',
+        target: path.join(yourCommandsPath, 'execute-specflow.md')
       }
     );
   }
 
-  if (workTypes.includes('investor')) {
-    commandsToLink.push({
-      source: '../pro-os/commands/quick/create-pitch-deck.md',
-      target: path.join(yourCommandsPath, 'create-pitch-deck.md')
-    });
-  }
-
-  // Roundtable commands (always)
-  commandsToLink.push(
-    {
-      source: '../pro-os/commands/quick/rt.md',
-      target: path.join(yourCommandsPath, 'rt.md')
-    },
-    {
-      source: '../pro-os/commands/quick/rt-update.md',
-      target: path.join(yourCommandsPath, 'rt-update.md')
-    }
-  );
+  // Roundtable command (always)
+  commandsToLink.push({
+    source: '../pro-os/commands/flows/rt.md',
+    target: path.join(yourCommandsPath, 'rt.md')
+  });
 
   // Create command symlinks
   for (const command of commandsToLink) {

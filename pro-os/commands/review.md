@@ -75,18 +75,23 @@ Use relevant checklist from `system/checklists/` if one exists.
 - [ ] Not approved - major issues
 ```
 
-### 5. Document & Update
+### 5. Create/Update Workspace + Deliverable
 
-**Add review to workspace:**
-- Open `roundtable/workspace/[name].md`
-- Add your review section with findings
-- Update status if needed
+**A. Update Workspace**
+- If reviewing existing work: Open that workspace, add your review section
+- If standalone review: Create `roundtable/workspace/[name]-review-complete.md`
+- Document review process, all issues found, recommendations
 
-**Or create new workspace if reviewing something without one:**
-- Create `roundtable/workspace/[name]-review.md`
-- Document findings and recommendations
+**B. Create Clean Deliverable** (if applicable)
+- For formal reviews: Save as `documents/reviews/[name]-review-report.md`
+- Include: Summary, Issues Found, Recommendations, Sign-off
+- For informal reviews: The review notes in workspace are sufficient
 
-Update `roundtable/whiteboards.md` with review status.
+**Files created:**
+1. `roundtable/workspace/[name]-review-complete.md` OR add section to existing workspace
+2. `documents/reviews/[name]-review-report.md` (if formal review needed)
+
+**Update whiteboards:** Update your section in `roundtable/whiteboards.md` with review status.
 
 ---
 

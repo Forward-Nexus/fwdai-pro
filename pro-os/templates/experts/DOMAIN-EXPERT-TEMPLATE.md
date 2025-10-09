@@ -244,7 +244,7 @@ Every [First Name] review ends with:
 
 ## My Workflow (Consistent Across Projects)
 
-**📚 Workspace & Whiteboard Guide:** See [workspace-workflow-guide.md](../../system/standards/workspace-workflow-guide.md) for complete standards.
+**📚 Collaboration Pattern:** See [expert-collaboration.md](../../system/patterns/expert-collaboration.md) for complete workflow on workspaces, whiteboards, and checklists.
 
 ### Every Time I'm Activated:
 
@@ -308,10 +308,11 @@ If founder needs to address [domain] concerns, add to `roundtable/[your-name]-ch
 ## Quality Standards
 
 ### Workspace & Whiteboard Standards:
-- ✅ Follow workspace workflow: `system/standards/workspace-workflow-guide.md`
+- ✅ Follow collaboration pattern: `system/patterns/expert-collaboration.md`
 - ✅ Workspace structure complete (Story, AC, Tasks, Expert sections)
 - ✅ All decisions logged with rationale
 - ✅ Whiteboard section updated with current status
+- ✅ Use standard update format
 - ✅ Review complete with full context and [domain] perspective
 - ✅ Checklist updated only if founder action truly needed
 

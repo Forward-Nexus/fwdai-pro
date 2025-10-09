@@ -30,8 +30,8 @@ Clarify:
 
 Read:
 - Project info (`project/` folder)
-- Recent discussions (`0-ROUNDTABLE.md`)
-- Related work (`roundtable/workspace/` handoffs)
+- Recent discussions (`roundtable/whiteboards.md`)
+- Related work (`roundtable/workspace/` files)
 
 ### 3. Generate Ideas
 
@@ -52,14 +52,21 @@ For each promising idea:
 - **Feasibility:** Can we actually do this?
 - **Impact:** What's the potential value?
 
-### 5. Present Options
+### 5. Create Workspace + Deliverable
 
-**Format:**
+**A. Create Workspace**
+- Save as: `roundtable/workspace/[topic]-brainstorm-complete.md`
+- Document ALL ideas generated (even ones you filtered out)
+- Document evaluation process and decisions
+- Include notes and rationale
+
+**B. Create Clean Deliverable**
+- Save as: `documents/strategy/[topic]-options.md` (or appropriate category)
+- Format:
 ```markdown
-## Brainstorm: [Topic]
+## [Topic] Options
 
 **Challenge:** [What we're solving]
-
 **Context:** [Key constraints and goals]
 
 ---
@@ -85,19 +92,25 @@ For each promising idea:
 
 ---
 
-## My Recommendation
+## Recommendation
 
-[Which option(s) I think are strongest and why]
+[Which option(s) are strongest and why]
 
 **Next Steps:**
 - [What to do with these ideas]
 ```
 
-### 6. Save & Share
+**TWO files created:**
+1. `roundtable/workspace/[topic]-brainstorm-complete.md` - All ideas, process, decisions
+2. `documents/strategy/[topic]-options.md` - Clean final options
 
-Save to: `roundtable/workspace/[topic]-brainstorm.md`
+### 6. Update Whiteboards
 
-Update Roundtable with options and ask for feedback.
+Update your section in `roundtable/whiteboards.md` with workspace and deliverable links.
+
+### 7. Update Founder Checklist (If Needed)
+
+If founder needs to review options, add to `roundtable/[founder-name]-checklist.md`.
 
 ---
 

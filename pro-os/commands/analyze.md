@@ -44,17 +44,30 @@ Follow `workflows/analyze-[type].yaml` if one exists, otherwise:
 3. **Insights** - What does it mean? (why it matters)
 4. **Recommendations** - What should be done? (actionable next steps)
 
-### 4. Present Findings
+### 4. Create Workspace + Deliverable
 
-Structure: Clear, actionable, evidence-based
+**A. Create Workspace**
+- Save as: `roundtable/workspace/[name]-analysis-complete.md`
+- Document analysis process, all data examined, methodology
+- Include raw findings before synthesis
+- Track analysis decisions and assumptions
 
-Use template from `templates/analysis-template.yaml` if available
+**B. Create Clean Deliverable**
+- Save as: `documents/analysis/[name]-findings.md` (or appropriate category)
+- Structure: Current State, Findings, Insights, Recommendations
+- This is the clean analysis report
 
-Save to: `roundtable/workspace/[name]-analysis.md`
+**TWO files created:**
+1. `roundtable/workspace/[name]-analysis-complete.md` - Analysis process, raw data, methodology
+2. `documents/analysis/[name]-findings.md` - Clean analysis report
 
-### 5. Update & Document
+### 5. Update Whiteboards
 
-Update Roundtable with key findings and recommendations.
+Update your section in `roundtable/whiteboards.md` with workspace and deliverable links.
+
+### 6. Update Founder Checklist (If Needed)
+
+If founder needs to review findings, add to `roundtable/[founder-name]-checklist.md`.
 
 ---
 

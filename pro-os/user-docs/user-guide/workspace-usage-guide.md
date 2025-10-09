@@ -118,8 +118,10 @@ A workspace is the MASTER document for everything related to that topic:
    ↓
 5. COMPLETE (Done status)
    ↓
-6. ARCHIVE to workspace/archive/YYYY-MM/
+6. ASK FOUNDER → If yes, ARCHIVE to workspace/archive/
 ```
+
+**Important:** Experts always ask before archiving - founder might remember missing work!
 
 ---
 
@@ -351,23 +353,29 @@ This makes it easy to:
 
 ## Archive Process
 
+**CRITICAL:** Experts NEVER archive without founder approval!
+
 When workspace is DONE:
 
-1. Mark status as "Done" in workspace
-2. Update whiteboard (move to "Completed This Month")
-3. Move workspace file to `workspace/archive/YYYY-MM/`
-4. Keep deliverable in `documents/` (don't archive that)
+1. Expert marks status as "Done" in workspace
+2. **Expert asks founder:** "This workspace is complete. Would you like me to archive it?"
+3. **If founder says YES:**
+   - Move workspace file to `workspace/archive/`
+   - Update whiteboard (move to "Completed This Month")
+4. **If founder says NO:**
+   - Keep workspace active for reference
+5. Keep deliverable in `documents/` (don't archive that)
 
 **Archive structure:**
 ```
 workspace/
   archive/
-    2025-10/
-      user-authentication-complete.md
-      marketing-campaign-complete.md
-    2025-11/
-      [future workspaces]
+    user-authentication-complete.md
+    marketing-campaign-complete.md
+    pitch-deck-complete.md
 ```
+
+**Why ask first?** Founder might remember missing work or want to reference it frequently!
 
 ---
 

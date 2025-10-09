@@ -16,12 +16,14 @@
 **Solutions:**
 
 **1. Start Fresh:**
-```
-@newthread
 
-→ Clears conversation context
+Start a new chat thread in your AI tool (method varies by tool):
+- **Cursor/VS Code:** Start new composer chat
+- **Claude Desktop:** New conversation
+- **Windsurf:** New cascade
+
+→ Clears conversation context  
 → Project files remain intact
-```
 
 **2. Update Context:**
 ```
@@ -53,7 +55,7 @@
 @spec
 
 # Right
-@create-spec
+@create-specflow
 ```
 
 **2. Give More Context:**
@@ -62,7 +64,7 @@
 @create spec
 
 # Better
-@create-spec authentication for mobile app
+@create-specflow authentication for mobile app
 ```
 
 **3. Tag Expert Directly:**
@@ -177,14 +179,14 @@ cat README.md
 
 **2. Check Last Update:**
 ```bash
-ls -la .fwdpro/project/project-kb.md
+ls -la .fwdpro/pro-os/project/project-kb.md
 
 # If old, update manually or via command
 ```
 
 **3. Manual Correction:**
 ```bash
-vim .fwdpro/project/project-kb.md
+vim .fwdpro/pro-os/project/project-kb.md
 
 # Edit directly
 # Experts see changes immediately
@@ -221,8 +223,8 @@ vim .fwdpro/project/project-kb.md
 
 **Set Regular Updates:**
 ```bash
-# Weekly
-@rt-update  (every Monday)
+# Weekly - Check whiteboards for status
+open .fwdpro/0-roundtable/whiteboards.md
 
 # Monthly
 @update-project
@@ -230,7 +232,6 @@ vim .fwdpro/project/project-kb.md
 # Quarterly
 @update-mission
 @update-people
-@update-founder-profile
 ```
 
 ---
@@ -248,9 +249,9 @@ vim .fwdpro/project/project-kb.md
 
 **1. Change Communication Style:**
 ```
-@update-founder-profile
+@update-fp
 
-→ Choose "Direct/no-fluff" (d)
+→ Update your communication preferences
 ```
 
 **2. Request Summaries:**
@@ -282,7 +283,7 @@ vim .fwdpro/project/project-kb.md
 
 **2. Enable Proactive Mode:**
 ```yaml
-# In config.yaml
+# In pro-os/project/config.yaml
 expert_behavior:
   proactive: true
   suggest_next_steps: true
@@ -329,9 +330,9 @@ expert_behavior:
 
 **1. Check Standard Locations:**
 ```
-documents/         ← Final deliverables
-roundtable/        ← Collaboration space
-project/           ← Project context
+.fwdpro/documents/        ← Final deliverables
+.fwdpro/0-roundtable/     ← Collaboration space
+.fwdpro/pro-os/project/   ← Project context
 ```
 
 **2. Search:**
@@ -359,10 +360,10 @@ find .fwdpro -name "*pitch*"
 **1. Check Correct Location:**
 ```bash
 # Draft might be in workspace
-ls .fwdpro/roundtable/workspace/
+ls .fwdpro/0-roundtable/workspace/
 
 # Final should be in documents
-ls .fwdpro/documents/technical/
+ls .fwdpro/documents/tech/
 ```
 
 **2. Refresh/Reopen File:**
@@ -390,8 +391,8 @@ git diff .fwdpro/
 **Clean Up:**
 ```bash
 # Move old drafts to archive
-mv .fwdpro/roundtable/workspace/old*.md \
-   .fwdpro/roundtable/workspace/archive/
+mv .fwdpro/0-roundtable/workspace/old*.md \
+   .fwdpro/0-roundtable/workspace/archive/
 ```
 
 **Ask Expert:**
@@ -427,8 +428,8 @@ mv .fwdpro/roundtable/workspace/old*.md \
 
 **3. Manual Move:**
 ```bash
-mv .fwdpro/roundtable/workspace/auth-spec-draft.md \
-   .fwdpro/documents/technical/auth-spec.md
+mv .fwdpro/0-roundtable/workspace/auth-spec-draft.md \
+   .fwdpro/documents/tech/auth-spec.md
 ```
 
 ---
@@ -444,7 +445,7 @@ mv .fwdpro/roundtable/workspace/auth-spec-draft.md \
 
 **1. Check Whiteboards:**
 ```bash
-cat .fwdpro/roundtable/whiteboards.md
+cat .fwdpro/0-roundtable/whiteboards.md
 
 # Look for handoff section
 ```
@@ -457,7 +458,7 @@ cat .fwdpro/roundtable/whiteboards.md
 
 **3. Check Checklist:**
 ```bash
-cat .fwdpro/roundtable/[your-name]-checklist.md
+cat .fwdpro/0-roundtable/[your-name]-checklist.md
 
 # Might be waiting for your approval
 ```
@@ -475,7 +476,7 @@ cat .fwdpro/roundtable/[your-name]-checklist.md
 
 **1. Enable Collaboration:**
 ```yaml
-# In config.yaml
+# In pro-os/project/config.yaml
 expert_behavior:
   collaborative: true
   auto_tag_experts: true
@@ -505,7 +506,7 @@ expert_behavior:
 
 **1. Check File Location:**
 ```bash
-ls .fwdpro/pro-os/commands/quick/my-command.md
+ls .fwdpro/pro-os/commands/flows/my-command.md
 
 # Should exist
 ```
@@ -522,7 +523,7 @@ ls .fwdpro/pro-os/commands/quick/my-command.md
 
 **3. Try Full Path:**
 ```
-@genna execute the workflow in pro-os/commands/quick/my-command.md
+@genna execute the workflow in pro-os/commands/custom/my-command.md
 ```
 
 ---
@@ -554,8 +555,9 @@ ls .fwdpro/pro-os/commands/quick/my-command.md
 ```
 
 **3. Start Fresh:**
+
+Start a new chat/composer in your AI tool, then:
 ```
-@newthread
 @rt review this specific thing: [clear description]
 ```
 
@@ -580,7 +582,7 @@ git checkout --ours .fwdpro/project/project-kb.md
 **2. Merge Manually:**
 ```bash
 # Open file
-vim .fwdpro/project/project-kb.md
+vim .fwdpro/pro-os/project/project-kb.md
 
 # Resolve conflicts
 # Run update
@@ -589,7 +591,7 @@ vim .fwdpro/project/project-kb.md
 
 **3. Reset if Needed:**
 ```bash
-git checkout HEAD .fwdpro/roundtable/workspace/
+git checkout HEAD .fwdpro/0-roundtable/workspace/
 # Workspace can be reset safely
 ```
 
@@ -608,14 +610,14 @@ git checkout HEAD .fwdpro/roundtable/workspace/
 cat .fwdpro/.gitignore
 
 # Should exclude:
-roundtable/workspace/*
-your-experts/*
-your-commands/*
+0-roundtable/workspace/*
+0-your-experts/*
+0-your-commands/*
 ```
 
 **Update .gitignore if needed:**
 ```bash
-echo "roundtable/workspace/*" >> .fwdpro/.gitignore
+echo "0-roundtable/workspace/*" >> .fwdpro/.gitignore
 ```
 
 ---
@@ -633,7 +635,7 @@ echo "roundtable/workspace/*" >> .fwdpro/.gitignore
 
 **1. Reduce Context:**
 ```yaml
-# In config.yaml
+# In pro-os/project/config.yaml
 context:
   summarize_if_larger_than: "5KB"  # Smaller threshold
 ```
@@ -641,8 +643,8 @@ context:
 **2. Clear Workspace:**
 ```bash
 # Archive old drafts
-mv .fwdpro/roundtable/workspace/*.md \
-   .fwdpro/roundtable/workspace/archive/
+mv .fwdpro/0-roundtable/workspace/*.md \
+   .fwdpro/0-roundtable/workspace/archive/
 ```
 
 **3. Restart AI Tool:**
@@ -660,19 +662,18 @@ mv .fwdpro/roundtable/workspace/*.md \
 
 **Solutions:**
 
-**1. Use @newthread:**
-```
-@newthread
+**1. Start New Thread:**
+
+Start a new chat/composer in your AI tool
 
 → Clears conversation memory
-```
 
 **2. Reduce Auto-Load:**
 ```yaml
-# In config.yaml
+# In pro-os/project/config.yaml
 context:
   auto_load:
-    - "project/project-kb.md"  # Only essential
+    - "pro-os/project/project-kb.md"  # Only essential
 ```
 
 **3. Summarize Large Files:**
@@ -695,8 +696,9 @@ context:
 **Solutions:**
 
 **1. Clear Context:**
+
+Start a new chat/composer in your AI tool, then:
 ```
-@newthread
 @genna I'm working on [Project A] now
 ```
 
@@ -730,14 +732,14 @@ cat ~/.fwdpro-global/[name]-profile.md
 
 **2. Update It:**
 ```
-@update-founder-profile
+@update-fp
 
 → Updates global settings
 ```
 
 **3. Per-Project Override:**
 ```yaml
-# In config.yaml
+# In pro-os/project/config.yaml
 founder:
   global_override: true
   communication_style: "d"  # Override for this project
@@ -814,7 +816,7 @@ ls .fwdpro/pro-os/user-docs/user-guide/
 
 ```bash
 # Search workspace for similar issues
-grep -r "similar problem" .fwdpro/roundtable/
+grep -r "similar problem" .fwdpro/0-roundtable/
 ```
 
 ### Community (Future)
@@ -831,9 +833,9 @@ grep -r "similar problem" .fwdpro/roundtable/
 ### 1. Regular Maintenance
 
 **Weekly:**
-- `@rt-update` every Monday
-- Check/clear founder-checklist
-- Review whiteboards
+- Check whiteboards every Monday (`0-roundtable/whiteboards.md`)
+- Check/clear your checklist (`0-roundtable/[your-name]-checklist.md`)
+- Review active workspaces
 
 **Monthly:**
 - `@update-project`
@@ -841,7 +843,7 @@ grep -r "similar problem" .fwdpro/roundtable/
 - Review context files
 
 **Quarterly:**
-- `@update-founder-profile`
+- Update your global profile (edit `~/.fwdpro-global/[name]-profile.md`)
 - `@update-mission`
 - `@update-people`
 
@@ -862,9 +864,9 @@ grep -r "similar problem" .fwdpro/roundtable/
 ### 3. Documentation
 
 **Keep Updated:**
-- project-kb.md
-- mission.md
-- people.md
+- pro-os/project/project-kb.md
+- pro-os/project/mission.md
+- pro-os/project/people.md
 
 **Experts work better with current info!**
 
@@ -876,10 +878,10 @@ grep -r "similar problem" .fwdpro/roundtable/
 
 | Issue | Quick Fix |
 |-------|-----------|
-| Expert confused | `@newthread` |
+| Expert confused | Start new chat/composer |
 | Old info | `@update-project` |
 | Wrong expert | `@[right-expert]` tag directly |
-| Command not working | Use full name: `@create-spec` |
+| Command not working | Use full name: `@create-specflow` |
 | Can't find file | Check `documents/` or `workspace/` |
 | Work stuck | `@expert please finalize this` |
 | Too verbose | `@update-founder-profile` → Direct |
@@ -890,10 +892,10 @@ grep -r "similar problem" .fwdpro/roundtable/
 ### Emergency Commands
 
 ```
-@newthread              # Start fresh
-@update-project         # Refresh context
-@genna help             # Ask for help
-@rt status check        # What's happening?
+# Start new chat/composer   # Start fresh
+@update-project             # Refresh context
+@genna help                 # Ask for help
+@rt status check            # What's happening?
 ```
 
 ---
@@ -907,7 +909,7 @@ grep -r "similar problem" .fwdpro/roundtable/
 - [ ] Is command name correct? (check spelling)
 - [ ] Did expert understand? (check whiteboards)
 - [ ] Is file in right place? (workspace vs documents)
-- [ ] Are experts active? (check config.yaml)
+- [ ] Are experts active? (check pro-os/project/config.yaml)
 - [ ] Is AI tool working? (restart if needed)
 - [ ] Did I approve handoff? (check checklist)
 
@@ -917,7 +919,7 @@ grep -r "similar problem" .fwdpro/roundtable/
 
 **Try this sequence:**
 
-1. `@newthread` - Start fresh
+1. Start new chat/composer - Start fresh
 2. `@update-project` - Refresh context
 3. `@genna I need help with [specific issue]`
 4. Check documentation (you're reading it!)

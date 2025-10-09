@@ -11,6 +11,109 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [2.0.0] - 2025-10-09
+
+### 🎉 Major Release: Pattern-Based Expert System & Flow Commands
+
+This is a major architectural upgrade that introduces a pattern-based workflow system, simplifies expert files, and consolidates command structures while maintaining full backward compatibility for universal commands.
+
+### Added
+
+**Pattern System:**
+- Created 5 core workflow patterns in `pro-os/system/patterns/`:
+  - `expert-collaboration.md` - Universal workflow for all experts
+  - `expert-tech.md` - Technical work patterns (TDD, QA enforcement)
+  - `expert-content.md` - Content/marketing/business document patterns
+  - `expert-strategy.md` - Strategic planning patterns
+  - `expert-legal.md` - Legal/compliance patterns
+- `spec.md` - Comprehensive technical specification pattern
+- `workspace.md` - Flexible workspace patterns (simple vs. complex)
+- `universal.md` - Universal three-phase workflow pattern
+
+**Flow Commands:**
+- `@create-specflow` - Create technical specification with TDD structure
+- `@execute-specflow` - Implement spec with TDD enforcement + mandatory QA
+- `@rt` - Multi-expert roundtable collaboration (moved from quick/)
+- `@create-flow` - Create custom flow commands (extensibility)
+
+**System Commands:**
+- `@create-expert` - Create new domain experts with auto-assigned patterns
+
+### Changed
+
+**Expert System:**
+- All 6 core experts updated with `primary_patterns` field
+- Removed duplicated workflow sections (~400 lines saved, 12% reduction)
+- Experts now dynamically load patterns based on task type
+- Task-based pattern selection (experts can work cross-domain)
+- Simplified expert files focus on identity and specialization
+
+**Command Structure:**
+- Renamed `commands/quick/` → `commands/flows/` for clarity
+- Updated installer to create correct symlinks to `flows/` commands
+- `.mdc` Cursor rules now reference actual commands in `pro-os/commands/`
+- Universal commands updated to reference pattern system
+
+**Documentation:**
+- Updated all user guides to explain pattern system
+- Added comprehensive FAQ sections about patterns
+- Fixed project-specific examples (generic placeholders)
+- Clarified "activates experts" → ALL experts always available
+- Updated customization guide for pattern-based domain experts
+
+**Installer:**
+- `favorites.js` - Updated to create symlinks to `flows/` instead of `quick/`
+- `ide-setup.js` - Updated `.mdc` generation to reference actual command paths
+- `generators.js` - Domain experts auto-assigned appropriate patterns
+- `welcome.js` - Updated welcome message with flow command names
+
+### Deprecated
+
+- `@create-spec` → Use `@create-specflow`
+- `@create-feature` → Use `@create-specflow` + `@execute-specflow`
+- `@create-pitch-deck` → Use `@create` (users should customize their own)
+- `@rt-update` → Removed (too overwhelming for AI)
+
+### Removed
+
+**Commands:**
+- `commands/quick/` folder (replaced by `commands/flows/`)
+- `commands/system/show-projects.md` (premature feature)
+- `commands/system/cross-project-context.md` (over-complicated)
+
+**Checklists:**
+- `checklists/handoff-checklist.md` (now handled in workspace stories)
+- `checklists/workspace-complete-checklist.md` (covered by universal pattern)
+
+**Standards (Consolidated into Patterns):**
+- `standards/workflow-standards.md` → Merged into `patterns/universal.md`
+- `standards/roundtable-standards.md` → Merged into `patterns/expert-collaboration.md`
+- Content preserved and enhanced with better examples and organization
+- Clear folder boundaries: patterns (workflow), standards (formatting), checklists (validation)
+
+### Fixed
+
+- Installer now creates correct command shortcuts
+- `.mdc` files reference actual source files, not shortcuts
+- Removed all project-specific examples from documentation
+- Fixed "activates experts" misleading language throughout docs
+- Expert files no longer duplicate workflow instructions
+
+### Migration Notes
+
+**For existing projects:**
+- Old commands still work (universal commands unchanged)
+- New flow commands available immediately
+- Expert shortcuts in `0-your-experts/` unchanged
+- Command shortcuts in `0-your-commands/` will update to new paths
+
+**No breaking changes for users:**
+- Universal commands (`@create`, `@execute`, etc.) work exactly the same
+- Expert @mentions work the same
+- All existing work preserved
+
+---
+
 ## [1.0.6] - 2025-10-08
 
 ### Fixed

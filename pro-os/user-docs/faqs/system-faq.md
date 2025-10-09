@@ -25,7 +25,7 @@
 
 **Expert** - AI specialist with specific role (Denny, Ada, Lyna, etc.)
 
-**Command** - Pre-built workflow or instruction (@create-spec, @rt, etc.)
+**Command** - Pre-built workflow or instruction (@create-specflow, @rt, etc.)
 
 **Domain Expert** - Custom expert YOU create for your industry
 
@@ -39,13 +39,40 @@
 
 ```
 .fwdpro/
+├── *welcome.md          Start here!
 ├── pro-os/              System core (don't touch!)
-├── your-experts/         Your favorite expert shortcuts
-├── your-commands/       Your favorite command shortcuts
-├── project/             Project context & config
-├── roundtable/          Collaboration space
+│   ├── experts/         ALL experts (always available)
+│   ├── commands/        ALL commands (always available)
+│   └── project/         Project context & config
+├── 0-your-experts/      Quick-access shortcuts
+├── 0-your-commands/     Quick-access shortcuts
+├── 0-roundtable/        Collaboration space
 └── documents/           Final clean outputs
 ```
+
+---
+
+## Shortcuts vs All Available
+
+**Important:** ALL 6 core experts and ALL commands are ALWAYS available!
+
+**What are shortcuts?**
+- Convenient links in `0-your-experts/` and `0-your-commands/`
+- Based on your work types from onboarding
+- Make frequently-used experts/commands easier to find
+
+**Where's everything?**
+- All experts: `pro-os/experts/` (can @mention any anytime)
+- All commands: `pro-os/commands/` (can use any anytime)
+- Your shortcuts: `0-your-experts/` and `0-your-commands/`
+
+**Add/remove shortcuts:**
+Just ask! Examples:
+- "Add a shortcut to @elle in my experts folder"
+- "Add @analyze to my commands shortcuts"
+- "Remove the @lyna shortcut from my experts folder"
+
+The AI will create/remove symlinks for you!
 
 ---
 
@@ -83,13 +110,13 @@ Set during onboarding, change with `@update-founder-profile`
 
 ## Work Types
 
-- Building something (Denny + Ada)
-- Investor materials (Lyna)
-- Marketing/content (Benji)
-- Legal/compliance (Elle)
-- Strategic planning (Genna)
+- Building something (Denny + Ada get shortcuts)
+- Investor materials (Lyna gets shortcut)
+- Marketing/content (Benji gets shortcut)
+- Legal/compliance (Elle gets shortcut)
+- Strategic planning (Genna always gets shortcut)
 
-Determines which experts activate!
+Determines which expert shortcuts you get! (All experts are always available)
 
 ---
 
@@ -134,12 +161,13 @@ Stored in: `~/.fwdpro-global/projects.md`
 
 ## System Commands
 
-**@update-project** - Scan & update project context (most common!)  
+**@update-project** - Scan & update ALL project documents (kb, mission, people, config)  
+**@update-kb** - Update just the knowledge base document  
 **@update-founder-profile** - Change communication/preferences  
 **@update-mission** - Update your "why"  
 **@update-people** - Update team/advisors  
-**@show-projects** - Portfolio dashboard  
-**@update-onboarding** - Re-run setup wizard
+**@create-expert** - Create custom domain expert  
+**@create-flow** - Create custom workflow command
 
 ---
 
@@ -153,7 +181,7 @@ npx @fwd-ai/pro install
 @genna help me create a roadmap
 
 # Check status
-@rt-update
+@rt check status
 
 # Update context
 @update-project
@@ -161,5 +189,5 @@ npx @fwd-ai/pro install
 
 ---
 
-**For detailed guides, see:** `documentation/user-guide/`
+**For detailed guides, see:** `user-docs/user-guide/`
 

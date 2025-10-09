@@ -1,6 +1,14 @@
 # FWD PRO Configuration
+# 
+# ⚠️ NOTE: This template is REFERENCE ONLY
+# The actual config.yaml is generated programmatically by generateConfig() in tools/installer/generators.js
+# This file shows the expected structure but is not actively used during installation.
+#
 # This file is generated during onboarding (npx @fwd-ai/pro install)
 # You can edit it anytime to adjust project settings
+
+# Version
+version: "1.0.0"
 
 # Project Information
 project:
@@ -12,97 +20,60 @@ project:
 founder:
   name: "[FOUNDER_NAME]"
   profile: "~/.fwdpro-global/[name]-profile.md"  # Global profile (reusable)
-  communication_style: "[a/b/c/d/e]"  # From onboarding Q5 - determines expert tone
+  communication_style: "[communication_style_from_onboarding]"  # From onboarding - determines expert tone
 
-# Work Focus (determines active experts)
+# Work Focus (array of work types selected in onboarding)
 work_types:
-  building_something: true/false  # Activates Denny + Ada
-  investor_materials: true/false  # Activates Lyna
-  marketing_content: true/false   # Activates Benji
-  legal_compliance: true/false    # Activates Elle
-  operations_strategy: true/false # Genna always active
+  - building     # If selected: Denny + Ada get shortcuts in 0-your-experts/
+  - investor     # If selected: Lyna gets shortcut
+  - marketing    # If selected: Benji gets shortcut
+  - legal        # If selected: Elle gets shortcut
+  - operations   # Genna always gets shortcut
 
-# Active Experts
-experts:
-  genna: true  # Chief Architect (always active)
-  denny: true  # Systems Architect (if building_something)
-  ada: true    # Lead Engineer (if building_something)
-  lyna: false  # Funding Strategist (if investor_materials)
-  benji: false # Growth Strategist (if marketing_content)
-  elle: false  # Legal Counsel (if legal_compliance or compliance detected)
-  domain: null # Domain expert name (if created): "[expert-name]"
+# Expert Shortcuts (which experts get links in 0-your-experts/)
+# Note: ALL experts are always available in pro-os/experts/ - this just determines shortcuts
+your_experts:
+  genna: true   # Chief Architect (always gets a shortcut)
+  denny: true   # Systems Architect (if "building" in work_types)
+  ada: true     # Lead Engineer (if "building" in work_types)
+  lyna: false   # External Strategy (if "investor" in work_types)
+  benji: false  # Internal Growth (if "marketing" in work_types)
+  elle: false   # Legal Counsel (if "legal" in work_types OR HIPAA detected in constraints)
+
+# Command Shortcuts (which commands get links in 0-your-commands/)
+# Note: ALL commands are always available in pro-os/commands/ - this just determines shortcuts
+# Only flow commands get shortcuts (system commands don't need shortcuts)
+your_commands:
+  - rt                # Roundtable (always)
+  - create-specflow   # Flow commands (if "building" in work_types)
+  - execute-specflow
 
 # Tech Stack (if building something)
+# Array of strings from onboarding or scanner
 tech_stack:
-  detected: true/false  # Was tech stack auto-detected?
-  languages: []  # e.g., ["JavaScript", "Python"]
-  frameworks: [] # e.g., ["React Native", "Node.js"]
-  database: null # e.g., "PostgreSQL"
-  platform: null # e.g., "iOS/Android", "Web", "Desktop"
-
-# Code Locations (for multi-repo projects)
-repositories:
-  primary: "."  # This project
-  related: []   # Other repos: ["../app-code", "~/GitHub/backend"]
-
-# Project Structure
-structure:
-  roundtable: "roundtable/"
-  workspace: "roundtable/workspace/"
-  documents: "documents/"
-  project_kb: "project/"
-  system: "system/"  # Standards, checklists, etc. (from pro-os/system/)
-  agents: "agents/"  # Expert definitions (from pro-os/agents/)
-
-# Document Organization
-documents:
-  auto_categorize: true  # Let AI organize into categories
-  categories:
-    technical: "documents/technical/"
-    investor: "documents/investor-materials/"
-    legal: "documents/legal/"
-    marketing: "documents/marketing/"
-    operations: "documents/operations/"
-    domain: "documents/materials/"  # Domain-specific
+  - "React Native"
+  - "Node.js"
+  - "PostgreSQL"
+  # OR: [] if not applicable/unknown
 
 # AI Tool Configuration
-ai_tool:
-  name: "[cursor/vscode/claude/windsurf/other]"
-  cursor_optimizations: true/false  # Install .cursor/rules/?
-  ide_config_location: ".cursor/rules/"  # or ".vscode/", etc.
-
-# Workflow Preferences
-workflow:
-  workspace_archive_location: "roundtable/workspace/archive/"
-  archive_on_complete: true
-  archive_format: "YYYY-MM"  # Archive by month
-  recap_on_major_work: true  # Create system/recaps/ for big deliverables
-
-# Expert Behavior
-expert_settings:
-  tone: "[professional/conversational/casual/direct/supportive]"  # From founder profile
-  use_emojis: true/false  # Based on communication style
-  detail_level: "balanced"  # headlines/balanced/comprehensive/detailed
-  
-# Notifications (optional)
-notifications:
-  completion_sound: true  # Play sound when work complete?
-  platform: "[mac/windows/linux]"
-
-# FWD PRO System
-system:
-  version: "1.0.0"
-  pro_os_location: ".fwdpro/"  # Where FWD PRO system lives
-  global_profile_location: "~/.fwdpro-global/"
-
-# Multi-Project Support
-multi_project:
-  enabled: false  # Using FWD PRO across multiple projects?
-  projects: []    # List of project paths using this founder profile
+ai_tool: "[cursor/vscode/claude/windsurf/other/generic]"
+ide_optimizations: true  # Install IDE-specific optimizations?
 
 # Notes
 # - This file is generated from onboarding answers
-# - Edit anytime to adjust settings
+# - Edit anytime to adjust settings  
 # - Experts read this to understand project context
 # - Changes take effect immediately (no restart needed)
+#
+# Actual generation happens in:
+# tools/installer/generators.js → generateConfig()
+#
+# Structure differences from v1.0:
+# - work_types is now an array (not object with booleans)
+# - your_experts uses object with booleans (correct structure)
+# - tech_stack is array of strings (not object with detected/languages/frameworks)
+# - Simplified structure (removed unused fields)
+#
+# For full structure reference, see the actual generated config.yaml in your project
 
