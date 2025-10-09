@@ -9,20 +9,23 @@ import fs from 'fs-extra';
 import path from 'path';
 
 export async function setupIDE(projectPath, aiTool, workTypes) {
-  if (aiTool === 'cursor') {
-    await setupCursor(projectPath, workTypes);
-  } else if (aiTool === 'vscode') {
-    await setupVSCode(projectPath);
-  }
-  // Other IDEs can be added here
+  // IDE-specific setup if needed in the future
+  // Currently, 0-your-commands/ symlinks work for all IDEs
+  // No special .mdc or .cursor/ setup needed - keeps it simple!
 }
 
 /**
- * Setup Cursor optimizations
- * Creates .mdc command shortcuts following the agent-os pattern
+ * DEPRECATED: Cursor setup removed
+ * Reason: .mdc files are confusing and unnecessary
+ * Solution: Users can @mention files in 0-your-commands/ directly
+ * 
+ * Keeping this function commented out for reference
  */
+/* 
 async function setupCursor(projectPath, workTypes) {
+  const cursorCommandsPath = path.join(projectPath, '.cursor', 'commands');
   const cursorRulesPath = path.join(projectPath, '.cursor', 'rules');
+  await fs.ensureDir(cursorCommandsPath);
   await fs.ensureDir(cursorRulesPath);
 
   // Create .mdc shortcuts for FWD PRO commands
@@ -134,7 +137,7 @@ async function setupCursor(projectPath, workTypes) {
     commandPath: '.fwdpro/pro-os/commands/flows/rt.md'
   });
 
-  // Create .mdc files for each command
+  // Create .mdc files for each command in .cursor/commands/
   for (const cmd of commandShortcuts) {
     const mdcContent = `---
 alwaysApply: false
@@ -146,19 +149,14 @@ ${cmd.description}
 
 Refer to @${cmd.commandPath}
 `;
-    await fs.writeFile(path.join(cursorRulesPath, `${cmd.name}.mdc`), mdcContent);
+    await fs.writeFile(path.join(cursorCommandsPath, `${cmd.name}.mdc`), mdcContent);
   }
 
-  // Create use-pnpm.mdc rule
-  const pnpmRule = `---
-alwaysApply: true
----
-Use pnpm when installing any dependencies.
-`;
-  await fs.writeFile(path.join(cursorRulesPath, 'use-pnpm.mdc'), pnpmRule);
+  // Create project rules in .cursor/rules/
+  // (Users can add their own rules here)
 
-  // Create a README
-  const readme = `# Cursor Rules
+  // Create README for commands
+  const commandsReadme = `# Cursor Commands
 
 These are FWD PRO command shortcuts for Cursor's @mention feature.
 
@@ -185,8 +183,8 @@ Type \`@\` in Cursor to see these shortcuts:
 ### Flow Commands
 ${workTypes.includes('building') ? '- `@create-specflow` - Create technical spec with TDD structure\n- `@execute-specflow` - Implement spec with TDD + QA enforcement\n' : ''}- \`@rt\` - Call a multi-expert roundtable discussion
 
-### Project Rules
-- \`@use-pnpm\` - Always use pnpm for dependencies
+### Your Experts
+${expertShortcuts.map(e => `- \`@${e.name}\` - ${e.title}`).join('\n')}
 
 ## How It Works
 
@@ -223,12 +221,39 @@ These files are auto-generated during installation. To update:
 2. Or modify \`.mdc\` files manually
 `;
 
-  await fs.writeFile(path.join(cursorRulesPath, 'README.md'), readme);
+  await fs.writeFile(path.join(cursorCommandsPath, 'README.md'), commandsReadme);
+
+  // Create README for rules folder
+  const rulesReadme = `# Cursor Rules
+
+Project-specific rules that are always applied by Cursor.
+
+## Adding Custom Rules
+
+You can add your own \`.mdc\` files here with \`alwaysApply: true\` to enforce project standards.
+
+**Examples:**
+- Package manager preference: \`use-pnpm.mdc\`, \`use-npm.mdc\`
+- Code style rules: \`no-console-logs.mdc\`
+- Project conventions: \`test-before-commit.mdc\`
+
+**Format:**
+\`\`\`
+---
+alwaysApply: true
+---
+Your rule description here
+\`\`\`
+`;
+  await fs.writeFile(path.join(cursorRulesPath, 'README.md'), rulesReadme);
 }
+*/
 
 /**
- * Setup VS Code optimizations
+ * DEPRECATED: VS Code setup removed
+ * Reason: Not needed - 0-your-commands/ works universally
  */
+/* 
 async function setupVSCode(projectPath) {
   const vscodeSettingsPath = path.join(projectPath, '.vscode');
   await fs.ensureDir(vscodeSettingsPath);
@@ -243,4 +268,4 @@ async function setupVSCode(projectPath) {
 
   await fs.writeJson(path.join(vscodeSettingsPath, 'settings.json'), settings, { spaces: 2 });
 }
-
+*/

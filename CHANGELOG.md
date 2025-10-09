@@ -11,6 +11,36 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [2.0.1] - 2025-10-09
+
+### 🧹 Installer Improvements & Simplification
+
+**Removed:**
+- Removed `.cursor/commands/` and `.cursor/rules/` setup (unnecessary complexity)
+- Removed `.mdc` files (confusing and redundant with `.md` files)
+- Removed hardcoded `use-pnpm.mdc` preference (was forcing creator's preference on all users)
+- Removed IDE-specific setup functions (not needed)
+
+**Fixed:**
+- Fixed outdated command examples in welcome message (`create-feature`, `create-spec` → `create-specflow`)
+- Fixed reference to non-existent `@show-projects` command
+- Updated installer documentation to reference correct command structure
+
+**Why:**
+- `.mdc` and `.md` files are treated identically by Cursor, causing confusion
+- Users can `@mention` files in `0-your-commands/` directly (simpler!)
+- Works universally across all IDEs (Cursor, VS Code, Windsurf, etc.)
+- No proprietary file formats - just standard markdown
+- Users choose their own package manager preferences
+
+**Impact:**
+- Cleaner installation (no hidden `.cursor/` folder)
+- Less confusion for users
+- Better cross-IDE compatibility
+- Respects user preferences instead of forcing creator's choices
+
+---
+
 ## [2.0.0] - 2025-10-09
 
 ### 🎉 Major Release: Pattern-Based Expert System & Flow Commands

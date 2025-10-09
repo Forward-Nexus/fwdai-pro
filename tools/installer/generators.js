@@ -708,8 +708,8 @@ Your project files have been created with basic information. You can flesh them 
 │   └── ...                   # Your other experts
 │
 ├── 0-your-commands/           # Shortcuts to your frequently used commands
-│   ├── create-spec.md        # Create a technical spec
-│   ├── create-feature.md     # Build a new feature
+│   ├── create-specflow.md    # Create a technical spec with TDD
+│   ├── execute-specflow.md   # Implement spec with TDD + QA
 │   └── rt.md                 # Call a roundtable meeting
 │
 ├── config/                    # Your project configuration
@@ -812,9 +812,9 @@ ${aboutProject.workTypes.includes('investor') ? '- **@lyna** - Fundraising, pitc
 - **FAQs:** \`.fwdpro/pro-os/user-docs/faqs/\`
 
 ### Common Questions
-- **"How do I update my profile?"** → Use \`@update-founder-profile\` command
-- **"How do I see all my projects?"** → Use \`@show-projects\` command
+- **"How do I update my profile?"** → Use \`@update-fp\` command
 - **"How do roundtables work?"** → See \`.fwdpro/0-your-commands/rt.md\`
+- **"Where are all the commands?"** → See \`.fwdpro/pro-os/commands/\`
 
 ---
 
