@@ -11,6 +11,40 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [2.0.4] - 2025-10-10
+
+### 🎯 Conservative Changelog-Based Updater
+
+**Revolutionary Update System:**
+- **Changelog-based updates** - Only touches files that actually changed in each version
+- **Version tracking** - Maintains detailed record of what changed when
+- **Smart preservation** - Files not in changelog are completely untouched
+- **Zero data loss** - Your customizations are safe by design
+
+**New Features:**
+- ✅ `version-changelog.js` - Tracks file changes per version
+- ✅ Only updates files explicitly listed in the changelog
+- ✅ Preserves ALL user customizations in unchanged files
+- ✅ Smart merge for changed files that were also customized
+- ✅ Expert Project Context sections always preserved
+- ✅ Clear conflict markers when manual merge needed
+- ✅ Test utility to verify what will be updated
+
+**What This Means:**
+- Your personalized documents stay exactly as you made them
+- Your custom experts remain untouched
+- Your workflow configurations are safe
+- Only files we explicitly update in the version get changed
+- Updates are predictable, transparent, and safe
+
+**Developer Benefits:**
+- Clear changelog maintenance workflow
+- Test updates before releasing
+- Document what changed in each version
+- Force update capability for critical fixes
+
+---
+
 ## [2.0.3] - 2025-10-09
 
 ### 🔧 Surgical Updater (Nuclear → Surgical)
