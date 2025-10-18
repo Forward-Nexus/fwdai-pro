@@ -123,6 +123,33 @@ Think of them as the "instruction manual" for different types of work.
 
 ---
 
+### deliverable-types.md ✨ NEW
+**For:** Document lifecycle and token efficiency
+
+**Defines:**
+- Living vs Working vs Fixed documents
+- When to update vs create new version
+- Token-efficient closeout processes
+- Document type decision tree
+
+**Used by:** All experts (universal pattern)
+
+---
+
+### market-research-workflow.md ✨ NEW
+**For:** Research-first workflow for investor materials
+
+**Defines:**
+- 5-phase scientific method for business docs
+- Lyna/Benji division of labor
+- Document hierarchy (verified data → references → deliverables)
+- Research integrity quality gates
+- Workspace coordination for research projects
+
+**Used by:** @lyna, @benji (investor materials, business plans, pitch decks)
+
+---
+
 ### PATTERN-LOADING-FLOW.md ⭐
 **For:** Visual understanding of the entire system
 
@@ -250,6 +277,21 @@ Information appears in ONE pattern, not duplicated across multiple
 ---
 
 ## Version History
+
+**v2.1** - October 18, 2025
+- **MAJOR SYSTEM IMPROVEMENTS:**
+  - Added `deliverable-types.md` - Document lifecycle & token efficiency
+  - Added `market-research-workflow.md` - Research-first for investor materials
+  - Enhanced `expert-collaboration.md` with 5 critical new patterns:
+    - Source of Truth Principle
+    - Token Efficiency Pattern
+    - Expert Lens Principle
+    - Research & Citation Integrity (links to new standards)
+    - Group Chat Pattern (natural multi-expert collaboration)
+  - Updated all domain patterns with research integrity references
+  - Created `standards/research-citation-standards.md` (3-tier citation standard)
+  - Updated all checklists with research verification requirements
+  - Enhanced `standards/expert-voice-guidelines.md` with update-in-place behavior
 
 **v2.0** - October 9, 2025
 - Enhanced universal.md with comprehensive workflow guidance

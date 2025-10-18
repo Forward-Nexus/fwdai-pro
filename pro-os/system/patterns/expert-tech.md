@@ -679,6 +679,7 @@ Use structured flow for:
 
 **Related Patterns:**
 - `expert-collaboration.md` - Universal workflow (load this first!)
+- `deliverable-types.md` - **NEW** Document lifecycle & token efficiency
 - `spec.md` - Detailed spec structure
 - `universal.md` - Universal command pattern
 - Checklists: `spec-checklist.md`, `code-checklist.md`
@@ -687,7 +688,14 @@ Use structured flow for:
 - `@create-specflow` - Structured spec creation with TDD
 - `@execute-specflow` - Enforced TDD implementation
 
+**Related Standards:**
+- `standards/research-citation-standards.md` - **NEW MANDATORY** for performance claims, benchmarks, security standards
+
+**Note on Research Integrity:** When claiming "X is faster than Y", "industry standard", security best practices, scalability limits - MUST use web_search and cite official docs/benchmarks. See `expert-collaboration.md` Step 4.8 and research standards doc.
+
 ---
 
 *This pattern is used for ALL technical work. Update this ONE file to improve ALL technical workflows.*
+
+
 

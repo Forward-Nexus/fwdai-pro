@@ -11,6 +11,72 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [2.1.0] - 2025-10-18
+
+### 🎉 Major Release: The Roundtable Architecture
+
+**Tagline & Philosophy:**
+- ✨ **New tagline:** "Better conversations lead to better outcomes"
+- Philosophy rooted in recovery principles: everyone deserves the chance to thrive
+- Human-first design by a psychology major, writer, and theater person (not a developer!)
+
+**The Roundtable Metaphor:**
+- 🪑 **Conference room model** - Clear spatial organization
+- **Whiteboards** (on wall) - Project dashboard, human-readable, Monday.com-style
+- **Workspaces** (notebooks) - AI-optimized context, founder never reads
+- **Checklist** (clipboard) - Scannable tickets, minimal text, action-focused
+- **Documents** (folder) - Final deliverables
+
+**v2.1 Core Features:**
+- ✅ **Research Integrity** - 3-tier citation standard, mandatory web search, no made-up stats
+- ✅ **Token Efficiency** - Iterate in chat before writing docs, update in place
+- ✅ **Group Chat Pattern** - Experts discuss naturally (not sequential handoffs!)
+- ✅ **Expert Recommendation Pattern** - Experts flag when they need other experts
+- ✅ **Natural Conversation Updates** - Just talk about your project, AI offers to update context
+- ✅ **New Thread Context Loading** - Read whiteboards first when context resets
+
+**New Documentation:**
+- `patterns/deliverable-types.md` - Document lifecycle & token efficiency
+- `patterns/market-research-workflow.md` - Research-first for investor materials
+- `standards/research-citation-standards.md` - 3-tier citation standard & verification
+- `user-docs/user-guide/personalizing-your-system.md` - Extensive customization capabilities
+- `user-docs/user-guide/recommended-integrations.md` - MCPs, tools, Cursor optimizations
+
+**System Architecture Updates:**
+- **Expert Collaboration Pattern (v2.2)** - Roundtable metaphor, AI-optimized workspaces, ticket-style checklist
+- **Workspace Usage Guide (v2.2)** - AI-optimized format clarity, reference not duplicate
+- All checklists updated with research integrity requirements
+- All domain patterns updated with research verification
+- Expert voice guidelines updated with document update behavior
+
+**Cursor IDE Optimizations:**
+- `.cursorignore` for performance (auto-installed)
+- `.cursor/recommended-rules.md` - Copy/paste templates for v2.1 patterns
+- `.cursor/recommended-mcps.json` - MCP configurations with examples
+- Updated installer to copy Cursor optimizations automatically
+
+**JIRA/Linear Integration Clarity:**
+- FWD PRO provides built-in project management (Whiteboards + Checklist)
+- JIRA/Linear integration is OPTIONAL (for teams that already use them)
+- Expert-facilitated manual sync (not automatic)
+- FWD PRO remains source of truth for AI collaboration
+
+**Documentation Updates:**
+- All user guides updated with v2.1 features and Roundtable metaphor
+- FAQs updated with v2.1 patterns
+- README updated with tagline, v2.1 features, execution clarity
+- Terminology: "Expert Orchestrators" (not "agents")
+
+**Breaking Changes:**
+- None! v2.1 is fully backward compatible
+
+**Migration Notes:**
+- Existing projects get v2.1 patterns automatically
+- Cursor optimizations installed on update
+- All user customizations preserved
+
+---
+
 ## [2.0.4] - 2025-10-10
 
 ### 🎯 Conservative Changelog-Based Updater

@@ -107,16 +107,18 @@ Experts collaborate in workspace files:
 - Decisions and context documented
 ```
 
-### Roundtable Review:
+### Roundtable Review (v2.1 Group Chat):
 ```
 @rt review this feature spec
 
-→ Multiple experts weigh in
-→ Each provides their perspective
+→ Multiple experts weigh in SIMULTANEOUSLY
+→ Experts discuss with each other naturally
+→ Cross-validate each other's perspectives
+→ You see authentic expert collaboration
 → Comprehensive feedback in workspace
 ```
 
-### How Experts Work Together:
+### How Experts Work Together (v2.1):
 ```
 You: @denny create auth spec
 → Denny creates spec in workspace
@@ -126,7 +128,19 @@ You: @ada implement the auth spec
 → Ada reads Denny's workspace
 → Implements based on spec
 → Documents progress in workspace
+
+You: @denny @ada @elle - work together on HIPAA auth
+→ All three experts active simultaneously
+→ They discuss with each other
+→ Cross-validate security & compliance
+→ Higher quality from group collaboration
 ```
+
+**v2.1 Features:**
+- **Group Chat** - Experts discuss naturally (not sequential handoffs)
+- **Research Integrity** - Experts verify claims with web sources
+- **Expert Recommendation** - Experts flag when they need another expert
+- **Token Efficiency** - Iterate in chat before writing docs
 
 ---
 

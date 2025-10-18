@@ -25,10 +25,12 @@ You → Team of Experts → Collaborative Output
 
 Benefits:
 ✅ Specialized experts
-✅ They collaborate with each other
+✅ They collaborate with each other (naturally discuss in group chat!)
 ✅ Persistent knowledge
 ✅ Clean handoffs between experts
 ✅ Cross-project awareness
+✅ Research integrity - verified data, not made-up stats (v2.1)
+✅ Token efficiency - iterate in chat, not documents (v2.1)
 ```
 
 ---
@@ -53,9 +55,9 @@ Benefits:
 
 You answer, Denny creates technical spec in `workspace/`
 
-### 4. Experts Review
+### 4. Experts Review (Group Chat Pattern - v2.1)
 
-**On the whiteboards:**
+**On the whiteboards - natural discussion:**
 
 **Genna:** "Spec looks good. Ada, ready to implement?"
 
@@ -64,6 +66,12 @@ You answer, Denny creates technical spec in `workspace/`
 **Elle:** "Make sure we're GDPR compliant on password storage."
 
 **Denny:** "Good catch Elle, I'll add that to the spec."
+
+**What's new in v2.1:**
+- Experts discuss naturally (no formal handoffs needed)
+- Cross-validate each other's work
+- You see authentic collaboration
+- Higher quality from multiple perspectives
 
 ### 5. Ada Implements
 
@@ -96,19 +104,56 @@ FWD PRO organizes work into three zones:
 
 **Purpose:** Where experts collaborate
 
+### 🪑 The Conference Room Metaphor:
+
+**Imagine walking into a conference room with your expert team:**
+
+```
+                ┌─────────────┐
+                │   GENNA'S   │
+                │ WHITEBOARD  │  ← Status board
+                └─────────────┘
+    ┌──────┐                      ┌──────┐
+    │ELLE'S│                      │DENNY'S│
+    │BOARD │     🪑  ROUND  🪑     │ BOARD │
+    └──────┘    🪑  TABLE  🪑     └──────┘
+[Elle's        🪑    YOU    🪑      [Denny's
+ notebook]      🪑   🪑   🪑         notebook]
+    ┌──────┐                      ┌──────┐
+    │LYNA'S│      [Your           │ ADA'S│
+    │BOARD │      Clipboard]      │BOARD │
+    └──────┘                      └──────┘
+```
+
 **Contains:**
-- `whiteboards.md` - Expert notes, handoffs, blockers
-- `workspace/` - Work-in-progress files
-- `[your-name]-checklist.md` - Your action items
 
-**Think of it as:** A conference room with whiteboards
+1. **`whiteboards.md`** (Status boards on wall - YOU read)
+   - Project dashboard (like Monday.com)
+   - What each expert is working on
+   - Current status, blockers
+   - Human-readable, scannable
 
-**Characteristics:**
-- ❌ Messy (that's okay!)
-- ❌ Drafts and iterations
-- ✅ Real collaboration
-- ✅ You can see expert thinking
-- ✅ Handoffs and reviews visible
+2. **`workspace/`** (Expert notebooks - AI reads, YOU don't)
+   - AI-optimized context files
+   - Detailed decisions, thread refs
+   - Expert collaboration notes
+   - Machine-readable format
+
+3. **`[your-name]-checklist.md`** (Your clipboard - YOU read)
+   - Ticket-style action items
+   - Things YOU need to do
+   - Scannable, visual
+   - Created by experts when they need you
+
+**What YOU Read:**
+- ✅ Whiteboards (project status)
+- ✅ Your Checklist (action items)
+- ✅ Documents (final deliverables)
+
+**What AI Reads:**
+- ✅ Workspaces (context, history)
+- ✅ Whiteboards (team status)
+- ✅ Documents (deliverables)
 
 ### Zone 2: Documents (Final Outputs)
 

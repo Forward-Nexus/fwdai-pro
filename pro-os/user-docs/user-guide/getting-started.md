@@ -13,13 +13,17 @@ Instead of:
 - ❌ Starting from scratch each time
 - ❌ No context about your project
 - ❌ Disorganized outputs
+- ❌ Making up facts and statistics
 
 You get:
 - ✅ 6 specialized experts + your custom expert
 - ✅ Persistent project knowledge
-- ✅ Roundtable collaboration model
+- ✅ Roundtable collaboration model (experts discuss naturally!)
 - ✅ Clean separation: workspace vs. final documents
 - ✅ Cross-project awareness
+- ✅ **Research integrity** - Verified data with real sources (v2.1)
+- ✅ **Token efficiency** - Iterate in chat, not documents (v2.1)
+- ✅ **Group chat** - Multiple experts collaborate simultaneously (v2.1)
 
 ---
 

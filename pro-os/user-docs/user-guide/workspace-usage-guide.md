@@ -1,29 +1,40 @@
 # Workspace Usage Guide
 
-**Version:** 1.0  
-**Date:** October 8, 2025  
+**Version:** 2.2  
+**Date:** October 18, 2025  
 **Purpose:** Ensure FWD PRO workspaces are being created and used for all collaborative work
+
+**v2.2 Updates:** AI-optimized format clarity, Roundtable metaphor integration
 
 ---
 
 ## What Are Workspaces?
 
-**Workspaces are detailed progress documents that track ALL work, decisions, and context for a work item.**
+**Workspaces are AI-optimized notebooks for detailed context, decisions, and collaboration notes.**
+
+### 🪑 The Roundtable Metaphor:
+
+**Imagine the conference room:**
+- **Whiteboards** (on the wall) = Project dashboard - YOU read this
+- **Workspaces** (notebooks on table) = AI context - AI reads this, YOU don't
+- **Checklist** (your clipboard) = Action items - YOU read this
+- **Documents** (deliverables folder) = Final outputs - YOU use these
 
 Think of it like this:
 
 ```
-WORKSPACES (detailed progress story)
-    ↓ informs
-WHITEBOARDS (high-level dashboard)
-    ↓ informs
-CHECKLIST (action items for founder)
+WORKSPACES (AI notebooks - detailed context)
+    ↓ summarizes to
+WHITEBOARDS (Status dashboard - everyone reads)
+    ↓ creates tasks for
+CHECKLIST (Your action items - you read)
 ```
 
-- **Workspaces** = Detailed story of work happening (can be long, that's good!)
-- **Whiteboards** = High-level overview of all expert activity
-- **Checklist** = Specific action items for founder
-- **Documents** = Clean final deliverables that come out of the work
+**Key Point:** Workspaces are FOR AI, not for you!
+- **Workspaces** = AI context, decisions, thread refs (AI-optimized format)
+- **Whiteboards** = Project dashboard (Monday.com-style, human-readable)
+- **Checklist** = Your action items (ticket-style, scannable)
+- **Documents** = Final deliverables (clean, polished)
 
 ---
 
@@ -37,12 +48,13 @@ CHECKLIST (action items for founder)
 - ❌ No clear status tracking
 
 ### With Workspaces:
-- ✅ All collaboration in one place
-- ✅ Complete context preserved
-- ✅ Clear ownership and status
-- ✅ Easy handoffs between experts
-- ✅ Decision history tracked
-- ✅ Progress visible on whiteboards
+- ✅ AI context preserved between threads
+- ✅ Complete decision history
+- ✅ Thread references (context switching)
+- ✅ Expert collaboration notes
+- ✅ References to deliverables (not duplicates!)
+- ✅ Token efficient (AI shorthand encouraged)
+- ✅ **You never read these** (ask AI in chat if you need info)
 
 ---
 
@@ -122,6 +134,50 @@ A workspace is the MASTER document for everything related to that topic:
 ```
 
 **Important:** Experts always ask before archiving - founder might remember missing work!
+
+---
+
+## AI-Optimized Workspace Format
+
+### ⚠️ CRITICAL: Workspaces Are for AI, Not You
+
+**You (founder) DON'T read workspaces** - experts use AI-optimized format!
+
+**Format Guidelines:**
+- ✅ Abbreviations encouraged (CTX, REFS, STATUS, COLLAB)
+- ✅ Machine-readable structure
+- ✅ Token-efficient
+- ✅ References deliverables (doesn't duplicate content!)
+- ✅ Includes thread IDs for context switching
+- ✅ Whatever format works for AI
+
+**Example AI-Optimized Workspace:**
+```markdown
+# WS:pitch-deck
+
+## CTX
+- Goal: seed $1.5M
+- Research: /workspace/market-research.md
+- Thread: "pitch brainstorm oct 15"
+- Decisions: peer-first (Lyna+Benji Oct 15)
+
+## REFS
+- D:/documents/investor/deck-v3.md
+- D:/documents/investor/research.md
+
+## STATUS
+- research: ✅
+- outline: 🔄 (Ward reviewing)
+- slides: ⏸️ (blocked on outline)
+
+## COLLAB
+- Lyna→Ward: outline review (Oct 17, checklist)
+- Lyna→Denny: tech slide validation needed
+```
+
+**If you need info from a workspace:** Just ask the expert in chat!
+- "Hey Lyna, what was that decision about the pitch deck messaging?"
+- AI will reference workspace and explain
 
 ---
 

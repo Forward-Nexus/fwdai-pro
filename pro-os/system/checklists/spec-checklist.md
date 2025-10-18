@@ -97,6 +97,34 @@ Go through each section systematically. Mark items as:
 
 ---
 
+## 3.5 Research & Technical Claims Verification 🔬
+
+### For ALL Technical Claims, Benchmarks, and Statistics:
+
+- [ ] **Web search performed** - For performance claims ("X is faster than Y")
+- [ ] **Sources cited** - Official docs, reputable tech sources (web.dev, MDN, etc.)
+- [ ] **Benchmarks verified** - Real benchmark data with URLs (not assumed)
+- [ ] **Security standards checked** - OWASP, NIST, or official security guidance
+- [ ] **Best practices verified** - Not relying on outdated LLM training data
+- [ ] **Estimates marked clearly** - When making projections ("should handle X users")
+
+### What NEVER to Include:
+
+❌ "Industry benchmarks show..." without actual source  
+❌ "X is 2x faster than Y" without benchmark data  
+❌ "Best practice is..." without citing current guidance  
+❌ "This can scale to..." without architectural justification  
+❌ Made-up performance numbers or statistics
+
+### When Research Doesn't Exist:
+
+✅ **BE HONEST:**
+"Based on our architecture and [Database X] documented limits, this should handle 1M users. We'll need to optimize [Y] at ~500K scale. Not yet load tested."
+
+**Reference:** See `system/standards/research-citation-standards.md` for complete technical verification workflow.
+
+---
+
 ## 4. Actionability 🚀
 
 - [ ] Clear enough for implementer to start immediately

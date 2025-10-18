@@ -42,6 +42,19 @@ Use this checklist before marking any work complete.
 
 ---
 
+## Research & Citation Integrity
+
+- [ ] **Web search performed** - For ANY statistic, benchmark, or research claim
+- [ ] **Sources verified** - Real, citable sources with URLs (not LLM training memory)
+- [ ] **Citations formatted** - Using proper Tier 1/2/3 format from research standards
+- [ ] **Estimates marked clearly** - If no research exists, marked as "projection" with reasoning
+- [ ] **No fake research** - Never cite "research shows..." without actual web search
+- [ ] **Honest about gaps** - When research doesn't exist, explicitly state that
+
+**Reference:** See `system/standards/research-citation-standards.md` for complete verification workflow.
+
+---
+
 ## Actionability
 
 - [ ] **Clear actions** - Next steps are specific and actionable

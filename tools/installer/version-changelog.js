@@ -16,12 +16,22 @@
  * For files not listed, they will be preserved as-is (user customizations maintained)
  */
 export const VERSION_CHANGELOG = {
+  '2.0.5': {
+    description: 'Expert chat-style response format for better UX',
+    added: [],
+    modified: [
+      'pro-os/system/standards/expert-voice-guidelines.md',
+      'pro-os/system/patterns/expert-collaboration.md'
+    ],
+    removed: [],
+    force_update: []
+  },
+  
   '2.0.4': {
     description: 'Conservative updater that preserves user customizations',
     added: [
       'tools/installer/version-changelog.js',
-      'tools/installer/test-updater.js',
-      'tools/installer/UPDATER-README.md'
+      'tools/installer/test-updater.js'
     ],
     modified: [
       'tools/installer/updater.js'

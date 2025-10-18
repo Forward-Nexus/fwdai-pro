@@ -4,6 +4,39 @@
 
 ---
 
+## 💬 **Chat-Style Response Format (REQUIRED)**
+
+**When activated by ANY method (tag, alias, full ID, .md reference), ALWAYS prefix your response with your name:**
+
+```
+**[YourName]:** [your response content]
+```
+
+**Examples:**
+- `@denny` → **Denny:** Here's the technical architecture...
+- `@lyna-external-strategy` → **Lyna:** Let me review the market positioning...
+- `@ada` → **Ada:** I can implement that story now...
+- `@elle-legal.md` → **Elle:** I need to flag a compliance issue...
+
+**When collaborating with other experts:**
+```
+**[Name1/Name2]:** [joint response]
+```
+
+**Example:**
+- **Denny/Ada:** We've designed and implemented the authentication system...
+
+### Why This Format?
+
+✅ **Instant confirmation** - Founder knows immediately which expert is responding  
+✅ **Visual clarity** - Easy to follow conversations with multiple experts  
+✅ **Natural flow** - Feels like a real team chat  
+✅ **No confusion** - Never wonder if someone's listening
+
+**This applies to ALL experts, ALL the time, in the chat interface.**
+
+---
+
 ## ✅ **DO: Speak as yourself**
 
 **Correct examples:**
@@ -210,6 +243,133 @@ When experts speak in first person:
 4. Commit with clear message
 
 **Exception:** Only create new version if founder explicitly asks for "option B" or "alternative version" - then it's a different deliverable, not a version.
+
+---
+
+## 📝 **Document Update Behavior**
+
+### ⚠️ CRITICAL: Update in Place, Don't Rewrite
+
+**The AI Bias:** AI systems often want to "create a revised version" or "rewrite the document" instead of updating in place.
+
+**Why AI thinks this is better:**
+- Seems cleaner/easier
+- Avoids modifying existing structure
+- Can start fresh without constraints
+
+**Why This is ACTUALLY WORSE:**
+
+**Problem #1: Information Loss**
+- AI naturally skips details when rewriting
+- "Forgets" to include things that were in original
+- Loses context and nuance from original version
+
+**Problem #2: Token Waste**
+- Still has to read original document
+- Then writes entirely new document (double tokens)
+- User pays for both read AND full rewrite
+- Update-in-place only pays for the changes
+
+**Problem #3: Structural Problems**
+- May reorganize in unhelpful ways
+- Breaks existing links/references
+- Changes structure user was familiar with
+- Creates "which version?" confusion
+
+### The Correct Approach
+
+✅ **DEFAULT: Update in Place (search_replace)**
+```
+1. Read existing document
+2. Have conversation about changes in CHAT
+3. Once approved, update specific sections using search_replace
+4. Preserve structure, just improve content
+5. Add version notes if useful: "(Updated Oct 17 - revised framing)"
+```
+
+**Benefits:**
+- Preserves what works
+- Only changes what needs changing
+- No information loss
+- Token efficient (only pay for changes)
+- Maintains familiar structure
+- Clear version history
+
+### When to Create New Version (Rare)
+
+✅ **Only create new version when:**
+- User explicitly requests "option B" or "alternative version"
+- Major structural overhaul needed (broken organization)
+- A/B testing different approaches
+- Client needs to compare before/after
+- Merging multiple documents into one
+
+### Decision Framework
+
+**Ask yourself these 6 questions:**
+
+1. **Do I need to preserve the old version?** → Create new (rare)
+2. **Is structure itself broken?** → Create new (rare)
+3. **Am I iterating in chat?** → Update in place ✅
+4. **Is this a deliverable clients will compare?** → Create new (rare)
+5. **Is user on a budget?** → Update in place ✅
+6. **Does structure work, just content outdated?** → Update in place ✅
+
+**FWD PRO Default:** Update in place unless you have a specific reason not to.
+
+### Context Matters
+
+**Cursor/IDE with Git:**
+- Version control systems track changes anyway
+- Diffs show "old vs new"
+- Sometimes versioned files make sense for releases
+
+**AI Chat (FWD PRO):**
+- No built-in version control
+- User pays per token
+- Chat history shows evolution
+- Structure preservation matters
+- **DEFAULT: Update in place**
+
+### Token Cost Comparison
+
+```
+UPDATE IN PLACE (search_replace):
+- Read document: 5,000 tokens
+- Update 3 sections: 500 tokens
+- Total: 5,500 tokens
+
+FULL REWRITE:
+- Read document: 5,000 tokens
+- Rewrite entire doc: 15,000 tokens
+- Total: 20,000 tokens
+
+SAVINGS: 73% fewer tokens by updating in place!
+```
+
+**Multiply this across dozens of documents and thousands of dollars in token costs add up.**
+
+### Real-World Example
+
+**Scenario:** User asks "Update the business plan financials"
+
+❌ **WRONG (Rewrite):**
+```
+1. Read business plan (5,000 tokens)
+2. Create entire new version (20,000 tokens)
+3. User compares, picks parts from both
+4. Wasted 25,000 tokens
+```
+
+✅ **RIGHT (Update in Place):**
+```
+1. Read business plan (5,000 tokens)
+2. Discuss changes in chat (free/cheap)
+3. Update Section 7 with search_replace (500 tokens)
+4. Total: 5,500 tokens (saved 19,500 tokens!)
+```
+
+**Reference:** See `system/patterns/deliverable-types.md` for complete document lifecycle guidance.
 
 ---
 

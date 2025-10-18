@@ -1,8 +1,10 @@
 # FWD PRO - Universal AI Expert Collaboration System
 
-**Build your entire business in one organized system.**
+**Version 2.1** - October 2025
 
-Create pitch decks, technical specs, marketing plans, legal docs, and more - with expert collaboration that stays organized and gets smarter as you use it.
+**Better conversations lead to better outcomes.**
+
+Every founder deserves expert collaboration that helps them thrive. FWD PRO gives you a team of AI experts who work together naturally - building features with TDD, creating pitch decks with verified research, writing legal docs, launching marketing campaigns, and more.
 
 ---
 
@@ -81,25 +83,40 @@ Updates work like app updates - your documents, workspace, and settings are auto
 
 ## 📊 How It Works
 
-### **Your Dashboard**
-All work happens in one place - the **Roundtable**. Read just TWO files:
+### 🪑 **The Roundtable - Your Conference Room**
 
-- **`roundtable/whiteboards.md`** - Current work, expert collaboration, project status
-- **`roundtable/[your-name]-checklist.md`** - Your action items and decisions needed
+**Imagine a conference room with your expert team:**
+- **Whiteboards on the wall** - Project dashboard (Monday.com-style)
+- **Your clipboard** - Action items (ticket-style, scannable)
+- **Expert notebooks** - AI context (you never read these)
+- **Documents folder** - Final deliverables
 
-No hunting through folders. Everything visible.
+### **Your Dashboard (What YOU Read)**
+Read just TWO files to see everything:
+
+1. **`roundtable/whiteboards.md`** - Project status dashboard
+   - What each expert is working on
+   - Current status and blockers
+   - High-level overview
+
+2. **`roundtable/[your-name]-checklist.md`** - Your action items
+   - Ticket-style format (scannable!)
+   - Things YOU need to do
+   - Created by experts when they need you
 
 ### **Smart Organization**
-- **Workspaces** for active collaboration - experts work together here
-- **Documents** for finished deliverables - clean outputs organized by type
-- **System learns** - the more you organize it your way, the better AI understands your preferences
+- **Workspaces** - AI-optimized context (experts use these, you don't!)
+- **Whiteboards** - Human-readable dashboard (everyone reads)
+- **Checklist** - Your tickets (clean, visual, actionable)
+- **Documents** - Final deliverables (organized by type)
 
-### **Expert Collaboration**
-Multiple specialized experts collaborate transparently:
-- You see all discussions, handoffs, and decisions
-- Experts coordinate automatically
-- Every deliverable reviewed by relevant experts
-- Clear handoffs and accountability
+### **Expert Collaboration (v2.1)**
+Multiple specialized experts collaborate naturally:
+- ✅ **Group chat style** - Experts discuss with each other (not sequential handoffs!)
+- ✅ **Research verified** - All claims backed by real sources (no made-up stats)
+- ✅ **Token efficient** - Iterate in chat before writing docs (saves money)
+- ✅ **Natural conversation** - Just talk about your project, AI updates context
+- ✅ **Cross-validated** - Experts check each other's work
 
 ---
 
@@ -139,16 +156,17 @@ Experts adapt to your communication style: professional, friendly, casual, direc
 @denny @create spec for user authentication
 ```
 
-### Creating Pitch Deck
+### Creating Pitch Deck (Research-First - v2.1)
 ```bash
 @lyna @create pitch deck for [investor type]
 ```
 **Timeline:** 2-3 days
-- Lyna reviews your mission and traction
-- Creates outline → full deck
+- Lyna performs market research (web search for TAM, competitors)
+- Creates outline with verified data
+- Denny validates technical claims
 - Benji reviews messaging
 - Genna checks strategic alignment
-- Deck ready for investors!
+- **Deck ready with REAL sources!** (Not made-up stats)
 
 ### Launching Marketing Campaign
 ```bash
@@ -161,13 +179,15 @@ Experts adapt to your communication style: professional, friendly, casual, direc
 - Set metrics and tracking
 - Campaign ready to execute!
 
-### Getting All Expert Input
+### Getting All Expert Input (Group Chat - v2.1)
 ```bash
 @rt [anything to review]
 ```
 **Timeline:** Same day
-- All relevant experts review
-- Each provides specialized perspective
+- All relevant experts review SIMULTANEOUSLY
+- Experts discuss with each other naturally
+- Cross-validate perspectives
+- You see authentic collaboration
 - Genna synthesizes consensus
 - You decide next steps!
 
@@ -215,14 +235,14 @@ your-project/
 ### 🌍 **Universal**
 Works for ANY business - not just software. Restaurant? Law firm? Telecom? FWD PRO adapts to your industry.
 
-### 🏗️ **Structured, Not Scattered**
-Not just chat - actual deliverables with clear workflows. Drafts in workspaces, finals in documents, everything tracked.
+### 🪑 **The Roundtable Model**
+Not just chat - a conference room with your expert team. Clear organization: whiteboards for status, checklist for actions, documents for deliverables.
 
-### 👥 **Multiple Expert Perspectives**
-Not one AI - a team of specialists who collaborate. See architecture, implementation, legal, marketing views on everything.
+### 👥 **Expert Orchestrators (Not "Agents")**
+Not generic AI or task-running agents - named experts with personalities who collaborate naturally. They discuss, cross-validate, and coordinate like real people.
 
 ### 📊 **Organization That Learns**
-The system adapts to YOUR organization style. The more you customize folder structures and preferences, the better it understands how you work.
+The system adapts to YOUR organization style. Just talk about your project naturally - AI updates context automatically (with your permission).
 
 ### 🎨 **Adapts to You**
 Choose communication styles, set technical level, work via voice or text. System adjusts to YOUR workflow, not vice versa.
@@ -230,15 +250,31 @@ Choose communication styles, set technical level, work via voice or text. System
 ### 🔍 **Complete Transparency**
 See all expert discussions, handoffs, and decision-making. Nothing hidden - you're in the room for everything.
 
+### 🔬 **Research Integrity (v2.1)**
+All statistics and claims backed by REAL sources. No made-up research. Experts verify with web search before citing data.
+
+### 💰 **Token Efficient (v2.1)**
+Experts iterate in chat before writing documents. Saves you money while producing better results.
+
 ---
 
 ## 🎯 Key Concepts
 
-### **The Roundtable**
-All experts work together in one place. Like a team meeting where everyone contributes and you can see all the work happening.
+### **The Roundtable (Conference Room)**
+All experts work together in one place. Like a conference room with:
+- Status boards (whiteboards)
+- Expert notebooks (workspaces - AI-optimized)
+- Your clipboard (checklist - scannable tickets)
+- Deliverables folder (documents)
 
-### **Workspaces**
-Each deliverable gets a workspace where experts collaborate. When done, it's archived and the clean output goes in `documents/`.
+### **Whiteboards (YOU Read)**
+Project dashboard showing what each expert is working on. High-level status, blockers, progress. Human-readable, Monday.com-style.
+
+### **Workspaces (AI Reads)**
+AI-optimized context files with decisions, thread references, and collaboration notes. You DON'T read these - just ask experts in chat if you need info!
+
+### **Checklist (YOU Read)**
+Your action items in ticket format. Scannable, visual, minimal text. Only things YOU need to do.
 
 ### **Your Profile**
 FWD PRO learns how YOU work:
@@ -333,9 +369,9 @@ We welcome contributions! See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
 ## ✨ Philosophy
 
-> "Every founder deserves a complete expert team that adapts to their style and helps them build incredible things."
+> "Better conversations lead to better outcomes. Everyone deserves the chance to thrive."
 
-FWD PRO democratizes access to AI collaboration - not just for developers, but for ALL founders building ANY business.
+FWD PRO democratizes access to expert collaboration - not just for developers, but for ALL founders building ANY business. When you have better conversations with AI experts who truly collaborate, you build better things.
 
 **Let's build together!** 🚀
 

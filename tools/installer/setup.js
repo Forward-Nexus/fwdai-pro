@@ -82,6 +82,20 @@ export async function setupProject(answers) {
     // Create pro-os/project/ folder for generated files
     await fs.ensureDir(path.join(fwdproDir, 'pro-os', 'project'));
     
+    // Copy .cursorignore to project root for performance optimization
+    const cursorignoreSrc = path.join(__dirname, '..', '..', '.cursorignore');
+    const cursorignoreDest = path.join(projectPath, '.cursorignore');
+    if (await fs.pathExists(cursorignoreSrc)) {
+      await fs.copy(cursorignoreSrc, cursorignoreDest);
+    }
+    
+    // Copy .cursor/ config files to project root
+    const cursorConfigSrc = path.join(__dirname, '..', '..', '.cursor');
+    const cursorConfigDest = path.join(projectPath, '.cursor');
+    if (await fs.pathExists(cursorConfigSrc)) {
+      await fs.copy(cursorConfigSrc, cursorConfigDest);
+    }
+    
     spinner.succeed(chalk.green('✓ Project structure created'));
   } catch (error) {
     spinner.fail(chalk.red('Failed to setup project structure'));

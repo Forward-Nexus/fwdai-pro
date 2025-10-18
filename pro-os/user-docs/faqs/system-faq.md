@@ -9,9 +9,10 @@
 **Universal AI expert collaboration system** for founders and small teams
 
 - 6 core experts + your custom domain expert
-- Roundtable collaboration model
+- Roundtable collaboration model (experts discuss naturally!)
 - Separation of workspace (messy) and documents (clean)
 - Works with any AI coding tool (Cursor, Claude, Windsurf, etc.)
+- **v2.1:** Research integrity, token efficiency, group chat collaboration
 
 ---
 
@@ -186,6 +187,24 @@ npx @fwd-ai/pro install
 # Update context
 @update-project
 ```
+
+---
+
+## v2.1 Features (New!)
+
+**Research Integrity** - Experts verify claims with real web sources (no made-up stats!)
+
+**Token Efficiency** - Iterate in chat before writing docs (saves money!)
+
+**Group Chat Pattern** - Multiple experts collaborate simultaneously
+
+**Expert Recommendation** - Experts flag when they need another expert's domain
+
+**Market Research Workflow** - Research-first for investor materials (pitch decks, business plans)
+
+**Document Lifecycle** - Clear patterns for living vs fixed documents
+
+**Learn more:** See `working-with-experts.md` for v2.1 collaboration features
 
 ---
 

@@ -168,6 +168,49 @@ Update `roundtable/whiteboards.md`:
 
 ---
 
+## How @rt Leverages Group Chat Pattern
+
+**@rt activates multiple experts simultaneously** - not sequential handoffs!
+
+### What This Means:
+
+✅ **All experts see full conversation** - Shared context from the start  
+✅ **Natural group discussion** - Experts can respond to each other's reviews  
+✅ **User orchestrates** - Founder decides who participates  
+✅ **Parallel processing** - Multiple perspectives at once, not one-by-one  
+
+### How It Works in Practice:
+
+```
+Founder: "@rt review this pitch deck"
+
+[System loads pitch deck, identifies relevant experts]
+
+Genna: [Reads deck, provides strategic perspective]
+Lyna: [Reads deck, provides investor perspective]  
+Elle: [Reads deck, flags legal issue with claim on Slide 7]
+Lyna: "Good catch Elle - I'll revise that claim"
+Genna: "Agree with both - also the market size slide needs work"
+
+[Natural group discussion, all experts active together]
+```
+
+**NOT like this:**
+```
+Expert 1 reviews → writes formal handoff → waits
+Expert 2 reviews → writes formal handoff → waits
+Expert 3 reviews → etc.
+[Sequential, formal, slow]
+```
+
+### Reference:
+
+See `system/patterns/expert-collaboration.md` Step 7 for complete group chat pattern documentation.
+
+**@rt is the PERFECT use case for group chat collaboration** - brings the whole team together naturally!
+
+---
+
 ## Example Usage
 
 ### Simple:

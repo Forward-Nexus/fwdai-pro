@@ -159,11 +159,13 @@ Location: src/auth/
 
 ## Investor Materials
 
-### Workflow: Create Pitch Deck
+### Workflow: Create Pitch Deck (Research-First - v2.1)
 
 **Best for:** Fundraising, need investor materials
 
 **Command:** `@lyna create pitch deck for [purpose]`
+
+**Pattern:** `market-research-workflow.md` (v2.1)
 
 **Steps:**
 
@@ -180,23 +182,45 @@ Location: src/auth/
 
 4. **You provide info**
 
-5. **Lyna creates outline:**
-> workspace/pitch-deck-outline.md
+5. **Lyna performs market research (v2.1 NEW!):**
+> - Web searches for TAM, SAM, SOM data
+> - Competitor research with sources
+> - Industry benchmark verification
+> - Creates: workspace/pitch-deck-research.md
 
-6. **You review outline**
+**Research includes:**
+- Total Addressable Market (verified sources)
+- Competitor landscape (real companies, URLs)
+- Industry growth rates (cited studies)
+- Average deal sizes (Crunchbase, PitchBook data)
 
-7. **Lyna creates full deck:**
-> Slide-by-slide content
+6. **Lyna creates outline:**
+> workspace/pitch-deck-outline.md (references research)
 
-8. **Benji reviews messaging:**
+7. **You review outline**
+
+8. **Lyna creates full deck:**
+> Slide-by-slide content with citations
+
+9. **Benji reviews messaging:**
 > "Traction story is strong. Suggest leading with problem/solution."
 
-9. **Lyna revises**
+10. **@denny validates technical claims (v2.1):**
+> "Scalability projections need adjustment based on actual architecture."
 
-10. **Final deck delivered:**
-> documents/investor/pitch-deck.md
+11. **Lyna revises with validated data**
+
+12. **Final deck delivered:**
+> documents/investor/pitch-deck.md (all claims verified!)
 
 **Timeline:** 2-3 days
+
+**v2.1 Advantage:**
+- ✅ Real market data, not estimates
+- ✅ Technical claims validated by architect
+- ✅ Competitors verified (no made-up companies!)
+- ✅ All statistics have sources
+- ✅ Investors can verify your numbers
 
 ---
 

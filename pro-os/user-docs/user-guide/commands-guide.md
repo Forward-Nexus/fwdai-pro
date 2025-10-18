@@ -400,10 +400,10 @@ Flow commands follow predefined patterns from `pro-os/system/patterns/` for cons
 
 ### @rt (Roundtable Review)
 
-**Purpose:** Multi-expert collaborative review
+**Purpose:** Multi-expert collaborative review with natural group discussion
 
-**Pattern:** `patterns/expert-collaboration.md`  
-**Experts:** ALL relevant experts participate
+**Pattern:** `patterns/expert-collaboration.md` (Step 7: Group Chat Pattern)  
+**Experts:** ALL relevant experts participate **simultaneously** (v2.1)
 
 **Usage:**
 ```
@@ -412,8 +412,8 @@ Flow commands follow predefined patterns from `pro-os/system/patterns/` for cons
 @rt should we pivot to B2B?
 ```
 
-**What Happens:**
-1. All relevant experts load context
+**What Happens (v2.1 Group Chat):**
+1. All relevant experts load context **at the same time**
 2. Each reviews from their domain perspective:
    - Genna: Strategic fit, big picture
    - Denny: Technical feasibility
@@ -422,14 +422,23 @@ Flow commands follow predefined patterns from `pro-os/system/patterns/` for cons
    - Benji: Market fit, growth potential
    - Elle: Legal/compliance
    - Your domain expert: Industry best practices
-3. Collaborative discussion in workspace
-4. Synthesized recommendations
-5. Documented review in workspace
+3. **Experts discuss naturally with each other** (not sequential handoffs!)
+4. Cross-validate each other's perspectives
+5. You see authentic expert collaboration
+6. Synthesized recommendations
+7. Documented review in workspace
+
+**What's New in v2.1:**
+- ✅ **Parallel, not sequential** - All experts active together
+- ✅ **Natural discussion** - Experts respond to each other
+- ✅ **Cross-validation** - They catch each other's blind spots
+- ✅ **You learn** - Watch experts debate tradeoffs
 
 **Use When:**
 - Major decisions requiring multiple perspectives
 - Cross-domain review needed
 - High-stakes deliverable
+- Want to see experts collaborate authentically
 - Want to catch issues from all angles
 
 **Output:**

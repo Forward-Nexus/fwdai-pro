@@ -1,8 +1,8 @@
 {
   "$schema": "https://json.schemastore.org/package.json",
   "name": "@fwd-ai/pro",
-  "version": "2.0.4",
-  "description": "FWD PRO - Universal AI expert collaboration system for founders building ANY type of business. Part of the FWD AI ecosystem.",
+  "version": "2.1.0",
+  "description": "FWD PRO - Better conversations lead to better outcomes. Universal AI expert collaboration system with verified research, natural expert discussion, and organized collaboration.",
   "type": "module",
   "main": "tools/installer/index.js",
   "bin": {
@@ -46,6 +46,8 @@
     "bin/",
     "tools/",
     "pro-os/",
+    ".cursorignore",
+    ".cursor/",
     "LICENSE",
     "README.md",
     "CHANGELOG.md",

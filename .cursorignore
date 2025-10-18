@@ -1,0 +1,72 @@
+# FWD PRO - Cursor Performance Optimization
+# Excludes large/unnecessary folders from Cursor's indexing
+
+# Dependencies
+node_modules/
+.pnpm-store/
+bower_components/
+
+# Build outputs
+dist/
+build/
+.next/
+out/
+.output/
+.nuxt/
+.cache/
+.parcel-cache/
+
+# Version control
+.git/
+.svn/
+.hg/
+
+# Test coverage
+coverage/
+.nyc_output/
+*.lcov
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Environment files (contain secrets)
+.env
+.env.*
+!.env.example
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Large media/assets (if applicable)
+*.mp4
+*.mov
+*.avi
+*.mkv
+
+# Documentation builds
+docs/_build/
+site/
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+

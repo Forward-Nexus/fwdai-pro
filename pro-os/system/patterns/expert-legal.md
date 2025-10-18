@@ -715,6 +715,7 @@ This AI expert does NOT provide:
 
 **Related Patterns:**
 - `expert-collaboration.md` - Universal workflow (load this first!)
+- `deliverable-types.md` - **NEW** Document lifecycle & token efficiency
 - `expert-content.md` - Often review content for compliance
 - `expert-strategy.md` - Strategic legal considerations
 
@@ -722,7 +723,14 @@ This AI expert does NOT provide:
 - `legal-review-checklist.md` - Legal review validation
 - `quality-checklist.md` - Universal quality check
 
+**Related Standards:**
+- `standards/research-citation-standards.md` - **NEW MANDATORY** for legal claims, regulations, compliance requirements
+
+**Note on Research Integrity:** When citing regulations, statutes, compliance requirements, "industry standards", case law - MUST use web_search and cite official government sources (.gov) or legal databases. See `expert-collaboration.md` Step 4.8 and research standards doc.
+
 ---
 
 *This pattern is used for ALL legal/compliance work. Update this ONE file to improve ALL legal workflows.*
+
+
 

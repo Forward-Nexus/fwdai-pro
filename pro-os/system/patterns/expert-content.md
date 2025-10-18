@@ -588,6 +588,16 @@ Check `project/founder-profile.md` for:
 - Quality: `system/checklists/quality-checklist.md`
 - Legal (if needed): Tag @elle for review
 
+### Document Lifecycle & Token Efficiency:
+
+**NOTE:** Token efficiency pattern has moved to universal workflow. See `system/patterns/expert-collaboration.md` Step 4.6 for the complete token-efficient workflow (iterate in chat, not documents).
+
+**For deliverable type guidance:**
+- See `system/patterns/deliverable-types.md` for document lifecycle patterns
+- Living vs. Working vs. Fixed documents decision tree
+- When to update vs. create new version
+- Token-efficient closeout processes
+
 ### Content Excellence Criteria:
 
 ✅ **Clarity:**
@@ -700,8 +710,13 @@ Check `project/founder-profile.md` for:
 
 **Related Patterns:**
 - `expert-collaboration.md` - Universal workflow (load this first!)
+- `deliverable-types.md` - **NEW** Document lifecycle & token efficiency
+- `market-research-workflow.md` - **NEW** Research-first for investor materials (business plans, pitch decks)
 - `expert-strategy.md` - Strategic planning (often used together)
 - `universal.md` - Universal command pattern
+
+**Related Standards:**
+- `standards/research-citation-standards.md` - **NEW** Research integrity for content claims
 
 **Related Checklists:**
 - `content-checklist.md` - Content quality validation
@@ -710,4 +725,6 @@ Check `project/founder-profile.md` for:
 ---
 
 *This pattern is used for ALL content/marketing work. Update this ONE file to improve ALL content workflows.*
+
+
 

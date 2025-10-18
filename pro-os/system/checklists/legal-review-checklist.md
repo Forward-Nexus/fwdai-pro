@@ -15,6 +15,15 @@
 - [ ] Testimonials properly disclosed as individual experiences
 - [ ] Statistics cited with sources
 
+### Research & Citation Integrity (MANDATORY)
+- [ ] **All legal claims verified** - Web search performed for statutes, regulations, requirements
+- [ ] **Sources cited** - Government sources (.gov), legal databases, official guidance
+- [ ] **No fake legal claims** - Never cite regulations you didn't verify
+- [ ] **"Industry standard" verified** - Actual standard referenced, not assumed
+- [ ] **Case law verified** - Real cases with proper citation (if referenced)
+
+**Reference:** See `system/standards/research-citation-standards.md` for legal-specific verification requirements.
+
 ### Disclaimers & Disclosures
 - [ ] "Not medical advice" disclaimer included (if health-related)
 - [ ] Privacy policy linked (if collecting data)

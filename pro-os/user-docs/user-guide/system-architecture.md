@@ -76,6 +76,7 @@ Located in: `pro-os/system/`
 - How checklists work (when to add items)
 - Update format standards with examples
 - Human-in-the-loop philosophy
+- **v2.1:** Source of Truth Principle, Token Efficiency, Expert Lens, Research Integrity, Group Chat Pattern
 
 ### The Standards (Formatting & Style)
 
@@ -83,11 +84,19 @@ Located in: `pro-os/system/`
 **`standards/error-templates.md`** - User-facing error message formats
 **`standards/helper-functions.md`** - Reusable code snippets
 **`standards/code-style/`** - Code formatting standards
+**`standards/research-citation-standards.md`** - **NEW v2.1** Research integrity
 
 **`standards/expert-voice-guidelines.md`** - Communication:
 - First-person voice ("I" not "Denny thinks")
 - Tone and style
 - How to adapt to founder
+- **v2.1:** Document update behavior (update-in-place vs rewrite)
+
+**`standards/research-citation-standards.md`** - **NEW v2.1** Research:
+- 3-tier citation standard (Verified, Benchmarks, Estimates)
+- Mandatory web search for claims
+- Source verification workflow
+- Applied across ALL domains (tech, content, strategy, legal)
 
 **`standards/code-style/`** - Code standards:
 - JavaScript, CSS, HTML, general code style
@@ -100,22 +109,37 @@ Located in: `pro-os/system/`
 - Cross-expert collaboration
 - Handoffs
 - Quality checks
+- **v2.1:** Group Chat Pattern, Expert Recommendation Pattern
+
+**`patterns/deliverable-types.md`** - **NEW v2.1** Document lifecycle:
+- Living vs Fixed documents
+- Token efficiency patterns
+- Update-in-place vs create-new decision framework
+
+**`patterns/market-research-workflow.md`** - **NEW v2.1** Research-first:
+- For investor materials (pitch decks, business plans)
+- 5-phase research workflow
+- Three-document system (Research → Plan → Deck)
+- Lyna + Benji collaboration
 
 **`patterns/expert-tech.md`** - Technical work:
 - For Denny (specs) and Ada (code)
 - TDD requirements
 - Code quality standards
 - Architecture principles
+- **v2.1:** Research integrity for technical claims
 
 **`patterns/expert-content.md`** - Content/marketing:
 - For Lyna (external) and Benji (internal)
 - Lead with emotion (external) or data (internal)
 - Audience-appropriate tone
+- **v2.1:** Research integrity for content claims
 
 **`patterns/expert-strategy.md`** - Strategic work:
 - For Genna, Lyna, Benji
 - Think 10 years ahead
 - "Should we build this?" question
+- **v2.1:** Research integrity for market analysis
 
 **`patterns/expert-legal.md`** - Legal/compliance:
 - For Elle

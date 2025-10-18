@@ -681,13 +681,22 @@ documents/strategy/decisions/
 
 **Related Patterns:**
 - `expert-collaboration.md` - Universal workflow (load this first!)
+- `deliverable-types.md` - **NEW** Document lifecycle & token efficiency
+- `market-research-workflow.md` - **NEW CRITICAL** Research-first for investor materials (business plans, market analysis)
 - `expert-content.md` - Often used together (strategic content)
 - `universal.md` - Universal command pattern
 
 **Related Checklists:**
 - `quality-checklist.md` - Universal quality check
 
+**Related Standards:**
+- `standards/research-citation-standards.md` - **NEW MANDATORY** for any statistics or market research claims
+
+**Note on Research Integrity:** When including market size, competitive analysis, industry benchmarks, or any strategic metrics - MUST use web_search and cite real sources. See `expert-collaboration.md` Step 4.8 and research standards doc.
+
 ---
 
 *This pattern is used for ALL strategic work. Update this ONE file to improve ALL strategic workflows.*
+
+
 

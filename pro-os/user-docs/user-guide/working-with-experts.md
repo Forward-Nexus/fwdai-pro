@@ -606,10 +606,30 @@ You can also add shortcuts anytime:
 @denny this spec looks good, but can you explain the refresh token strategy?
 ```
 
-### 3. Involve Multiple Experts
+### 3. Involve Multiple Experts (Group Chat Pattern - v2.1)
 
 ```
 @denny @elle let's discuss HIPAA compliance for authentication
+```
+
+**What happens (v2.1):**
+- Both experts see the full conversation
+- They can discuss with each other naturally
+- Cross-validate each other's work
+- You see authentic expert collaboration
+- Higher quality output from multiple perspectives
+
+**Example:**
+```
+You: "@denny @elle - authentication spec for healthcare app"
+
+Denny: "I'm proposing JWT with refresh tokens, 15-min expiry..."
+
+Elle: "Good start Denny, but for HIPAA we need to log all auth 
+       events and add automatic session termination after 15 mins 
+       of inactivity."
+
+Denny: "Perfect catch Elle - updating spec with those requirements."
 ```
 
 ### 4. Check Whiteboards Regularly
@@ -646,10 +666,20 @@ Actually, @denny this is more your area
 
 ### Experts Disagree
 
-**Solution:** Ask Genna to mediate
+**Solution:** This is actually GOOD! (v2.1)
+
+Experts discussing and even disagreeing shows authentic collaboration:
+
 ```
 @genna @denny and @ada have different opinions on architecture. Can you weigh in?
 ```
+
+**Or let them work it out:**
+```
+@denny @ada - talk through your different approaches and reach consensus
+```
+
+Watching experts debate teaches you about tradeoffs and best practices!
 
 ### Need More Detail
 
@@ -725,6 +755,92 @@ Just ask the AI:
 
 → AI creates shortcut in 0-your-experts/ for you
 ```
+
+---
+
+## v2.1 Expert Collaboration Features
+
+### Research Integrity (Mandatory)
+
+**All experts verify their claims with real sources:**
+
+```
+You: "@lyna what's the average seed round in healthcare?"
+
+Lyna: "Let me search for current data... [performs web search]
+
+Based on Crunchbase 2024 data, the average healthcare seed 
+round is $2.8M.
+
+Source: [URL to actual data]"
+```
+
+**What changed:**
+- ❌ Before: Experts might cite "research shows..." from training data
+- ✅ Now: Experts MUST perform web search and cite real sources
+- ✅ If no data exists, they'll say "no current research available" + make educated projection
+
+**Why this matters:**
+- Investor materials have accurate, verifiable data
+- Business plans cite real market research
+- Technical specs reference current best practices
+- No more made-up statistics!
+
+### Token Efficiency (Saves You Money)
+
+**Experts iterate in chat before writing to documents:**
+
+```
+You: "@denny create auth spec"
+
+Denny: "Let me ask some questions first..."
+[Discussion in chat about requirements]
+
+Denny: "Here's my proposed approach... [describes in chat]"
+
+You: "Yes, that works!"
+
+Denny: "Great! Writing to workspace now." [Creates spec once approved]
+```
+
+**What changed:**
+- ❌ Before: Write document → revise document → rewrite document (3x tokens)
+- ✅ Now: Discuss in chat → write final document once (minimal tokens)
+
+**Why this matters:**
+- Lower AI costs for you
+- Faster iteration
+- Better final output (discussed before written)
+
+### Expert Recommendation Pattern (Experts Help Each Other)
+
+**Experts recognize when they need another expert's input:**
+
+```
+You: "@lyna create pitch deck slide about our infrastructure"
+
+Lyna: "I can create the slide, but these scalability claims need 
+       validation from @denny (systems architect) to ensure they're 
+       realistic.
+       
+       Can you bring Denny in to cross-check these numbers?"
+
+You: "@denny can you validate Lyna's infrastructure claims?"
+
+Denny: [Reviews] "Looks good, just one adjustment..." [Explains]
+
+Lyna: "Perfect! Updated the slide with Denny's architectural reality check."
+```
+
+**What changed:**
+- ❌ Before: Experts worked independently, might make claims outside their expertise
+- ✅ Now: Experts proactively flag when they need another expert's domain knowledge
+- ✅ You know WHO to bring in and WHY
+
+**Why this matters:**
+- Cross-validated work
+- No expert working outside their domain
+- You learn when different expertise is needed
 
 ---
 
