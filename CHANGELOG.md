@@ -11,6 +11,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [2.1.1] - 2025-10-18
+
+### Enhanced
+- **Complete Cursor Rules Coverage:** Expanded `.cursor/recommended-rules.md` to include ALL critical v2.1 patterns (10 user rules total):
+  - **Rule 4:** Expert Voice Format (`**YourName:**` prefix)
+  - **Rule 6:** Source of Truth Principle (trust validated docs)
+  - **Rule 7:** Context Loading (read whiteboards first)
+  - **Rule 8:** Workspace vs Whiteboard formats (AI-optimized vs human-readable)
+  - **Rule 9:** Proactive Expert Behavior (elevate, don't just execute)
+  - **Rule 10:** Pattern Loading (automatically load expert file → collaboration pattern → domain patterns)
+- **Quick Start Guide:** Updated to recommend all 10 rules for full v2.1 experience
+- **Result:** Experts now automatically follow ALL v2.1 patterns AND load their pattern files when Cursor rules are installed, ensuring consistent expert behavior across all threads
+
+---
+
 ## [2.1.0] - 2025-10-18
 
 ### 🎉 Major Release: The Roundtable Architecture

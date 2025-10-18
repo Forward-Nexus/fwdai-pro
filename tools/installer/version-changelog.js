@@ -16,6 +16,18 @@
  * For files not listed, they will be preserved as-is (user customizations maintained)
  */
 export const VERSION_CHANGELOG = {
+  '2.1.1': {
+    description: 'Enhanced Cursor Rules - All critical v2.1 patterns now in recommended rules',
+    added: [],
+    modified: [
+      '.cursor/recommended-rules.md'
+    ],
+    removed: [],
+    force_update: [
+      '.cursor/recommended-rules.md'
+    ]
+  },
+  
   '2.1.0': {
     description: 'The Roundtable Architecture - Research integrity, token efficiency, group chat',
     added: [
