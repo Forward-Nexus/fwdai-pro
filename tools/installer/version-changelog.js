@@ -16,6 +16,50 @@
  * For files not listed, they will be preserved as-is (user customizations maintained)
  */
 export const VERSION_CHANGELOG = {
+  '2.1.0': {
+    description: 'The Roundtable Architecture - Research integrity, token efficiency, group chat',
+    added: [
+      '.cursorignore',
+      '.cursor/recommended-rules.md',
+      '.cursor/recommended-mcps.json',
+      'pro-os/system/patterns/deliverable-types.md',
+      'pro-os/system/patterns/market-research-workflow.md',
+      'pro-os/system/standards/research-citation-standards.md',
+      'pro-os/user-docs/user-guide/personalizing-your-system.md',
+      'pro-os/user-docs/user-guide/recommended-integrations.md'
+    ],
+    modified: [
+      'pro-os/commands/flows/rt.md',
+      'pro-os/system/patterns/expert-collaboration.md',
+      'pro-os/system/patterns/expert-content.md',
+      'pro-os/system/patterns/expert-tech.md',
+      'pro-os/system/patterns/expert-strategy.md',
+      'pro-os/system/patterns/expert-legal.md',
+      'pro-os/system/patterns/README.md',
+      'pro-os/system/standards/expert-voice-guidelines.md',
+      'pro-os/system/checklists/quality-checklist.md',
+      'pro-os/system/checklists/spec-checklist.md',
+      'pro-os/system/checklists/content-checklist.md',
+      'pro-os/system/checklists/legal-review-checklist.md',
+      'pro-os/system/ide-configs/cursor/README.md',
+      'pro-os/user-docs/user-guide/getting-started.md',
+      'pro-os/user-docs/user-guide/working-with-experts.md',
+      'pro-os/user-docs/user-guide/understanding-the-system.md',
+      'pro-os/user-docs/user-guide/commands-guide.md',
+      'pro-os/user-docs/user-guide/common-workflows.md',
+      'pro-os/user-docs/user-guide/system-architecture.md',
+      'pro-os/user-docs/user-guide/workspace-usage-guide.md',
+      'pro-os/user-docs/faqs/system-faq.md',
+      'pro-os/user-docs/faqs/experts-faq.md',
+      'tools/installer/setup.js'
+    ],
+    removed: [],
+    force_update: [
+      'pro-os/system/patterns/expert-collaboration.md',
+      'tools/installer/setup.js'
+    ]
+  },
+  
   '2.0.5': {
     description: 'Expert chat-style response format for better UX',
     added: [],

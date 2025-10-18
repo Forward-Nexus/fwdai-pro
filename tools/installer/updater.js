@@ -28,6 +28,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 const FWD_PRO_SOURCE = path.join(__dirname, '..', '..', 'pro-os');
+const FWD_PRO_ROOT = path.join(__dirname, '..', '..');
 
 /**
  * Main update function
@@ -139,8 +140,16 @@ export async function updateInstallation() {
     
     // Process added files
     for (const filePath of changelog.added) {
-      const sourcePath = path.join(FWD_PRO_SOURCE, filePath.replace('pro-os/', ''));
-      const targetPath = path.join(fwdproDir, filePath);
+      // Determine source path (root files like .cursorignore vs pro-os files)
+      const isRootFile = filePath.startsWith('.cursor') || filePath === '.cursorignore';
+      const sourcePath = isRootFile 
+        ? path.join(FWD_PRO_ROOT, filePath)
+        : path.join(FWD_PRO_SOURCE, filePath.replace('pro-os/', ''));
+      
+      // Root files go to project root, pro-os files go to .fwdpro
+      const targetPath = isRootFile
+        ? path.join(projectPath, filePath)
+        : path.join(fwdproDir, filePath);
       
       if (await fs.pathExists(sourcePath)) {
         await fs.ensureDir(path.dirname(targetPath));
