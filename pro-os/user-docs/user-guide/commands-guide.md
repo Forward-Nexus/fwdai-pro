@@ -821,3 +821,38 @@ Just say so:
 ---
 
 **Commands make collaboration structured and efficient - but plain language works too! Just tell the experts what you need.** 🚀
+
+"I need help with authentication"
+"Can someone fix this bug?"
+"Help me create a pitch deck"
+```
+
+The AI will figure it out!
+
+### Want to Change Approach Mid-Way?
+
+Just say so:
+```
+"Actually, let's use @create-specflow instead for more structure"
+"Can @lyna take over this research instead?"
+```
+
+---
+
+## Next Steps
+
+**Learn the system:**
+→ Read `understanding-the-system.md`
+
+**Work with experts:**
+→ Read `working-with-experts.md`
+
+**Try workflows:**
+→ Read `common-workflows.md`
+
+**Understand the system:**
+→ Read `understanding-the-system.md`
+
+---
+
+**Commands make collaboration structured and efficient - but plain language works too! Just tell the experts what you need.** 🚀

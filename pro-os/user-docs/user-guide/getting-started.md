@@ -662,3 +662,45 @@ Can someone implement this feature?
 
 **Welcome to FWD PRO! You're ready to build! 🚀**
 
+
+@update-project
+→ Keep context current as project evolves
+```
+
+**Update context as you go:**
+```
+@update-project
+→ Scans for changes, updates context
+```
+
+**Plain language works:**
+```
+I need a technical specification for authentication
+Help me with investor materials
+Can someone implement this feature?
+```
+
+---
+
+## Getting Help
+
+**In this guide:**
+- Troubleshooting → `troubleshooting.md`
+- Commands → `commands-guide.md`
+- Experts → `working-with-experts.md`
+
+**Quick facts:**
+- Commands → `user-docs/faqs/commands-faq.md`
+- Experts → `user-docs/faqs/experts-faq.md`
+- System → `user-docs/faqs/system-faq.md`
+
+**Ask Genna:**
+```
+@genna I'm confused about [something]
+@genna how do I [do something]?
+```
+
+---
+
+**Welcome to FWD PRO! You're ready to build! 🚀**
+

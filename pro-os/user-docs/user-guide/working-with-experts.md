@@ -932,3 +932,33 @@ Experts now use a **pattern-based workflow system**. Instead of duplicating work
 
 **You now know your expert team! Time to put them to work! 💪**
 
+
+1. Each expert has `primary_patterns` in their profile
+2. Experts dynamically load patterns based on your task
+3. Example: Ask Denny (tech expert) to write content → he loads `expert-content.md` too!
+
+**Benefits:**
+- Cleaner expert files (~12% smaller)
+- Single source of truth for workflows
+- Easier to maintain and update
+- Experts can work across domains when needed
+
+**Pattern Files Location:** `.fwdpro/pro-os/system/patterns/`
+
+---
+
+## Next Steps
+
+**Try common workflows:**
+→ Read `common-workflows.md`
+
+**Learn commands:**
+→ Read `commands-guide.md`
+
+**Understand the system:**
+→ Read `understanding-the-system.md`
+
+---
+
+**You now know your expert team! Time to put them to work! 💪**
+

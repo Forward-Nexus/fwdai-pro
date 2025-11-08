@@ -639,3 +639,81 @@ Located in: `.fwdpro/0-roundtable/`
 
 *Now you understand the architecture! The system is designed to be powerful yet understandable, with clear separation between who does work (experts), how they do it (patterns/standards), and where it happens (roundtable).*
 
+
+### For Founders
+
+**You can customize:**
+- `pro-os/project/founder-profile.md` - Your preferences
+- `pro-os/project/config.yaml` - Expert behavior
+- `0-your-experts/` - Which expert shortcuts to have
+- `0-your-commands/` - Which command shortcuts to have
+
+**Don't edit (system will overwrite):**
+- `pro-os/experts/` - Core expert files
+- `pro-os/system/patterns/` - Pattern files
+- `pro-os/system/standards/` - Standards files
+
+### For Advanced Users
+
+**You can create:**
+- Custom domain experts in `pro-os/experts/`
+- Custom commands in `pro-os/commands/custom/`
+- Project-specific patterns
+
+**Copy templates from:**
+- `pro-os/templates/experts/DOMAIN-EXPERT-TEMPLATE.md`
+- `pro-os/templates/commands/`
+
+---
+
+## Update & Maintenance
+
+### When You Run `npx @fwd-ai/pro update`:
+
+**Updates (overwrites):**
+- ✅ Expert definitions (`pro-os/experts/`)
+- ✅ Commands (`pro-os/commands/`)
+- ✅ Patterns (`pro-os/system/patterns/`)
+- ✅ Standards (`pro-os/system/standards/`)
+- ✅ Checklists (`pro-os/system/checklists/`)
+- ✅ Documentation (`pro-os/user-docs/`)
+
+**Preserves (your data):**
+- ✅ Project context (`pro-os/project/`)
+- ✅ Roundtable (`0-roundtable/`)
+- ✅ Documents (`documents/`)
+- ✅ Your shortcuts (`0-your-experts/`, `0-your-commands/`)
+
+---
+
+## Summary
+
+**FWD PRO is a three-layer system:**
+
+1. **Experts** (who) - Specialized AI team members
+2. **Patterns & Standards** (how) - How experts work and collaborate
+3. **Roundtable** (where) - Transparent collaboration space
+
+**The magic happens when:**
+- Experts load appropriate patterns for their work
+- Follow standards for consistency and quality
+- Collaborate transparently in the roundtable
+- Produce clean deliverables in documents/
+
+**You stay informed via:**
+- `0-roundtable/whiteboards.md` - High-level dashboard
+- `0-roundtable/[name]-checklist.md` - Your action items
+- `0-roundtable/workspace/` - Full context when needed
+
+---
+
+**Related Docs:**
+- `understanding-the-system.md` - How the roundtable model works
+- `working-with-experts.md` - How to work with your expert team
+- `commands-guide.md` - All available commands
+- `common-workflows.md` - Real-world usage examples
+
+---
+
+*Now you understand the architecture! The system is designed to be powerful yet understandable, with clear separation between who does work (experts), how they do it (patterns/standards), and where it happens (roundtable).*
+
