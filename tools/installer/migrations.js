@@ -27,7 +27,7 @@ export async function runMigrations(projectPath, fromVersion, toVersion) {
     await migration(fwdproDir);
   }
 
-  console.log(chalk.green(`\n✓ Migration complete!\n`));
+  console.log(chalk.green('\n✓ Migration complete!\n'));
 }
 
 /**

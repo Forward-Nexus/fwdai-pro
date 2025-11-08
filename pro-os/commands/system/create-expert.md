@@ -8,10 +8,16 @@
 
 ## What This Command Does
 
-Walks you through creating a custom domain expert tailored to your project's needs. The AI will ask guided questions and generate a complete expert profile with:
+Walks you through creating a custom domain expert tailored to your project's needs. The AI will ask guided questions and generate:
+
+**Two files created:**
+1. **Expert personality file** (`.md`) - Who they are, domain expertise, communication style
+2. **Expert activation rule** (`.mdc`) - When/how to load the expert
+
+**What you get:**
 - Personality and communication style
 - Specialized knowledge areas
-- Review frameworks
+- Domain-specific patterns assigned
 - Quality standards
 - Example interactions
 
@@ -105,29 +111,37 @@ Example: "Overpromising results, ignoring regulations, cultural insensitivity"
 > [Your answer]
 ```
 
-### Step 3: AI Generates Expert Profile
+### Step 3: AI Generates Expert Files
 
 ```
 Genna:
 Perfect! I'm creating [Expert Name] with [domain] expertise...
 
 Generated:
-- ✅ Expert profile with credentials
-- ✅ Personality and communication style  
-- ✅ Specialized knowledge areas
-- ✅ Primary patterns assigned (based on domain)
-- ✅ Workflow standards referenced
-- ✅ Review framework for their domain
-- ✅ Quality standards and red flags
-- ✅ Example interactions
-- ✅ Signature sign-off format
+- ✅ Expert personality file (.md)
+  - Profile with credentials
+  - Personality and communication style  
+  - Specialized knowledge areas
+  - Domain adaptation examples
+  - Key questions they ask
+  - Example interactions
 
-📁 Saved to: .fwdpro/pro-os/experts/[expert-name-domain].md
+- ✅ Expert activation rule (.mdc)
+  - Trigger: @[shortname]
+  - Loads expert personality
+  - Loads expert-workflow.md (how to operate)
+  - Loads expert-collaboration.md (how to work with others)
+  - Loads domain patterns (tech/content/strategy/legal)
+
+📁 Files saved:
+- .cursor/rules/experts/[shortname].mdc
+- .fwdpro/pro-os/experts/[expert-name-domain].md
 
 **Patterns automatically assigned:**
 - Technical domains → expert-tech.md
 - Legal domains → expert-legal.md
-- Most other domains → expert-content.md + expert-strategy.md
+- Content/marketing → expert-content.md
+- Strategic work → expert-strategy.md
 
 You can now use @[shortname] anytime you need [domain] expertise!
 
@@ -181,69 +195,99 @@ processes, missing industry standards
 Genna:
 Perfect! Creating Chef Maria Rodriguez...
 
-✅ Generated comprehensive expert profile
-📁 Saved to: .fwdpro/pro-os/experts/chef-maria-rodriguez-restaurant-operations.md
+✅ Generated expert files:
+📁 .cursor/rules/experts/maria.mdc (activation rule)
+📁 .fwdpro/pro-os/experts/maria-restaurant-operations.md (personality & expertise)
+
+**Patterns assigned:**
+- expert-workflow.md (how Maria operates)
+- expert-collaboration.md (how Maria works with others)
+- expert-content.md (for menu/marketing content)
+- expert-strategy.md (for operational strategy)
 
 You can now use @maria anytime you need restaurant operations expertise!
 
-Try: @maria @review [your kitchen workflow design]
+Try: @maria Can you review my kitchen workflow design?
 ```
 
 ---
 
 ## What Gets Created
 
-### Expert File Structure
+### File 1: Expert Activation Rule (`.mdc`)
 
-Your new expert will have:
+**Location:** `.cursor/rules/experts/[shortname].mdc`
 
-1. **Agent Metadata** (YAML front matter)
-   - Name, ID, aliases
-   - Role and hierarchy
-   - **Primary patterns** (intelligently assigned based on domain)
-   - Specializations
-   - Commands they respond to
+**Contains:**
+- Trigger definition (@[shortname])
+- Load order (personality → workflow → collaboration → domain patterns)
+- Context loading instructions
+- Domain pattern assignments
 
-2. **Origin Story**
-   - Why this expert exists for YOUR project
-   - Project-specific context
+**Example:**
+```markdown
+---
+description: "Maria - Restaurant Operations Expert"
+alwaysApply: false
+---
 
-3. **Expert Profile**
-   - Credentials and background (AI generates appropriate ones)
-   - Philosophy and approach
+# Maria - Restaurant Operations Activation
 
-4. **Personality & Voice**
-   - Communication style
-   - Phrases they use
+**Trigger:** User mentions `@maria`
+
+## Load Order:
+1. .fwdpro/pro-os/experts/maria-restaurant-operations.md
+2. .fwdpro/pro-os/system/patterns/expert-workflow.md
+3. .fwdpro/pro-os/system/patterns/expert-collaboration.md  
+4. .fwdpro/pro-os/system/patterns/expert-content.md
+5. .fwdpro/pro-os/system/patterns/expert-strategy.md
+```
+
+### File 2: Expert Personality File (`.md`)
+
+**Location:** `.fwdpro/pro-os/experts/[name-domain].md`
+
+**Contains:**
+
+1. **Universal Role**
+   - Core purpose across all projects
+   - What problems they solve
+
+2. **Expert Profile** (Fictional Credentials)
+   - Background and credentials (AI-generated)
+   - Why this persona helps
+   - Disclaimer that it's fictional
+
+3. **Personality & Working Style**
+   - Communication approach
+   - Unique voice and phrases
    - How they interact
 
-5. **Workflow & Quality Standards**
-   - References to universal patterns (expert-collaboration.md)
-   - References to domain-specific patterns (expert-tech.md, expert-content.md, etc.)
-   - Quality checklist references
+4. **Domain Adaptation**
+   - How expertise applies to different project types
+   - Focus areas for each type
+   - What they create/deliver
 
-6. **Core Expertise Areas**
-   - Primary focus areas
-   - Specialized knowledge
-   - Domain-specific skills
+5. **Communication Style**
+   - When formal vs casual
+   - How to explain concepts
+   - Adaptation to founder's preferences
 
-7. **Review Framework**
-   - Standards checklist
-   - Best practices validation
-   - Quality assessment process
+6. **Core Skills**
+   - Universal skills across projects
+   - Domain-specific expertise
 
-8. **Standards & Red Flags**
-   - What makes work great in this domain
-   - What to avoid
-   - Warning signs to catch
+7. **Key Questions They Ask**
+   - Universal questions
+   - Domain-specific questions
 
-9. **Signature Sign-Off**
-   - Consistent review format
-   - How they deliver feedback
+8. **Collaboration Patterns**
+   - Who they commonly work with
+   - When to bring them in
 
-10. **Example Interaction**
-    - Shows how to work with them
-    - Sample review output
+9. **Project Context** (Auto-Generated)
+   - Customized during onboarding
+   - Project-specific focus areas
 
 ---
 
@@ -259,23 +303,24 @@ Your new expert will have:
 
 ### Customizing Further
 
-Your expert profile is fully editable:
+Your expert is fully customizable:
 
-**Option 1: Edit directly**
+**Option 1: Edit personality file**
 ```
 Open: .fwdpro/pro-os/experts/[expert-name].md
-Edit any section to customize
+Edit any section to customize personality, expertise, communication style
 ```
 
-**Option 2: Ask AI to refine**
+**Option 2: Edit activation rule**
+```
+Open: .cursor/rules/experts/[shortname].mdc
+Adjust pattern loading, add conditional logic, customize behavior
+```
+
+**Option 3: Ask AI to refine**
 ```
 @genna Can you update [Expert Name]'s personality to be more [style]?
 @genna Add [specific expertise] to [Expert Name]'s knowledge areas
-```
-
-**Option 3: Update through command**
-```
-@update-onboarding (can update domain expert details)
 ```
 
 ---

@@ -1,0 +1,31 @@
+# @update-people Command Activation
+
+**Trigger:** User mentions `@update-people`
+
+**This rule loads the people document update system command**
+
+---
+
+## Load Command
+
+**Read:** `.fwdpro/pro-os/commands/system/update-people.md`
+
+This system command updates the people document with information about team members, advisors, contractors, or collaborators.
+
+---
+
+## Purpose
+
+Maintains `project/people.md` as the source of truth for:
+- Team members and roles
+- Advisors and their expertise
+- Contractors and availability
+- Key stakeholders
+
+---
+
+## Key Principles
+
+- **Update in Place:** Modifies existing file, doesn't create new versions
+- **Structured:** Maintains consistent people format
+- **Context Building:** Helps AI understand who's involved and their roles

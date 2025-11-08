@@ -1,6 +1,5 @@
 # Expert Content Pattern
 
-**Version:** 1.0  
 **Purpose:** Content/marketing/business document workflow  
 **Primary users:** Lyna (external), Benji (internal), Genna (strategy)  
 **Can be used by:** ANY expert doing content/marketing work

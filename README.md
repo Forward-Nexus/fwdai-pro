@@ -1,6 +1,6 @@
 # FWD PRO - Universal AI Expert Collaboration System
 
-**Version 2.1** - October 2025
+**Version 2.2** - November 2025
 
 **Better conversations lead to better outcomes.**
 
@@ -56,7 +56,11 @@ npx @fwd-ai/pro install
 # FWD PRO sets up everything automatically
 ```
 
-That's it! You now have a team of AI experts ready to help.
+That's it! You now have:
+- ✅ A team of AI experts ready to help
+- ✅ Document processing tools (PDF, Word, Excel)
+- ✅ Organized workspace and collaboration system
+- ✅ Everything you need to start building
 
 ### 🔄 Keeping FWD PRO Updated
 
@@ -82,6 +86,19 @@ Updates work like app updates - your documents, workspace, and settings are auto
 ---
 
 ## 📊 How It Works
+
+### ⚡ **Expert & Command Activation (Behind the Scenes)**
+
+When you type `@denny` or `@create`, FWD PRO automatically:
+
+1. **Triggers activation rule** (`.cursor/rules/experts/denny.mdc` or `.cursor/rules/commands/create.mdc`)
+2. **Loads expert personality** + workflow patterns
+3. **Enforces quality standards** (checklists/standards automatically loaded)
+4. **Expert responds** with full context and domain expertise
+
+**You just type `@denny` or `@create` - the system handles the rest!**
+
+---
 
 ### 🪑 **The Roundtable - Your Conference Room**
 
@@ -231,6 +248,9 @@ your-project/
 ---
 
 ## ✨ What Makes FWD PRO Different
+
+### 📄 **Document Processing Built-In**
+Read/write PDF, Word, and Excel files out-of-the-box. No setup needed. Experts can process contracts, generate reports, extract data, and create professional documents automatically.
 
 ### 🌍 **Universal**
 Works for ANY business - not just software. Restaurant? Law firm? Telecom? FWD PRO adapts to your industry.

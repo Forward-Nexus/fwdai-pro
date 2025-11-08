@@ -1,6 +1,5 @@
 # Expert Strategy Pattern
 
-**Version:** 1.0  
 **Purpose:** Strategic planning and long-term thinking workflow  
 **Primary users:** Genna (chief strategist), Lyna (external strategy), Benji (growth strategy)  
 **Can be used by:** ANY expert doing strategic planning

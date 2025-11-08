@@ -1,0 +1,29 @@
+# @brainstorm Command Activation
+
+**Trigger:** User mentions `@brainstorm`
+
+**This rule loads the brainstorming command workflow**
+
+---
+
+## Load Command
+
+**Read:** `.fwdpro/pro-os/commands/brainstorm.md`
+
+This command provides a structured creative ideation process for generating ideas, exploring possibilities, and finding innovative solutions.
+
+---
+
+## Load Quality Standards
+
+**MANDATORY - Load at Post-Flight phase:**
+- `.fwdpro/pro-os/system/checklists/quality-checklist.md` (validate deliverable organization)
+
+---
+
+## Key Principles
+
+- **Token Efficiency:** Check context before loading files
+- **Three-Phase Workflow:** Pre-Flight (understand goal) → Execution (generate ideas) → Post-Flight (refine, organize, validate with checklist)
+- **Expert Integration:** Works best with strategy experts (Genna, Lyna, Benji)
+- **Quality Validation:** Final deliverable must be organized and actionable (checklist validates this)

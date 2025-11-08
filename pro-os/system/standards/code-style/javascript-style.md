@@ -1,5 +1,4 @@
 ---
-version: 1.0.0
 applies_to: javascript_typescript
 conditional_loading: true
 ---

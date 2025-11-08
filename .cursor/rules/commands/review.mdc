@@ -1,0 +1,37 @@
+# @review Command Activation
+
+**Trigger:** User mentions `@review`
+
+**This rule loads the review command workflow**
+
+---
+
+## Load Command
+
+**Read:** `.fwdpro/pro-os/commands/review.md`
+
+This command provides a structured quality review process for evaluating work - code, content, designs, strategies, or any deliverable requiring expert feedback.
+
+---
+
+## Load Quality Standards
+
+**Load based on what's being reviewed:**
+- Reviewing code? → `.fwdpro/pro-os/system/checklists/code-checklist.md`
+- Reviewing content? → `.fwdpro/pro-os/system/checklists/content-checklist.md`
+- Reviewing spec? → `.fwdpro/pro-os/system/checklists/spec-checklist.md`
+- Reviewing legal docs? → `.fwdpro/pro-os/system/checklists/legal-review-checklist.md`
+- General review? → `.fwdpro/pro-os/system/checklists/quality-checklist.md`
+
+**If work has research claims:**
+- `.fwdpro/pro-os/system/standards/research-citation-standards.md`
+
+---
+
+## Key Principles
+
+- **Token Efficiency:** Check context before loading files
+- **Three-Phase Workflow:** Pre-Flight (understand criteria) → Execution (review using checklist) → Post-Flight (deliver actionable feedback)
+- **Expert Lens:** Each expert reviews only through their domain expertise
+- **Checklist-Driven:** Use appropriate checklist as review framework
+- **Actionable Feedback:** Provide specific, concrete suggestions for improvement

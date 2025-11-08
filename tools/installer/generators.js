@@ -829,7 +829,7 @@ and help me understand how to best work with the team?
 \`\`\`
 
 **Or jump right in:**
-${aboutProject.workTypes.includes('building') ? '- \`@denny I need a spec for [feature name]\`\n- \`@ada Can you implement [feature]?\`\n' : ''}${aboutProject.workTypes.includes('investor') ? '- \`@lyna Help me create a pitch deck\`\n' : ''}${aboutProject.workTypes.includes('marketing') ? '- \`@benji I need a marketing strategy\`\n' : ''}
+${aboutProject.workTypes.includes('building') ? '- `@denny I need a spec for [feature name]`\n- `@ada Can you implement [feature]?`\n' : ''}${aboutProject.workTypes.includes('investor') ? '- `@lyna Help me create a pitch deck`\n' : ''}${aboutProject.workTypes.includes('marketing') ? '- `@benji I need a marketing strategy`\n' : ''}
 ---
 
 **Welcome to your expert team. Let's build something amazing!** 🚀
@@ -847,64 +847,64 @@ function getDomainSpecificDetails(domainLower) {
   // Check for domain keywords and return specific career paths
   if (domainLower.includes('telecom') || domainLower.includes('network') || domainLower.includes('wireless')) {
     return {
-      careerPath: `{firstName} started in telecom during the 4G rollout era, working in site acquisition and network planning for major carriers like AT&T and Verizon. {subject} spent years negotiating lease agreements, managing RF engineering teams, and coordinating tower builds across multiple markets.`,
-      pivotalMoment: `The breakthrough came when {firstName} realized that most telecom startups failed not from bad technology, but from underestimating regulatory complexity and site acquisition timelines. {subject} shifted focus to helping founders navigate carrier relationships, spectrum licensing, and infrastructure deployment.`
+      careerPath: '{firstName} started in telecom during the 4G rollout era, working in site acquisition and network planning for major carriers like AT&T and Verizon. {subject} spent years negotiating lease agreements, managing RF engineering teams, and coordinating tower builds across multiple markets.',
+      pivotalMoment: 'The breakthrough came when {firstName} realized that most telecom startups failed not from bad technology, but from underestimating regulatory complexity and site acquisition timelines. {subject} shifted focus to helping founders navigate carrier relationships, spectrum licensing, and infrastructure deployment.'
     };
   }
   
   if (domainLower.includes('recovery') || domainLower.includes('addiction') || domainLower.includes('substance')) {
     return {
-      careerPath: `{firstName} started {possessive} career in clinical social work, specializing in addiction treatment and trauma-informed care. {subject} worked in intensive outpatient programs (IOPs), residential treatment facilities, and community mental health centers, seeing firsthand what interventions actually help people stay sober.`,
-      pivotalMoment: `The turning point came when {firstName} witnessed the gap between clinical best practices and what people in early recovery actually needed - accessible, stigma-free support in their everyday moments. {subject} began focusing on recovery-informed design and technology that meets people where they are.`
+      careerPath: '{firstName} started {possessive} career in clinical social work, specializing in addiction treatment and trauma-informed care. {subject} worked in intensive outpatient programs (IOPs), residential treatment facilities, and community mental health centers, seeing firsthand what interventions actually help people stay sober.',
+      pivotalMoment: 'The turning point came when {firstName} witnessed the gap between clinical best practices and what people in early recovery actually needed - accessible, stigma-free support in their everyday moments. {subject} began focusing on recovery-informed design and technology that meets people where they are.'
     };
   }
   
   if (domainLower.includes('restaurant') || domainLower.includes('food') || domainLower.includes('hospitality')) {
     return {
-      careerPath: `{firstName} came up through restaurant operations the hard way - starting as front-of-house staff, moving into management, then operations for multi-unit groups. {subject} has opened restaurants, turned around failing locations, and scaled concepts from single units to regional chains.`,
-      pivotalMoment: `The pivotal moment came during {possessive} third restaurant opening, when {firstName} realized that most restaurant failures stemmed from poor systems and operational planning, not bad food. {subject} shifted to helping founders build sustainable operations from day one.`
+      careerPath: '{firstName} came up through restaurant operations the hard way - starting as front-of-house staff, moving into management, then operations for multi-unit groups. {subject} has opened restaurants, turned around failing locations, and scaled concepts from single units to regional chains.',
+      pivotalMoment: 'The pivotal moment came during {possessive} third restaurant opening, when {firstName} realized that most restaurant failures stemmed from poor systems and operational planning, not bad food. {subject} shifted to helping founders build sustainable operations from day one.'
     };
   }
   
   if (domainLower.includes('health') || domainLower.includes('medical') || domainLower.includes('clinical')) {
     return {
-      careerPath: `{firstName} trained in clinical practice and healthcare administration, working across hospitals, clinics, and digital health startups. {subject} has navigated HIPAA compliance, clinical validation, and the complex intersection of technology and patient care.`,
-      pivotalMoment: `{firstName}'s perspective shifted when {subject} saw promising health tech fail not from bad ideas, but from ignoring clinical workflows and regulatory realities. {subject} became the bridge between healthcare's "move fast" culture and medicine's "first, do no harm" imperative.`
+      careerPath: '{firstName} trained in clinical practice and healthcare administration, working across hospitals, clinics, and digital health startups. {subject} has navigated HIPAA compliance, clinical validation, and the complex intersection of technology and patient care.',
+      pivotalMoment: '{firstName}\'s perspective shifted when {subject} saw promising health tech fail not from bad ideas, but from ignoring clinical workflows and regulatory realities. {subject} became the bridge between healthcare\'s "move fast" culture and medicine\'s "first, do no harm" imperative.'
     };
   }
   
   if (domainLower.includes('finance') || domainLower.includes('fintech') || domainLower.includes('banking')) {
     return {
-      careerPath: `{firstName} worked in traditional banking and fintech, spanning retail banking, payments infrastructure, and regulatory compliance. {subject} has built financial products, navigated state-by-state money transmitter licensing, and worked with both legacy systems and bleeding-edge crypto.`,
-      pivotalMoment: `The wake-up call came when {firstName} watched a brilliant fintech startup crash into regulatory walls they didn't see coming. {subject} realized that financial innovation needs someone who understands both the opportunity and the compliance minefield.`
+      careerPath: '{firstName} worked in traditional banking and fintech, spanning retail banking, payments infrastructure, and regulatory compliance. {subject} has built financial products, navigated state-by-state money transmitter licensing, and worked with both legacy systems and bleeding-edge crypto.',
+      pivotalMoment: 'The wake-up call came when {firstName} watched a brilliant fintech startup crash into regulatory walls they didn\'t see coming. {subject} realized that financial innovation needs someone who understands both the opportunity and the compliance minefield.'
     };
   }
   
   if (domainLower.includes('education') || domainLower.includes('edtech') || domainLower.includes('learning')) {
     return {
-      careerPath: `{firstName} has worked across K-12, higher ed, and corporate learning - as an educator, instructional designer, and edtech product lead. {subject} understands pedagogy, learning science, and the practical realities of deploying technology in educational settings.`,
-      pivotalMoment: `{firstName}'s perspective crystallized when {subject} saw yet another well-funded edtech product fail because it was built for how founders thought learning worked, not how it actually works. {subject} became obsessed with evidence-based design that teachers and learners actually want to use.`
+      careerPath: '{firstName} has worked across K-12, higher ed, and corporate learning - as an educator, instructional designer, and edtech product lead. {subject} understands pedagogy, learning science, and the practical realities of deploying technology in educational settings.',
+      pivotalMoment: '{firstName}\'s perspective crystallized when {subject} saw yet another well-funded edtech product fail because it was built for how founders thought learning worked, not how it actually works. {subject} became obsessed with evidence-based design that teachers and learners actually want to use.'
     };
   }
   
   if (domainLower.includes('retail') || domainLower.includes('ecommerce') || domainLower.includes('commerce')) {
     return {
-      careerPath: `{firstName} has built and scaled retail operations across brick-and-mortar, direct-to-consumer ecommerce, and omnichannel experiences. {subject} has managed inventory systems, built fulfillment operations, and optimized customer acquisition across multiple channels.`,
-      pivotalMoment: `The turning point was watching founders burn cash on customer acquisition without understanding unit economics or repeat purchase behavior. {firstName} shifted to helping retailers build sustainable growth engines, not just viral moments.`
+      careerPath: '{firstName} has built and scaled retail operations across brick-and-mortar, direct-to-consumer ecommerce, and omnichannel experiences. {subject} has managed inventory systems, built fulfillment operations, and optimized customer acquisition across multiple channels.',
+      pivotalMoment: 'The turning point was watching founders burn cash on customer acquisition without understanding unit economics or repeat purchase behavior. {firstName} shifted to helping retailers build sustainable growth engines, not just viral moments.'
     };
   }
   
   if (domainLower.includes('legal') || domainLower.includes('compliance') || domainLower.includes('regulatory')) {
     return {
-      careerPath: `{firstName} practiced law at firms and in-house, specializing in regulatory compliance, contracts, and risk management. {subject} has navigated federal regulations, state-by-state variations, and the practical realities of startup legal work.`,
-      pivotalMoment: `{firstName} realized that most startup legal problems were preventable - founders just needed guidance at the right moment, not just documents after the fact. {subject} became the advisor who helps founders make smart legal decisions as they build.`
+      careerPath: '{firstName} practiced law at firms and in-house, specializing in regulatory compliance, contracts, and risk management. {subject} has navigated federal regulations, state-by-state variations, and the practical realities of startup legal work.',
+      pivotalMoment: '{firstName} realized that most startup legal problems were preventable - founders just needed guidance at the right moment, not just documents after the fact. {subject} became the advisor who helps founders make smart legal decisions as they build.'
     };
   }
   
   if (domainLower.includes('real estate') || domainLower.includes('property') || domainLower.includes('housing')) {
     return {
-      careerPath: `{firstName} worked across residential, commercial, and real estate development - from brokerage to property management to investment analysis. {subject} has closed deals, managed portfolios, and navigated zoning battles.`,
-      pivotalMoment: `The light bulb moment came when {firstName} watched first-time developers make costly mistakes that could have been avoided with experienced guidance. {subject} shifted to advisory work, helping founders understand deal structures, financing, and market dynamics.`
+      careerPath: '{firstName} worked across residential, commercial, and real estate development - from brokerage to property management to investment analysis. {subject} has closed deals, managed portfolios, and navigated zoning battles.',
+      pivotalMoment: 'The light bulb moment came when {firstName} watched first-time developers make costly mistakes that could have been avoided with experienced guidance. {subject} shifted to advisory work, helping founders understand deal structures, financing, and market dynamics.'
     };
   }
   
@@ -952,7 +952,7 @@ function generateBackstoryContent(expertName, firstName, domain, personality, pr
     enthusiastic: {
       approach: 'energetic and passionate',
       philosophy: `${firstName} brings infectious energy to every project, celebrating innovation and pushing boundaries in ${domainLower}. ${pForm.subject.charAt(0).toUpperCase() + pForm.subject.slice(1)} believes that passion and expertise together create breakthroughs.`,
-      drive: 'inspiring teams to reimagine what's possible'
+      drive: 'inspiring teams to reimagine what\'s possible'
     },
     wise: {
       approach: 'thoughtful and measured',
@@ -1248,8 +1248,8 @@ ${primaryPatterns.map(p => `- **\`system/patterns/${p}\`** - ${p === 'expert-tec
 
 **Before marking work complete:**
 - ✅ Run appropriate checklists:
-  - \`system/checklists/quality-checklist.md\` (universal quality)
-${primaryPatterns.includes('expert-content.md') ? '  - \`system/checklists/content-checklist.md\` (for content work)\n' : ''}${primaryPatterns.includes('expert-tech.md') ? '  - \`system/checklists/spec-checklist.md\` (for technical specs)\n  - \`system/checklists/code-checklist.md\` (for implementation)\n' : ''}${primaryPatterns.includes('expert-legal.md') ? '  - \`system/checklists/legal-review-checklist.md\` (for legal work)\n' : ''}- ✅ Follow patterns referenced above
+  - system/checklists/quality-checklist.md (universal quality)
+${primaryPatterns.includes('expert-content.md') ? '  - system/checklists/content-checklist.md (for content work)\n' : ''}${primaryPatterns.includes('expert-tech.md') ? '  - system/checklists/spec-checklist.md (for technical specs)\n  - system/checklists/code-checklist.md (for implementation)\n' : ''}${primaryPatterns.includes('expert-legal.md') ? '  - system/checklists/legal-review-checklist.md (for legal work)\n' : ''}- ✅ Follow patterns referenced above
 - ✅ ${domain} best practices applied
 - ✅ Industry standards met
 - ✅ Current trends/regulations considered
@@ -1488,24 +1488,24 @@ export function generateMission(aboutYou, aboutProject, missionAnswers = {}, sca
   } else if (targetAudience) {
     coreMission += `serve ${targetAudience}.`;
   } else {
-    coreMission += `[describe your mission - what problem are you solving and for whom?]`;
+    coreMission += '[describe your mission - what problem are you solving and for whom?]';
   }
 
   // Target audience section (prioritize scanner data)
   const audienceSection = targetAudience
     ? `### Primary Users\n- ${targetAudience}\n\n### Why They Need This\n${problemSolving || '[Describe the problem they face]'}`
-    : `### Primary Users\n[Who is this for? What are their needs?]\n\n### Why They Need This\n[What problem are they facing?]`;
+    : '### Primary Users\n[Who is this for? What are their needs?]\n\n### Why They Need This\n[What problem are they facing?]';
 
   // Your why section (prioritize scanner data)
   const yourWhy = scannedMission.why || missionAnswers.yourWhy;
   const whySection = yourWhy
     ? `${yourWhy}\n\nThis personal connection drives the vision and ensures authenticity in everything we build.`
-    : `[Why does THIS project matter to YOU personally? Your "why" helps experts understand your passion and make better decisions aligned with your vision.]`;
+    : '[Why does THIS project matter to YOU personally? Your "why" helps experts understand your passion and make better decisions aligned with your vision.]';
   
   // Story section (use scanner data if available)
   const founderStorySection = scannedStory.story 
     ? `### How This Started\n${scannedStory.story}\n\n### The Realization\n[What insight or "aha moment" made you realize this needed to exist?]`
-    : `### How This Started\n[Tell the story of why you started this project. What inspired it? What problem did you personally encounter?]\n\n### The Realization\n[What insight or "aha moment" made you realize this needed to exist?]`;
+    : '### How This Started\n[Tell the story of why you started this project. What inspired it? What problem did you personally encounter?]\n\n### The Realization\n[What insight or "aha moment" made you realize this needed to exist?]';
 
   return `# ${projectName} - Mission & Vision
 
@@ -1634,7 +1634,7 @@ export function generatePeople(aboutYou, aboutProject, peopleInfo = null, scanFi
   } else if (peopleInfo?.cofounder) {
     teamSection = `### Co-Founder(s)\n**${peopleInfo.cofounder}**\n- ${peopleInfo.cofouderRole || 'Role: [Add their role/expertise]'}\n- [Add more context about how you work together]`;
   } else {
-    teamSection = `### Current Team\n**Solo founder** - No co-founders or employees yet\n\n💡 **Planning to add team members?**  \nUse \`@update-people\` to add co-founders, advisors, or key hires as your team grows.`;
+    teamSection = '### Current Team\n**Solo founder** - No co-founders or employees yet\n\n💡 **Planning to add team members?**  \nUse `@update-people` to add co-founders, advisors, or key hires as your team grows.';
   }
 
   // Advisors section (prioritize scanner data)
@@ -1644,7 +1644,7 @@ export function generatePeople(aboutYou, aboutProject, peopleInfo = null, scanFi
   } else if (peopleInfo?.advisors) {
     advisorsSection = peopleInfo.advisors.split(',').map(a => `- **${a.trim()}** - [Add their expertise and how they help]`).join('\n');
   } else {
-    advisorsSection = `[No advisors added yet]\n\n💡 **Have advisors or mentors?**  \nUse \`@update-people\` to add them, or edit this file directly.`;
+    advisorsSection = '[No advisors added yet]\n\n💡 **Have advisors or mentors?**  \nUse `@update-people` to add them, or edit this file directly.';
   }
 
   // Investors section (prioritize scanner data)
@@ -1654,13 +1654,13 @@ export function generatePeople(aboutYou, aboutProject, peopleInfo = null, scanFi
   } else if (peopleInfo?.investors) {
     investorsSection = peopleInfo.investors.split(',').map(i => `- **${i.trim()}** - [Add investment details and relationship]`).join('\n');
   } else {
-    investorsSection = `[No investors yet]\n\n💡 **When you raise funding:**  \nUse \`@update-people\` to track investors and their involvement.`;
+    investorsSection = '[No investors yet]\n\n💡 **When you raise funding:**  \nUse `@update-people` to track investors and their involvement.';
   }
 
   // Key relationships section
   const relationshipsSection = peopleInfo?.keyConnections 
     ? peopleInfo.keyConnections.split(',').map(k => `- **${k.trim()}** - [Add context about this relationship]`).join('\n')
-    : `[No key relationships added yet]\n\n💡 **Have important connections?**  \nCustomers, partners, industry contacts - add them here or use \`@update-people\`.`;
+    : '[No key relationships added yet]\n\n💡 **Have important connections?**  \nCustomers, partners, industry contacts - add them here or use `@update-people`.';
   
   // Founder background (prioritize scanner data)
   const founderBackground = scannedStory.story || aboutYou.background || '- [Add key background that relates to this project]';

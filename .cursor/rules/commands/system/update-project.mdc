@@ -1,0 +1,31 @@
+# @update-project Command Activation
+
+**Trigger:** User mentions `@update-project`
+
+**This rule loads the project config update system command**
+
+---
+
+## Load Command
+
+**Read:** `.fwdpro/pro-os/commands/system/update-project.md`
+
+This system command updates the project configuration with new settings, paths, or project-level metadata.
+
+---
+
+## Purpose
+
+Maintains `project/config.yaml` as the source of truth for:
+- Project paths and structure
+- Environment configuration
+- Project metadata
+- System settings
+
+---
+
+## Key Principles
+
+- **Update in Place:** Modifies existing file, doesn't create new versions
+- **Structured:** Maintains valid YAML format
+- **System Integration:** Ensures all experts use correct paths and settings

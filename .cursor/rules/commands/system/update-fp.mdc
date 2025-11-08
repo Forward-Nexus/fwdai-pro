@@ -1,0 +1,31 @@
+# @update-fp Command Activation
+
+**Trigger:** User mentions `@update-fp`
+
+**This rule loads the founder profile update system command**
+
+---
+
+## Load Command
+
+**Read:** `.fwdpro/pro-os/commands/system/update-fp.md`
+
+This system command updates the founder profile document with new information, preferences, or context.
+
+---
+
+## Purpose
+
+Maintains `project/founder-profile.md` as the source of truth for:
+- Founder's work style and preferences
+- Communication preferences
+- Decision-making patterns
+- Personal context
+
+---
+
+## Key Principles
+
+- **Update in Place:** Modifies existing file, doesn't create new versions
+- **Structured:** Maintains consistent profile format
+- **Context Building:** Helps AI understand founder better over time

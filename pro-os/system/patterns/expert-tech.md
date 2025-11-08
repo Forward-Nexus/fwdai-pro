@@ -1,6 +1,5 @@
 # Expert Tech Pattern
 
-**Version:** 1.0  
 **Purpose:** Technical work workflow (specs, architecture, implementation, testing)  
 **Primary users:** Denny (design), Ada (implementation)  
 **Can be used by:** ANY expert doing technical work
@@ -41,11 +40,33 @@ Load this pattern when doing:
 - Deploying systems
 - Configuring infrastructure
 
+✅ **Document processing:**
+- Reading technical PDFs/specs
+- Generating technical documentation
+- Processing data files
+
 ✅ **Technical review:**
 - Code review
 - Architecture review
 - Security review
 - Performance analysis
+
+---
+
+## 📄 Document Processing Available
+
+**FWD PRO includes document tools out-of-the-box:**
+- Read/write PDF documents
+- Read/write Word documents
+- Read/write Excel spreadsheets
+
+See `system/patterns/document-processing.md` for full details.
+
+**Common use cases:**
+- Read technical specs from PDFs
+- Generate architecture docs in Word/PDF
+- Process data from Excel files
+- Create reports and documentation
 
 ---
 

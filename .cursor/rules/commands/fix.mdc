@@ -1,0 +1,36 @@
+# @fix Command Activation
+
+**Trigger:** User mentions `@fix`
+
+**This rule loads the fix/debug command workflow**
+
+---
+
+## Load Command
+
+**Read:** `.fwdpro/pro-os/commands/fix.md`
+
+This command provides a structured debugging and problem-solving approach for fixing bugs, errors, issues, or any broken functionality.
+
+---
+
+## Load Quality Standards
+
+**MANDATORY - Load at Post-Flight phase:**
+
+**If fixing code:**
+- `.fwdpro/pro-os/system/checklists/code-checklist.md` (verify fix quality)
+- `.fwdpro/pro-os/system/standards/code-style/` (ensure style compliance)
+
+**If fixing other work:**
+- `.fwdpro/pro-os/system/checklists/quality-checklist.md` (verify fix quality)
+
+---
+
+## Key Principles
+
+- **Token Efficiency:** Check context before loading files
+- **Three-Phase Workflow:** Pre-Flight (reproduce & diagnose) → Execution (fix) → Post-Flight (verify with checklist & document)
+- **Expert Integration:** Works with technical experts (Denny, Ada)
+- **Root Cause Focus:** Fix the underlying issue, not just symptoms
+- **Quality Validation:** Must pass appropriate checklist after fix

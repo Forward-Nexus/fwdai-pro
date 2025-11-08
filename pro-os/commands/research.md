@@ -26,7 +26,55 @@ Clarify:
 - How deep? (quick overview vs comprehensive analysis?)
 - Any constraints? (budget, timeline, location?)
 
-### 2. Conduct Research
+### 2. Assess Research Scope (IMPORTANT)
+
+**Before starting research, determine if Cursor AI can handle it:**
+
+#### Can Cursor AI Handle This?
+
+**✅ Cursor AI is GOOD for:**
+- Quick overviews and summaries
+- Technical documentation review
+- Best practices research (1-3 sources)
+- Comparing 2-3 known options
+- Specific question with limited scope
+
+**❌ Cursor AI is LIMITED for:**
+- Comprehensive market research (10+ sources)
+- Industry benchmark compilation
+- Detailed competitive analysis (5+ competitors)
+- Financial projections requiring extensive verification
+- Paywalled research or industry reports
+- Real-time data aggregation across multiple sites
+
+#### When to Route to Deep Research Tools
+
+**If research requires:**
+- 10+ sources to be comprehensive
+- Paywalled industry reports or academic papers
+- Real-time aggregation across multiple sites
+- Detailed competitive data from many companies
+- Market sizing with multiple data sources
+- Extensive financial benchmark verification
+
+**→ STOP and recommend ChatGPT Deep Research or Perplexity Pro**
+
+**Template for routing:**
+```markdown
+**[Expert]:** This research requires comprehensive data across multiple sources that would be better handled by a deep research tool.
+
+**I recommend using ChatGPT with Deep Research or Perplexity Pro:**
+
+**Research prompt to use:**
+"[Specific, detailed prompt with clear scope, sources to prioritize, and format for results]"
+
+**After you get results:**
+- Share the research output back here
+- I'll verify the sources and URLs
+- I'll help synthesize findings into our deliverable
+```
+
+### 3. Conduct Research (If Within Cursor's Capabilities)
 
 **Research sources:**
 - Industry reports
@@ -37,7 +85,7 @@ Clarify:
 - Technical documentation
 - Market data
 
-### 3. Organize Findings
+### 4. Organize Findings
 
 Structure: Clear, scannable, well-organized
 
@@ -48,28 +96,30 @@ Structure: Clear, scannable, well-organized
 4. **Recommendations** - What to do with this information
 5. **Sources** - Where you got the info
 
-### 4. Create Workspace + Deliverable
+### 5. Create Workspace + Deliverable
 
 **A. Create Workspace**
 - Save as: `roundtable/workspace/[topic]-research-complete.md`
 - Document research process, all sources checked, notes
 - Include raw findings before synthesis
 - Track research decisions and why certain sources were prioritized
+- **If deep research was used:** Include raw output and verification notes
 
 **B. Create Clean Deliverable**
 - Save as: `documents/research/[topic]-findings.md` (or appropriate category)
 - Format: Executive Summary, Detailed Findings, Options/Alternatives, Recommendations, Sources
 - This is the clean research report
+- **Mark source verification:** Note which sources were verified vs. provided by deep research tool
 
 **TWO files created:**
 1. `roundtable/workspace/[topic]-research-complete.md` - Research process, all sources, raw notes
 2. `documents/research/[topic]-findings.md` - Clean research report
 
-### 5. Update Whiteboards
+### 6. Update Whiteboards
 
 Update your section in `roundtable/whiteboards.md` with workspace and deliverable links.
 
-### 6. Update Founder Checklist (If Needed)
+### 7. Update Founder Checklist (If Needed)
 
 If founder needs to review findings, add to `roundtable/[founder-name]-checklist.md`.
 

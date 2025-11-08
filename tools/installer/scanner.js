@@ -188,7 +188,7 @@ function extractMission(content) {
   
   const lines = content.split('\n');
   let inMissionSection = false;
-  let sectionContent = [];
+  const sectionContent = [];
   
   for (let i = 0; i < lines.length; i++) {
     const line = lines[i];
@@ -295,7 +295,7 @@ function extractFounderStory(content) {
   
   const lines = content.split('\n');
   let inStorySection = false;
-  let sectionContent = [];
+  const sectionContent = [];
   
   for (let i = 0; i < lines.length; i++) {
     const line = lines[i];

@@ -1,0 +1,33 @@
+# @plan Command Activation
+
+**Trigger:** User mentions `@plan`
+
+**This rule loads the planning command workflow**
+
+---
+
+## Load Command
+
+**Read:** `.fwdpro/pro-os/commands/plan.md`
+
+This command provides a structured approach for planning projects, features, campaigns, or any initiative requiring strategic thinking and roadmapping.
+
+---
+
+## Load Quality Standards
+
+**MANDATORY - Load at Post-Flight phase:**
+- `.fwdpro/pro-os/system/checklists/quality-checklist.md` (validate plan quality)
+
+**If plan includes research/projections:**
+- `.fwdpro/pro-os/system/standards/research-citation-standards.md` (cite sources for claims)
+
+---
+
+## Key Principles
+
+- **Token Efficiency:** Check context before loading files
+- **Three-Phase Workflow:** Pre-Flight (understand goals) → Execution (create plan) → Post-Flight (validate with checklist & refine)
+- **Expert Integration:** Works with strategic experts (Genna, Denny for technical, Lyna for external, Benji for internal)
+- **Actionable Output:** Plans include concrete next steps and success metrics
+- **Quality Validation:** Plan must pass quality checklist (actionable, measurable, realistic)

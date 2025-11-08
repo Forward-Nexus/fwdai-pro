@@ -20,6 +20,41 @@ Commands are pre-built workflows that help you work with experts efficiently. Th
 
 ---
 
+## How Command Activation Works (Behind the Scenes)
+
+**When you type `@create` or any command, here's what happens automatically:**
+
+```
+@create authentication spec
+  ↓
+.cursor/rules/commands/create.mdc (TRIGGERS)
+  ↓
+LOADS:
+- create.md (command workflow)
+- quality-checklist.md (quality enforcement)
+- spec-checklist.md (for specs)
+- research-citation-standards.md (if making claims)
+  ↓
+Command executes with quality enforcement built-in!
+```
+
+**This happens for ALL commands:**
+- `@create` → Loads workflow + quality checklists
+- `@execute` → Loads workflow + code/content checklists
+- `@create-specflow` → Loads workflow + **MANDATORY** spec checklist (no skipping!)
+- `@execute-specflow` → Loads workflow + **MANDATORY** code checklist + tests required
+- `@research` → Loads workflow + **MANDATORY** citation standards (no fake research!)
+
+**Quality is automatically enforced!** You don't need to remember to run checklists - the system loads them automatically.
+
+**Where are these `.mdc` files?**
+- Command triggers: `.cursor/rules/commands/*.mdc`
+- Flow triggers: `.cursor/rules/commands/flows/*.mdc`
+
+**You usually don't need to edit these!** They're part of the FWD PRO system.
+
+---
+
 ## How Commands Work with Experts
 
 **IMPORTANT:** Universal commands work with ANY expert. They don't "route" automatically.

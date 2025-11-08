@@ -6,12 +6,17 @@
 
 ---
 
-## Overview: The Three-Layer System
+## Overview: The Four-Layer System
 
 ```
 ┌─────────────────────────────────────────────────────────┐
+│               LAYER 0: ACTIVATION RULES (.mdc)           │
+│  WHEN to trigger (cursor rules that activate system)    │
+└─────────────────────────────────────────────────────────┘
+                          ↓ activates
+┌─────────────────────────────────────────────────────────┐
 │                    LAYER 1: EXPERTS                      │
-│  Who does the work (Genna, Denny, Ada, Lyna, etc.)     │
+│  WHO does the work (Genna, Denny, Ada, Lyna, etc.)     │
 └─────────────────────────────────────────────────────────┘
                           ↓ uses
 ┌─────────────────────────────────────────────────────────┐
@@ -24,6 +29,79 @@
 │  WHERE work happens (workspaces, whiteboards, docs)     │
 └─────────────────────────────────────────────────────────┘
 ```
+
+---
+
+## Layer 0: Activation Rules (When - NEW!)
+
+**Located in:** `.cursor/rules/`
+
+### Expert Activation Rules
+
+**Location:** `.cursor/rules/experts/*.mdc`
+
+When you type `@denny`, `@lyna`, `@ada`, etc., these `.mdc` files automatically trigger and load:
+
+1. Expert's personality file (`.fwdpro/pro-os/experts/[name].md`)
+2. Workflow patterns (`expert-workflow.md`, `expert-collaboration.md`)
+3. Domain-specific patterns (`expert-tech.md`, `expert-content.md`, etc.)
+4. Project context (founder profile, project KB, mission)
+
+**Example: `@denny` activation**
+```
+.cursor/rules/experts/denny.mdc
+  ↓ TRIGGERS & LOADS
+- denny-systems-architect.md (personality)
+- expert-workflow.md (individual workflow)
+- expert-collaboration.md (team collaboration)
+- expert-tech.md (domain expertise)
+- Project context files
+  ↓ RESULT
+Denny responds with full context & expertise
+```
+
+### Command Activation Rules
+
+**Location:** `.cursor/rules/commands/*.mdc`
+
+When you use commands like `@create`, `@execute`, `@research`, these `.mdc` files automatically trigger and load:
+
+1. Command workflow file (`.fwdpro/pro-os/commands/[name].md`)
+2. Quality checklists (appropriate for the work type)
+3. Standards (research citations, code style, etc.)
+
+**Example: `@create` activation**
+```
+.cursor/rules/commands/create.mdc
+  ↓ TRIGGERS & LOADS
+- create.md (command workflow)
+- quality-checklist.md (always)
+- Domain-specific checklists (spec/code/content)
+- research-citation-standards.md (if making claims)
+  ↓ RESULT
+Command executes with quality enforcement built-in
+```
+
+**Example: `@create-specflow` activation (MANDATORY enforcement)**
+```
+.cursor/rules/commands/flows/create-specflow.mdc
+  ↓ TRIGGERS & LOADS
+- create-specflow.md (structured workflow)
+- spec-checklist.md (MANDATORY - no skipping!)
+- research-citation-standards.md (for any claims)
+  ↓ RESULT
+Spec creation with bulletproof quality gates
+```
+
+### Why `.mdc` Files?
+
+- **Automatic:** You don't manually load experts or patterns
+- **Consistent:** Same activation every time
+- **Quality-Enforced:** Checklists loaded automatically
+- **Token-Efficient:** Only loads what's needed for the task
+- **Updatable:** System updates preserve your work, update rules
+
+**You usually don't edit `.mdc` files** - they're part of the FWD PRO system and update automatically with `npx @fwd-ai/pro update`.
 
 ---
 

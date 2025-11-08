@@ -291,6 +291,36 @@ FWD PRO gives you 6 core experts + your custom domain expert. Each has a specifi
 
 ---
 
+## How Expert Activation Works (Behind the Scenes)
+
+**When you type `@denny`, here's what happens automatically:**
+
+```
+@denny
+  ↓
+.cursor/rules/experts/denny.mdc (TRIGGERS)
+  ↓
+LOADS:
+- denny-systems-architect.md (personality)
+- expert-workflow.md (how to work)
+- expert-collaboration.md (team patterns)
+- expert-tech.md (domain expertise)
+- project context (your project info)
+  ↓
+Denny responds with FULL context!
+```
+
+**This happens for ALL experts:**
+- `@genna` → Loads Genna's personality + strategy patterns
+- `@lyna` → Loads Lyna's personality + content/strategy patterns
+- `@ada` → Loads Ada's personality + tech patterns
+- `@elle` → Loads Elle's personality + legal patterns
+- `@benji` → Loads Benji's personality + content patterns
+
+**You don't need to do anything!** Just type `@expert-name` and the system loads everything they need.
+
+---
+
 ## How to Tag Experts
 
 ### Direct Tag (Recommended)

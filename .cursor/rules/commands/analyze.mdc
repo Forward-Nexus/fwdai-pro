@@ -1,0 +1,32 @@
+# @analyze Command Activation
+
+**Trigger:** User mentions `@analyze`
+
+**This rule loads the analysis command workflow**
+
+---
+
+## Load Command
+
+**Read:** `.fwdpro/pro-os/commands/analyze.md`
+
+This command provides a structured approach for analyzing codebases, systems, documents, strategies, or any other subject requiring deep evaluation and insights.
+
+---
+
+## Load Quality Standards
+
+**MANDATORY - Load at Post-Flight phase:**
+- `.fwdpro/pro-os/system/checklists/quality-checklist.md` (validate analysis deliverable)
+
+**If analysis includes research:**
+- `.fwdpro/pro-os/system/standards/research-citation-standards.md` (cite sources properly)
+
+---
+
+## Key Principles
+
+- **Token Efficiency:** Check context before loading files
+- **Three-Phase Workflow:** Pre-Flight (scope) → Execution (analyze) → Post-Flight (validate with checklist & deliver insights)
+- **Expert Integration:** Works with any expert based on analysis domain
+- **Quality Validation:** Analysis deliverable must pass quality checklist

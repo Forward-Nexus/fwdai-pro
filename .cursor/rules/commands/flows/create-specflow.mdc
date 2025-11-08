@@ -1,0 +1,46 @@
+# @create-specflow Command Activation
+
+**Trigger:** User mentions `@create-specflow`
+
+**This rule loads the TDD-enforced specification creation flow**
+
+---
+
+## Load Command
+
+**Read:** `.fwdpro/pro-os/commands/flows/create-specflow.md`
+
+This flow command creates comprehensive technical specifications with **mandatory TDD enforcement** and structured quality phases.
+
+---
+
+## When to Use This
+
+✅ **Use `@create-specflow` when:**
+- Building new features that need technical specification
+- Want TDD enforced (tests first, always)
+- Need bulletproof quality requirements
+- Implementing code (not content/strategy)
+
+❌ **Use `@create` instead when:**
+- Flexible content creation needed
+- Strategy documents
+- Campaigns/pitches
+- No strict TDD requirements
+
+---
+
+## Load Quality Standards
+
+**MANDATORY - Load at Post-Flight phase:**
+- `.fwdpro/pro-os/system/checklists/spec-checklist.md` (REQUIRED - no exceptions)
+- `.fwdpro/pro-os/system/standards/research-citation-standards.md` (if making claims)
+
+---
+
+## Key Principles
+
+- **TDD Enforcement:** Tests defined BEFORE implementation (non-negotiable)
+- **Three-Phase Workflow:** Pre-Flight → Execution → Post-Flight (MANDATORY quality phase)
+- **Expert Integration:** Works best with Denny or Ada
+- **Quality First:** `spec-checklist.md` MUST be validated at end (no shipping without passing)

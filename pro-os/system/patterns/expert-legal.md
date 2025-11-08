@@ -1,6 +1,5 @@
 # Expert Legal Pattern
 
-**Version:** 1.0  
 **Purpose:** Legal, compliance, and risk management workflow  
 **Primary user:** Elle (legal counsel)  
 **Can be used by:** ANY expert needing legal/compliance guidance
@@ -56,6 +55,35 @@ Load this pattern when doing:
 - Regulatory risk evaluation
 - IP risk assessment
 - Compliance gap analysis
+
+---
+
+## 📄 Document Processing for Legal Work
+
+**FWD PRO includes document tools out-of-the-box:**
+- Read contract PDFs and extract text for analysis
+- Generate legal documents in Word format
+- Create professional legal PDFs
+- Process forms and templates
+
+See `system/patterns/document-processing.md` for full details.
+
+**Common legal workflows:**
+```javascript
+// Read contract PDF
+const contractText = await readPDF('client-contract.pdf');
+
+// Generate legal memo in Word
+await createWordDoc({
+  title: 'Legal Memorandum',
+  sections: [
+    { heading: 'Background', content: '...' },
+    { heading: 'Analysis', content: '...' },
+    { heading: 'Recommendations', content: '...' }
+  ],
+  output: 'legal-memo.docx'
+});
+```
 
 ---
 

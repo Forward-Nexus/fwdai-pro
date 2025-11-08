@@ -2,16 +2,45 @@
  * IDE Setup
  * 
  * Configure IDE-specific optimizations (Cursor, VS Code, etc.)
- * Creates .mdc command shortcuts following the agent-os pattern
+ * Copies .mdc rules for enhanced @mention support in Cursor
  */
 
 import fs from 'fs-extra';
 import path from 'path';
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 export async function setupIDE(projectPath, aiTool, workTypes) {
-  // IDE-specific setup if needed in the future
-  // Currently, 0-your-commands/ symlinks work for all IDEs
-  // No special .mdc or .cursor/ setup needed - keeps it simple!
+  if (aiTool === 'cursor') {
+    await setupCursor(projectPath);
+  }
+  // Other IDEs can be added here (VS Code, Windsurf, Claude, etc.)
+}
+
+async function setupCursor(projectPath) {
+  // Get the path to the FWD PRO package's .cursor/rules directory
+  const packageRoot = path.resolve(__dirname, '../../');
+  const sourceCursorRules = path.join(packageRoot, '.cursor', 'rules');
+  const targetCursorRules = path.join(projectPath, '.cursor', 'rules');
+  
+  // Check if source .cursor/rules exists
+  if (!await fs.pathExists(sourceCursorRules)) {
+    console.warn('⚠️  Could not find .cursor/rules templates - skipping Cursor setup');
+    return;
+  }
+  
+  // Copy .cursor/rules to user's project
+  await fs.ensureDir(path.join(projectPath, '.cursor'));
+  await fs.copy(sourceCursorRules, targetCursorRules, {
+    overwrite: false, // Don't overwrite if user has customized
+    errorOnExist: false
+  });
+  
+  console.log('✅ Cursor rules installed (.cursor/rules/)');
+  console.log('   You can now use @denny, @ada, @lyna, etc. in Cursor!');
 }
 
 /**

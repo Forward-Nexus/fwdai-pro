@@ -1,66 +1,79 @@
 # IDE Configurations
 
-**Purpose:** Optional IDE-specific configurations that enhance FWD PRO in different AI coding tools.
+**Purpose:** Documentation and guides for using FWD PRO with different AI coding tools.
 
 ---
 
 ## What's This Folder?
 
-FWD PRO works in **any AI coding tool** out of the box. These configurations are **optional enhancements** that leverage IDE-specific features.
+FWD PRO works in **any AI coding tool** out of the box. These are **setup guides** for different IDEs.
 
 **Everyone gets:**
 - Core `pro-os/` system (works everywhere)
 - Natural `@expert` tagging
 - Universal commands
 
-**IDE configs add:**
-- IDE-specific features (like Cursor's `.mdc` commands or VS Code's copilot settings)
-- Optimized file structures per tool
-- Enhanced integrations
+**IDE-specific setups:**
+- Cursor: Automatic `.mdc` rules installation (experts + commands)
+- VS Code: Settings and extensions recommendations
+- Claude/Windsurf/Generic: Usage guides
 
 ---
 
-## Supported IDEs
+## ✅ Cursor (Automated Setup)
 
-### 🎯 Cursor (`cursor/`)
-- `.cursor/rules/` for enhanced @mentions and .mdc commands
-- Optimized for Cursor's AI features
+**Status:** Fully automated! 🎉
 
-### 💻 VS Code (`vscode/`)
-- `.vscode/` settings for Copilot and Cline
-- Workspace configurations
+When you run `npx @fwd-ai/pro install` and select "Cursor", the installer automatically copies:
+- `.cursor/rules/experts/` (all expert `.mdc` files)
+- `.cursor/rules/commands/` (all command `.mdc` files)
 
-### 🤖 Claude Code (`claude/`)
-- `.claude/commands/` for slash commands
-- Claude-specific workflows
+**You get:**
+- `@denny`, `@ada`, `@lyna`, `@genna`, `@benji`, `@elle` - All experts ready
+- `@create`, `@execute`, `@plan`, `@research`, etc. - All commands ready
 
-### 🌊 Windsurf (`windsurf/`)
-- `.windsurf/workflows/` for Windsurf features
-- Flow-specific optimizations
-
-### 📝 Generic (`generic/`)
-- No IDE-specific folders
-- Works in any AI coding tool
-- Simple markdown-based
+**See:** `cursor/README.md` for setup details and MCP recommendations
 
 ---
 
-## How This Works
+## 🔄 Other IDEs (Coming Soon)
 
-During `npx @fwd-ai/pro install`, the CLI:
+### 💻 VS Code
+**Status:** Documentation only  
+**See:** `vscode/README.md` for manual setup instructions
 
-1. Detects your IDE (or asks)
-2. Copies `pro-os/` (core system - everyone gets this)
-3. Optionally copies IDE-specific config from here
-4. You're ready to go!
+### 🤖 Claude Code  
+**Status:** Documentation only  
+**See:** `claude/README.md` for manual setup instructions
+
+### 🌊 Windsurf
+**Status:** Documentation only  
+**See:** `windsurf/README.md` for manual setup instructions
+
+### 📝 Generic
+**Status:** Documentation only  
+**See:** `generic/README.md` for any AI coding tool
+
+---
+
+## How Cursor Setup Works
+
+During `npx @fwd-ai/pro install`:
+
+1. **Detects your IDE** (or asks which you're using)
+2. **Copies core system** (`pro-os/` - everyone gets this)
+3. **If Cursor:** Automatically copies `.cursor/rules/` from package
+4. **You're ready!** Start using `@denny`, `@ada`, etc. immediately
 
 **Example:**
 ```bash
 npx @fwd-ai/pro install
 
-→ Detected: Cursor
-→ Install Cursor optimizations? [Y/n]
-→ ✅ Installed pro-os/ + .cursor/rules/
+→ Which AI coding tool are you using?
+→ Selected: Cursor
+→ ✅ Installed pro-os/ (core system)
+→ ✅ Cursor rules installed (.cursor/rules/)
+→ You can now use @denny, @ada, @lyna, etc. in Cursor!
 ```
 
 ---

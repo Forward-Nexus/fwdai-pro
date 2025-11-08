@@ -1,6 +1,5 @@
 # FWD PRO Flow Commands
 
-**Version:** 1.0  
 **Purpose:** Structured workflow commands with bulletproof quality enforcement
 
 ---

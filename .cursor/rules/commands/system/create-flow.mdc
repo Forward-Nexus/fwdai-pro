@@ -1,0 +1,36 @@
+# @create-flow Command Activation
+
+**Trigger:** User mentions `@create-flow`
+
+**This rule loads the flow creation system command**
+
+---
+
+## Load Command
+
+**Read:** `.fwdpro/pro-os/commands/system/create-flow.md`
+
+This system command creates new flow commands with structured multi-step workflows and quality enforcement.
+
+---
+
+## What This Creates
+
+When you use `@create-flow`, it generates:
+
+1. **Flow Command Document** (`.md`)
+   - Location: `pro-os/commands/flows/{name}-flow.md`
+   - Contains: Structured 3-phase workflow with enforcement
+
+2. **Flow Activation Rule** (`.mdc`)
+   - Location: `.cursor/rules/commands/flows/{name}-flow.mdc`
+   - Contains: Trigger and command loading
+
+---
+
+## Key Principles
+
+- **Structured Workflows:** Three-phase enforcement (Pre-Flight → Execution → Post-Flight)
+- **Quality Enforcement:** Mandatory checklists and standards
+- **Pattern Integration:** Loads relevant patterns and standards
+- **Use Cases:** For repeatable, quality-critical workflows

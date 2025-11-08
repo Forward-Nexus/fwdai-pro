@@ -1,0 +1,38 @@
+# @update Command Activation
+
+**Trigger:** User mentions `@update`
+
+**This rule loads the update command workflow**
+
+---
+
+## Load Command
+
+**Read:** `.fwdpro/pro-os/commands/update.md`
+
+This command provides a structured approach for updating existing work - code, content, documents, strategies, or any deliverable that needs modification or enhancement.
+
+---
+
+## Load Quality Standards
+
+**MANDATORY - Load at Post-Flight phase:**
+
+**Always load:**
+- `.fwdpro/pro-os/system/checklists/quality-checklist.md` (universal quality validation)
+
+**Load based on what's being updated:**
+- Updating code? → `.fwdpro/pro-os/system/checklists/code-checklist.md` + `.fwdpro/pro-os/system/standards/code-style/`
+- Updating content? → `.fwdpro/pro-os/system/checklists/content-checklist.md`
+- Updating spec? → `.fwdpro/pro-os/system/checklists/spec-checklist.md`
+- Legal/compliance work? → `.fwdpro/pro-os/system/checklists/legal-review-checklist.md`
+
+---
+
+## Key Principles
+
+- **Token Efficiency:** Check context before loading files
+- **Three-Phase Workflow:** Pre-Flight (understand current state) → Execution (make changes) → Post-Flight (validate with checklist)
+- **Expert Integration:** Works with any expert based on what's being updated
+- **Preserve Intent:** Maintain original purpose and style unless explicitly changing it
+- **Quality Validation:** Updates must pass appropriate checklist

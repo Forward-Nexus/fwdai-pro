@@ -1,5 +1,4 @@
 ---
-version: 1.0.0
 applies_to: technical_specifications
 purpose: Ensure specifications are complete, clear, and actionable
 ---

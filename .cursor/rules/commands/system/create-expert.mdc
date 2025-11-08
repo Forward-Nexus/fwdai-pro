@@ -1,0 +1,36 @@
+# @create-expert Command Activation
+
+**Trigger:** User mentions `@create-expert`
+
+**This rule loads the expert creation system command**
+
+---
+
+## Load Command
+
+**Read:** `.fwdpro/pro-os/commands/system/create-expert.md`
+
+This system command creates new FWD PRO experts with both personality documents (`.md`) and activation rules (`.mdc`).
+
+---
+
+## What This Creates
+
+When you use `@create-expert`, it generates:
+
+1. **Expert Personality File** (`.md`)
+   - Location: `pro-os/experts/{name}-{domain}.md`
+   - Contains: Personality, expertise, working style, adaptation examples
+
+2. **Expert Activation Rule** (`.mdc`)
+   - Location: `.cursor/rules/experts/{name}.mdc`
+   - Contains: Trigger conditions, context loading, pattern assignments
+
+---
+
+## Key Principles
+
+- **Guided Creation:** Asks questions to understand expert's role
+- **Pattern Assignment:** Loads appropriate workflow and domain patterns
+- **Integration:** Automatically integrates with roundtable system
+- **Quality:** Ensures consistent expert structure

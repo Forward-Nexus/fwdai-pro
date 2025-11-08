@@ -1,0 +1,35 @@
+# @research Command Activation
+
+**Trigger:** User mentions `@research`
+
+**This rule loads the research command workflow**
+
+---
+
+## Load Command
+
+**Read:** `.fwdpro/pro-os/commands/research.md`
+
+This command provides a structured approach for conducting research - market analysis, technical exploration, competitive intelligence, or any investigation requiring deep information gathering.
+
+---
+
+## Load Quality Standards
+
+**MANDATORY - Load at start:**
+- `.fwdpro/pro-os/system/standards/research-citation-standards.md` (REQUIRED for all research)
+
+**For investor/market research:**
+- `.fwdpro/pro-os/system/patterns/market-research-workflow.md` (research-first workflow for investor materials)
+
+**Load at Post-Flight:**
+- `.fwdpro/pro-os/system/checklists/quality-checklist.md` (validate deliverable)
+
+---
+
+## Key Principles
+
+- **Token Efficiency:** Check context before loading files
+- **Three-Phase Workflow:** Pre-Flight (define scope) → Execution (research & synthesize) → Post-Flight (document findings & validate citations)
+- **Expert Integration:** Works with research-oriented experts (Lyna for market, Denny for technical, Benji for operations)
+- **Citation Standards:** MUST follow `research-citation-standards.md` (three-tier system, no fake citations)

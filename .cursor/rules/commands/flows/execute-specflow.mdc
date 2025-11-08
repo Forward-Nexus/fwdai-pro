@@ -1,0 +1,45 @@
+# @execute-specflow Command Activation
+
+**Trigger:** User mentions `@execute-specflow`
+
+**This rule loads the TDD-enforced implementation flow**
+
+---
+
+## Load Command
+
+**Read:** `.fwdpro/pro-os/commands/flows/execute-specflow.md`
+
+This flow command implements technical specifications with **mandatory TDD enforcement** and structured quality phases.
+
+---
+
+## When to Use This
+
+✅ **Use `@execute-specflow` when:**
+- Implementing from a technical spec
+- Want TDD enforced (tests pass before shipping)
+- Need bulletproof implementation quality
+- Building features (not content/strategy)
+
+❌ **Use `@execute` instead when:**
+- Flexible implementation needed
+- Content or campaign execution
+- No strict TDD requirements
+
+---
+
+## Load Quality Standards
+
+**MANDATORY - Load at Post-Flight phase:**
+- `.fwdpro/pro-os/system/checklists/code-checklist.md` (REQUIRED - no exceptions)
+- `.fwdpro/pro-os/system/standards/code-style/` (all relevant style guides)
+
+---
+
+## Key Principles
+
+- **TDD Enforcement:** All tests must pass before completion (non-negotiable)
+- **Three-Phase Workflow:** Pre-Flight → Execution → Post-Flight (MANDATORY QA phase)
+- **Expert Integration:** Works best with Ada (or Denny for architecture)
+- **Quality First:** `code-checklist.md` MUST be validated at end + all tests passing (no shipping without both)

@@ -1,0 +1,36 @@
+# @execute Command Activation
+
+**Trigger:** User mentions `@execute`
+
+**This rule loads the execution command workflow**
+
+---
+
+## Load Command
+
+**Read:** `.fwdpro/pro-os/commands/execute.md`
+
+This command provides a structured approach for implementing work - code, campaigns, content, or any other execution task.
+
+---
+
+## Load Quality Standards
+
+**MANDATORY - Load at Post-Flight phase:**
+
+**Always load:**
+- `.fwdpro/pro-os/system/checklists/quality-checklist.md` (universal quality validation)
+
+**Load based on what's being executed:**
+- Executing code? → `.fwdpro/pro-os/system/checklists/code-checklist.md` + `.fwdpro/pro-os/system/standards/code-style/`
+- Executing content/campaign? → `.fwdpro/pro-os/system/checklists/content-checklist.md`
+- Legal/compliance work? → `.fwdpro/pro-os/system/checklists/legal-review-checklist.md`
+
+---
+
+## Key Principles
+
+- **Token Efficiency:** Check context before loading files
+- **Three-Phase Workflow:** Pre-Flight (understand spec) → Execution (implement) → Post-Flight (quality validation with checklist)
+- **Expert Integration:** Works with implementation experts (Ada, Lyna for content, Benji for ops)
+- **Quality First:** Appropriate checklist MUST be used in Post-Flight phase

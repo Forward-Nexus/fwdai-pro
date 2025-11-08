@@ -1,5 +1,4 @@
 ---
-version: 1.0.0
 applies_to: html_markup
 conditional_loading: true
 ---

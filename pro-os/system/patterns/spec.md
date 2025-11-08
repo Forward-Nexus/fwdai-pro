@@ -1,5 +1,4 @@
 # FWD PRO Spec Pattern
-**Version:** 1.0  
 **Purpose:** Reusable structure for comprehensive technical specifications with TDD enforcement
 
 ---
@@ -364,7 +363,6 @@ Before marking this spec as COMPLETE:
 
 ---
 
-**Last Updated:** [Date] by [Expert]
 ```
 
 ---

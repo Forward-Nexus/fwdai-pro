@@ -1,0 +1,46 @@
+# @create Command Activation
+
+**Trigger:** User mentions `@create`
+
+**This rule loads the universal creation command workflow**
+
+---
+
+## Load Command
+
+**Read:** `.fwdpro/pro-os/commands/create.md`
+
+This command provides a flexible workflow for creating anything - specs, designs, documents, content, strategies, briefs, etc. The AI infers structure based on context.
+
+---
+
+## Load Quality Standards
+
+**MANDATORY - Load at Post-Flight phase:**
+
+**Always load:**
+- `.fwdpro/pro-os/system/checklists/quality-checklist.md` (universal quality validation)
+
+**Load based on what's being created:**
+- Creating content/marketing? → `.fwdpro/pro-os/system/checklists/content-checklist.md`
+- Creating code? → `.fwdpro/pro-os/system/checklists/code-checklist.md` + `.fwdpro/pro-os/system/standards/code-style/`
+- Creating spec? → `.fwdpro/pro-os/system/checklists/spec-checklist.md`
+- Legal/compliance work? → `.fwdpro/pro-os/system/checklists/legal-review-checklist.md`
+- Making research claims? → `.fwdpro/pro-os/system/standards/research-citation-standards.md`
+
+---
+
+## Key Principles
+
+- **Token Efficiency:** Check what's already in context before loading
+- **Three-Phase Workflow:** Pre-Flight (understand) → Execution (create) → Post-Flight (quality validation with checklist)
+- **Adaptive Intelligence:** AI infers structure based on what's being created
+- **Expert Integration:** Works with any expert based on domain needs
+- **Quality Enforcement:** Appropriate checklist MUST be used in Post-Flight phase
+
+---
+
+## Alternative Commands
+
+- For technical specs with TDD enforcement → use `@create-specflow`
+- For updating existing items → use `@update`

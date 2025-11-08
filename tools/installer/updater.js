@@ -92,7 +92,7 @@ export async function updateInstallation() {
 
     // Step 1: Remove deprecated files
     if (changelog.removed.length > 0) {
-      let spinner = ora('Removing deprecated files...').start();
+      const spinner = ora('Removing deprecated files...').start();
       
       for (const filePath of changelog.removed) {
         const fullPath = path.join(projectPath, filePath);

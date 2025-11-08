@@ -359,6 +359,48 @@ Try: "@create-specflow [feature name]" (for building)
 
 ---
 
+## Behind the Scenes: How Activation Works
+
+**When you type `@denny` or `@create`, here's what happens automatically:**
+
+```
+YOU TYPE: @denny
+    ↓
+CURSOR TRIGGERS: .cursor/rules/experts/denny.mdc
+    ↓
+SYSTEM LOADS:
+  1. Denny's personality (pro-os/experts/denny-systems-architect.md)
+  2. Workflow patterns (expert-workflow.md, expert-collaboration.md)
+  3. Domain patterns (expert-tech.md for technical work)
+  4. Project context (founder-profile, project-kb, mission)
+    ↓
+DENNY RESPONDS: Fully activated with domain expertise!
+```
+
+**For commands:**
+```
+YOU TYPE: @create authentication spec
+    ↓
+CURSOR TRIGGERS: .cursor/rules/commands/create.mdc
+    ↓
+SYSTEM LOADS:
+  1. Create command workflow (pro-os/commands/create.md)
+  2. Quality checklists (quality-checklist.md, spec-checklist.md)
+  3. Standards (research-citation-standards.md if needed)
+    ↓
+COMMAND EXECUTES: With quality enforcement built-in!
+```
+
+**You don't see this happening** - it's automatic! Just type `@denny` or `@create` and the system handles activation.
+
+**Where are these `.mdc` files?**
+- Expert triggers: `.cursor/rules/experts/*.mdc`
+- Command triggers: `.cursor/rules/commands/*.mdc`
+
+**You usually don't need to edit these!** They're part of the FWD PRO system and update automatically when you run `npx @fwd-ai/pro update`.
+
+---
+
 ## Your First Command
 
 Let's run your first command!

@@ -11,6 +11,130 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [2.2.0] - 2025-11-07
+
+### 🚀 Major Feature Release: Production Utilities
+
+**Complete Production Toolkit (30+ Utilities):**
+
+#### Document Processing (Always Installed)
+- **PDF handling** - Read and write PDF files (`pdf-lib`, `pdf-parse`)
+- **Word documents** - Convert Word to Markdown, generate Word files (`mammoth`, `docx`)
+- **Excel spreadsheets** - Read and write Excel files (`xlsx`)
+- **Location:** `pro-os/system/tools/document-utils/`
+
+#### Financial & Accounting Utilities
+- **Unit economics calculator** - LTV, CAC, payback period, churn rate
+- **ARR/MRR tracking** - Revenue metrics for investor reporting
+- **Burn rate & runway** - Financial planning tools
+- **Location:** `pro-os/system/tools/financial-utils/`
+
+#### Git & Version Control Helpers
+- **Commit helper** - Interactive conventional commit generator
+- **PR generator** - Auto-generate PR descriptions from commit history
+- **Changelog automation** - Generate CHANGELOG.md from git history
+- **Location:** `pro-os/system/tools/git-utils/`
+
+#### Testing & QA Tools
+- **Test runner** - Universal test runner (Vitest, Jest, Mocha, Ava, Tape)
+- **Quality gates** - Enforce coverage and quality thresholds
+- **Test reports** - Human-readable test coverage reports
+- **Location:** `pro-os/system/tools/testing-utils/`
+
+#### Environment & Secrets Management
+- **Environment generator** - Create .env.example templates
+- **Environment validator** - Validate required environment variables
+- **Secret scanner** - Scan for accidentally committed API keys/secrets
+- **Location:** `pro-os/system/tools/env-utils/`
+
+#### Database Utilities
+- **Migration runner** - Run migrations (Prisma, Drizzle, Knex, TypeORM)
+- **Database seeder** - Populate database with test data
+- **Backup utility** - Create database backups (PostgreSQL, MySQL, SQLite, MongoDB)
+- **Location:** `pro-os/system/tools/database-utils/`
+
+#### API & Integration Tools
+- **API client generator** - Generate type-safe clients from OpenAPI specs
+- **Webhook tester** - Local webhook testing and validation
+- **Rate limit monitor** - Track API usage and prevent rate limit errors
+- **Location:** `pro-os/system/tools/api-utils/`
+
+#### Deployment Automation
+- **Vercel setup** - Generate optimized vercel.json configuration
+- **Docker generator** - Create Dockerfile and docker-compose.yml
+- **CI/CD generator** - Generate GitHub Actions, GitLab CI, or CircleCI configs
+- **Location:** `pro-os/system/tools/deployment-utils/`
+
+#### Analytics & Monitoring
+- **Sentry setup** - Configure error tracking and reporting
+- **PostHog setup** - Privacy-first product analytics and feature flags
+- **Performance monitoring** - Web Vitals tracking and performance monitoring
+- **Location:** `pro-os/system/tools/monitoring-utils/`
+
+### Enhanced Developer Experience
+
+**NPM Scripts for All Utilities:**
+- `npm run tools:commit` - Interactive commit generator
+- `npm run tools:test` - Run tests with coverage
+- `npm run tools:quality` - Check quality gates
+- `npm run tools:env-check` - Validate environment
+- `npm run tools:migrate` - Run database migrations
+- `npm run tools:docker` - Generate Docker files
+- `npm run tools:sentry` - Setup error tracking
+- And 20+ more utility scripts!
+
+**Cursor IDE Auto-Setup:**
+- Automatic `.cursor/rules/` installation during setup
+- All 6 expert `.mdc` files installed
+- All command `.mdc` files installed
+- Works with `npx @fwd-ai/pro install`
+
+**System Improvements:**
+- Deep research routing pattern (when to use ChatGPT/Perplexity)
+- AI language audit checklist (detect repetitive AI phrases)
+- Pre-commit hooks for code quality (husky + lint-staged)
+- GitHub issue templates (bug reports, feature requests)
+
+### Documentation
+
+- **Complete utility documentation** - README for each category
+- **Master utilities guide** - `pro-os/system/tools/README.md`
+- **Expert pattern updates** - Document processing workflows for Ada and Elle
+- **MCP recommendations guide** - Cursor marketplace extensions
+
+### Dependencies Added
+
+```json
+{
+  "pdf-lib": "^1.17.1",
+  "pdf-parse": "^1.1.1",
+  "mammoth": "^1.8.0",
+  "docx": "^8.5.0",
+  "xlsx": "^0.18.5"
+}
+```
+
+### Files Created/Modified
+
+- **37 new files** - 28 utility scripts + 9 READMEs
+- **9 utility categories** - Complete production toolkit
+- **Updated:** `package.json`, `README.md`, expert patterns
+- **Enhanced:** IDE setup, installer, documentation
+
+### Real-World Validation
+
+Battle-tested across multiple project types:
+- ✅ Software development (Next.js, Firebase, Clerk, AI SDK)
+- ✅ Investor materials (pitch decks, business plans, financial projections)
+- ✅ Legal work (contracts, verified complaints, evidence organization)
+- ✅ Financial modeling (unit economics, metrics, investor reporting)
+
+### Breaking Changes
+
+None! Fully backward compatible with v2.1.x
+
+---
+
 ## [2.1.1] - 2025-10-18
 
 ### Enhanced

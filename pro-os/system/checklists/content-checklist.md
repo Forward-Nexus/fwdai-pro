@@ -49,6 +49,38 @@
 
 **Reference:** See `system/standards/research-citation-standards.md` for content-specific verification.
 
+### AI Language Audit (Required for Investor-Facing & External Content)
+
+**Purpose:** Detect and eliminate repetitive AI-generated phrases that make content feel robotic.
+
+**Search for repetitive phrases (3+ occurrences in document):**
+- [ ] "Key insight:" → Replace with direct statement or vary language
+- [ ] "Why this matters:" → Remove or rephrase contextually
+- [ ] "It's worth noting that..." → Direct statement instead
+- [ ] "Importantly," / "Notably," → Use sparingly, vary placement
+- [ ] "✅ ALIGNED" (or similar markers) → If used 3+ times, vary language
+- [ ] Templated section headers → Vary if repeated pattern detected
+- [ ] "robust" / "seamless" / "cutting-edge" / "leverage" → Remove marketing filler
+- [ ] "deep dive" / "level up" / "game-changer" → Overused tech clichés
+
+**Structural pattern check:**
+- [ ] Competitor descriptions → Vary structure (not "Company X does Y. Our advantage: Z" repeated)
+- [ ] Feature descriptions → Avoid template-like repetition
+- [ ] Section introductions → Check for formulaic openings
+
+**Read aloud test:**
+- [ ] Read document aloud (or imagine reading to investor)
+- [ ] Flag any phrase that sounds like AI wrote it
+- [ ] Remove phrases a real person wouldn't say in conversation
+- [ ] Check if explanations sound natural or robotic
+
+**Human authenticity check:**
+- [ ] Would a real person say this to an investor over coffee?
+- [ ] Does personality come through, or is it generic?
+- [ ] Are there specific details vs. vague generalizations?
+
+**Why this matters:** Investors and partners read hundreds of documents. AI-generated patterns are immediately recognizable and reduce credibility. Human-sounding writing builds trust.
+
 ### Technical Requirements
 - [ ] Character count within limits (if applicable)
 - [ ] Format appropriate for platform
