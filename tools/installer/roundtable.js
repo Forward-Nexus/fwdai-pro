@@ -9,7 +9,7 @@ import path from 'path';
 
 export async function initializeRoundtable(projectPath, aboutYou, aboutProject, templatesSourcePath) {
   const fwdproDir = path.join(projectPath, '.fwdpro');
-  const roundtablePath = path.join(fwdproDir, '0-roundtable');
+  const roundtablePath = path.join(fwdproDir, '_roundtable');
   const templatesPath = templatesSourcePath; // Now passed from setup
 
   // Create roundtable structure

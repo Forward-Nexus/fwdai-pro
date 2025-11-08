@@ -37,8 +37,8 @@ export function generateWelcomeMessage(aboutYou, aboutProject) {
 
   // Quick access folders
   message += chalk.bold('\n🔖 Quick access folders:\n');
-  message += chalk.gray('   - .fwdpro/0-your-experts/ - Shortcuts to your active experts\n');
-  message += chalk.gray('   - .fwdpro/0-your-commands/ - Shortcuts to useful commands\n');
+  message += chalk.gray('   - .fwdpro/_your-experts/ - Shortcuts to your active experts\n');
+  message += chalk.gray('   - .fwdpro/_your-commands/ - Shortcuts to useful commands\n');
   message += chalk.dim('   (These are symlinks - always up-to-date!)\n');
 
   // Flow commands
@@ -54,9 +54,9 @@ export function generateWelcomeMessage(aboutYou, aboutProject) {
   // Learn more
   message += chalk.bold('\n📖 Learn more:\n');
   message += chalk.gray('   - .fwdpro/documents/tech/tech-stack-guide.md - Tech stack help\n');
-  message += chalk.gray('   - .fwdpro/0-roundtable/whiteboards.md - Current work dashboard\n');
-  message += chalk.gray('   - .fwdpro/0-roundtable/[your-name]-checklist.md - Your action items\n');
-  message += chalk.gray('   - .fwdpro/0-your-experts/README.md - Expert team reference\n');
+  message += chalk.gray('   - .fwdpro/_roundtable/whiteboards.md - Current work dashboard\n');
+  message += chalk.gray('   - .fwdpro/_roundtable/[your-name]-checklist.md - Your action items\n');
+  message += chalk.gray('   - .fwdpro/_your-experts/README.md - Expert team reference\n');
 
   // Get started
   message += chalk.bold('\n🚀 Get started:\n');
@@ -65,7 +65,7 @@ export function generateWelcomeMessage(aboutYou, aboutProject) {
 
   // Pro tip
   message += chalk.bold('\n💡 Pro tip:\n');
-  message += chalk.gray('   Check .fwdpro/0-your-experts/ for quick access to your team!\n');
+  message += chalk.gray('   Check .fwdpro/_your-experts/ for quick access to your team!\n');
   message += chalk.gray('   All experts read your profile and adapt to your style.\n');
 
   return message;

@@ -16,6 +16,147 @@
  * For files not listed, they will be preserved as-is (user customizations maintained)
  */
 export const VERSION_CHANGELOG = {
+  '2.2.1': {
+    description: 'Force Update - Folder Renaming & Complete System Refresh',
+    added: [],
+    modified: [
+      'tools/installer/migrations.js',
+      'tools/installer/generators.js',
+      'pro-os/templates/roundtable/whiteboards-template.md',
+      'pro-os/templates/roundtable/workspace/workspace-template.md',
+      'pro-os/user-docs/user-guide/getting-started.md'
+    ],
+    removed: [],
+    force_update: [
+      'ALL_SYSTEM_FILES' // Special flag for complete system refresh
+    ]
+  },
+  
+  '2.2.0': {
+    description: 'Production Utilities & Document Processing - Git helpers, testing tools, database utils, deployment helpers, monitoring, and full document processing (PDF/Word/Excel)',
+    added: [
+      // Cursor rules for experts and commands (auto-installed)
+      '.cursor/rules/experts/ada.mdc',
+      '.cursor/rules/experts/benji.mdc',
+      '.cursor/rules/experts/denny.mdc',
+      '.cursor/rules/experts/elle.mdc',
+      '.cursor/rules/experts/genna.mdc',
+      '.cursor/rules/experts/lyna.mdc',
+      '.cursor/rules/commands/analyze.mdc',
+      '.cursor/rules/commands/brainstorm.mdc',
+      '.cursor/rules/commands/create.mdc',
+      '.cursor/rules/commands/execute.mdc',
+      '.cursor/rules/commands/fix.mdc',
+      '.cursor/rules/commands/plan.mdc',
+      '.cursor/rules/commands/research.mdc',
+      '.cursor/rules/commands/review.mdc',
+      '.cursor/rules/commands/update.mdc',
+      '.cursor/rules/commands/flows/create-specflow.mdc',
+      '.cursor/rules/commands/flows/execute-specflow.mdc',
+      '.cursor/rules/commands/system/create-expert.mdc',
+      '.cursor/rules/commands/system/create-flow.mdc',
+      '.cursor/rules/commands/system/update-fp.mdc',
+      '.cursor/rules/commands/system/update-kb.mdc',
+      '.cursor/rules/commands/system/update-mission.mdc',
+      '.cursor/rules/commands/system/update-people.mdc',
+      '.cursor/rules/commands/system/update-project.mdc',
+      
+      // Document processing utilities
+      'pro-os/system/tools/document-utils/README.md',
+      'pro-os/system/tools/document-utils/pdf-reader.js',
+      'pro-os/system/tools/document-utils/pdf-writer.js',
+      'pro-os/system/tools/document-utils/word-reader.js',
+      'pro-os/system/tools/document-utils/word-writer.js',
+      'pro-os/system/tools/document-utils/excel-handler.js',
+      
+      // Financial utilities
+      'pro-os/system/tools/financial-utils/README.md',
+      'pro-os/system/tools/financial-utils/unit-economics.js',
+      
+      // Git utilities
+      'pro-os/system/tools/git-utils/README.md',
+      'pro-os/system/tools/git-utils/commit-helper.js',
+      'pro-os/system/tools/git-utils/pr-generator.js',
+      'pro-os/system/tools/git-utils/changelog.js',
+      
+      // Testing utilities
+      'pro-os/system/tools/testing-utils/README.md',
+      'pro-os/system/tools/testing-utils/test-runner.js',
+      'pro-os/system/tools/testing-utils/quality-gate.js',
+      'pro-os/system/tools/testing-utils/test-report.js',
+      
+      // Environment utilities
+      'pro-os/system/tools/env-utils/README.md',
+      'pro-os/system/tools/env-utils/env-generator.js',
+      'pro-os/system/tools/env-utils/env-validator.js',
+      'pro-os/system/tools/env-utils/secret-scanner.js',
+      
+      // Database utilities
+      'pro-os/system/tools/database-utils/README.md',
+      'pro-os/system/tools/database-utils/migrate.js',
+      'pro-os/system/tools/database-utils/seed.js',
+      'pro-os/system/tools/database-utils/backup.js',
+      
+      // API utilities
+      'pro-os/system/tools/api-utils/README.md',
+      'pro-os/system/tools/api-utils/api-client-generator.js',
+      'pro-os/system/tools/api-utils/webhook-tester.js',
+      'pro-os/system/tools/api-utils/rate-limit-checker.js',
+      
+      // Deployment utilities
+      'pro-os/system/tools/deployment-utils/README.md',
+      'pro-os/system/tools/deployment-utils/vercel-setup.js',
+      'pro-os/system/tools/deployment-utils/docker-setup.js',
+      'pro-os/system/tools/deployment-utils/cicd-generator.js',
+      
+      // Monitoring utilities
+      'pro-os/system/tools/monitoring-utils/README.md',
+      'pro-os/system/tools/monitoring-utils/sentry-setup.js',
+      'pro-os/system/tools/monitoring-utils/posthog-setup.js',
+      'pro-os/system/tools/monitoring-utils/performance-setup.js',
+      
+      // Master tools README
+      'pro-os/system/tools/README.md',
+      
+      // New patterns and docs
+      'pro-os/system/patterns/document-processing.md',
+      'pro-os/system/patterns/expert-workflow.md',
+      'pro-os/system/patterns/roundtable-system.md',
+      'pro-os/system/standards/expert-command-quick-reference.md',
+      'pro-os/templates/experts/DOMAIN-EXPERT-RULE-TEMPLATE.mdc',
+      'pro-os/user-docs/user-guide/visual-workflow-diagrams.md',
+      'pro-os/user-docs/user-guide/mcp-recommendations.md'
+    ],
+    modified: [
+      'pro-os/system/patterns/expert-collaboration.md', // Deep research routing
+      'pro-os/commands/research.md', // Deep research routing
+      'pro-os/system/checklists/content-checklist.md', // AI language audit
+      'pro-os/system/patterns/expert-tech.md', // Document processing
+      'pro-os/system/patterns/expert-legal.md', // Document processing
+      'pro-os/system/ide-configs/README.md', // Cursor auto-install
+      'tools/installer/ide-setup.js', // Cursor auto-install
+      'README.md', // Document processing section
+      'package.json' // New dependencies and scripts
+    ],
+    removed: [
+      '.cursor/recommended-rules.md', // Replaced by .mdc rules
+      '.cursor/recommended-mcps.json', // Moved to user docs
+      'pro-os/system/checklists/new-command-checklist.md',
+      'pro-os/system/checklists/new-expert-checklist.md',
+      'pro-os/system/patterns/deliverable-types.md',
+      'pro-os/system/patterns/universal.md',
+      'pro-os/system/patterns/workspace.md',
+      'pro-os/system/standards/error-templates.md',
+      'pro-os/system/standards/expert-voice-guidelines.md',
+      'pro-os/system/standards/helper-functions.md'
+    ],
+    force_update: [
+      'pro-os/system/patterns/expert-collaboration.md',
+      'package.json',
+      'tools/installer/ide-setup.js'
+    ]
+  },
+  
   '2.1.1': {
     description: 'Enhanced Cursor Rules - All critical v2.1 patterns now in recommended rules',
     added: [],

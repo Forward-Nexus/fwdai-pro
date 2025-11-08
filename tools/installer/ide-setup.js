@@ -46,7 +46,7 @@ async function setupCursor(projectPath) {
 /**
  * DEPRECATED: Cursor setup removed
  * Reason: .mdc files are confusing and unnecessary
- * Solution: Users can @mention files in 0-your-commands/ directly
+ * Solution: Users can @mention files in _your-commands/ directly
  * 
  * Keeping this function commented out for reference
  */
@@ -221,11 +221,11 @@ These \`.mdc\` files reference the actual command files in \`.fwdpro/pro-os/comm
 
 When you use a shortcut, Cursor loads the full command instructions.
 
-**Note:** You can also access commands directly via \`.fwdpro/0-your-commands/\` shortcuts!
+**Note:** You can also access commands directly via \`.fwdpro/_your-commands/\` shortcuts!
 
 ## Expert @mentions
 
-You can @mention experts directly from \`.fwdpro/pro-os/experts/\` or \`.fwdpro/0-your-experts/\`:
+You can @mention experts directly from \`.fwdpro/pro-os/experts/\` or \`.fwdpro/_your-experts/\`:
 - \`@genna-architect\` or \`@genna\` - Chief Architect
 - \`@denny-systems-architect\` or \`@denny\` - Systems Architect  
 - \`@ada-implementation\` or \`@ada\` - Lead Engineer
@@ -280,7 +280,7 @@ Your rule description here
 
 /**
  * DEPRECATED: VS Code setup removed
- * Reason: Not needed - 0-your-commands/ works universally
+ * Reason: Not needed - _your-commands/ works universally
  */
 /* 
 async function setupVSCode(projectPath) {

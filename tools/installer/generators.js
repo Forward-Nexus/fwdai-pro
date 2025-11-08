@@ -295,7 +295,7 @@ export async function generateConfig(aboutYou, aboutProject) {
     : aboutYou.name;
 
   // Determine which experts get shortcut links (all experts are always available)
-  // This creates shortcuts in 0-your-experts/ based on work types
+  // This creates shortcuts in _your-experts/ based on work types
   const activeExperts = {
     genna: true, // Always gets a shortcut
     denny: aboutProject.workTypes.includes('building'),
@@ -307,7 +307,7 @@ export async function generateConfig(aboutYou, aboutProject) {
   };
 
   // Determine which commands get shortcut links (all commands are always available)
-  // This creates shortcuts in 0-your-commands/ for flow commands only
+  // This creates shortcuts in _your-commands/ for flow commands only
   // System commands are always available but don't get shortcuts
   const yourCommands = ['rt']; // Roundtable always gets shortcut
   
@@ -621,7 +621,7 @@ export async function generateWelcomeDocument(aboutYou, aboutProject) {
     });
   }
 
-  const expertsList = experts.map(e => `- **${e.name}** (${e.role}) - See \`.fwdpro/0-your-experts/${e.file}\``).join('\n');
+  const expertsList = experts.map(e => `- **${e.name}** (${e.role}) - See \`.fwdpro/_your-experts/${e.file}\``).join('\n');
 
   return `# 🚀 Welcome to FWD PRO!
 
@@ -643,7 +643,7 @@ ${expertsList}
 
 1. **Tag an expert** in your conversation: \`@genna\`, \`@denny\`, \`@ada\`, etc.
 2. **Give them context** about what you need
-3. **They collaborate** through the roundtable system
+3. **They collaborate** through the _roundtable system
 4. **You review and approve** their work
 
 ---
@@ -697,19 +697,17 @@ Your project files have been created with basic information. You can flesh them 
 .fwdpro/
 ├── 00-welcome.md              # This file! Your quick-start guide
 │
-├── 0-roundtable/              # Where experts collaborate
+├── _roundtable/               # Where experts collaborate
 │   ├── whiteboards.md        # Expert status updates
 │   ├── [your-name]-checklist.md  # Items for you to review
 │   └── workspace/            # Active work-in-progress
 │
-├── 0-your-experts/            # Quick access to your active experts
+├── _your-experts/             # Quick access to your active experts
 │   ├── genna.md              # Chief Architect
 │   ├── denny.md              # Systems Architect
 │   └── ...                   # Your other experts
 │
-├── 0-your-commands/           # Shortcuts to your frequently used commands
-│   ├── create-specflow.md    # Create a technical spec with TDD
-│   ├── execute-specflow.md   # Implement spec with TDD + QA
+├── _your-commands/            # Quick access to commands
 │   └── rt.md                 # Call a roundtable meeting
 │
 ├── config/                    # Your project configuration
@@ -736,12 +734,12 @@ Your project files have been created with basic information. You can flesh them 
 1. Tag **@denny** to design the system/spec
 2. He'll create a spec and hand off to **@ada**
 3. **@ada** implements the code
-4. Review in \`0-roundtable/workspace/\`
+4. Review in \`_roundtable/workspace/\`
 
 ### Getting Strategic Advice
 1. Tag **@genna** for vision/strategy questions
 2. She'll coordinate with other experts as needed
-3. Check \`0-roundtable/whiteboards.md\` for status
+3. Check \`_roundtable/whiteboards.md\` for status
 
 ### Running a Roundtable
 1. Use the command: \`@rt [topic]\`
@@ -755,31 +753,31 @@ Your project files have been created with basic information. You can flesh them 
 ### Must Read
 - **\`.fwdpro/pro-os/project/founder-profile.md\`** - Your preferences and context
 - **\`.fwdpro/pro-os/project/project-kb.md\`** - Your project knowledge base
-- **\`.fwdpro/0-roundtable/whiteboards.md\`** - Expert status board
-- **\`.fwdpro/0-roundtable/[your-name]-checklist.md\`** - Items for your review
+- **\`.fwdpro/_roundtable/whiteboards.md\`** - Expert status board
+- **\`.fwdpro/_roundtable/[your-name]-checklist.md\`** - Items for your review
 
 ### Reference When Needed
-- **\`.fwdpro/0-your-experts/\`** - Expert bios and capabilities
-- **\`.fwdpro/0-your-commands/\`** - Available commands
+- **\`.fwdpro/_your-experts/\`** - Expert bios and capabilities
+- **\`.fwdpro/_your-commands/\`** - Available commands
 - **\`.fwdpro/pro-os/user-docs/\`** - Full user guides and FAQs
 
 ---
 
 ## 🔄 The Roundtable System
 
-The **roundtable** is where your experts collaborate:
+The **_roundtable** is where your experts collaborate:
 
-1. **Whiteboards** (\`0-roundtable/whiteboards.md\`)
+1. **Whiteboards** (\`_roundtable/whiteboards.md\`)
    - Each expert has a whiteboard section
    - Shows what they're working on
    - Updated in real-time
 
-2. **Workspace** (\`0-roundtable/workspace/\`)
+2. **Workspace** (\`_roundtable/workspace/\`)
    - Active collaboration files
    - Experts work together here
    - Contains handoffs, decisions, blockers
 
-3. **Founder Checklist** (\`0-roundtable/[your-name]-checklist.md\`)
+3. **Founder Checklist** (\`_roundtable/[your-name]-checklist.md\`)
    - Items that need your input
    - Decisions to approve
    - Reviews pending
@@ -798,7 +796,7 @@ ${aboutProject.commStyle === 'direct' ? 'You prefer **direct, concise communicat
 ${aboutProject.workTypes.includes('investor') ? '- **@lyna** - Fundraising, pitch decks, investor relations\n' : ''}${aboutProject.workTypes.includes('marketing') ? '- **@benji** - Marketing, growth, operations\n' : ''}${aboutProject.workTypes.includes('legal') ? '- **@elle** - Legal, compliance, contracts\n' : ''}${aboutProject.domainExpert ? `- **@${aboutProject.domainExpert.expertName.toLowerCase().replace(/\s+/g, '-')}** - ${aboutProject.domainExpert.domain}\n` : ''}
 ### Best Practices
 1. **Be specific** - The more context you give, the better the output
-2. **Check the roundtable** - See what's in progress in \`0-roundtable/\`
+2. **Check the _roundtable** - See what's in progress in \`_roundtable/\`
 3. **Review deliverables** - Found in \`.fwdpro/documents/\`
 4. **Update your KB** - Keep \`project-kb.md\` current as things evolve
 
@@ -813,7 +811,7 @@ ${aboutProject.workTypes.includes('investor') ? '- **@lyna** - Fundraising, pitc
 
 ### Common Questions
 - **"How do I update my profile?"** → Use \`@update-fp\` command
-- **"How do roundtables work?"** → See \`.fwdpro/0-your-commands/rt.md\`
+- **"How do roundtables work?"** → See \`.fwdpro/_your-commands/rt.md\`
 - **"Where are all the commands?"** → See \`.fwdpro/pro-os/commands/\`
 
 ---
@@ -1150,12 +1148,12 @@ workspace:
     - project/project-kb.md (project facts and context)
     - project/mission.md (your vision and mission)
     - project/people.md (team and community context)
-    - roundtable/whiteboards.md (current work overview)
-    - roundtable/workspace/ (active work to review)
+    - _roundtable/whiteboards.md (current work overview)
+    - _roundtable/workspace/ (active work to review)
   writes_to:
-    - roundtable/workspace/ (my reviews and ${domain.toLowerCase()} guidance)
-    - roundtable/whiteboards.md (my whiteboard section updates)
-    - roundtable/[your-name]-checklist.md (tasks for you)
+    - _roundtable/workspace/ (my reviews and ${domain.toLowerCase()} guidance)
+    - _roundtable/whiteboards.md (my whiteboard section updates)
+    - _roundtable/[your-name]-checklist.md (tasks for you)
     - documents/ (${domain.toLowerCase()} guidelines - AI organizes intuitively)
   
 customization:

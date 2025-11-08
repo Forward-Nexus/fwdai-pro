@@ -21,6 +21,10 @@ export async function runMigrations(projectPath, fromVersion, toVersion) {
   if (needsMigration(fromVersion, '1.1.0')) {
     migrations.push(migrate_to_1_1_0);
   }
+  
+  if (needsMigration(fromVersion, '2.2.1')) {
+    migrations.push(migrate_to_2_2_1);
+  }
 
   // Run migrations in order
   for (const migration of migrations) {
@@ -94,6 +98,44 @@ async function migrate_to_1_1_0(fwdproDir) {
   }
 
   console.log(chalk.green('  ✓ 1.1.0 migration complete'));
+}
+
+/**
+ * Migration: 2.2.0 -> 2.2.1
+ * - Rename 0-roundtable/ -> _roundtable/
+ * - Rename 0-your-commands/ -> _your-commands/
+ * - Rename 0-your-experts/ -> _your-experts/
+ * - Rename roundtable/ -> _roundtable/ (for older installs)
+ */
+async function migrate_to_2_2_1(fwdproDir) {
+  console.log(chalk.yellow('  → Applying 2.2.1 migration (folder renaming)...'));
+
+  const renamePairs = [
+    ['0-roundtable', '_roundtable'],
+    ['roundtable', '_roundtable'],
+    ['0-your-commands', '_your-commands'],
+    ['0-your-experts', '_your-experts']
+  ];
+
+  for (const [oldName, newName] of renamePairs) {
+    const oldPath = path.join(fwdproDir, oldName);
+    const newPath = path.join(fwdproDir, newName);
+
+    if (await fs.pathExists(oldPath)) {
+      console.log(chalk.gray(`    - Renaming ${oldName}/ → ${newName}/...`));
+      
+      // If new path already exists, merge contents
+      if (await fs.pathExists(newPath)) {
+        console.log(chalk.yellow(`    - ${newName}/ already exists, merging contents...`));
+        await fs.copy(oldPath, newPath, { overwrite: false });
+        await fs.remove(oldPath);
+      } else {
+        await fs.move(oldPath, newPath);
+      }
+    }
+  }
+
+  console.log(chalk.green('  ✓ 2.2.1 migration complete'));
 }
 
 /**

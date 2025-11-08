@@ -1,7 +1,7 @@
 /**
  * Favorites (Symlinks)
  * 
- * Create shortcuts in 0-your-experts/ and 0-your-commands/ folders
+ * Create shortcuts in _your-experts/ and _your-commands/ folders
  * Based on active experts and work types
  */
 
@@ -9,8 +9,8 @@ import fs from 'fs-extra';
 import path from 'path';
 
 export async function createFavorites(projectPath, workTypes, domainExpert) {
-  const yourExpertsPath = path.join(projectPath, '.fwdpro', '0-your-experts');
-  const yourCommandsPath = path.join(projectPath, '.fwdpro', '0-your-commands');
+  const yourExpertsPath = path.join(projectPath, '.fwdpro', '_your-experts');
+  const yourCommandsPath = path.join(projectPath, '.fwdpro', '_your-commands');
 
   await fs.ensureDir(yourExpertsPath);
   await fs.ensureDir(yourCommandsPath);

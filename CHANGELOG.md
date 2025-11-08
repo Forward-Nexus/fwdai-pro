@@ -11,7 +11,30 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
-## [2.2.0] - 2025-11-07
+## [2.2.1] - 2025-11-08
+
+### 🔄 Force Update & Folder Renaming
+
+**Breaking Changes:**
+- **Folder Renaming:** `0-roundtable/` → `_roundtable/`, `0-your-experts/` → `_your-experts/`, `0-your-commands/` → `_your-commands/`
+- **Complete System Refresh:** All `pro-os/` system files updated to latest v2.2.0 features
+- **Preserved:** Your `_roundtable/`, `documents/`, and `pro-os/project/` remain untouched
+
+**What's New:**
+- ✅ Automatic folder migration (old folders renamed to underscore convention)
+- ✅ All v2.2.0 utilities now properly installed (30+ production tools)
+- ✅ Fresh `.cursor/rules/` with all expert and command `.mdc` files
+- ✅ Cleaned up deprecated files from older versions
+- ✅ Underscore naming for better file sorting and visibility
+
+**Migration:**
+This update will automatically rename your folders and refresh all system files while preserving your work. Run `npx @fwd-ai/pro update` to upgrade.
+
+**Important:** Back up `documents/`, `_roundtable/`, and `pro-os/project/` before updating (though the updater preserves them).
+
+---
+
+## [2.2.0] - 2025-11-08
 
 ### 🚀 Major Feature Release: Production Utilities
 
