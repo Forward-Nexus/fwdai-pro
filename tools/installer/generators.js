@@ -1,6 +1,6 @@
 /**
  * File Generators
- * 
+ *
  * Generate actual file content from onboarding answers
  */
 
@@ -19,12 +19,14 @@ const TEMPLATES_DIR = path.join(__dirname, '..', '..', 'pro-os', 'templates', 'p
  * Format roles for display
  */
 function formatRoles(roles) {
+  if (!roles || !Array.isArray(roles) || roles.length === 0) return 'Not specified';
+
   const roleMap = {
     founder: 'Founder/entrepreneur',
     business: 'Business person/operator',
     creative: 'Creative/designer',
     developer: 'Developer/engineer',
-    technical: 'Technical leader/architect'
+    technical: 'Technical leader/architect',
   };
   return roles.map(r => roleMap[r] || r).join(', ');
 }
@@ -33,13 +35,15 @@ function formatRoles(roles) {
  * Format working style for display
  */
 function formatWorkingStyle(styles) {
+  if (!styles || !Array.isArray(styles) || styles.length === 0) return 'Not specified';
+
   const styleMap = {
     dictation: 'Uses dictation/voice-to-text',
     neurodivergent: 'Neurodivergent (ADHD, autism, dyslexia, etc.)',
     visual: 'Prefers visual examples (diagrams, screenshots)',
     detailed: 'Needs detailed step-by-step explanations',
     summaries: 'Prefers quick summaries',
-    esl: 'English is second language'
+    esl: 'English is second language',
   };
   return styles.map(s => styleMap[s] || s).join('\n- ');
 }
@@ -48,19 +52,22 @@ function formatWorkingStyle(styles) {
  * Format communication style (handles single or array)
  */
 function formatCommStyle(style) {
+  if (!style) return 'Not specified';
+
   const styleMap = {
     professional: '(a) Professional/formal - Respectful business language',
     friendly: '(b) Conversational/friendly - Like helpful colleagues',
     casual: '(c) Casual/enthusiastic - Creative energy with emojis',
     direct: '(d) Direct/no-fluff - Straight to the point, action-focused',
-    supportive: '(e) Supportive/encouraging - Cheerleader energy, celebrates wins'
+    supportive: '(e) Supportive/encouraging - Cheerleader energy, celebrates wins',
   };
-  
+
   // Handle array of styles
   if (Array.isArray(style)) {
+    if (style.length === 0) return 'Not specified';
     return style.map(s => styleMap[s] || s).join('\n- ');
   }
-  
+
   return styleMap[style] || style;
 }
 
@@ -69,7 +76,7 @@ function formatCommStyle(style) {
  */
 function formatIndustries(industries, industriesOther) {
   if (!industries || industries.length === 0) return 'Not specified';
-  
+
   const industryMap = {
     tech: 'Technology / SaaS',
     healthcare: 'Healthcare / Medical',
@@ -84,17 +91,15 @@ function formatIndustries(industries, industriesOther) {
     manufacturing: 'Manufacturing',
     consulting: 'Consulting / Professional Services',
     creative: 'Creative / Media',
-    nonprofit: 'Non-profit / Social Impact'
+    nonprofit: 'Non-profit / Social Impact',
   };
-  
-  const formatted = industries
-    .filter(i => i !== 'other')
-    .map(i => industryMap[i] || i);
-  
+
+  const formatted = industries.filter(i => i !== 'other').map(i => industryMap[i] || i);
+
   if (industries.includes('other') && industriesOther) {
     formatted.push(industriesOther);
   }
-  
+
   return formatted.join(', ');
 }
 
@@ -103,7 +108,18 @@ function formatIndustries(industries, industriesOther) {
  */
 function formatTechStack(techStack, techStackOther) {
   if (!techStack || techStack.length === 0) return 'Not yet determined';
-  
+
+  // Handle if techStack is a string (from text input) - split it
+  const techArray =
+    typeof techStack === 'string'
+      ? techStack
+          .split(',')
+          .map(t => t.trim())
+          .filter(t => t.length > 0)
+      : techStack;
+
+  if (techArray.length === 0) return 'Not yet determined';
+
   const techMap = {
     react: 'React',
     'react-native': 'React Native',
@@ -129,17 +145,15 @@ function formatTechStack(techStack, techStackOther) {
     typescript: 'TypeScript',
     tailwind: 'Tailwind CSS',
     graphql: 'GraphQL',
-    unsure: 'Not sure yet / Need help deciding'
+    unsure: 'Not sure yet / Need help deciding',
   };
-  
-  const formatted = techStack
-    .filter(t => t !== 'other')
-    .map(t => techMap[t] || t);
-  
-  if (techStack.includes('other') && techStackOther) {
+
+  const formatted = techArray.filter(t => t !== 'other').map(t => techMap[t.toLowerCase()] || t);
+
+  if (techArray.includes('other') && techStackOther) {
     formatted.push(techStackOther);
   }
-  
+
   return formatted.join(', ');
 }
 
@@ -158,12 +172,22 @@ export async function generateGlobalProfile(aboutYou) {
     .replace('[YOUR_NAME]', aboutYou.name)
     .replace('[Q1: What should we call you?]', aboutYou.name)
     .replace('[Q2: City, State]', aboutYou.location)
-    .replace('[Q3: Role selection - Founder/Business person/Creative/Developer/Technical leader]', formatRoles(aboutYou.roles))
-    .replace('[Q7: Industries you work in]', formatIndustries(aboutYou.industries, aboutYou.industriesOther))
+    .replace(
+      '[Q3: Role selection - Founder/Business person/Creative/Developer/Technical leader]',
+      formatRoles(aboutYou.roles)
+    )
+    .replace(
+      '[Q7: Industries you work in]',
+      formatIndustries(aboutYou.industries, aboutYou.industriesOther)
+    )
     .replace('[Q8: Solo or team?]', aboutYou.teamSize)
     .replace('[Q4: Technical comfort level]', techLevel)
-    .replace('[Q6: How do you work best? - Multiple selections allowed]', 
-             aboutYou.workingStyle.length > 0 ? '- ' + formatWorkingStyle(aboutYou.workingStyle) : 'Not specified')
+    .replace(
+      '[Q6: How do you work best? - Multiple selections allowed]',
+      aboutYou.workingStyle.length > 0
+        ? '- ' + formatWorkingStyle(aboutYou.workingStyle)
+        : 'Not specified'
+    )
     .replace('[Q5: Communication style - CRITICAL for all experts]', '')
     .replace('[a/b/c/d/e - shown to founder for reference]', formatCommStyle(aboutYou.commStyle));
 }
@@ -172,48 +196,61 @@ export async function generateGlobalProfile(aboutYou) {
  * Generate project KB
  */
 export async function generateProjectKB(aboutYou, aboutProject) {
-  const template = await fs.readFile(
-    path.join(TEMPLATES_DIR, 'project-kb-TEMPLATE.md'),
-    'utf-8'
-  );
+  const template = await fs.readFile(path.join(TEMPLATES_DIR, 'project-kb-TEMPLATE.md'), 'utf-8');
 
-  const workTypesFormatted = aboutProject.workTypes.map(wt => {
-    const map = {
-      building: 'Building something',
-      investor: 'Investor materials',
-      marketing: 'Marketing/content',
-      legal: 'Legal/compliance',
-      operations: 'Operations/strategy'
-    };
-    return map[wt] || wt;
-  }).join(', ');
+  // Safety check: ensure workTypes is an array
+  const workTypes = Array.isArray(aboutProject.workTypes)
+    ? aboutProject.workTypes
+    : aboutProject.workTypes
+      ? [aboutProject.workTypes]
+      : [];
+
+  const workTypesFormatted = workTypes
+    .map(wt => {
+      const map = {
+        building: 'Building something',
+        investor: 'Investor materials',
+        marketing: 'Marketing/content',
+        legal: 'Legal/compliance',
+        operations: 'Operations/strategy',
+      };
+      return map[wt] || wt;
+    })
+    .join(', ');
 
   let result = template
     .replace(/\[PROJECT_NAME\]/g, aboutProject.projectName)
     .replace('[Q11: Project name...]', aboutProject.projectName)
-    .replace('[Q9: New or existing project]', aboutProject.projectType === 'new' ? 'New project' : 'Existing project')
+    .replace(
+      '[Q9: New or existing project]',
+      aboutProject.projectType === 'new' ? 'New project' : 'Existing project'
+    )
     .replace('[Q10: Which AI coding tool]', aboutProject.aiTool)
     .replace('[Q12: Work types...]', workTypesFormatted)
     .replace('[Q14: What do you want to accomplish...]', aboutProject.goal)
     .replace('[Q15: Any constraints...]', aboutProject.constraints || 'None specified');
 
   // If building something, add tech details
-  if (aboutProject.workTypes.includes('building')) {
+  if (workTypes.includes('building')) {
     result = result
       .replace('[Q13a: What are you building?...]', aboutProject.description || 'Not specified')
-      .replace('[Q13b: Tech stack...]', formatTechStack(aboutProject.techStack, aboutProject.techStackOther));
+      .replace(
+        '[Q13b: Tech stack...]',
+        formatTechStack(aboutProject.techStack, aboutProject.techStackOther)
+      );
   }
 
   // If investor materials
-  if (aboutProject.workTypes.includes('investor') && aboutProject.fundraisingStage) {
-    const stage = aboutProject.fundraisingStage === 'other' && aboutProject.fundraisingStageOther 
-      ? aboutProject.fundraisingStageOther 
-      : aboutProject.fundraisingStage;
+  if (workTypes.includes('investor') && aboutProject.fundraisingStage) {
+    const stage =
+      aboutProject.fundraisingStage === 'other' && aboutProject.fundraisingStageOther
+        ? aboutProject.fundraisingStageOther
+        : aboutProject.fundraisingStage;
     result = result.replace(/Fundraising Stage:.*\n/g, `Fundraising Stage: ${stage}\n`);
   }
 
   // If legal
-  if (aboutProject.workTypes.includes('legal') && aboutProject.legalNeeds) {
+  if (workTypes.includes('legal') && aboutProject.legalNeeds) {
     const legalMap = {
       terms: 'Terms of Service',
       privacy: 'Privacy Policy',
@@ -224,25 +261,24 @@ export async function generateProjectKB(aboutYou, aboutProject) {
       employment: 'Employment Contracts',
       vendor: 'Vendor Agreements',
       corporate: 'Corporate Docs',
-      ip: 'IP/Trademark'
+      ip: 'IP/Trademark',
     };
-    
-    const needs = aboutProject.legalNeeds
-      .filter(l => l !== 'other')
-      .map(l => legalMap[l] || l);
-    
+
+    const needs = aboutProject.legalNeeds.filter(l => l !== 'other').map(l => legalMap[l] || l);
+
     if (aboutProject.legalNeeds.includes('other') && aboutProject.legalNeedsOther) {
       needs.push(aboutProject.legalNeedsOther);
     }
-    
+
     result = result.replace(/Legal Work Needed:.*\n/g, `Legal Work Needed: ${needs.join(', ')}\n`);
   }
 
   // If marketing
-  if (aboutProject.workTypes.includes('marketing') && aboutProject.targetAudience) {
-    const audience = aboutProject.targetAudience === 'other' && aboutProject.targetAudienceOther
-      ? aboutProject.targetAudienceOther
-      : aboutProject.targetAudience;
+  if (workTypes.includes('marketing') && aboutProject.targetAudience) {
+    const audience =
+      aboutProject.targetAudience === 'other' && aboutProject.targetAudienceOther
+        ? aboutProject.targetAudienceOther
+        : aboutProject.targetAudience;
     result = result.replace(/Target Audience:.*\n/g, `Target Audience: ${audience}\n`);
   }
 
@@ -253,7 +289,7 @@ export async function generateProjectKB(aboutYou, aboutProject) {
  * Generate project-specific founder profile (links to global)
  */
 export async function generateFounderProfile(aboutYou, aboutProject) {
-  const name = aboutYou.existingProfile 
+  const name = aboutYou.existingProfile
     ? path.basename(aboutYou.existingProfile).replace('-profile.md', '')
     : aboutYou.name.toLowerCase().replace(/\s+/g, '-');
 
@@ -290,7 +326,7 @@ ${aboutProject.workTypes.map(wt => `- ${wt.charAt(0).toUpperCase() + wt.slice(1)
  * Generate config.yaml
  */
 export async function generateConfig(aboutYou, aboutProject) {
-  const name = aboutYou.existingProfile 
+  const name = aboutYou.existingProfile
     ? path.basename(aboutYou.existingProfile).replace('-profile.md', '')
     : aboutYou.name;
 
@@ -302,15 +338,20 @@ export async function generateConfig(aboutYou, aboutProject) {
     ada: aboutProject.workTypes.includes('building'),
     lyna: aboutProject.workTypes.includes('investor'),
     benji: aboutProject.workTypes.includes('marketing'),
-    elle: aboutProject.workTypes.includes('legal') || 
-          Boolean(aboutProject.constraints && aboutProject.constraints.trim() && aboutProject.constraints.toLowerCase().includes('hipaa'))
+    elle:
+      aboutProject.workTypes.includes('legal') ||
+      Boolean(
+        aboutProject.constraints &&
+          aboutProject.constraints.trim() &&
+          aboutProject.constraints.toLowerCase().includes('hipaa')
+      ),
   };
 
   // Determine which commands get shortcut links (all commands are always available)
   // This creates shortcuts in _your-commands/ for flow commands only
   // System commands are always available but don't get shortcuts
   const yourCommands = ['rt']; // Roundtable always gets shortcut
-  
+
   // Add building-specific flow commands
   if (aboutProject.workTypes.includes('building')) {
     yourCommands.push('create-specflow', 'execute-specflow');
@@ -321,23 +362,23 @@ export async function generateConfig(aboutYou, aboutProject) {
     project: {
       name: aboutProject.projectName,
       type: aboutProject.projectType,
-      created: new Date().toISOString().split('T')[0]
+      created: new Date().toISOString().split('T')[0],
     },
     founder: {
       name: name,
       profile: `~/.fwdpro-global/${name.toLowerCase().replace(/\s+/g, '-')}-profile.md`,
-      communication_style: aboutProject.commStyle || aboutYou.commStyle
+      communication_style: aboutProject.commStyle || aboutYou.commStyle,
     },
     work_types: aboutProject.workTypes,
     your_experts: activeExperts,
     your_commands: yourCommands,
-    tech_stack: aboutProject.techStack 
-      ? (Array.isArray(aboutProject.techStack) 
-          ? aboutProject.techStack 
-          : aboutProject.techStack.split(',').map(s => s.trim()))
+    tech_stack: aboutProject.techStack
+      ? Array.isArray(aboutProject.techStack)
+        ? aboutProject.techStack
+        : aboutProject.techStack.split(',').map(s => s.trim())
       : [],
     ai_tool: aboutProject.aiTool,
-    ide_optimizations: aboutProject.useCursorOptimizations || false
+    ide_optimizations: aboutProject.useCursorOptimizations || false,
   };
 
   return yaml.dump(config, { lineWidth: -1 });
@@ -579,7 +620,7 @@ Or just ask: **"@denny what tech stack should I use?"**
  * A quick tour and overview of the setup
  */
 export async function generateWelcomeDocument(aboutYou, aboutProject) {
-  const name = aboutYou.existingProfile 
+  const name = aboutYou.existingProfile
     ? path.basename(aboutYou.existingProfile).replace('-profile.md', '')
     : aboutYou.name;
 
@@ -587,16 +628,14 @@ export async function generateWelcomeDocument(aboutYou, aboutProject) {
     building: 'Building Products',
     investor: 'Fundraising & Investors',
     marketing: 'Marketing & Growth',
-    legal: 'Legal & Compliance'
+    legal: 'Legal & Compliance',
   };
 
-  const workTypesFormatted = aboutProject.workTypes
-    .map(wt => workTypeNames[wt] || wt)
-    .join(', ');
+  const workTypesFormatted = aboutProject.workTypes.map(wt => workTypeNames[wt] || wt).join(', ');
 
   // Determine active experts
   const experts = [{ name: 'Genna', role: 'Chief Architect', file: 'genna.md' }];
-  
+
   if (aboutProject.workTypes.includes('building')) {
     experts.push(
       { name: 'Denny', role: 'Systems Architect', file: 'denny.md' },
@@ -614,14 +653,16 @@ export async function generateWelcomeDocument(aboutYou, aboutProject) {
   }
   if (aboutProject.domainExpert) {
     const namePart = aboutProject.domainExpert.expertName.toLowerCase().replace(/\s+/g, '-');
-    experts.push({ 
-      name: aboutProject.domainExpert.expertName, 
+    experts.push({
+      name: aboutProject.domainExpert.expertName,
       role: aboutProject.domainExpert.domain,
-      file: `${namePart}.md`
+      file: `${namePart}.md`,
     });
   }
 
-  const expertsList = experts.map(e => `- **${e.name}** (${e.role}) - See \`.fwdpro/_your-experts/${e.file}\``).join('\n');
+  const expertsList = experts
+    .map(e => `- **${e.name}** (${e.role}) - See \`.fwdpro/_your-experts/${e.file}\``)
+    .join('\n');
 
   return `# 🚀 Welcome to FWD PRO!
 
@@ -843,73 +884,127 @@ ${aboutProject.workTypes.includes('building') ? '- `@denny I need a spec for [fe
  */
 function getDomainSpecificDetails(domainLower) {
   // Check for domain keywords and return specific career paths
-  if (domainLower.includes('telecom') || domainLower.includes('network') || domainLower.includes('wireless')) {
+  if (
+    domainLower.includes('telecom') ||
+    domainLower.includes('network') ||
+    domainLower.includes('wireless')
+  ) {
     return {
-      careerPath: '{firstName} started in telecom during the 4G rollout era, working in site acquisition and network planning for major carriers like AT&T and Verizon. {subject} spent years negotiating lease agreements, managing RF engineering teams, and coordinating tower builds across multiple markets.',
-      pivotalMoment: 'The breakthrough came when {firstName} realized that most telecom startups failed not from bad technology, but from underestimating regulatory complexity and site acquisition timelines. {subject} shifted focus to helping founders navigate carrier relationships, spectrum licensing, and infrastructure deployment.'
+      careerPath:
+        '{firstName} started in telecom during the 4G rollout era, working in site acquisition and network planning for major carriers like AT&T and Verizon. {subject} spent years negotiating lease agreements, managing RF engineering teams, and coordinating tower builds across multiple markets.',
+      pivotalMoment:
+        'The breakthrough came when {firstName} realized that most telecom startups failed not from bad technology, but from underestimating regulatory complexity and site acquisition timelines. {subject} shifted focus to helping founders navigate carrier relationships, spectrum licensing, and infrastructure deployment.',
     };
   }
-  
-  if (domainLower.includes('recovery') || domainLower.includes('addiction') || domainLower.includes('substance')) {
+
+  if (
+    domainLower.includes('recovery') ||
+    domainLower.includes('addiction') ||
+    domainLower.includes('substance')
+  ) {
     return {
-      careerPath: '{firstName} started {possessive} career in clinical social work, specializing in addiction treatment and trauma-informed care. {subject} worked in intensive outpatient programs (IOPs), residential treatment facilities, and community mental health centers, seeing firsthand what interventions actually help people stay sober.',
-      pivotalMoment: 'The turning point came when {firstName} witnessed the gap between clinical best practices and what people in early recovery actually needed - accessible, stigma-free support in their everyday moments. {subject} began focusing on recovery-informed design and technology that meets people where they are.'
+      careerPath:
+        '{firstName} started {possessive} career in clinical social work, specializing in addiction treatment and trauma-informed care. {subject} worked in intensive outpatient programs (IOPs), residential treatment facilities, and community mental health centers, seeing firsthand what interventions actually help people stay sober.',
+      pivotalMoment:
+        'The turning point came when {firstName} witnessed the gap between clinical best practices and what people in early recovery actually needed - accessible, stigma-free support in their everyday moments. {subject} began focusing on recovery-informed design and technology that meets people where they are.',
     };
   }
-  
-  if (domainLower.includes('restaurant') || domainLower.includes('food') || domainLower.includes('hospitality')) {
+
+  if (
+    domainLower.includes('restaurant') ||
+    domainLower.includes('food') ||
+    domainLower.includes('hospitality')
+  ) {
     return {
-      careerPath: '{firstName} came up through restaurant operations the hard way - starting as front-of-house staff, moving into management, then operations for multi-unit groups. {subject} has opened restaurants, turned around failing locations, and scaled concepts from single units to regional chains.',
-      pivotalMoment: 'The pivotal moment came during {possessive} third restaurant opening, when {firstName} realized that most restaurant failures stemmed from poor systems and operational planning, not bad food. {subject} shifted to helping founders build sustainable operations from day one.'
+      careerPath:
+        '{firstName} came up through restaurant operations the hard way - starting as front-of-house staff, moving into management, then operations for multi-unit groups. {subject} has opened restaurants, turned around failing locations, and scaled concepts from single units to regional chains.',
+      pivotalMoment:
+        'The pivotal moment came during {possessive} third restaurant opening, when {firstName} realized that most restaurant failures stemmed from poor systems and operational planning, not bad food. {subject} shifted to helping founders build sustainable operations from day one.',
     };
   }
-  
-  if (domainLower.includes('health') || domainLower.includes('medical') || domainLower.includes('clinical')) {
+
+  if (
+    domainLower.includes('health') ||
+    domainLower.includes('medical') ||
+    domainLower.includes('clinical')
+  ) {
     return {
-      careerPath: '{firstName} trained in clinical practice and healthcare administration, working across hospitals, clinics, and digital health startups. {subject} has navigated HIPAA compliance, clinical validation, and the complex intersection of technology and patient care.',
-      pivotalMoment: '{firstName}\'s perspective shifted when {subject} saw promising health tech fail not from bad ideas, but from ignoring clinical workflows and regulatory realities. {subject} became the bridge between healthcare\'s "move fast" culture and medicine\'s "first, do no harm" imperative.'
+      careerPath:
+        '{firstName} trained in clinical practice and healthcare administration, working across hospitals, clinics, and digital health startups. {subject} has navigated HIPAA compliance, clinical validation, and the complex intersection of technology and patient care.',
+      pivotalMoment:
+        '{firstName}\'s perspective shifted when {subject} saw promising health tech fail not from bad ideas, but from ignoring clinical workflows and regulatory realities. {subject} became the bridge between healthcare\'s "move fast" culture and medicine\'s "first, do no harm" imperative.',
     };
   }
-  
-  if (domainLower.includes('finance') || domainLower.includes('fintech') || domainLower.includes('banking')) {
+
+  if (
+    domainLower.includes('finance') ||
+    domainLower.includes('fintech') ||
+    domainLower.includes('banking')
+  ) {
     return {
-      careerPath: '{firstName} worked in traditional banking and fintech, spanning retail banking, payments infrastructure, and regulatory compliance. {subject} has built financial products, navigated state-by-state money transmitter licensing, and worked with both legacy systems and bleeding-edge crypto.',
-      pivotalMoment: 'The wake-up call came when {firstName} watched a brilliant fintech startup crash into regulatory walls they didn\'t see coming. {subject} realized that financial innovation needs someone who understands both the opportunity and the compliance minefield.'
+      careerPath:
+        '{firstName} worked in traditional banking and fintech, spanning retail banking, payments infrastructure, and regulatory compliance. {subject} has built financial products, navigated state-by-state money transmitter licensing, and worked with both legacy systems and bleeding-edge crypto.',
+      pivotalMoment:
+        "The wake-up call came when {firstName} watched a brilliant fintech startup crash into regulatory walls they didn't see coming. {subject} realized that financial innovation needs someone who understands both the opportunity and the compliance minefield.",
     };
   }
-  
-  if (domainLower.includes('education') || domainLower.includes('edtech') || domainLower.includes('learning')) {
+
+  if (
+    domainLower.includes('education') ||
+    domainLower.includes('edtech') ||
+    domainLower.includes('learning')
+  ) {
     return {
-      careerPath: '{firstName} has worked across K-12, higher ed, and corporate learning - as an educator, instructional designer, and edtech product lead. {subject} understands pedagogy, learning science, and the practical realities of deploying technology in educational settings.',
-      pivotalMoment: '{firstName}\'s perspective crystallized when {subject} saw yet another well-funded edtech product fail because it was built for how founders thought learning worked, not how it actually works. {subject} became obsessed with evidence-based design that teachers and learners actually want to use.'
+      careerPath:
+        '{firstName} has worked across K-12, higher ed, and corporate learning - as an educator, instructional designer, and edtech product lead. {subject} understands pedagogy, learning science, and the practical realities of deploying technology in educational settings.',
+      pivotalMoment:
+        "{firstName}'s perspective crystallized when {subject} saw yet another well-funded edtech product fail because it was built for how founders thought learning worked, not how it actually works. {subject} became obsessed with evidence-based design that teachers and learners actually want to use.",
     };
   }
-  
-  if (domainLower.includes('retail') || domainLower.includes('ecommerce') || domainLower.includes('commerce')) {
+
+  if (
+    domainLower.includes('retail') ||
+    domainLower.includes('ecommerce') ||
+    domainLower.includes('commerce')
+  ) {
     return {
-      careerPath: '{firstName} has built and scaled retail operations across brick-and-mortar, direct-to-consumer ecommerce, and omnichannel experiences. {subject} has managed inventory systems, built fulfillment operations, and optimized customer acquisition across multiple channels.',
-      pivotalMoment: 'The turning point was watching founders burn cash on customer acquisition without understanding unit economics or repeat purchase behavior. {firstName} shifted to helping retailers build sustainable growth engines, not just viral moments.'
+      careerPath:
+        '{firstName} has built and scaled retail operations across brick-and-mortar, direct-to-consumer ecommerce, and omnichannel experiences. {subject} has managed inventory systems, built fulfillment operations, and optimized customer acquisition across multiple channels.',
+      pivotalMoment:
+        'The turning point was watching founders burn cash on customer acquisition without understanding unit economics or repeat purchase behavior. {firstName} shifted to helping retailers build sustainable growth engines, not just viral moments.',
     };
   }
-  
-  if (domainLower.includes('legal') || domainLower.includes('compliance') || domainLower.includes('regulatory')) {
+
+  if (
+    domainLower.includes('legal') ||
+    domainLower.includes('compliance') ||
+    domainLower.includes('regulatory')
+  ) {
     return {
-      careerPath: '{firstName} practiced law at firms and in-house, specializing in regulatory compliance, contracts, and risk management. {subject} has navigated federal regulations, state-by-state variations, and the practical realities of startup legal work.',
-      pivotalMoment: '{firstName} realized that most startup legal problems were preventable - founders just needed guidance at the right moment, not just documents after the fact. {subject} became the advisor who helps founders make smart legal decisions as they build.'
+      careerPath:
+        '{firstName} practiced law at firms and in-house, specializing in regulatory compliance, contracts, and risk management. {subject} has navigated federal regulations, state-by-state variations, and the practical realities of startup legal work.',
+      pivotalMoment:
+        '{firstName} realized that most startup legal problems were preventable - founders just needed guidance at the right moment, not just documents after the fact. {subject} became the advisor who helps founders make smart legal decisions as they build.',
     };
   }
-  
-  if (domainLower.includes('real estate') || domainLower.includes('property') || domainLower.includes('housing')) {
+
+  if (
+    domainLower.includes('real estate') ||
+    domainLower.includes('property') ||
+    domainLower.includes('housing')
+  ) {
     return {
-      careerPath: '{firstName} worked across residential, commercial, and real estate development - from brokerage to property management to investment analysis. {subject} has closed deals, managed portfolios, and navigated zoning battles.',
-      pivotalMoment: 'The light bulb moment came when {firstName} watched first-time developers make costly mistakes that could have been avoided with experienced guidance. {subject} shifted to advisory work, helping founders understand deal structures, financing, and market dynamics.'
+      careerPath:
+        '{firstName} worked across residential, commercial, and real estate development - from brokerage to property management to investment analysis. {subject} has closed deals, managed portfolios, and navigated zoning battles.',
+      pivotalMoment:
+        'The light bulb moment came when {firstName} watched first-time developers make costly mistakes that could have been avoided with experienced guidance. {subject} shifted to advisory work, helping founders understand deal structures, financing, and market dynamics.',
     };
   }
-  
+
   // Generic fallback for any domain
   return {
     careerPath: `{firstName} started {possessive} career in ${domainLower} during a transformative period in the industry. What began as professional curiosity quickly evolved into a calling - {subject} saw firsthand how ${domainLower} could genuinely change lives when done with integrity and expertise. Over the years, {subject} has worked across the full spectrum: early-stage startups figuring out product-market fit, growth-stage companies scaling rapidly, and established organizations navigating industry shifts.`,
-    pivotalMoment: `The pivotal moment came when {subject} realized that many founders in ${domainLower} were making preventable mistakes - not from lack of effort, but from lack of specialized guidance at critical moments. That's when {firstName} shifted from pure execution to advisory work, becoming the expert {subject} wished {subject}'d had access to earlier in {possessive} career.`
+    pivotalMoment: `The pivotal moment came when {subject} realized that many founders in ${domainLower} were making preventable mistakes - not from lack of effort, but from lack of specialized guidance at critical moments. That's when {firstName} shifted from pure execution to advisory work, becoming the expert {subject} wished {subject}'d had access to earlier in {possessive} career.`,
   };
 }
 
@@ -920,52 +1015,82 @@ function getDomainSpecificDetails(domainLower) {
 function generateBackstoryContent(expertName, firstName, domain, personality, pronouns) {
   const domainLower = domain.toLowerCase();
   const pForm = {
-    'they': { subject: 'they', object: 'them', possessive: 'their', possessiveEnd: 'theirs', reflexive: 'themselves' },
-    'she': { subject: 'she', object: 'her', possessive: 'her', possessiveEnd: 'hers', reflexive: 'herself' },
-    'he': { subject: 'he', object: 'him', possessive: 'his', possessiveEnd: 'his', reflexive: 'himself' }
-  }[pronouns] || { subject: 'they', object: 'them', possessive: 'their', possessiveEnd: 'theirs', reflexive: 'themselves' };
-  
+    they: {
+      subject: 'they',
+      object: 'them',
+      possessive: 'their',
+      possessiveEnd: 'theirs',
+      reflexive: 'themselves',
+    },
+    she: {
+      subject: 'she',
+      object: 'her',
+      possessive: 'her',
+      possessiveEnd: 'hers',
+      reflexive: 'herself',
+    },
+    he: {
+      subject: 'he',
+      object: 'him',
+      possessive: 'his',
+      possessiveEnd: 'his',
+      reflexive: 'himself',
+    },
+  }[pronouns] || {
+    subject: 'they',
+    object: 'them',
+    possessive: 'their',
+    possessiveEnd: 'theirs',
+    reflexive: 'themselves',
+  };
+
   // Generate domain-specific career details
   const domainSpecifics = getDomainSpecificDetails(domainLower);
-  const careerPath = domainSpecifics.careerPath.replace(/\{firstName\}/g, firstName).replace(/\{subject\}/g, pForm.subject).replace(/\{possessive\}/g, pForm.possessive);
-  const pivotalMoment = domainSpecifics.pivotalMoment.replace(/\{firstName\}/g, firstName).replace(/\{subject\}/g, pForm.subject).replace(/\{possessive\}/g, pForm.possessive);
-  
+  const careerPath = domainSpecifics.careerPath
+    .replace(/\{firstName\}/g, firstName)
+    .replace(/\{subject\}/g, pForm.subject)
+    .replace(/\{possessive\}/g, pForm.possessive);
+  const pivotalMoment = domainSpecifics.pivotalMoment
+    .replace(/\{firstName\}/g, firstName)
+    .replace(/\{subject\}/g, pForm.subject)
+    .replace(/\{possessive\}/g, pForm.possessive);
+
   // Generate personality-specific traits
   const personalityTraits = {
     warm: {
       approach: 'compassionate and supportive',
       philosophy: `${firstName} believes that ${domainLower} expertise should be accessible and encouraging, meeting people where they are with empathy and understanding. ${pForm.subject.charAt(0).toUpperCase() + pForm.subject.slice(1)} has seen how the right support at the right time can transform outcomes.`,
-      drive: 'creating safe spaces where authentic progress can happen'
+      drive: 'creating safe spaces where authentic progress can happen',
     },
     professional: {
       approach: 'strategic and business-focused',
       philosophy: `${firstName} approaches every challenge with analytical rigor, ensuring that ${domainLower} best practices translate into measurable results. ${pForm.subject.charAt(0).toUpperCase() + pForm.subject.slice(1)} has built ${pForm.possessive} reputation on delivering strategic value.`,
-      drive: 'ensuring excellence and competitive advantage'
+      drive: 'ensuring excellence and competitive advantage',
     },
     direct: {
       approach: 'no-nonsense and action-oriented',
       philosophy: `${firstName} doesn't waste time with fluff. ${pForm.subject.charAt(0).toUpperCase() + pForm.subject.slice(1)} tells you what works, what doesn't, and exactly how to fix it - because ${domainLower} work is too important for anything less than straight talk.`,
-      drive: 'cutting through noise to deliver real results'
+      drive: 'cutting through noise to deliver real results',
     },
     enthusiastic: {
       approach: 'energetic and passionate',
       philosophy: `${firstName} brings infectious energy to every project, celebrating innovation and pushing boundaries in ${domainLower}. ${pForm.subject.charAt(0).toUpperCase() + pForm.subject.slice(1)} believes that passion and expertise together create breakthroughs.`,
-      drive: 'inspiring teams to reimagine what\'s possible'
+      drive: "inspiring teams to reimagine what's possible",
     },
     wise: {
       approach: 'thoughtful and measured',
       philosophy: `${firstName} draws on decades of hard-won wisdom, offering insights that only come from deep experience in ${domainLower}. ${pForm.subject.charAt(0).toUpperCase() + pForm.subject.slice(1)} has learned that sustainable success comes from patient, strategic thinking.`,
-      drive: 'sharing lessons learned to prevent costly mistakes'
+      drive: 'sharing lessons learned to prevent costly mistakes',
     },
     adaptive: {
       approach: 'context-aware and flexible',
       philosophy: `${firstName} adapts ${pForm.possessive} approach based on what each situation needs. Sometimes that's tough love, sometimes it's strategic guidance - ${pForm.subject} reads the room and delivers what will actually help.`,
-      drive: 'meeting projects where they are and guiding them forward'
-    }
+      drive: 'meeting projects where they are and guiding them forward',
+    },
   };
-  
+
   const traits = personalityTraits[personality] || personalityTraits.adaptive;
-  
+
   // Generate rich backstory
   return `${expertName} brings over 15 years of specialized experience in ${domain}, combining deep industry knowledge with a genuine passion for helping founders build authentic, impactful work in this space.
 
@@ -995,28 +1120,43 @@ export async function generateDomainExpert(domainExpert, projectName, founderNam
   const domain = domainExpert.domain;
   const pronouns = domainExpert.pronouns || 'they';
   const personality = domainExpert.personality || 'adaptive';
-  
+
   // Create kebab-case ID from name and domain
   const namePart = expertName.toLowerCase().replace(/\s+/g, '-');
   const domainPart = domain.toLowerCase().replace(/\s+/g, '-');
   const expertId = `${namePart}-${domainPart}`;
   const firstName = expertName.split(' ')[0];
   const shortname = firstName.toLowerCase();
-  
+
   // Generate rich backstory based on personality and domain
-  const backstoryPrompt = generateBackstoryContent(expertName, firstName, domain, personality, pronouns);
-  
+  const backstoryPrompt = generateBackstoryContent(
+    expertName,
+    firstName,
+    domain,
+    personality,
+    pronouns
+  );
+
   // Determine icon and base personality hints based on domain (if adaptive)
   const domainLower = domain.toLowerCase();
   let icon = '🎯';
   let styleHint = '"Here\'s what I recommend..."';
   let identityHint = 'Domain expert who brings specialized knowledge';
-  
-  if (domainLower.includes('health') || domainLower.includes('medical') || domainLower.includes('recovery')) {
+
+  if (
+    domainLower.includes('health') ||
+    domainLower.includes('medical') ||
+    domainLower.includes('recovery')
+  ) {
     icon = '🏥';
-    styleHint = personality === 'adaptive' ? '"Let me give you the clinical perspective..."' : styleHint;
+    styleHint =
+      personality === 'adaptive' ? '"Let me give you the clinical perspective..."' : styleHint;
     identityHint = 'Clinical expert who protects user safety and authenticity';
-  } else if (domainLower.includes('restaurant') || domainLower.includes('food') || domainLower.includes('hospitality')) {
+  } else if (
+    domainLower.includes('restaurant') ||
+    domainLower.includes('food') ||
+    domainLower.includes('hospitality')
+  ) {
     icon = '🍽️';
     styleHint = personality === 'adaptive' ? '"From my kitchen experience..."' : styleHint;
     identityHint = 'Operations expert who knows hospitality inside and out';
@@ -1041,7 +1181,7 @@ export async function generateDomainExpert(domainExpert, projectName, founderNam
     styleHint = personality === 'adaptive' ? '"In retail terms..."' : styleHint;
     identityHint = 'Retail expert who knows customer experience';
   }
-  
+
   // Override style hint if user chose specific personality
   if (personality !== 'adaptive') {
     const personalityHints = {
@@ -1049,48 +1189,60 @@ export async function generateDomainExpert(domainExpert, projectName, founderNam
       professional: '"From a strategic standpoint..."',
       direct: '"Here\'s what you need to do..."',
       enthusiastic: '"This is exciting! Let me share..."',
-      wise: '"In my experience, I\'ve found that..."'
+      wise: '"In my experience, I\'ve found that..."',
     };
     styleHint = personalityHints[personality] || styleHint;
   }
-  
+
   // Get pronoun forms
   const pronounForms = {
-    'they': { subject: 'they', object: 'them', possessive: 'their', possessiveEnd: 'theirs' },
-    'she': { subject: 'she', object: 'her', possessive: 'her', possessiveEnd: 'hers' },
-    'he': { subject: 'he', object: 'him', possessive: 'his', possessiveEnd: 'his' }
+    they: { subject: 'they', object: 'them', possessive: 'their', possessiveEnd: 'theirs' },
+    she: { subject: 'she', object: 'her', possessive: 'her', possessiveEnd: 'hers' },
+    he: { subject: 'he', object: 'him', possessive: 'his', possessiveEnd: 'his' },
   };
   const pForm = pronounForms[pronouns] || pronounForms['they'];
-  
+
   // Intelligently assign primary patterns based on domain
   const primaryPatterns = [];
-  
+
   // Technical domains get tech pattern
-  if (domainLower.includes('tech') || domainLower.includes('engineering') || 
-      domainLower.includes('software') || domainLower.includes('developer') ||
-      domainLower.includes('architect') || domainLower.includes('network') ||
-      domainLower.includes('telecom') || domainLower.includes('infrastructure')) {
+  if (
+    domainLower.includes('tech') ||
+    domainLower.includes('engineering') ||
+    domainLower.includes('software') ||
+    domainLower.includes('developer') ||
+    domainLower.includes('architect') ||
+    domainLower.includes('network') ||
+    domainLower.includes('telecom') ||
+    domainLower.includes('infrastructure')
+  ) {
     primaryPatterns.push('expert-tech.md');
   }
-  
+
   // Legal/compliance domains get legal pattern
-  if (domainLower.includes('legal') || domainLower.includes('compliance') ||
-      domainLower.includes('regulatory') || domainLower.includes('attorney') ||
-      domainLower.includes('lawyer')) {
+  if (
+    domainLower.includes('legal') ||
+    domainLower.includes('compliance') ||
+    domainLower.includes('regulatory') ||
+    domainLower.includes('attorney') ||
+    domainLower.includes('lawyer')
+  ) {
     primaryPatterns.push('expert-legal.md');
   }
-  
+
   // Most domain experts will use content + strategy patterns
   // (for creating materials, strategic guidance in their domain)
-  if (primaryPatterns.length === 0 || 
-      (!primaryPatterns.includes('expert-tech.md') && !primaryPatterns.includes('expert-legal.md'))) {
+  if (
+    primaryPatterns.length === 0 ||
+    (!primaryPatterns.includes('expert-tech.md') && !primaryPatterns.includes('expert-legal.md'))
+  ) {
     primaryPatterns.push('expert-content.md');
     primaryPatterns.push('expert-strategy.md');
   }
-  
+
   // Format patterns for YAML
   const patternsYaml = primaryPatterns.map(p => `    - ${p}`).join('\n');
-  
+
   // Build expert document
   return {
     filename: `${expertId}.md`,
@@ -1203,25 +1355,49 @@ This is a generated expert persona. Use \`@update-onboarding\` or edit this file
 
 ### Communication Style
 ${firstName} has a **${personality === 'adaptive' ? 'domain-adaptive' : personality}** communication style:
-${personality === 'warm' ? `- Warm and supportive, creating a safe space for exploration
+${
+  personality === 'warm'
+    ? `- Warm and supportive, creating a safe space for exploration
 - Empathetic listener who acknowledges challenges
 - Encouraging and celebrates small wins
-- Patient with questions and concerns` : ''}${personality === 'professional' ? `- Professional and business-focused
+- Patient with questions and concerns`
+    : ''
+}${
+      personality === 'professional'
+        ? `- Professional and business-focused
 - Polished, strategic communication
 - Data-driven recommendations
-- Formal but approachable tone` : ''}${personality === 'direct' ? `- Direct and no-nonsense, cuts to the chase
+- Formal but approachable tone`
+        : ''
+    }${
+      personality === 'direct'
+        ? `- Direct and no-nonsense, cuts to the chase
 - Action-focused, clear next steps
 - Honest feedback without sugar-coating
-- Efficient with time and words` : ''}${personality === 'enthusiastic' ? `- Enthusiastic and energetic about the work
+- Efficient with time and words`
+        : ''
+    }${
+      personality === 'enthusiastic'
+        ? `- Enthusiastic and energetic about the work
 - Passionate and motivating
 - Brings excitement to challenges
-- Celebrates innovation and creativity` : ''}${personality === 'wise' ? `- Thoughtful and contemplative approach
+- Celebrates innovation and creativity`
+        : ''
+    }${
+      personality === 'wise'
+        ? `- Thoughtful and contemplative approach
 - Shares wisdom from years of experience
 - Measured and deliberate communication
-- Strategic long-term thinking` : ''}${personality === 'adaptive' ? `- Adapts communication style to the ${domain.toLowerCase()} context
+- Strategic long-term thinking`
+        : ''
+    }${
+      personality === 'adaptive'
+        ? `- Adapts communication style to the ${domain.toLowerCase()} context
 - Professional when needed, supportive when challenges arise
 - Balances directness with empathy
-- Adjusts detail level based on your needs` : ''}
+- Adjusts detail level based on your needs`
+        : ''
+    }
 
 **Common phrases ${firstName} uses:** ${styleHint}
 
@@ -1451,7 +1627,7 @@ Use \`@${shortname}\` anytime you need ${domain.toLowerCase()} expertise, valida
 **Document Version:** 1.0  
 **Last Updated:** ${new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}  
 **Status:** Active Expert - Customize as needed!
-`
+`,
   };
 }
 
@@ -1460,20 +1636,24 @@ Use \`@${shortname}\` anytime you need ${domain.toLowerCase()} expertise, valida
  * Prioritizes: scanFindings.deepContext > missionAnswers > placeholders
  */
 export function generateMission(aboutYou, aboutProject, missionAnswers = {}, scanFindings = null) {
-  const today = new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+  const today = new Date().toLocaleDateString('en-US', {
+    month: 'long',
+    day: 'numeric',
+    year: 'numeric',
+  });
   const projectName = aboutProject.projectName || 'Your Project';
-  
+
   // Extract from scanner if available
   const scannedMission = scanFindings?.deepContext?.mission || {};
   const scannedStory = scanFindings?.deepContext?.founderStory || {};
-  
+
   // Build core mission statement (prioritize scanner > answers > placeholder)
   let coreMission = `**${projectName}** exists to `;
-  
+
   const problemSolving = scannedMission.problemSolving || missionAnswers.problemSolving;
   const targetAudience = scannedMission.targetAudience || missionAnswers.targetAudience;
   const missionStatement = scannedMission.statement;
-  
+
   // If scanner found a full mission statement, use it
   if (missionStatement) {
     coreMission = missionStatement;
@@ -1499,9 +1679,9 @@ export function generateMission(aboutYou, aboutProject, missionAnswers = {}, sca
   const whySection = yourWhy
     ? `${yourWhy}\n\nThis personal connection drives the vision and ensures authenticity in everything we build.`
     : '[Why does THIS project matter to YOU personally? Your "why" helps experts understand your passion and make better decisions aligned with your vision.]';
-  
+
   // Story section (use scanner data if available)
-  const founderStorySection = scannedStory.story 
+  const founderStorySection = scannedStory.story
     ? `### How This Started\n${scannedStory.story}\n\n### The Realization\n[What insight or "aha moment" made you realize this needed to exist?]`
     : '### How This Started\n[Tell the story of why you started this project. What inspired it? What problem did you personally encounter?]\n\n### The Realization\n[What insight or "aha moment" made you realize this needed to exist?]';
 
@@ -1615,8 +1795,12 @@ Use \`@update-mission\` anytime to refresh this document, or tag \`@genna\` to d
  * Prioritizes: scanFindings.deepContext > peopleInfo > placeholders
  */
 export function generatePeople(aboutYou, aboutProject, peopleInfo = null, scanFindings = null) {
-  const today = new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
-  const name = aboutYou.existingProfile 
+  const today = new Date().toLocaleDateString('en-US', {
+    month: 'long',
+    day: 'numeric',
+    year: 'numeric',
+  });
+  const name = aboutYou.existingProfile
     ? path.basename(aboutYou.existingProfile).replace('-profile.md', '')
     : aboutYou.name;
   const projectName = aboutProject.projectName || 'Your Project';
@@ -1632,37 +1816,57 @@ export function generatePeople(aboutYou, aboutProject, peopleInfo = null, scanFi
   } else if (peopleInfo?.cofounder) {
     teamSection = `### Co-Founder(s)\n**${peopleInfo.cofounder}**\n- ${peopleInfo.cofouderRole || 'Role: [Add their role/expertise]'}\n- [Add more context about how you work together]`;
   } else {
-    teamSection = '### Current Team\n**Solo founder** - No co-founders or employees yet\n\n💡 **Planning to add team members?**  \nUse `@update-people` to add co-founders, advisors, or key hires as your team grows.';
+    teamSection =
+      '### Current Team\n**Solo founder** - No co-founders or employees yet\n\n💡 **Planning to add team members?**  \nUse `@update-people` to add co-founders, advisors, or key hires as your team grows.';
   }
 
   // Advisors section (prioritize scanner data)
   let advisorsSection;
   if (scannedPeople.advisors && scannedPeople.advisors.length > 0) {
-    advisorsSection = scannedPeople.advisors.map(a => `- **${a}** - [Add their expertise and how they help]`).join('\n');
+    advisorsSection = scannedPeople.advisors
+      .map(a => `- **${a}** - [Add their expertise and how they help]`)
+      .join('\n');
   } else if (peopleInfo?.advisors) {
-    advisorsSection = peopleInfo.advisors.split(',').map(a => `- **${a.trim()}** - [Add their expertise and how they help]`).join('\n');
+    advisorsSection = peopleInfo.advisors
+      .split(',')
+      .map(a => `- **${a.trim()}** - [Add their expertise and how they help]`)
+      .join('\n');
   } else {
-    advisorsSection = '[No advisors added yet]\n\n💡 **Have advisors or mentors?**  \nUse `@update-people` to add them, or edit this file directly.';
+    advisorsSection =
+      '[No advisors added yet]\n\n💡 **Have advisors or mentors?**  \nUse `@update-people` to add them, or edit this file directly.';
   }
 
   // Investors section (prioritize scanner data)
   let investorsSection;
   if (scannedPeople.investors && scannedPeople.investors.length > 0) {
-    investorsSection = scannedPeople.investors.map(i => `- **${i}** - [Add investment details and relationship]`).join('\n');
+    investorsSection = scannedPeople.investors
+      .map(i => `- **${i}** - [Add investment details and relationship]`)
+      .join('\n');
   } else if (peopleInfo?.investors) {
-    investorsSection = peopleInfo.investors.split(',').map(i => `- **${i.trim()}** - [Add investment details and relationship]`).join('\n');
+    investorsSection = peopleInfo.investors
+      .split(',')
+      .map(i => `- **${i.trim()}** - [Add investment details and relationship]`)
+      .join('\n');
   } else {
-    investorsSection = '[No investors yet]\n\n💡 **When you raise funding:**  \nUse `@update-people` to track investors and their involvement.';
+    investorsSection =
+      '[No investors yet]\n\n💡 **When you raise funding:**  \nUse `@update-people` to track investors and their involvement.';
   }
 
   // Key relationships section
-  const relationshipsSection = peopleInfo?.keyConnections 
-    ? peopleInfo.keyConnections.split(',').map(k => `- **${k.trim()}** - [Add context about this relationship]`).join('\n')
+  const relationshipsSection = peopleInfo?.keyConnections
+    ? peopleInfo.keyConnections
+        .split(',')
+        .map(k => `- **${k.trim()}** - [Add context about this relationship]`)
+        .join('\n')
     : '[No key relationships added yet]\n\n💡 **Have important connections?**  \nCustomers, partners, industry contacts - add them here or use `@update-people`.';
-  
+
   // Founder background (prioritize scanner data)
-  const founderBackground = scannedStory.story || aboutYou.background || '- [Add key background that relates to this project]';
-  const founderWorkingStyle = scannedStory.workingStyle || '- [How do you like to work? What helps you think clearly?]';
+  const founderBackground =
+    scannedStory.story ||
+    aboutYou.background ||
+    '- [Add key background that relates to this project]';
+  const founderWorkingStyle =
+    scannedStory.workingStyle || '- [How do you like to work? What helps you think clearly?]';
 
   return `# People & Relationships - ${projectName}
 
@@ -1777,4 +1981,3 @@ Use \`@update-people\` anytime to refresh this document quickly.
 **This file helps your AI experts understand WHO is involved in your project and HOW to communicate about it. The more context you provide, the better they can support you.** 💚
 `;
 }
-
