@@ -54,7 +54,16 @@ function needsMigration(fromVersion, targetVersion) {
  * Parse semantic version
  */
 function parseVersion(version) {
-  const [major, minor, patch] = version.split('.').map(Number);
+  // Handle unknown or invalid versions
+  if (!version || version === 'unknown') {
+    return { major: 0, minor: 0, patch: 0 };
+  }
+
+  const parts = version.split('.');
+  const major = parseInt(parts[0]) || 0;
+  const minor = parseInt(parts[1]) || 0;
+  const patch = parseInt(parts[2]) || 0;
+
   return { major, minor, patch };
 }
 
