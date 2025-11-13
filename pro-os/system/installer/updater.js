@@ -14,6 +14,7 @@ import inquirer from 'inquirer';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 import { setupIDE } from './ide-setup.js';
+import { runMigrations } from './migrations.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -152,12 +153,17 @@ export async function updateInstallation() {
 
     spinner.succeed(chalk.green('✓ Ready to update'));
 
-    // Step 2: Detect installed IDEs (before we delete them)
+    // Step 2: Run migrations (rename old folders, etc.)
+    spinner.start('Running migrations...');
+    await runMigrations(projectPath);
+    spinner.succeed(chalk.green('✓ Migrations complete'));
+
+    // Step 3: Detect installed IDEs (before we overwrite them)
     spinner.start('Detecting installed IDEs...');
     const installedIDEs = await detectInstalledIDEs(projectPath);
     spinner.succeed(chalk.green(`✓ Found: ${installedIDEs.join(', ') || 'none'}`));
 
-    // Step 3: Remove only what we're replacing (NOT IDE configs - we'll overwrite those)
+    // Step 4: Remove only what we're replacing (NOT IDE configs - we'll overwrite those)
     spinner.start('Removing old system files...');
 
     // Remove pro-os subdirectories (but NOT project/)
@@ -173,7 +179,7 @@ export async function updateInstallation() {
 
     spinner.succeed(chalk.green('✓ Old system files removed'));
 
-    // Step 4: Copy fresh pro-os directories
+    // Step 5: Copy fresh pro-os directories
     spinner.start('Installing fresh FWD PRO system...');
     const sourceProOS = path.join(__dirname, '..', '..');
     const targetProOS = path.join(fwdproDir, 'pro-os');
@@ -205,7 +211,7 @@ export async function updateInstallation() {
 
     spinner.succeed(chalk.green('✓ FWD PRO system installed'));
 
-    // Step 5: Verify user data is intact (no restore needed - never touched!)
+    // Step 6: Verify user data is intact (no restore needed - never touched!)
     spinner.start('Verifying user data...');
 
     // Just verify key directories exist
@@ -216,14 +222,14 @@ export async function updateInstallation() {
       spinner.warn(chalk.yellow('⚠ Some user directories not found (may be fresh install)'));
     }
 
-    // Step 6: Update IDE configs (overwrite with fresh versions)
+    // Step 7: Update IDE configs (overwrite with fresh versions)
     if (installedIDEs.length > 0) {
       spinner.start('Updating IDE configs...');
       await setupIDE(projectPath, installedIDEs);
       spinner.succeed(chalk.green('✓ IDE configs updated'));
     }
 
-    // Step 7: Done (no cleanup needed)
+    // Step 8: Done (no cleanup needed)
     spinner.succeed(chalk.green('✓ Update complete'));
 
     // Success!
