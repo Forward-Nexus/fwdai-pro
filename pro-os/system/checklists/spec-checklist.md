@@ -7,23 +7,29 @@ purpose: Ensure specifications are complete, clear, and actionable
 
 ## Purpose
 
-This checklist ensures technical specifications (and similar planning documents) are complete, clear, and ready for implementation.
+This checklist ensures technical specifications (and similar planning documents)
+are complete, clear, and ready for implementation.
 
 Use this when:
+
 - Creating technical specifications (especially with `@create-specflow`)
 - Creating architecture documents
 - Creating system design documents
 - Planning technical work
 
-**Related patterns:**
-- `pro-os/system/patterns/spec.md` - Comprehensive spec structure with TDD
-- `pro-os/system/patterns/universal.md` - Universal command workflow
+**Related standards:**
+
+- `pro-os/system/standards/spec-standards.md` - Defines spec structure and
+  requirements
+- `pro-os/system/standards/research-citation-standards.md` - Technical claim
+  verification
 
 ---
 
 ## Instructions
 
 Go through each section systematically. Mark items as:
+
 - `[x]` Done - Item is complete and verified
 - `[ ]` Not Done - Item needs attention
 - `[N/A]` Not Applicable - Item doesn't apply to this spec
@@ -35,6 +41,7 @@ Go through each section systematically. Mark items as:
 ## 1. Completeness ✅
 
 ### Core Requirements
+
 - [ ] Problem statement clearly defined
 - [ ] User needs/use cases identified
 - [ ] Success criteria specified
@@ -43,6 +50,7 @@ Go through each section systematically. Mark items as:
 - [ ] Constraints identified (technical, business, time)
 
 ### Technical Details
+
 - [ ] Architecture/system design described
 - [ ] Data models/schema defined (if applicable)
 - [ ] API endpoints/interfaces specified (if applicable)
@@ -51,15 +59,16 @@ Go through each section systematically. Mark items as:
 - [ ] Dependencies identified (libraries, services, other systems)
 
 ### Implementation Guidance
+
 - [ ] File structure/organization specified
 - [ ] Naming conventions defined
 - [ ] Breaking complex work into clear tasks/phases
 - [ ] Priority/sequence of implementation clear
-- [ ] Tasks follow TDD structure (test → implement → verify) if using `@create-specflow`
+- [ ] Tasks follow TDD structure (test → implement → verify) if using
+      `@create-specflow`
 - [ ] QA phase included (mandatory for flow commands)
 
-**Notes on missing items:**
-[Explain any [ ] or [N/A] items]
+**Notes on missing items:** [Explain any [ ] or [N/A] items]
 
 ---
 
@@ -73,8 +82,7 @@ Go through each section systematically. Mark items as:
 - [ ] No ambiguous statements ("might", "could", "should probably")
 - [ ] Decisions are stated clearly with rationale
 
-**Notes on clarity:**
-[Any sections that could be clearer?]
+**Notes on clarity:** [Any sections that could be clearer?]
 
 ---
 
@@ -89,10 +97,10 @@ Go through each section systematically. Mark items as:
 - [ ] Cross-referenced with existing architecture (if brownfield)
 
 **Research sources consulted:**
+
 - [List best practices sources, documentation, standards referenced]
 
-**Notes on accuracy:**
-[Any areas that need validation?]
+**Notes on accuracy:** [Any areas that need validation?]
 
 ---
 
@@ -101,11 +109,14 @@ Go through each section systematically. Mark items as:
 ### For ALL Technical Claims, Benchmarks, and Statistics:
 
 - [ ] **Web search performed** - For performance claims ("X is faster than Y")
-- [ ] **Sources cited** - Official docs, reputable tech sources (web.dev, MDN, etc.)
+- [ ] **Sources cited** - Official docs, reputable tech sources (web.dev, MDN,
+      etc.)
 - [ ] **Benchmarks verified** - Real benchmark data with URLs (not assumed)
-- [ ] **Security standards checked** - OWASP, NIST, or official security guidance
+- [ ] **Security standards checked** - OWASP, NIST, or official security
+      guidance
 - [ ] **Best practices verified** - Not relying on outdated LLM training data
-- [ ] **Estimates marked clearly** - When making projections ("should handle X users")
+- [ ] **Estimates marked clearly** - When making projections ("should handle X
+      users")
 
 ### What NEVER to Include:
 
@@ -117,10 +128,12 @@ Go through each section systematically. Mark items as:
 
 ### When Research Doesn't Exist:
 
-✅ **BE HONEST:**
-"Based on our architecture and [Database X] documented limits, this should handle 1M users. We'll need to optimize [Y] at ~500K scale. Not yet load tested."
+✅ **BE HONEST:** "Based on our architecture and [Database X] documented limits,
+this should handle 1M users. We'll need to optimize [Y] at ~500K scale. Not yet
+load tested."
 
-**Reference:** See `system/standards/research-citation-standards.md` for complete technical verification workflow.
+**Reference:** See `system/standards/research-citation-standards.md` for
+complete technical verification workflow.
 
 ---
 
@@ -134,35 +147,37 @@ Go through each section systematically. Mark items as:
 - [ ] Testing approach specified
 - [ ] Potential risks/challenges identified
 
-**Notes on actionability:**
-[Would Ada (or another implementer) have everything needed?]
+**Notes on actionability:** [Would Ada (or another implementer) have everything
+needed?]
 
 ---
 
 ## 5. Alignment 🎯
 
 ### Project Alignment
+
 - [ ] Aligns with project goals (check project-kb.md)
 - [ ] Fits within existing architecture/patterns
 - [ ] Consistent with tech stack decisions
 - [ ] Respects project constraints (timeline, budget, skills)
 
 ### Stakeholder Alignment
+
 - [ ] Addresses founder's actual needs (check founder-profile.md)
 - [ ] Considers user experience appropriately
 - [ ] Legal/compliance considerations addressed (if applicable)
 - [ ] Reviewed by Genna for strategic alignment (if major decision)
 
-**Notes on alignment:**
-[Any misalignments or concerns?]
+**Notes on alignment:** [Any misalignments or concerns?]
 
 ---
 
 ## 6. Quality Standards 📋
 
 - [ ] Follows FWD PRO workflow standards
-- [ ] Follows spec pattern (`pro-os/system/patterns/spec.md`) if using flow commands
-- [ ] TDD structure enforced (every task: test → implement → verify) if flow command
+- [ ] Follows spec standards (`pro-os/system/standards/spec-standards.md`)
+- [ ] TDD structure enforced (every task: test → implement → verify) if flow
+      command
 - [ ] Mandatory QA phase included if flow command
 - [ ] Security considerations addressed
 - [ ] Performance requirements specified
@@ -171,8 +186,7 @@ Go through each section systematically. Mark items as:
 - [ ] Logging/monitoring approach specified (if applicable)
 - [ ] Testing strategy outlined (or TDD structure if flow command)
 
-**Notes on quality:**
-[Any quality concerns?]
+**Notes on quality:** [Any quality concerns?]
 
 ---
 
@@ -186,6 +200,7 @@ Go through each section systematically. Mark items as:
 - [ ] Changes from previous versions tracked (if updating)
 
 **Key decisions made:**
+
 - [Decision 1]: [Rationale]
 - [Decision 2]: [Rationale]
 
@@ -203,6 +218,7 @@ Go through each section systematically. Mark items as:
 - [ ] Whiteboards updated
 
 **Collaborators:**
+
 - [List who was consulted and what input they provided]
 
 ---
@@ -210,6 +226,7 @@ Go through each section systematically. Mark items as:
 ## 9. Completeness Check 🔍
 
 **Final review:**
+
 - [ ] Read through entire spec as if I'm the implementer
 - [ ] Can I build this with just this spec + general knowledge?
 - [ ] Are there any ambiguities or gaps?
@@ -231,7 +248,8 @@ Go through each section systematically. Mark items as:
 
 ## Final Confirmation
 
-- [ ] **I confirm this specification is complete, clear, accurate, and actionable.**
+- [ ] **I confirm this specification is complete, clear, accurate, and
+      actionable.**
 
 **Checklist completed by:** [Expert name]  
 **Date:** YYYY-MM-DD  
@@ -241,24 +259,26 @@ Go through each section systematically. Mark items as:
 
 ## Summary
 
-**What this spec accomplishes:**
-[Brief summary of what will be built based on this spec]
+**What this spec accomplishes:** [Brief summary of what will be built based on
+this spec]
 
-**Ready for:** 
-- [ ] Implementation (Ada - can use `@execute-specflow` if TDD structure present)
+**Ready for:**
+
+- [ ] Implementation (Ada - can use `@execute-specflow` if TDD structure
+      present)
 - [ ] Review (Genna/Elle/other)
 - [ ] Founder approval
 - [ ] Further refinement (explain why)
 
-**Notes:**
-[Any important context or caveats]
+**Notes:** [Any important context or caveats]
 
 ---
 
 **If any items are marked [ ] Not Done:**
+
 - Explain why in notes
 - Either: Fix them before marking spec complete, OR
 - Document as known gaps with plan to address
 
-**Remember:** A good spec saves time during implementation. Take the time to get it right!
-
+**Remember:** A good spec saves time during implementation. Take the time to get
+it right!

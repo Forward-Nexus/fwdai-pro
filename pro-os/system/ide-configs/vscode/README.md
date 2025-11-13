@@ -28,17 +28,15 @@ When you choose VS Code during onboarding, FWD PRO will:
     "*.md": "markdown"
   },
   "markdown.preview.doubleClickToSwitchToEditor": false,
-  "workbench.editor.enablePreview": false,
-  "files.exclude": {
-    "**/.fwdpro/pro-os/roundtable/workspace/**": true
-  }
+  "workbench.editor.enablePreview": false
 }
 ```
 
 **What this does:**
+
 - Ensures markdown files are recognized properly
 - Disables preview-only mode (opens files for editing immediately)
-- Hides memory folders from file explorer (reduces clutter)
+- Keeps all FWD PRO files visible for transparency
 
 ---
 
@@ -105,9 +103,11 @@ While not required, these enhance the FWD PRO experience:
 
 ## Customizing Settings
 
-You can add your own VS Code settings to `.vscode/settings.json`. FWD PRO only sets up markdown and file handling basics.
+You can add your own VS Code settings to `.vscode/settings.json`. FWD PRO only
+sets up markdown and file handling basics.
 
 **Common additions:**
+
 ```json
 {
   "editor.wordWrap": "on",
@@ -122,9 +122,11 @@ You can add your own VS Code settings to `.vscode/settings.json`. FWD PRO only s
 
 ## No VS Code? No Problem!
 
-FWD PRO works in **any AI coding tool**. The `.vscode/` configuration just optimizes the experience for VS Code users.
+FWD PRO works in **any AI coding tool**. The `.vscode/` configuration just
+optimizes the experience for VS Code users.
 
 You can use FWD PRO in:
+
 - Cursor
 - Claude Code
 - Windsurf
@@ -133,4 +135,3 @@ You can use FWD PRO in:
 ---
 
 **Ready to code!** 💻
-

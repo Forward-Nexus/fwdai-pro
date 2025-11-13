@@ -1,22 +1,22 @@
 {
   "$schema": "https://json.schemastore.org/package.json",
   "name": "@fwd-ai/pro",
-  "version": "2.2.2",
+  "version": "2.3.0",
   "description": "FWD PRO - Better conversations lead to better outcomes. Universal AI expert collaboration system with verified research, natural expert discussion, and organized collaboration.",
   "type": "module",
-  "main": "tools/installer/index.js",
+  "main": "pro-os/system/installer/index.js",
   "bin": {
     "fwdpro": "./bin/cli.js"
   },
   "scripts": {
-    "install-local": "node tools/installer/index.js",
-    "dev": "node tools/installer/index.js",
     "test": "echo \"Tests coming soon\" && exit 0",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
     "prepare": "husky || true",
+    "install-local": "node pro-os/system/installer/index.js",
+    "dev": "node pro-os/system/installer/index.js",
     "tools:commit": "node pro-os/system/tools/git-utils/commit-helper.js",
     "tools:pr": "node pro-os/system/tools/git-utils/pr-generator.js",
     "tools:changelog": "node pro-os/system/tools/git-utils/changelog.js",
@@ -63,10 +63,8 @@
   "packageManager": "pnpm@10.20.0",
   "files": [
     "bin/",
-    "tools/",
     "pro-os/",
     ".cursorignore",
-    ".cursor/",
     "LICENSE",
     "README.md",
     "CHANGELOG.md",

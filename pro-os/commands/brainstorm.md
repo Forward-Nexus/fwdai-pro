@@ -1,14 +1,17 @@
 # Brainstorm Command
 
-**Purpose:** Universal command for ideation and exploration - features, solutions, strategies, names, approaches, content ideas, etc.
+**Command:** `@brainstorm`  
+**Type:** Universal ideation command  
+**Purpose:** Generate and explore ideas for anything
 
 ---
 
-## How This Works
+## When This Command is Invoked
 
-When a user says: `@[expert] @brainstorm [thing]`
+**Trigger:** User says `@[expert] @brainstorm [thing]`
 
-Example:
+**Examples:**
+
 - `@genna @brainstorm product features for our MVP`
 - `@lyna @brainstorm marketing campaign ideas`
 - `@denny @brainstorm solutions for the scaling problem`
@@ -16,196 +19,132 @@ Example:
 
 ---
 
-## Process
+## AI Instructions
 
-### 1. Frame the Challenge
+### Step 1: Frame the Challenge
 
-Clarify:
+**Clarify:**
+
 - What are we brainstorming?
 - What's the goal/problem?
 - Any constraints? (budget, time, tech, etc.)
 - Any must-haves or must-avoids?
 
-### 2. Load Context
+### Step 2: Load Context (Token Efficient)
 
-Read:
-- Project info (`project/` folder)
-- Recent discussions (`roundtable/whiteboards.md`)
-- Related work (`roundtable/workspace/` files)
+**Check context first!**
 
-### 3. Generate Ideas
+**Load:**
+
+- `project/founder-profile.md`
+- `project/project-kb.md`
+- `project/mission.md`
+- `roundtable/whiteboards.md` (recent discussions)
+- Related workspace files
+
+### Step 3: Research Inspiration
+
+**Before brainstorming:**
+
+- Search: "[topic] ideas [current year]"
+- Look at what others are doing
+- Find current trends
+- Understand what's possible
+
+### Step 4: Generate Ideas
 
 **Brainstorming approach:**
-- Start broad - quantity over quality initially
-- Mix safe and bold ideas
-- Build on previous ideas
-- Consider different angles
-- Don't filter too early
+
+1. **Start broad** - quantity over quality initially
+2. **Mix safe and bold** - conventional + innovative
+3. **Build on previous** - combine and expand ideas
+4. **Consider different angles** - multiple approaches
+5. **Don't filter too early** - capture everything first
 
 **Aim for:** 10-20 initial ideas, then narrow to 3-5 strong options
 
-### 4. Evaluate & Refine
+**Apply domain lens:**
 
-For each promising idea:
-- **Pros:** What makes this good?
-- **Cons:** What are the challenges?
-- **Feasibility:** Can we actually do this?
-- **Impact:** What's the potential value?
+- Technical brainstorm → Architecture patterns, tech solutions
+- Marketing brainstorm → Campaigns, channels, messaging
+- Product brainstorm → Features, UX improvements, innovations
+- Strategy brainstorm → Approaches, positioning, opportunities
 
-### 5. Create Workspace + Deliverable
+### Step 5: Evaluate & Refine
 
-**A. Create Workspace**
-- Save as: `roundtable/workspace/[topic]-brainstorm-complete.md`
-- Document ALL ideas generated (even ones you filtered out)
-- Document evaluation process and decisions
-- Include notes and rationale
+**For each promising idea:**
 
-**B. Create Clean Deliverable**
-- Save as: `documents/strategy/[topic]-options.md` (or appropriate category)
-- Format:
-```markdown
-## [Topic] Options
+**Pros:** What makes this good? **Cons:** What are the downsides?
+**Feasibility:** Can we actually do this? **Impact:** How much would this help?
+**Effort:** How hard would this be?
 
-**Challenge:** [What we're solving]
-**Context:** [Key constraints and goals]
+**Score or rank ideas** to identify top options
 
----
+### Step 6: Present Options
 
-### Option 1: [Name]
-**The Idea:** [Clear description]
+**Structure:**
 
-**Pros:**
-- [Benefit 1]
-- [Benefit 2]
+1. **Quick list** - All ideas generated (for reference)
+2. **Top 3-5 ideas** - Most promising options
+3. **For each top idea:**
+   - Description
+   - Pros/cons
+   - Feasibility
+   - Why it's interesting
+   - Next steps if pursued
 
-**Cons:**
-- [Challenge 1]
-- [Challenge 2]
+**Recommend** - Which idea(s) you'd pursue and why
 
-**Feasibility:** [High/Medium/Low]
-**Potential Impact:** [High/Medium/Low]
+### Step 7: Document
 
----
+**Create workspace:** `roundtable/workspace/[name]-brainstorm.md`
 
-### Option 2: [Name]
-[Same structure]
+- All ideas generated
+- Evaluation notes
+- Recommendation
 
----
+**If proceeding:** Create deliverable with refined ideas
 
-## Recommendation
+### Step 8: Next Steps
 
-[Which option(s) are strongest and why]
+**After brainstorming:**
 
-**Next Steps:**
-- [What to do with these ideas]
-```
-
-**TWO files created:**
-1. `roundtable/workspace/[topic]-brainstorm-complete.md` - All ideas, process, decisions
-2. `documents/strategy/[topic]-options.md` - Clean final options
-
-### 6. Update Whiteboards
-
-Update your section in `roundtable/whiteboards.md` with workspace and deliverable links.
-
-### 7. Update Founder Checklist (If Needed)
-
-If founder needs to review options, add to `roundtable/[founder-name]-checklist.md`.
+- Get founder's input
+- If idea selected, use `@plan` or `@create` to develop it
+- If needs more exploration, iterate
 
 ---
 
-## Brainstorming Techniques
+## Key Behaviors
 
-### Divergent Thinking (Generate Ideas):
-- What if...?
-- How might we...?
-- Opposite thinking (what if we did the reverse?)
-- Analogy (how do others solve this?)
-- Combination (merge two ideas)
+**Divergent then convergent:**
 
-### Convergent Thinking (Evaluate Ideas):
-- Feasibility vs Impact matrix
-- Must-have, should-have, could-have
-- Risks vs Rewards
-- Short-term vs Long-term value
+- Generate broadly first
+- Narrow down second
+- Don't judge too early
 
----
+**Domain expertise:**
 
-## Best Practices
+- Technical expert thinks in technical solutions
+- Marketing expert thinks in campaigns/channels
+- Strategic expert thinks long-term
 
-### ✅ DO:
-- **Generate first, filter later** - don't judge too early
-- **Build on ideas** - "yes, and..." thinking
-- **Go wide** - explore different angles
-- **Be specific** - vague ideas aren't useful
-- **Consider constraints** - but don't let them kill creativity
-- **Recommend** - don't just list options, give your take
+**Actionable:**
 
-### ❌ DON'T:
-- **Don't filter too early** - let ideas flow first
-- **Don't only give safe options** - include bold ideas
-- **Don't just list** - explain pros/cons
-- **Don't skip evaluation** - help prioritize
-- **Don't ignore constraints** - ideas must be feasible
+- Ideas should be concrete enough to evaluate
+- Not "make it better" but "specific approach X"
 
----
+**Balanced:**
 
-## Collaborative Brainstorming
-
-If multiple experts should weigh in:
-
-```markdown
-I've got some ideas, but this would benefit from multiple perspectives!
-
-**Let's bring in:**
-- @[expert1] for [their expertise]
-- @[expert2] for [their expertise]
-
-Want me to start a Roundtable brainstorm session? 🎨
-```
-
----
-
-## Examples
-
-### Example 1: Feature Brainstorming
-
-**User:** `@genna @brainstorm MVP features`
-
-**Genna:**
-1. Reads project-kb and mission
-2. Generates 15 feature ideas
-3. Evaluates each for MVP fit
-4. Narrows to 5 strong options
-5. Presents with pros/cons/feasibility
-6. Recommends top 3 for MVP
-7. Updates Roundtable
-8. "Here are 5 strong features - I'd start with these 3!"
-
-### Example 2: Marketing Ideas
-
-**User:** `@lyna @brainstorm ways to reach our first 100 users`
-
-**Lyna:**
-1. Reads founder-profile and project-kb
-2. Generates 12 marketing ideas
-3. Evaluates for budget and impact
-4. Presents 4 best options
-5. Recommends 2-pronged approach
-6. Updates Roundtable
-7. "I'd combine content marketing + community outreach!"
+- Mix safe and innovative
+- Consider constraints
+- Be realistic about feasibility
 
 ---
 
 ## Notes
 
-- **Quantity breeds quality** - generate many, pick the best
-- **Context matters** - always consider project goals
-- **Bold + Safe mix** - include ambitious and pragmatic ideas
-- **Recommend** - don't make founder decide alone
-- **Collaborate** - bring in other experts when valuable
-
----
-
-**Remember:** Great brainstorming balances creativity with practicality. Generate freely, evaluate honestly, recommend confidently! 💡
-
+- Brainstorm scope adapts to request
+- Expert domain guides type of ideas generated
+- Quantity first, quality second
+- Evaluation helps narrow to best options

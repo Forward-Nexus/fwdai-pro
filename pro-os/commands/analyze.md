@@ -1,92 +1,146 @@
 # Analyze Command
 
-**Purpose:** Universal command for deep analysis of anything - projects, markets, competitors, systems, data, strategies, etc.
+**Command:** `@analyze`  
+**Type:** Universal analysis command  
+**Purpose:** Deep investigation and analysis of anything
 
 ---
 
-## How This Works
+## When This Command is Invoked
 
-When a user says: `@[expert] @analyze [thing]`
+**Trigger:** User says `@[expert] @analyze [thing]`
 
-Example:
+**Examples:**
+
 - `@genna @analyze our product positioning`
-- `@denny @analyze the system architecture for improvements`
-- `@lyna @analyze competitor pricing strategies`
+- `@denny @analyze the system architecture`
+- `@lyna @analyze competitor pricing`
 - `@ada @analyze codebase for technical debt`
 
 ---
 
-## Process
+## AI Instructions
 
-### 1. Understand What to Analyze
+### Step 1: Understand Analysis Scope
 
-Clarify:
-- What specifically needs analysis?
-- What's the goal? (improve, decide, understand, identify issues?)
-- What level of depth? (quick overview vs deep dive?)
+**Clarify:**
+
+- What specifically to analyze?
+- What's the goal? (improve, decide, understand, identify issues)
+- How deep? (quick overview vs comprehensive)
 - Any specific focus areas?
 
-### 2. Gather Information
+### Step 2: Load Context (Token Efficient)
 
-Collect relevant data:
-- Project context (`project/` folder)
-- Previous work (`roundtable/workspace/` handoffs)
-- Roundtable discussions
-- External research (if needed)
+**Check context first, load only if needed:**
 
-### 3. Conduct Analysis
+- `project/founder-profile.md`
+- `project/project-kb.md`
+- `roundtable/whiteboards.md`
+- Relevant workspace files
+- The thing being analyzed
 
-Follow `workflows/analyze-[type].yaml` if one exists, otherwise:
+### Step 3: Research Current Standards
 
-**Analysis Framework:**
-1. **Current State** - What is the situation now?
-2. **Findings** - What did you discover? (patterns, issues, opportunities)
-3. **Insights** - What does it mean? (why it matters)
-4. **Recommendations** - What should be done? (actionable next steps)
+**Before analyzing:**
 
-### 4. Create Workspace + Deliverable
+- Check current year
+- Search: "[topic] analysis best practices [year]"
+- Understand current benchmarks/standards
+- Know what "good" looks like
 
-**A. Create Workspace**
-- Save as: `roundtable/workspace/[name]-analysis-complete.md`
-- Document analysis process, all data examined, methodology
-- Include raw findings before synthesis
-- Track analysis decisions and assumptions
+### Step 4: Conduct Analysis
 
-**B. Create Clean Deliverable**
-- Save as: `documents/analysis/[name]-findings.md` (or appropriate category)
-- Structure: Current State, Findings, Insights, Recommendations
-- This is the clean analysis report
+**Framework:**
 
-**TWO files created:**
-1. `roundtable/workspace/[name]-analysis-complete.md` - Analysis process, raw data, methodology
-2. `documents/analysis/[name]-findings.md` - Clean analysis report
+1. **Current State**
+   - What is the situation now?
+   - Document findings objectively
 
-### 5. Update Whiteboards
+2. **Findings**
+   - What did you discover?
+   - Patterns, issues, opportunities
+   - Data and evidence
 
-Update your section in `roundtable/whiteboards.md` with workspace and deliverable links.
+3. **Insights**
+   - What does it mean?
+   - Why does it matter?
+   - Implications
 
-### 6. Update Founder Checklist (If Needed)
+4. **Recommendations**
+   - What should be done?
+   - Actionable next steps
+   - Prioritized by impact
 
-If founder needs to review findings, add to `roundtable/[founder-name]-checklist.md`.
+**Apply domain expertise:**
+
+- Technical analysis → Architecture, performance, security
+- Market analysis → Competition, positioning, opportunities
+- Content analysis → Effectiveness, messaging, audience fit
+- Legal analysis → Compliance, risks, exposure
+
+### Step 5: Document in Workspace
+
+**Create:** `roundtable/workspace/[name]-analysis.md`
+
+**Include:**
+
+- Analysis conducted
+- Findings and insights
+- Recommendations
+- Sources/references
+- Decisions made
+
+### Step 6: Create Deliverable
+
+**Save:** `documents/[category]/[name]-analysis.md`
+
+**Clean, structured output:**
+
+- Executive summary
+- Detailed findings
+- Insights and recommendations
+- Supporting data/evidence
+
+### Step 7: Update Tracking
+
+**Update whiteboard and checklist if needed.**
+
+### Step 8: Deliver
+
+**Present analysis clearly:**
+
+- Key findings
+- Most important insights
+- Top recommendations
+- Next steps
 
 ---
 
-## Best Practices
+## Key Behaviors
 
-### ✅ DO:
-- **Be thorough** - don't rush analysis
-- **Be specific** - vague findings aren't useful
-- **Provide evidence** - back up your findings
-- **Make it actionable** - always include recommendations
-- **Prioritize findings** - what matters most?
+**Objective analysis:**
 
-### ❌ DON'T:
-- **Don't make assumptions** - validate with data
-- **Don't be vague** - "it could be better" isn't helpful
-- **Don't just list problems** - provide solutions
-- **Don't analyze in isolation** - consider project context
+- Focus on facts and evidence
+- Don't assume or speculate
+- Document sources
+
+**Domain lens:**
+
+- Apply expert's domain expertise automatically
+- Technical expert → sees technical issues
+- Strategic expert → sees strategic implications
+
+**Actionable:**
+
+- Don't just identify problems
+- Provide recommendations
+- Prioritize by impact
 
 ---
 
-**Remember:** Good analysis turns data into decisions. Be thorough, be clear, be actionable! 🔍
+## Notes
 
+- Analysis depth adapts to request
+- Expert domain patterns guide methodology
+- Creates both workspace (context) and deliverable (output)

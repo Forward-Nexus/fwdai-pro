@@ -15,11 +15,13 @@
 **Project Type:** [Q9: New or existing project]  
 **AI Tool Used:** [Q10: Which AI coding tool]
 
-**One-Sentence Description:** [Q13a: What are you building? - auto-detected from README or entered]
+**One-Sentence Description:** [Q13a: What are you building? - auto-detected from
+README or entered]
 
 **Examples:**
+
 - "We help small telecom carriers find and acquire tower sites in rural areas"
-- "We help restaurants manage inventory and reduce food waste"  
+- "We help restaurants manage inventory and reduce food waste"
 - "We help recovering addicts track their progress and find community support"
 
 ---
@@ -39,9 +41,11 @@
 
 ## 🏢 Project Type & Work Focus
 
-**What You're Working On:** [Q12: Work types - critical for determining which experts are active]
+**What You're Working On:** [Q12: Work types - critical for determining which
+experts are active]
 
 From onboarding:
+
 - [ ] Building something (app, website, platform, code)
 - [ ] Investor materials (pitch deck, business plan)
 - [ ] Marketing/content (landing page, campaigns, social)
@@ -56,16 +60,22 @@ From onboarding:
 ## 📍 Current Stage
 
 **Stage:** [Auto-detected from project scan or asked if new project]
+
 - Idea (figuring it out, no product yet)
 - MVP (building first version)
 - Launched (live with real users/customers)
 - Scaling (growing, need to scale operations)
+
+**Funding Status:** [Q12: Funding status]
+
+- Bootstrapped / Pre-seed / Seed / Series A+ / etc.
 
 **Current Status:** [From existing project scan if applicable]  
 [If EXISTING: Auto-detected from git history, README, code analysis]  
 [If NEW: Asked during onboarding]
 
 **Users/Customers (if applicable):** [From README or manually entered]
+
 - Current: [Number of users/customers/clients]
 - Target by [DATE]: [From Q14: Goal]
 
@@ -75,25 +85,30 @@ From onboarding:
 
 **Only populated if "Building something" checked in Q12**
 
-**Tech Stack:** [Q13b: Tech stack - auto-detected from package.json/requirements.txt OR entered]
+**Tech Stack:** [Q13b: Tech stack - auto-detected from
+package.json/requirements.txt OR entered]
 
 Examples (auto-detected):
+
 - "React Native, Node.js, PostgreSQL" (from package.json analysis)
 - "Next.js, React, Tailwind CSS" (from dependencies)
 - "Python, Django, MySQL" (from requirements.txt)
 
 Examples (entered if new project):
+
 - "Not sure yet, need help deciding"
 - "[Specific stack founder chooses]"
 
 **Code Repository Location:** [Q13c: Code location]
+
 - Here in this project (detected)
 - Elsewhere: [path/URL provided]
 - Not yet, starting fresh
 
 **Codebase Status:** [Auto-detected from project scan if existing]
+
 - Not started yet
-- Started, very early  
+- Started, very early
 - Working MVP
 - Production-ready
 
@@ -109,7 +124,8 @@ Examples (entered if new project):
 ## 📊 Business Model (Optional - Add Later)
 
 **How You Make Money:**  
-[Can be populated from pitch deck or entered later. Not required for onboarding.]
+[Can be populated from pitch deck or entered later. Not required for
+onboarding.]
 
 **Pricing:**  
 [Your pricing structure, if decided]
@@ -121,6 +137,7 @@ Examples (entered if new project):
 **Your Goal:** [Q14: What do you want to accomplish with FWD PRO?]
 
 Examples from onboarding:
+
 - "Launch MVP by end of year"
 - "Raise seed round"
 - "Get to 1,000 users"
@@ -137,15 +154,18 @@ Examples from onboarding:
 
 ## 💰 Funding & Budget
 
-**Fundraising Stage:** [Q13-investor: Only populated if "Investor materials" checked in Q12]
+**Fundraising Stage:** [Q13-investor: Only populated if "Investor materials"
+checked in Q12]
 
 Examples from onboarding:
+
 - "Pre-seed ($100K)"
 - "Seed ($500K-$2M)"
 - "Series A"
 - "Not raising yet, just prep materials"
 
 **Current Funding Status:** [Optional - can be added later]
+
 - Bootstrapped (self-funded)
 - Small budget raised
 - Well-funded
@@ -165,19 +185,23 @@ Examples from onboarding:
 
 ## ⚖️ Legal & Compliance
 
-**Constraints & Requirements:** [Q15: Any constraints or requirements? (Optional)]
+**Constraints & Requirements:** [Q15: Any constraints or requirements?
+(Optional)]
 
 Examples from onboarding:
+
 - "Need HIPAA compliance"
 - "Budget is tight, bootstrap mode"
 - "Deadline: December 31st"
 - "Must work on mobile"
 
 **Industry-Specific Compliance:** [Auto-inferred from industry/work type]  
-[Based on founder's industry focus and what they're building, Elle can identify relevant regulations]
+[Based on founder's industry focus and what they're building, Elle can identify
+relevant regulations]
 
 **Sensitive Topics:** [Auto-inferred from industry context]  
-[If working in recovery/mental health/healthcare, experts will be mindful of sensitive topics]
+[If working in recovery/mental health/healthcare, experts will be mindful of
+sensitive topics]
 
 ---
 
@@ -187,16 +211,18 @@ Examples from onboarding:
 See `founder-profile.md` for detailed info
 
 **Team Status:** [From founder profile Q8]
+
 - Solo founder
 - Small team (2-5)
 - Growing team (6-20)
 - Larger organization (20+)
 
 **FWD PRO Experts Activated:** [Based on Q12 work types]
+
 - Genna (Chief Architect) - Always active
 - Denny (Systems Architect) - If "Building something"
 - Ada (Lead Engineer) - If "Building something"
-- Lyna (Funding Strategist) - If "Investor materials"  
+- Lyna (Funding Strategist) - If "Investor materials"
 - Benji (Growth Strategist) - If "Marketing/content"
 - Elle (Legal Counsel) - If "Legal/compliance" or compliance needs detected
 - [Domain Expert Name] - If created in Q16
@@ -208,7 +234,8 @@ See `founder-profile.md` for detailed info
 ## 🚀 What You Need Help With
 
 **Primary Work Focus:** [From Q12 - determines active experts]  
-[The work types you selected determine which experts are active and what commands are suggested]
+[The work types you selected determine which experts are active and what
+commands are suggested]
 
 **Your Goal:** [From Q14]  
 [This helps experts prioritize what to work on]
@@ -218,7 +245,9 @@ See `founder-profile.md` for detailed info
 ## 📝 Additional Context (Grows Over Time)
 
 **Project Context:**  
-[This section grows as you work with experts. Initial onboarding provides basic info, but experts will add:
+[This section grows as you work with experts. Initial onboarding provides basic
+info, but experts will add:
+
 - Key decisions made
 - Important discoveries
 - Technical constraints learned
@@ -226,6 +255,7 @@ See `founder-profile.md` for detailed info
 - Strategic directions chosen]
 
 **Existing Assets:** [Auto-detected from project scan if existing project]
+
 - README.md found ✓
 - Code repository detected ✓
 - Documentation found ✓
@@ -235,15 +265,18 @@ See `founder-profile.md` for detailed info
 
 ## 🔄 Keep This Updated
 
-This is the **single source of truth** for project facts. Experts read this to understand your project.
+This is the **single source of truth** for project facts. Experts read this to
+understand your project.
 
 **Auto-updated by experts when:**
+
 - Key decisions are made
 - Status changes
 - New information is discovered
 - Technical constraints are identified
 
 **You can update anytime:**
+
 - Edit this file directly
 - Experts will see the changes immediately
 - Keep goals, constraints, and context current
@@ -258,9 +291,9 @@ This is the **single source of truth** for project facts. Experts read this to u
 ---
 
 **How This KB is Used:**
+
 - All experts read this to understand your project context
 - Work types (Q12) determine which experts are active
 - Your goal (Q14) helps experts prioritize
 - Constraints (Q15) ensure experts stay within boundaries
 - Tech stack, stage, and industry inform expert recommendations
-

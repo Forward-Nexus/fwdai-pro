@@ -6,14 +6,18 @@
 
 ## Overview
 
-Flow commands are **structured workflows** that enforce quality standards like TDD and mandatory QA. They complement (don't replace) the flexible universal commands.
+Flow commands are **structured workflows** that enforce quality standards like
+TDD and mandatory QA. They complement (don't replace) the flexible universal
+commands.
 
 ### The Hybrid Approach
 
 **FWD PRO has TWO types of commands:**
 
-1. **Universal Commands** (`@create`, `@execute`) - Flexible, AI infers structure
-2. **Flow Commands** (`@create-specflow`, `@execute-specflow`) - Structured, enforces patterns
+1. **Universal Commands** (`@create`, `@execute`) - Flexible, AI infers
+   structure
+2. **Flow Commands** (`@create-specflow`, `@execute-specflow`) - Structured,
+   enforces patterns
 
 **Both are valid!** Choose based on your needs.
 
@@ -22,6 +26,7 @@ Flow commands are **structured workflows** that enforce quality standards like T
 ## When to Use Flow Commands
 
 ### Use Flow Commands When:
+
 - ✅ Building technical features (code)
 - ✅ Want TDD enforced (tests first, always)
 - ✅ Want mandatory QA (can't skip)
@@ -30,13 +35,15 @@ Flow commands are **structured workflows** that enforce quality standards like T
 - ✅ Implementing critical features (auth, payments, data integrity)
 
 ### Use Universal Commands When:
+
 - ✅ Creating content (docs, strategies, campaigns)
 - ✅ Want flexibility (AI adapts to context)
 - ✅ Exploratory work (research, brainstorming)
 - ✅ Non-technical deliverables
 - ✅ Quick iterations (prototypes, experiments)
 
-**Rule of thumb:** If it's code and quality is critical, use flow commands. Otherwise, universal commands work great.
+**Rule of thumb:** If it's code and quality is critical, use flow commands.
+Otherwise, universal commands work great.
 
 ---
 
@@ -49,6 +56,7 @@ Flow commands are **structured workflows** that enforce quality standards like T
 **Purpose:** Create comprehensive technical specification with TDD structure
 
 **What it does:**
+
 - Creates ONE comprehensive spec file (no fragmentation)
 - Enforces TDD task structure (test → implement → verify)
 - Includes mandatory QA phase
@@ -57,12 +65,14 @@ Flow commands are **structured workflows** that enforce quality standards like T
 - Updates whiteboards
 
 **Example:**
+
 ```
 @create-specflow user-authentication
 @denny @create-specflow password-reset
 ```
 
 **Outputs:**
+
 - `documents/tech/specs/[feature-name]/spec.md` - Comprehensive spec
 - `documents/tech/workspaces/[feature-name]/workspace.md` - Linked workspace
 
@@ -72,9 +82,11 @@ Flow commands are **structured workflows** that enforce quality standards like T
 
 ### `@execute-specflow [feature-name]`
 
-**Purpose:** Execute technical specification with TDD enforcement and mandatory QA
+**Purpose:** Execute technical specification with TDD enforcement and mandatory
+QA
 
 **What it does:**
+
 - Loads existing spec (from `@create-specflow`)
 - Enforces TDD workflow (tests first, no exceptions)
 - Updates progress in real-time (spec + workspace)
@@ -84,6 +96,7 @@ Flow commands are **structured workflows** that enforce quality standards like T
 - Completion report
 
 **Example:**
+
 ```
 @execute-specflow user-authentication
 @ada @execute-specflow password-reset
@@ -102,6 +115,7 @@ Flow commands are **structured workflows** that enforce quality standards like T
 **Purpose:** Multi-expert roundtable review and collaboration
 
 **What it does:**
+
 - Brings in relevant experts based on topic
 - Each expert provides their perspective
 - Identifies issues, opportunities, improvements
@@ -109,6 +123,7 @@ Flow commands are **structured workflows** that enforce quality standards like T
 - Documents all perspectives in workspace
 
 **Example:**
+
 ```
 @rt review authentication spec
 @rt this pitch deck needs feedback
@@ -116,7 +131,8 @@ Flow commands are **structured workflows** that enforce quality standards like T
 
 **See:** `pro-os/commands/flows/rt.md`
 
-**Note:** For status overview, use whiteboards (`roundtable/whiteboards.md`) instead of trying to review all work at once.
+**Note:** For status overview, use whiteboards (`roundtable/whiteboards.md`)
+instead of trying to review all work at once.
 
 ---
 
@@ -127,6 +143,7 @@ Flow commands are **structured workflows** that enforce quality standards like T
 **All flow commands follow this pattern:**
 
 **Phase 1: Pre-Flight**
+
 - Load context (conditional, token efficient)
 - Verify requirements clear
 - Ask clarifying questions if needed
@@ -134,12 +151,14 @@ Flow commands are **structured workflows** that enforce quality standards like T
 - Set up structure
 
 **Phase 2: Execution**
+
 - Follow defined workflow
 - Update progress in real-time
 - Document decisions as made
 - Keep going (DON'T STOP mid-flow)
 
 **Phase 3: Post-Flight (MANDATORY)**
+
 - Quality review
 - Update all tracking (workspace, whiteboards, checklist)
 - Completion summary
@@ -154,9 +173,11 @@ Flow commands are **structured workflows** that enforce quality standards like T
 **Flow commands reference reusable patterns:**
 
 ### Spec Pattern
+
 **File:** `pro-os/system/patterns/spec.md`
 
 **Defines:**
+
 - Comprehensive spec structure (ONE file has everything)
 - TDD task format
 - Progress logging format
@@ -168,9 +189,11 @@ Flow commands are **structured workflows** that enforce quality standards like T
 ---
 
 ### Workspace Pattern
+
 **File:** `pro-os/system/patterns/workspace.md`
 
 **Defines:**
+
 - Simple workspace (one file, one or more related deliverables)
 - Complex workspace (folder with multiple sub-workspaces for large systems)
 - When to use each pattern
@@ -184,6 +207,7 @@ Flow commands are **structured workflows** that enforce quality standards like T
 ### Decision 1: NO Dates in Folder Names ✅
 
 **Pattern:**
+
 ```
 ✅ documents/tech/specs/user-authentication/
 ❌ documents/tech/specs/2025-10-09-user-authentication/
@@ -196,6 +220,7 @@ Flow commands are **structured workflows** that enforce quality standards like T
 ### Decision 2: ONE Comprehensive Spec File ✅
 
 **Pattern:**
+
 ```
 ✅ ONE file: spec.md (has EVERYTHING)
 ❌ Multiple files: spec.md, tasks.md, decisions.md, etc.
@@ -208,8 +233,10 @@ Flow commands are **structured workflows** that enforce quality standards like T
 ### Decision 3: TDD Non-Negotiable ✅
 
 **Pattern:**
+
 ```markdown
 EVERY task follows:
+
 - [ ] X.1 Write Tests ← FIRST
 - [ ] X.2 Implement
 - [ ] X.3 Verify ← LAST
@@ -222,8 +249,10 @@ EVERY task follows:
 ### Decision 4: QA Phase Mandatory ✅
 
 **Pattern:**
+
 ```markdown
 Phase 3: QA (MANDATORY)
+
 - Comprehensive testing
 - Manual QA checklist
 - Code quality review
@@ -238,6 +267,7 @@ Phase 3: QA (MANDATORY)
 ### Decision 5: Flexible Workspace Patterns ✅
 
 **Pattern:**
+
 ```
 Simple: 1 workspace → 1 deliverable
 Campaign: 1 workspace → multiple deliverables
@@ -250,15 +280,15 @@ Complex: workspace folder → sub-workspaces
 
 ## Comparison: Flow vs Universal
 
-| Aspect | Universal Commands | Flow Commands |
-|--------|-------------------|---------------|
-| **Structure** | AI infers | Defined patterns |
-| **TDD** | Optional | Enforced |
-| **QA** | Flexible | Mandatory |
-| **Best For** | Content, strategy, exploration | Technical features |
-| **Speed** | Faster (less structure) | Thorough (more checks) |
-| **Quality** | Good | Bulletproof |
-| **When to Use** | Flexible creation | Critical code |
+| Aspect          | Universal Commands             | Flow Commands          |
+| --------------- | ------------------------------ | ---------------------- |
+| **Structure**   | AI infers                      | Defined patterns       |
+| **TDD**         | Optional                       | Enforced               |
+| **QA**          | Flexible                       | Mandatory              |
+| **Best For**    | Content, strategy, exploration | Technical features     |
+| **Speed**       | Faster (less structure)        | Thorough (more checks) |
+| **Quality**     | Good                           | Bulletproof            |
+| **When to Use** | Flexible creation              | Critical code          |
 
 **Both have a place!** Use the right tool for the job.
 
@@ -273,7 +303,7 @@ Founder: We need user authentication for the app
 
 AI: I'll create a comprehensive spec with TDD enforcement:
     @create-specflow user-authentication
-    
+
 [Creates spec with TDD structure, mandatory QA]
 
 Founder: Looks good, let's build it
@@ -294,7 +324,7 @@ Founder: Plan our Kickstarter campaign
 
 AI: I'll create a campaign plan:
     @lyna @create kickstarter campaign strategy
-    
+
 [Creates flexible campaign plan, adapts to needs]
 
 Founder: Great, now execute it
@@ -315,7 +345,7 @@ Founder: Build a chat feature and create launch content
 
 AI (Technical): @create-specflow realtime-chat
 AI (Content): @lyna @create launch-announcement
-    
+
 [Uses flow for code, universal for content]
 
 Founder: Build the feature and launch it
@@ -334,7 +364,8 @@ Result: Quality code + flexible content = best of both worlds
 
 **Purpose:** Create your own custom flow commands for domain-specific workflows
 
-**Status:** Optional - can use `@create-specflow` then `@execute-specflow` separately
+**Status:** Optional - can use `@create-specflow` then `@execute-specflow`
+separately
 
 **Why optional:** Natural break point for review between spec and implementation
 
@@ -396,18 +427,22 @@ Result: Quality code + flexible content = best of both worlds
 ### Flow Commands Are Primarily Used By:
 
 **@denny (Systems Architect):**
+
 - Creates specs (`@create-specflow`)
 - Can execute if system-level work
 
 **@ada (Implementation Expert):**
+
 - Executes specs (`@execute-specflow`)
 - Implements features with TDD
 
 **@genna (Architect):**
+
 - Uses for strategic technical specs
 - System-level architecture
 
 **Any Expert Can:**
+
 - Call flow commands when appropriate
 - Mix flow and universal commands
 - Choose right tool for the job
@@ -417,6 +452,7 @@ Result: Quality code + flexible content = best of both worlds
 ## Version History
 
 **v1.0** - October 9, 2025
+
 - Initial flow command system created
 - `@create-specflow` and `@execute-specflow` implemented
 - Spec, workspace, and TDD patterns defined
@@ -427,24 +463,29 @@ Result: Quality code + flexible content = best of both worlds
 ## Resources
 
 **Command Files:**
+
 - `create-specflow.md` - Spec creation flow
 - `execute-specflow.md` - Spec execution flow
 - `rt.md` - Multi-expert roundtable review
 
 **Pattern Files:**
+
 - `../system/patterns/spec.md` - Spec structure with TDD
 - `../system/patterns/workspace.md` - Simple vs Complex workspaces
 - `../system/patterns/universal.md` - Universal command workflow
 
 **Related Commands:**
+
 - `../create.md` - Universal create command
 - `../execute.md` - Universal execute command
 
 **Guides:**
-- `../../system/patterns/expert-collaboration.md` - Roundtable system standards
-- `../../system/patterns/universal.md` - Core workflow principles
+
+- `../../system/patterns/expert-workflow.md` - Universal expert workflow and
+  collaboration (all experts)
+- `../../system/patterns/universal.md` - Core workflow principles (all commands)
 
 ---
 
-*Flow commands bring bulletproof quality enforcement to FWD PRO while maintaining the flexibility that makes the system great.*
-
+_Flow commands bring bulletproof quality enforcement to FWD PRO while
+maintaining the flexibility that makes the system great._

@@ -1,14 +1,17 @@
 # Update Command
 
-**Purpose:** Universal command for modifying or improving existing work - specs, code, documents, strategies, campaigns, etc.
+**Command:** `@update`  
+**Type:** Universal modification command  
+**Purpose:** Modify or improve existing work
 
 ---
 
-## How This Works
+## When This Command is Invoked
 
-When a user says: `@[expert] @update [thing]`
+**Trigger:** User says `@[expert] @update [thing]`
 
-Example:
+**Examples:**
+
 - `@denny @update the spec with new requirements`
 - `@ada @update the login feature to add 2FA`
 - `@lyna @update the pitch deck with new metrics`
@@ -16,240 +19,142 @@ Example:
 
 ---
 
-## Process
+## AI Instructions
 
-### 1. Understand What to Update
+### Step 1: Understand What to Update
 
-Clarify:
+**Clarify:**
+
 - What specifically needs updating?
-- What's changing? (new requirements, improvements, fixes?)
-- Why the update? (new information, feedback, change in direction?)
-- How extensive? (minor tweak vs major revision?)
+- What's changing? (new requirements, improvements, fixes)
+- Why the update? (new information, feedback, change in direction)
+- How extensive? (minor tweak vs major revision)
 
-### 2. Load Current Version
+### Step 2: Load Current Version
 
 **⚠️ CRITICAL: Update the EXISTING file - don't create a v2!**
 
-Find and read the existing work:
+**Find and read the existing work:**
+
 - Check `documents/[category]/` for the deliverable
 - Check `roundtable/workspace/` for the collaboration file
 - Read the existing content thoroughly
 - Understand what's there now
 
 **NEVER create:**
+
 - ❌ `pitch-deck-v2.md`
 - ❌ `auth-spec-updated.md`
 - ❌ `design-final.md`
 
 **ALWAYS update:**
+
 - ✅ `pitch-deck.md` (the existing file)
 - ✅ `auth-spec.md` (directly)
-- ✅ Git handles version history, not filenames!
+- ✅ Git handles version history, not filenames
 
-### 3. Understand the Changes
+### Step 3: Understand the Changes
 
 **What's changing:**
-- New requirements?
-- Updated information?
-- Addressing feedback?
-- Improving quality?
-- Adding features?
-- Removing things?
 
-**Search if needed:**
-- **Check what year it is!**
-- Search for "[current year] best practices" for the new requirements
-- Research new approaches if adding functionality
-- Verify current standards (not outdated info!)
+- New information to add?
+- Sections to revise?
+- Content to remove?
+- Structure to reorganize?
 
-### 4. Make the Updates
+**Why it's changing:**
 
-**Follow workflow standards** (`checklists/patterns/universal.md`)
+- Document the rationale
+- Note what triggered the update
 
-**Update approach:**
-- Preserve what's working (don't change unnecessarily)
-- Make changes clearly (document what changed and why)
-- Maintain consistency (with the rest of the document/project)
-- Test/validate changes (especially for code)
-- Update related documentation
+### Step 4: Research if Needed
 
-**For code updates:**
-- Create a new branch
-- Write/update tests
-- Make changes incrementally
-- Verify tests pass
-- Document changes
+**If new requirements or approach:**
 
-**For document updates:**
-- Track what changed (version history or change notes)
-- Ensure consistency throughout
-- Update related sections
-- Maintain quality standards
+- Search current best practices
+- Check if standards have changed
+- Verify new information
 
-### 5. Document Changes
+### Step 5: Make Updates
 
-**In the updated file, include:**
-```yaml
-# At top or in metadata
-updated: 2025-10-06
-updated_by: [expert]
-changes:
-  - Added 2FA requirements
-  - Updated security considerations
-  - Revised implementation timeline
-```
+**Use search_replace to update existing file:**
 
-Or for major updates:
-```markdown
-## Change History
+- Modify specific sections
+- Add new content
+- Remove outdated information
+- Update metadata (updated date, etc.)
 
-### 2025-10-06 Update
-- **Added:** 2FA support with biometric option
-- **Changed:** Authentication flow to accommodate 2FA
-- **Removed:** Simple password-only login
-- **Rationale:** Security requirements increased based on user feedback
-```
+**Maintain quality:**
 
-### 6. Quality Check
+- Apply appropriate standards
+- Keep consistent style
+- Ensure completeness
 
-- [ ] Are all requested changes made?
-- [ ] Is it still consistent/coherent?
-- [ ] Does it maintain quality standards?
-- [ ] Are tests updated/passing? (if code)
-- [ ] Is nothing accidentally broken?
+### Step 6: Document Changes
 
-Use `checklists/quality-checklist.md` or domain-specific checklist.
+**Update workspace:**
 
-### 7. Save & Communicate
+- What was changed
+- Why it was changed
+- Date of update
+- Who requested/approved
 
-**Update files directly (no v2 versions!):**
-- Update the existing workspace: `roundtable/workspace/[filename].md`
-- Update the existing deliverable: `documents/[category]/[filename].md`
-- Document changes in the file itself (change history section)
+**If major update:**
 
-**TWO files updated:**
-1. `roundtable/workspace/[filename].md` - Updated with process notes
-2. `documents/[category]/[filename].md` - Updated deliverable
+- Note key changes in workspace
+- Update whiteboard status
 
-### 8. Update Whiteboards
+### Step 7: Quality Check
 
-Update your section in `roundtable/whiteboards.md` with update summary.
+**Verify:**
+
+- All requested changes made
+- No unintended modifications
+- Still meets original requirements plus new ones
+- Quality maintained or improved
+
+### Step 8: Deliver
+
+**Report changes:**
+
+- What was updated
+- Key changes made
+- Rationale for changes
+- Ready for use/review
 
 ---
 
-## Original Roundtable Update Example
+## Key Behaviors
 
-**Update Roundtable:**
-```markdown
-### [Date] - [Expert]: Updated [Thing] 🔄
+**Update in place:**
 
-**What changed:**
-- [Change 1]
-- [Change 2]
+- Modify existing files
+- Don't create versions
+- Git tracks history
 
-**Why:**
-[Rationale for updates]
+**Understand before changing:**
 
-**Impact:**
-[What this affects or enables]
+- Read current version fully
+- Understand why it was that way
+- Don't break what works
 
-**File:**
-- `roundtable/workspace/[filename]`
+**Document changes:**
 
-**Next steps:**
-- **founder:** [Review changes? Test? Approve?]
-- **[other expert]:** [If affects their work]
+- Note what changed and why
+- Track in workspace
+- Update metadata
 
-**Status:** Updated and ready for review ✅
-```
+**Maintain quality:**
 
-**Create tasks if needed:**
-```markdown
-- [ ] Review updated [thing] - [What to focus on]
-- [ ] Test [specific changes] - [What to verify]
-```
+- Apply standards consistently
+- Preserve good parts
+- Improve as you update
 
 ---
 
-## Best Practices
+## Notes
 
-### ✅ DO:
-- **Understand the current state** - Read thoroughly before changing
-- **Document what changed** - Make it clear what's different
-- **Test thoroughly** - Especially for code updates
-- **Preserve what works** - Don't change unnecessarily
-- **Communicate changes** - Update Roundtable clearly
-- **Follow standards** - Use patterns/universal.md pattern
-
-### ❌ DON'T:
-- **Don't change blindly** - Understand the impact
-- **Don't break existing functionality** - Test carefully
-- **Don't lose history** - Document what changed
-- **Don't skip validation** - Verify it still works
-- **Don't forget related docs** - Update everything affected
-
----
-
-## Common Update Scenarios
-
-### Updating Based on Feedback:
-```markdown
-Founder says: "The spec looks good but we need to add mobile support"
-
-Process:
-1. Read current spec
-2. Research mobile best practices
-3. Add mobile requirements throughout
-4. Update implementation plan
-5. Revise timeline if needed
-6. Document changes
-7. Update Roundtable
-```
-
-### Updating for New Information:
-```markdown
-Founder says: "We just learned competitors have feature X"
-
-Process:
-1. Research competitor's feature X
-2. Determine if/how to adapt
-3. Update strategy/spec accordingly
-4. Document competitive analysis
-5. Adjust roadmap if needed
-6. Update Roundtable with findings
-```
-
-### Updating to Fix Issues:
-```markdown
-Founder says: "The pitch deck is missing our traction numbers"
-
-Process:
-1. Get traction numbers from founder
-2. Update relevant slides
-3. Ensure consistency throughout
-4. Verify all numbers are current
-5. Update Roundtable
-```
-
----
-
-## Graceful Handoffs
-
-If another expert should handle the update:
-
-```markdown
-I can update this, but [Expert Name] created the original and might be better 
-positioned to make these specific changes because [reason].
-
-Would you like me to:
-1. Update it myself (happy to!)
-2. Collaborate with [Expert]
-3. Hand this update to [Expert]
-
-What works best? 🔄
-```
-
----
-
-**Remember:** Updates are about improving existing work while maintaining quality and consistency. Be thoughtful about what changes, document everything, and keep everyone informed! 🔄
-
+- Update scope adapts to what's being modified
+- Expert domain expertise guides how to update
+- Always update existing file, never create v2
+- Document rationale for changes

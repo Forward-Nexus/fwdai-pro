@@ -1,307 +1,210 @@
 # FWD PRO Patterns
 
-**Purpose:** Reference guides that define workflow structures for commands
+**Purpose:** Expert behavior workflows - HOW experts work
 
 ---
 
 ## What Are Patterns?
 
-Patterns are **reference documentation** that define how commands should work. They're not templates - they're guides that AI reads to understand the proper workflow.
+Patterns define **expert workflows** - how experts operate, collaborate, and
+deliver work.
 
-Think of them as the "instruction manual" for different types of work.
+**Patterns are ONLY for experts.** Commands, standards, and checklists live
+elsewhere.
 
 ---
 
 ## Available Patterns
 
-### universal.md
-**For:** All universal commands (`@create`, `@execute`, `@analyze`, `@research`, `@review`, `@update`, `@fix`, `@plan`, `@brainstorm`)
+### expert-workflow.md (UNIVERSAL) ⭐
+
+**For:** ALL experts
 
 **Defines:**
-- Three-phase workflow (Pre-Flight → Execution → Post-Flight)
-- Smart context loading
-- Adaptive intelligence (adjust to complexity/type)
-- Quality standards
-- When to route to flow commands
 
-**Used by:** All universal commands
-
----
-
-### spec.md
-**For:** Technical specifications with TDD enforcement
-
-**Defines:**
-- Comprehensive spec structure (ONE file has everything)
-- TDD task format (test → implement → verify)
-- Metadata, Story, AC, Technical Design, Tasks, QA, Decisions
-- Progress logging format
-- NO dates in folder names
-- ONE file approach (no fragmentation)
-
-**Used by:** `@create-specflow`, `@execute-specflow`
-
----
-
-### workspace.md
-**For:** Workspace structure decisions
-
-**Defines:**
-- Simple workspace (one file, one or more related deliverables)
-- Complex workspace (folder with sub-workspaces for large systems)
-- When to use each pattern
-- How to choose
-
-**Used by:** All commands that create workspaces
-
----
-
-### expert-collaboration.md
-**For:** Universal collaboration workflow for ALL experts
-
-**Defines:**
-- Context loading standards
-- Workspace creation and management
-- Whiteboard updates
-- Cross-expert collaboration patterns
-- Founder checklist management
+- Individual expert workflow (7 steps: context → workspace → deliverables →
+  tracking)
+- Expert collaboration (group chat, handoffs, multi-expert work)
+- The Roundtable System (whiteboards, workspaces, checklists, deliverables)
+- Cross-expert awareness and coordination
+- Division of labor
 - Quality standards
 
-**Used by:** All experts, all the time (universal pattern)
+**Used by:** Every expert, every time
+
+**Note:** Consolidated from `expert-collaboration.md` and
+`roundtable-system.md` - single universal operating system for all experts.
 
 ---
 
-### expert-tech.md
+### expert-tech.md (DOMAIN)
+
 **For:** Technical work (code, specs, systems)
 
 **Defines:**
+
 - TDD requirements (tests FIRST, always)
 - Code quality standards
 - Technical documentation requirements
 - Testing coverage goals (80%+)
+- Denny → Ada handoff process
 
-**Used by:** @denny, @ada (primary pattern for technical experts)
+**Used by:** @denny (design), @ada (implementation)
 
 ---
 
-### expert-content.md
+### expert-content.md (DOMAIN)
+
 **For:** Content, marketing, and business documents
 
 **Defines:**
-- Lead with emotion (external) or data (internal)
+
+- Content creation workflow
 - Audience-appropriate messaging
 - Content quality standards
 - Legal review requirements for customer-facing content
+- Lead with emotion (external) or data (internal)
 
-**Used by:** @lyna, @benji (primary pattern for content/marketing experts)
+**Used by:** @benji (internal growth), @lyna (external strategy - pitch decks,
+investor materials)
 
 ---
 
-### expert-strategy.md
+### expert-strategy.md (DOMAIN)
+
 **For:** Strategic planning and vision work
 
 **Defines:**
+
 - Long-term thinking (10-year horizon)
 - "Should we build this?" decision framework
 - Strategic alignment requirements
 - Trade-off documentation
+- Strategic thinking frameworks
 
-**Used by:** @genna, @lyna, @benji (primary pattern for strategy experts)
+**Used by:** @genna (chief strategist), @benji (growth strategy), @lyna
+(external strategy)
 
 ---
 
-### expert-legal.md
+### expert-legal.md (DOMAIN)
+
 **For:** Legal and compliance work
 
 **Defines:**
+
 - Risk assessment standards
 - Compliance verification process
 - Claims review methodology
 - Accessible legal explanations
+- Legal workflow and frameworks
 
-**Used by:** @elle (primary pattern for legal expert)
-
----
-
-### deliverable-types.md ✨ NEW
-**For:** Document lifecycle and token efficiency
-
-**Defines:**
-- Living vs Working vs Fixed documents
-- When to update vs create new version
-- Token-efficient closeout processes
-- Document type decision tree
-
-**Used by:** All experts (universal pattern)
+**Used by:** @elle (legal counsel)
 
 ---
 
-### market-research-workflow.md ✨ NEW
-**For:** Research-first workflow for investor materials
+## Pattern Loading Architecture
 
-**Defines:**
-- 5-phase scientific method for business docs
-- Lyna/Benji division of labor
-- Document hierarchy (verified data → references → deliverables)
-- Research integrity quality gates
-- Workspace coordination for research projects
-
-**Used by:** @lyna, @benji (investor materials, business plans, pitch decks)
-
----
-
-### PATTERN-LOADING-FLOW.md ⭐
-**For:** Visual understanding of the entire system
-
-**Defines:**
-- System architecture hierarchy (visual diagrams)
-- Pattern loading sequence
-- Expert activation flow
-- Pattern-to-checklist mapping
-- Decision trees for pattern selection
-- Complete examples of pattern loading
-- Roundtable integration flow
-
-**Used by:** System maintainers, documentation reference
-
-**Purpose:** Comprehensive visual guide showing how patterns, experts, commands, checklists, and standards all work together.
-
----
-
-## How Patterns Work
-
-### Commands Read Patterns
+### Expert .mdc Rules Load:
 
 ```
-User: @create spec for user authentication
-
-AI reads: pro-os/system/patterns/universal.md
-↓
-Follows three-phase workflow:
-- Pre-Flight: Load context, understand request, research
-- Execution: Create workspace + deliverable, update progress
-- Post-Flight: Update tracking, provide summary
-
-AI also checks: Should this use @create-specflow instead?
-↓
-Offers alternative if appropriate
+Step 1: Personality (WHO I am)
+    ↓
+Step 2: Domain Pattern (WHAT I know)
+    ↓
+Step 3: Universal Workflow (HOW I work)
+    ↓
+Step 4: Then respond
 ```
 
-### Patterns Are References, Not Templates
+**Example - Denny:**
 
-**Templates** = Files you copy/fill out (like `workspace-template.md`)
-
-**Patterns** = Guides that explain HOW to do something
-
-**Example:**
-- Template: "Here's a blank workspace to fill out"
-- Pattern: "Here's when to use Simple vs Complex workspace, and here's the workflow to follow"
+1. `denny-systems-architect.md` (personality)
+2. `expert-tech.md` (domain expertise)
+3. `expert-workflow.md` (universal workflow)
+4. Respond as Denny
 
 ---
 
-## Pattern Design Principles
+## Pattern Philosophy
 
-### 1. Clear and Concise
-Patterns explain WHAT to do and WHEN, not excessive detail
+**Patterns = Expert behavior (not document structure)**
 
-### 2. Adaptive
-Patterns provide structure while allowing flexibility
+```
+PATTERNS (Expert Workflows)
+├── expert-workflow.md (universal - all experts)
+└── expert-[domain].md (specialized - per domain)
 
-### 3. Consistent
-All patterns follow similar format (Overview → Structure → Best Practices)
+STANDARDS (Document Structure)
+├── spec-standards.md
+├── investor-materials-standards.md
+└── code-style/
 
-### 4. Practical
-Patterns include examples and clear decision criteria
+CHECKLISTS (Quality Gates)
+├── spec-checklist.md
+├── code-checklist.md
+└── quality-checklist.md
+```
 
-### 5. Non-Redundant
-Information appears in ONE pattern, not duplicated across multiple
+**Like professional training:**
+
+- **Universal pattern** = Foundational training all experts get
+- **Domain pattern** = Specialized expertise filtered through universal workflow
+- **Standards** = Document structure/format requirements
+- **Checklists** = Quality validation
 
 ---
 
 ## Adding New Patterns
 
-**When to add a pattern:**
-- New command type needs structure
-- Repetitive workflow that needs standardization
-- Complex decision tree that needs documentation
+**Only add patterns for expert workflows.**
 
-**When NOT to add a pattern:**
-- Information already in another pattern
-- Simple workflow that doesn't need documentation
-- One-off case that won't repeat
+### When to Add:
 
-**Keep it simple!** Only add patterns when they truly help.
+- New expert domain needs behavior definition
+- Universal workflow needs enhancement
+- Expert collaboration needs new process
 
----
+### When NOT to Add:
 
-## Pattern vs Template vs Command
-
-**Pattern** = Reference guide explaining workflow
-- Location: `pro-os/system/patterns/`
-- Example: `universal.md`, `spec.md`, `workspace.md`
-- Purpose: AI reads to understand HOW to work
-
-**Template** = Blank structure to copy/fill
-- Location: `pro-os/templates/`
-- Example: `workspace-template.md`
-- Purpose: Starting point for creating new files
-
-**Command** = Executable instruction
-- Location: `pro-os/commands/`
-- Example: `create.md`, `execute.md`, `create-specflow.md`
-- Purpose: AI executes when user invokes command
-- Commands READ patterns to understand workflow
-
----
-
-## Pattern vs Standard vs Checklist
-
-**Pattern** = Workflow guide (HOW to do the work)
-- Location: `pro-os/system/patterns/`
-- Example: `universal.md`, `expert-collaboration.md`
-- Purpose: Define workflows, processes, and structures
-- When: Throughout all phases of work
-
-**Standard** = Formatting and style rules (HOW to format)
-- Location: `pro-os/system/standards/`
-- Example: `expert-voice-guidelines.md`, `error-templates.md`
-- Purpose: Define formatting, voice, and style
-- When: When formatting communication or code
-
-**Checklist** = Quality validation (DID I do it right?)
-- Location: `pro-os/system/checklists/`
-- Example: `quality-checklist.md`, `code-checklist.md`
-- Purpose: Validate completeness and quality
-- When: Before marking work complete (Phase 3)
+- Document structure rules → goes in `standards/`
+- Quality validation → goes in `checklists/`
+- Command behavior → goes in `commands/`
 
 ---
 
 ## Version History
 
+**v3.0** - November 13, 2025
+
+- **MAJOR ARCHITECTURE CLEANUP:**
+  - Consolidated expert-workflow.md + expert-collaboration.md +
+    roundtable-system.md → ONE universal pattern
+  - Moved spec.md → standards/spec-standards.md
+  - Moved document-processing.md → standards/document-processing-standards.md
+  - Moved market-research-workflow.md →
+    standards/investor-materials-standards.md
+  - **Patterns now ONLY contain expert workflows**
+  - Standards contain document structure/format
+  - Checklists contain quality validation
+  - Clear separation of concerns
+
 **v2.1** - October 18, 2025
-- **MAJOR SYSTEM IMPROVEMENTS:**
-  - Added `deliverable-types.md` - Document lifecycle & token efficiency
-  - Added `market-research-workflow.md` - Research-first for investor materials
-  - Enhanced `expert-collaboration.md` with 5 critical new patterns:
-    - Source of Truth Principle
-    - Token Efficiency Pattern
-    - Expert Lens Principle
-    - Research & Citation Integrity (links to new standards)
-    - Group Chat Pattern (natural multi-expert collaboration)
-  - Updated all domain patterns with research integrity references
-  - Created `standards/research-citation-standards.md` (3-tier citation standard)
-  - Updated all checklists with research verification requirements
-  - Enhanced `standards/expert-voice-guidelines.md` with update-in-place behavior
+
+- Added deliverable-types.md, market-research-workflow.md
+- Enhanced expert-collaboration.md with research integrity
+- Created research-citation-standards.md
 
 **v2.0** - October 9, 2025
-- Enhanced universal.md with comprehensive workflow guidance
-- Enhanced expert-collaboration.md with update format examples
-- System-wide improvements and clarifications
+
+- Enhanced universal.md and expert-collaboration.md
+- System-wide improvements
 
 **v1.0** - October 9, 2025
+
 - Initial patterns system created
 
 ---
 
-*Patterns provide structure without rigidity - the foundation of consistent, high-quality work.*
-
+_Patterns are the expert operating system - they define HOW we work, not WHAT we
+produce._

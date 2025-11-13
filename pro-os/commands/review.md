@@ -1,14 +1,17 @@
 # Review Command
 
-**Purpose:** Universal command for reviewing anything - code, designs, documents, strategies, campaigns, legal terms, etc.
+**Command:** `@review`  
+**Type:** Universal review command  
+**Purpose:** Review and provide feedback on anything
 
 ---
 
-## How This Works
+## When This Command is Invoked
 
-When a user says: `@[expert] @review [thing]`
+**Trigger:** User says `@[expert] @review [thing]`
 
-Example:
+**Examples:**
+
 - `@ada @review the authentication code`
 - `@elle @review these terms of service`
 - `@denny @review this system architecture`
@@ -16,136 +19,125 @@ Example:
 
 ---
 
-## Process
+## AI Instructions
 
-### 1. Understand What to Review
+### Step 1: Understand Review Scope
 
-Clarify:
+**Clarify:**
+
 - What needs review?
-- What's the focus? (quality, accuracy, completeness, risk?)
-- What's the goal? (approve, improve, identify issues?)
+- What's the focus? (quality, accuracy, completeness, risk)
+- What's the goal? (approve, improve, identify issues)
 - Any specific concerns?
 
-### 2. Load Context (Token Efficiency!)
+### Step 2: Load Context (Token Efficient)
 
-**Check what's already in context first!**
+**Check context first!**
 
-Read:
-- The thing being reviewed (from `documents/` or `roundtable/workspace/`)
-- Related context (workspace has specs, requirements!)
-- Project goals and constraints (if not already loaded)
-- Relevant checklists from `system/checklists/`
+**Load:**
 
-### 3. Conduct Review
+- The thing being reviewed
+- Related workspace (has specs, requirements, context)
+- Project context (if not already loaded)
 
-**Review Framework:**
+### Step 3: Conduct Review
+
+**Review framework:**
+
 1. **Quality Check** - Is it well-done?
 2. **Completeness** - Is anything missing?
 3. **Accuracy** - Is it correct?
 4. **Risks** - Any problems or concerns?
 5. **Improvements** - How could it be better?
 
-Use relevant checklist from `system/checklists/` if one exists.
+**Apply domain expertise automatically:**
 
-### 4. Provide Feedback
+- Code → Quality, testing, security, performance
+- Legal → Compliance, risk, liability
+- Content → Messaging, accuracy, tone
+- Technical → Architecture, scalability, maintainability
+- Strategy → Alignment, long-term thinking
 
-**Format:**
-```markdown
-## Review: [Thing]
+**Use appropriate checklist** (loaded via command .mdc based on review type)
 
-**Overall Assessment:** [Looks great / Needs work / Major concerns]
+### Step 4: Provide Feedback
 
-**Strengths:**
-- [What's working well]
-- [What's working well]
+**Structure feedback clearly:**
 
-**Issues Found:**
-- [ ] **[Severity]** [Issue description]
-  - Impact: [How this affects things]
-  - Recommendation: [How to fix]
+**What's good:**
+
+- Strengths
+- What's working well
+
+**Issues found:**
+
+- Problems identified
+- Why they matter
+- Severity (critical/high/medium/low)
 
 **Recommendations:**
-1. [Priority action]
-2. [Priority action]
 
-**Approval Status:**
-- [ ] Approved as-is
-- [ ] Approved with minor changes
-- [ ] Needs revision
-- [ ] Not approved - major issues
-```
+- How to fix issues
+- Improvements to consider
+- Prioritized by impact
 
-### 5. Create/Update Workspace + Deliverable
+**Specific and actionable:**
 
-**A. Update Workspace**
-- If reviewing existing work: Open that workspace, add your review section
-- If standalone review: Create `roundtable/workspace/[name]-review-complete.md`
-- Document review process, all issues found, recommendations
+- Not "this could be better"
+- But "change X to Y because Z"
 
-**B. Create Clean Deliverable** (if applicable)
-- For formal reviews: Save as `documents/reviews/[name]-review-report.md`
-- Include: Summary, Issues Found, Recommendations, Sign-off
-- For informal reviews: The review notes in workspace are sufficient
+### Step 5: Document in Workspace
 
-**Files created:**
-1. `roundtable/workspace/[name]-review-complete.md` OR add section to existing workspace
-2. `documents/reviews/[name]-review-report.md` (if formal review needed)
+**Update relevant workspace:**
 
-**Update whiteboards:** Update your section in `roundtable/whiteboards.md` with review status.
+- Review conducted
+- Findings and recommendations
+- Date reviewed
+- Status after review
 
----
+### Step 6: Update Tracking
 
-## Review Types
+**If issues found:**
 
-### Code Review (Ada):
-- [ ] Follows conventions
-- [ ] Has tests
-- [ ] No bugs/errors
-- [ ] Well-documented
-- [ ] Secure
-- [ ] Performant
+- Add to founder checklist if action needed
+- Update whiteboard with review status
 
-### Legal Review (Elle):
-- [ ] Legally sound
-- [ ] Risks identified
-- [ ] Compliance met
-- [ ] Clear language
-- [ ] Protected interests
+### Step 7: Deliver Feedback
 
-### Strategy Review (Genna/Lyna/Benji):
-- [ ] Aligned with goals
-- [ ] Feasible
-- [ ] Well-reasoned
-- [ ] Considers risks
-- [ ] Clear next steps
+**Present clearly:**
 
-### Design Review (Denny):
-- [ ] Sound architecture
-- [ ] Scalable
-- [ ] Maintainable
-- [ ] Follows best practices
-- [ ] Complete
+- Overall assessment
+- Key issues (if any)
+- Top recommendations
+- Next steps
 
 ---
 
-## Best Practices
+## Key Behaviors
 
-### ✅ DO:
-- **Be thorough** - don't rush
-- **Be specific** - vague feedback isn't helpful
-- **Be constructive** - focus on improvements
-- **Prioritize issues** - what matters most?
-- **Provide solutions** - don't just point out problems
-- **Use checklists** - ensure completeness
+**Constructive:**
 
-### ❌ DON'T:
-- **Don't be vague** - "needs work" isn't actionable
-- **Don't skip severity** - mark critical vs nice-to-have
-- **Don't just criticize** - acknowledge strengths too
-- **Don't approve blindly** - take time to review properly
-- **Don't skip documentation** - record your findings
+- Focus on improvement, not criticism
+- Provide solutions, not just problems
+- Balance positive and negative
+
+**Domain lens:**
+
+- Apply expert's specific expertise
+- Technical expert catches technical issues
+- Legal expert catches legal risks
+
+**Specific:**
+
+- Point to exact lines/sections
+- Explain why it matters
+- Show how to fix
 
 ---
 
-**Remember:** Good reviews improve quality and catch problems early. Be thorough, be helpful, be clear! ✅
+## Notes
 
+- Review depth adapts to request
+- Appropriate checklist loaded via command .mdc
+- Expert domain patterns guide review methodology
+- Be honest but constructive

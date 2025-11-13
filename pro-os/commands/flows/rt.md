@@ -11,12 +11,14 @@
 ## When to Use
 
 Use this command when:
+
 - You want multiple expert perspectives on something
 - You need comprehensive review before launching/shipping
 - You want to catch issues from different angles
 - You need validation from the whole team
 
 **vs individual expert review:**
+
 - This command: All relevant experts weigh in, comprehensive feedback
 - Individual review: Single perspective (still valuable!)
 
@@ -27,6 +29,7 @@ Use this command when:
 ### 1. Identify What to Review
 
 **Founder specifies:**
+
 ```
 @rt pitch-deck
 @rt auth-feature
@@ -37,6 +40,7 @@ Use this command when:
 ### 2. Load the Deliverable
 
 **Check where it is:**
+
 - Workspace: `roundtable/workspace/[name].md`
 - Deliverable: `documents/[category]/[name].md`
 - Or founder provides file
@@ -46,18 +50,21 @@ Use this command when:
 **Based on deliverable type:**
 
 **Pitch deck → All business experts:**
+
 - 🎯 Genna (strategic alignment)
 - 🌐 Lyna (investor appeal, narrative)
 - 📊 Benji (market/growth claims)
 - ⚖️ Elle (legal compliance)
 
 **Technical spec/feature → Technical experts:**
+
 - 🎯 Genna (strategic fit)
 - 🔧 Denny (technical soundness)
 - 💻 Ada (implementation feasibility)
 - ⚖️ Elle (compliance if needed)
 
 **Marketing campaign → Growth experts:**
+
 - 🎯 Genna (brand alignment)
 - 🌐 Lyna (positioning, messaging)
 - 📊 Benji (campaign strategy)
@@ -70,11 +77,13 @@ Use this command when:
 **Each relevant expert:**
 
 **Step 1: Read the Deliverable**
+
 - Open workspace (has context)
 - Read deliverable itself
 - Understand the goal
 
 **Step 2: Review from Their Perspective**
+
 - Genna: Strategic alignment, long-term fit
 - Denny: Technical soundness, feasibility
 - Ada: Implementation quality, maintainability
@@ -92,14 +101,17 @@ Each expert adds their section:
 **Overall:** [Looks great / Needs work / Major concerns]
 
 **Strengths:**
+
 - [What's working well]
 - [What's working well]
 
 **Issues/Concerns:**
+
 - ⚠️ [Issue 1] - [Why it matters]
 - ⚠️ [Issue 2] - [Why it matters]
 
 **Recommendations:**
+
 1. [Priority recommendation]
 2. [Priority recommendation]
 
@@ -120,9 +132,11 @@ Create summary in workspace:
 **Overall Consensus:** [Strong approval / Conditional approval / Needs work]
 
 **Key Strengths:**
+
 - [What multiple experts praised]
 
 **Key Issues to Address:**
+
 1. **[Issue]** - Raised by [expert(s)]
    - Impact: [Why it matters]
    - Recommendation: [How to fix]
@@ -132,6 +146,7 @@ Create summary in workspace:
    - Recommendation: [How to fix]
 
 **Next Steps:**
+
 - [ ] [Action item 1]
 - [ ] [Action item 2]
 
@@ -141,6 +156,7 @@ Create summary in workspace:
 ### 6. Update Roundtable
 
 Update `roundtable/whiteboards.md`:
+
 - Note that roundtable review completed
 - Link to workspace with full reviews
 - Add to `roundtable/[your-name]-checklist.md` if action needed
@@ -150,18 +166,21 @@ Update `roundtable/whiteboards.md`:
 ## What Makes This Command Different
 
 **Multi-expert coordination:**
+
 - Brings all relevant perspectives
 - Catches issues one expert might miss
 - Comprehensive feedback
 - Builds consensus
 
 **Efficient process:**
+
 - All experts review in parallel
 - Reviews documented in workspace
 - Synthesis shows consensus/conflicts
 - Clear next steps
 
 **Quality multiplication:**
+
 - Technical + strategic + legal + market perspectives
 - Each expert focuses on their domain
 - Cross-functional validation
@@ -177,7 +196,7 @@ Update `roundtable/whiteboards.md`:
 ✅ **All experts see full conversation** - Shared context from the start  
 ✅ **Natural group discussion** - Experts can respond to each other's reviews  
 ✅ **User orchestrates** - Founder decides who participates  
-✅ **Parallel processing** - Multiple perspectives at once, not one-by-one  
+✅ **Parallel processing** - Multiple perspectives at once, not one-by-one
 
 ### How It Works in Practice:
 
@@ -187,7 +206,7 @@ Founder: "@rt review this pitch deck"
 [System loads pitch deck, identifies relevant experts]
 
 Genna: [Reads deck, provides strategic perspective]
-Lyna: [Reads deck, provides investor perspective]  
+Lyna: [Reads deck, provides investor perspective]
 Elle: [Reads deck, flags legal issue with claim on Slide 7]
 Lyna: "Good catch Elle - I'll revise that claim"
 Genna: "Agree with both - also the market size slide needs work"
@@ -196,6 +215,7 @@ Genna: "Agree with both - also the market size slide needs work"
 ```
 
 **NOT like this:**
+
 ```
 Expert 1 reviews → writes formal handoff → waits
 Expert 2 reviews → writes formal handoff → waits
@@ -205,20 +225,24 @@ Expert 3 reviews → etc.
 
 ### Reference:
 
-See `system/patterns/expert-collaboration.md` Step 7 for complete group chat pattern documentation.
+See `system/patterns/expert-workflow.md` Part 2 (Expert Collaboration section)
+for complete group chat pattern documentation.
 
-**@rt is the PERFECT use case for group chat collaboration** - brings the whole team together naturally!
+**@rt is the PERFECT use case for group chat collaboration** - brings the whole
+team together naturally!
 
 ---
 
 ## Example Usage
 
 ### Simple:
+
 ```
 @rt pitch-deck
 ```
 
 ### With file path:
+
 ```
 @rt documents/investor/pitch-deck.md
 ```
@@ -228,6 +252,7 @@ See `system/patterns/expert-collaboration.md` Step 7 for complete group chat pat
 **Founder:** `@rt pitch-deck`
 
 **AI:**
+
 ```
 Initiating roundtable review of pitch deck...
 
@@ -359,6 +384,7 @@ Approval: Approved with minor edits
 ## Quality Standards
 
 ### For This Command:
+
 - ✅ All relevant experts participate
 - ✅ Each expert reviews from their domain
 - ✅ Reviews are specific and actionable
@@ -371,12 +397,14 @@ Approval: Approved with minor edits
 ## When to Use vs Individual Review
 
 **Use `@rt` when:**
+
 - ✅ High-stakes deliverable (pitch, launch, legal)
 - ✅ Need comprehensive validation
 - ✅ Want to catch issues from all angles
 - ✅ Building consensus before action
 
 **Use individual expert review when:**
+
 - ✅ Need specific domain feedback only
 - ✅ Iterating quickly
 - ✅ Don't need full team input
@@ -400,5 +428,5 @@ Approval: Approved with minor edits
 
 ---
 
-**Remember:** Roundtable reviews catch what individual reviews miss. Multiple perspectives make better decisions. Use this for high-stakes work! 🎯
-
+**Remember:** Roundtable reviews catch what individual reviews miss. Multiple
+perspectives make better decisions. Use this for high-stakes work! 🎯

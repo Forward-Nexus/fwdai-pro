@@ -8,13 +8,17 @@
 
 ## What This Command Does
 
-Walks you through creating a custom domain expert tailored to your project's needs. The AI will ask guided questions and generate:
+Walks you through creating a custom domain expert tailored to your project's
+needs. The AI will ask guided questions and generate:
 
 **Two files created:**
-1. **Expert personality file** (`.md`) - Who they are, domain expertise, communication style
+
+1. **Expert personality file** (`.md`) - Who they are, domain expertise,
+   communication style
 2. **Expert activation rule** (`.mdc`) - When/how to load the expert
 
 **What you get:**
+
 - Personality and communication style
 - Specialized knowledge areas
 - Domain-specific patterns assigned
@@ -26,13 +30,20 @@ Walks you through creating a custom domain expert tailored to your project's nee
 ## When to Use This
 
 Create a new expert when:
-- ✅ **Need specialized expertise** - Your project needs domain knowledge not covered by core experts
-- ✅ **Industry-specific guidance** - You need someone who knows your specific industry
-- ✅ **Quality review** - You want someone to review work through a specialized lens
-- ✅ **Custom workflows** - You need an expert with specific processes for your work
+
+- ✅ **Need specialized expertise** - Your project needs domain knowledge not
+  covered by core experts
+- ✅ **Industry-specific guidance** - You need someone who knows your specific
+  industry
+- ✅ **Quality review** - You want someone to review work through a specialized
+  lens
+- ✅ **Custom workflows** - You need an expert with specific processes for your
+  work
 
 **Examples:**
-- Restaurant owner building an app → Create "Chef Maria" for hospitality operations
+
+- Restaurant owner building an app → Create "Chef Maria" for hospitality
+  operations
 - Healthcare startup → Create "Dr. Chen" for clinical validation
 - Real estate platform → Create "Broker Sam" for property market expertise
 - Education app → Create "Professor Lee" for learning design
@@ -42,14 +53,15 @@ Create a new expert when:
 ## How It Works
 
 ### Step 1: Initiate Creation
+
 ```
 You: @create-expert
 
 Genna:
 🎯 Let's create a custom expert for your team!
 
-I'll ask you some questions to build a detailed expert profile. This will be 
-similar to how Bonnie Jo was created for ODAT - a full persona with expertise, 
+I'll ask you some questions to build a detailed expert profile. This will be
+similar to how Bonnie Jo was created for ODAT - a full persona with expertise,
 personality, and review frameworks.
 
 Ready? Let's go!
@@ -60,6 +72,7 @@ Ready? Let's go!
 Genna will ask:
 
 **1. Expert Name**
+
 ```
 What should we name your expert?
 Example: "Chef Maria Rodriguez" or "Dr. Sarah Chen" or "Sam Torres"
@@ -68,6 +81,7 @@ Example: "Chef Maria Rodriguez" or "Dr. Sarah Chen" or "Sam Torres"
 ```
 
 **2. Domain/Expertise**
+
 ```
 What's their area of expertise?
 Example: "Restaurant Operations" or "Clinical Psychology" or "Real Estate"
@@ -76,6 +90,7 @@ Example: "Restaurant Operations" or "Clinical Psychology" or "Real Estate"
 ```
 
 **3. Why You Need Them**
+
 ```
 Why do you need this expertise for your project? What will they help with?
 Example: "Review menu designs and kitchen workflows" or "Validate clinical claims"
@@ -84,6 +99,7 @@ Example: "Review menu designs and kitchen workflows" or "Validate clinical claim
 ```
 
 **4. Personality Style**
+
 ```
 What personality should they have?
 - Professional and formal?
@@ -96,6 +112,7 @@ What personality should they have?
 ```
 
 **5. Key Responsibilities**
+
 ```
 What should they review or guide you on?
 Example: "Review marketing materials, validate medical claims, ensure HIPAA compliance"
@@ -104,6 +121,7 @@ Example: "Review marketing materials, validate medical claims, ensure HIPAA comp
 ```
 
 **6. Red Flags to Watch**
+
 ```
 What mistakes or risks should they catch?
 Example: "Overpromising results, ignoring regulations, cultural insensitivity"
@@ -120,7 +138,7 @@ Perfect! I'm creating [Expert Name] with [domain] expertise...
 Generated:
 - ✅ Expert personality file (.md)
   - Profile with credentials
-  - Personality and communication style  
+  - Personality and communication style
   - Specialized knowledge areas
   - Domain adaptation examples
   - Key questions they ask
@@ -128,10 +146,9 @@ Generated:
 
 - ✅ Expert activation rule (.mdc)
   - Trigger: @[shortname]
-  - Loads expert personality
-  - Loads expert-workflow.md (how to operate)
-  - Loads expert-collaboration.md (how to work with others)
-  - Loads domain patterns (tech/content/strategy/legal)
+  - Loads expert personality (WHO they are)
+  - Loads domain patterns (WHAT they know - tech/content/strategy/legal)
+  - Loads expert-workflow.md (HOW they operate - universal for all experts)
 
 📁 Files saved:
 - .cursor/rules/experts/[shortname].mdc
@@ -177,19 +194,19 @@ Genna: What's their area of expertise?
 You: Restaurant operations and hospitality
 
 Genna: Why do you need this expertise?
-You: I'm building a restaurant management app and need someone who knows 
+You: I'm building a restaurant management app and need someone who knows
 kitchen workflows, menu design, and service operations
 
 Genna: What personality should Maria have?
-You: Direct and practical, with lots of real-world kitchen experience. 
+You: Direct and practical, with lots of real-world kitchen experience.
 No-nonsense but warm.
 
 Genna: What should Maria review or guide you on?
-You: Kitchen workflow designs, menu structures, service processes, 
+You: Kitchen workflow designs, menu structures, service processes,
 restaurant-specific features
 
 Genna: What red flags should Maria watch for?
-You: Unrealistic workflows, ignoring health codes, over-complicating simple 
+You: Unrealistic workflows, ignoring health codes, over-complicating simple
 processes, missing industry standards
 
 Genna:
@@ -200,10 +217,9 @@ Perfect! Creating Chef Maria Rodriguez...
 📁 .fwdpro/pro-os/experts/maria-restaurant-operations.md (personality & expertise)
 
 **Patterns assigned:**
-- expert-workflow.md (how Maria operates)
-- expert-collaboration.md (how Maria works with others)
-- expert-content.md (for menu/marketing content)
-- expert-strategy.md (for operational strategy)
+- expert-content.md (for menu/marketing content - domain expertise)
+- expert-strategy.md (for operational strategy - domain expertise)
+- expert-workflow.md (universal workflow - all experts load this)
 
 You can now use @maria anytime you need restaurant operations expertise!
 
@@ -219,15 +235,17 @@ Try: @maria Can you review my kitchen workflow design?
 **Location:** `.cursor/rules/experts/[shortname].mdc`
 
 **Contains:**
+
 - Trigger definition (@[shortname])
 - Load order (personality → workflow → collaboration → domain patterns)
 - Context loading instructions
 - Domain pattern assignments
 
 **Example:**
+
 ```markdown
 ---
-description: "Maria - Restaurant Operations Expert"
+description: 'Maria - Restaurant Operations Expert'
 alwaysApply: false
 ---
 
@@ -236,11 +254,11 @@ alwaysApply: false
 **Trigger:** User mentions `@maria`
 
 ## Load Order:
-1. .fwdpro/pro-os/experts/maria-restaurant-operations.md
-2. .fwdpro/pro-os/system/patterns/expert-workflow.md
-3. .fwdpro/pro-os/system/patterns/expert-collaboration.md  
-4. .fwdpro/pro-os/system/patterns/expert-content.md
-5. .fwdpro/pro-os/system/patterns/expert-strategy.md
+
+1. .fwdpro/pro-os/experts/maria-restaurant-operations.md (personality)
+2. .fwdpro/pro-os/system/patterns/expert-content.md (domain: content)
+3. .fwdpro/pro-os/system/patterns/expert-strategy.md (domain: strategy)
+4. .fwdpro/pro-os/system/patterns/expert-workflow.md (universal: all experts)
 ```
 
 ### File 2: Expert Personality File (`.md`)
@@ -306,18 +324,21 @@ alwaysApply: false
 Your expert is fully customizable:
 
 **Option 1: Edit personality file**
+
 ```
 Open: .fwdpro/pro-os/experts/[expert-name].md
 Edit any section to customize personality, expertise, communication style
 ```
 
 **Option 2: Edit activation rule**
+
 ```
 Open: .cursor/rules/experts/[shortname].mdc
 Adjust pattern loading, add conditional logic, customize behavior
 ```
 
 **Option 3: Ask AI to refine**
+
 ```
 @genna Can you update [Expert Name]'s personality to be more [style]?
 @genna Add [specific expertise] to [Expert Name]'s knowledge areas
@@ -328,20 +349,26 @@ Adjust pattern loading, add conditional logic, customize behavior
 ## Tips for Great Experts
 
 ### 1. Be Specific About Domain
+
 ❌ Generic: "Business expert"  
 ✅ Specific: "SaaS pricing and monetization strategist"
 
 ### 2. Define Clear Role
+
 ❌ Vague: "Help with stuff"  
 ✅ Clear: "Review pitch decks for investor readiness and messaging clarity"
 
 ### 3. Give Them Personality
+
 ❌ Bland: "Professional expert"  
-✅ Vivid: "No-nonsense industry veteran who's seen it all and gives straight talk"
+✅ Vivid: "No-nonsense industry veteran who's seen it all and gives straight
+talk"
 
 ### 4. Define Red Flags
+
 ❌ Generic: "Catch mistakes"  
-✅ Specific: "Flag HIPAA violations, overpromised outcomes, missing informed consent"
+✅ Specific: "Flag HIPAA violations, overpromised outcomes, missing informed
+consent"
 
 ---
 
@@ -350,6 +377,7 @@ Adjust pattern loading, add conditional logic, customize behavior
 You can create as many custom experts as you need:
 
 **Examples:**
+
 - **Legal compliance expert** for healthcare regulations
 - **UX research expert** for user testing
 - **SEO expert** for content strategy
@@ -357,6 +385,7 @@ You can create as many custom experts as you need:
 - **Community management expert** for user engagement
 
 **Each expert:**
+
 - Lives in `pro-os/experts/`
 - Can be added to `0-your-experts/` for quick access
 - Has their own specialized knowledge and frameworks
@@ -373,5 +402,5 @@ You can create as many custom experts as you need:
 
 ---
 
-**Ready to build your perfect expert team? Use `@create-expert` anytime you need specialized knowledge!** 🎯
-
+**Ready to build your perfect expert team? Use `@create-expert` anytime you need
+specialized knowledge!** 🎯

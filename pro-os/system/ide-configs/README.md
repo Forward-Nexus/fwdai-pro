@@ -1,22 +1,26 @@
 # IDE Configurations
 
-**Purpose:** Documentation and guides for using FWD PRO with different AI coding tools.
+**Purpose:** Documentation and guides for using FWD PRO with different AI coding
+tools.
 
 ---
 
 ## What's This Folder?
 
-FWD PRO works in **any AI coding tool** out of the box. These are **setup guides** for different IDEs.
+FWD PRO works in **any AI coding tool** out of the box. These are **setup
+guides** for different IDEs.
 
 **Everyone gets:**
+
 - Core `pro-os/` system (works everywhere)
 - Natural `@expert` tagging
 - Universal commands
 
 **IDE-specific setups:**
+
 - Cursor: Automatic `.mdc` rules installation (experts + commands)
-- VS Code: Settings and extensions recommendations
-- Claude/Windsurf/Generic: Usage guides
+- VS Code: GitHub Copilot instructions (master routing)
+- Claude Code: Custom rules (experts + commands)
 
 ---
 
@@ -24,68 +28,80 @@ FWD PRO works in **any AI coding tool** out of the box. These are **setup guides
 
 **Status:** Fully automated! 🎉
 
-When you run `npx @fwd-ai/pro install` and select "Cursor", the installer automatically copies:
+When you run `npx @fwd-ai/pro install` and select "Cursor", the installer
+automatically copies:
+
 - `.cursor/rules/experts/` (all expert `.mdc` files)
 - `.cursor/rules/commands/` (all command `.mdc` files)
 
 **You get:**
+
 - `@denny`, `@ada`, `@lyna`, `@genna`, `@benji`, `@elle` - All experts ready
 - `@create`, `@execute`, `@plan`, `@research`, etc. - All commands ready
+
+**Format:** Native `.mdc` files with automatic activation
 
 **See:** `cursor/README.md` for setup details and MCP recommendations
 
 ---
 
-## 🔄 Other IDEs (Coming Soon)
+## 🔄 Other IDEs (Ready to Install)
 
 ### 💻 VS Code
-**Status:** Documentation only  
-**See:** `vscode/README.md` for manual setup instructions
 
-### 🤖 Claude Code  
-**Status:** Documentation only  
-**See:** `claude/README.md` for manual setup instructions
+**Status:** Ready! GitHub Copilot instructions available  
+**Format:** `.github/copilot-instructions.md` (master routing document)  
+**See:** `vscode/README.md` for usage guide
 
-### 🌊 Windsurf
-**Status:** Documentation only  
-**See:** `windsurf/README.md` for manual setup instructions
+### 🤖 Claude Code
 
-### 📝 Generic
-**Status:** Documentation only  
-**See:** `generic/README.md` for any AI coding tool
+**Status:** Ready! Custom commands available  
+**Format:** `.claude/rules/` (experts + commands)  
+**See:** `claude-code/README.md` for usage guide
 
 ---
 
-## How Cursor Setup Works
+## How Installation Works
 
 During `npx @fwd-ai/pro install`:
 
 1. **Detects your IDE** (or asks which you're using)
-2. **Copies core system** (`pro-os/` - everyone gets this)
-3. **If Cursor:** Automatically copies `.cursor/rules/` from package
-4. **You're ready!** Start using `@denny`, `@ada`, etc. immediately
+2. **Copies core system** (`.fwdpro/pro-os/` - everyone gets this)
+3. **Copies IDE-specific config** based on your selection:
+   - **Cursor:** Copies `ide-configs/cursor/.cursor/` to project root
+   - **VS Code:** Copies `ide-configs/vscode/.github/` to project root
+   - **Claude Code:** Copies `ide-configs/claude-code/.claude/` to project root
+4. **You're ready!** Start using experts and commands immediately
 
 **Example:**
+
 ```bash
 npx @fwd-ai/pro install
 
 → Which AI coding tool are you using?
 → Selected: Cursor
-→ ✅ Installed pro-os/ (core system)
-→ ✅ Cursor rules installed (.cursor/rules/)
+→ ✅ Installed .fwdpro/pro-os/ (core system)
+→ ✅ Installed .cursor/rules/ (activation rules)
 → You can now use @denny, @ada, @lyna, etc. in Cursor!
 ```
 
 ---
 
-## Adding New IDEs
+## Supported IDEs
 
-Want to add support for a new IDE? 
+FWD PRO currently supports these AI coding environments:
 
-1. Create folder: `ide-configs/[ide-name]/`
-2. Add the IDE-specific files/structure
-3. Update installer to detect and copy
-4. Submit PR!
+✅ **Cursor** - Native `.mdc` rules  
+✅ **VS Code** - GitHub Copilot instructions  
+✅ **Claude Code** - Custom slash commands
+
+**Want to add another IDE?**
+
+1. IDE must support local file system access and AI assistants
+2. Create folder: `ide-configs/[ide-name]/`
+3. Add activation system (dotfolder structure)
+4. Update installer logic
+5. Submit PR!
 
 Community contributions welcome! 🎉
 
@@ -93,32 +109,42 @@ Community contributions welcome! 🎉
 
 ## File Structure
 
+**In the FWD PRO repo:**
+
 ```
-ide-configs/
+pro-os/system/ide-configs/
   cursor/
     .cursor/
       rules/
-        [expert and command files]
-  
+        experts/      (denny.mdc, ada.mdc, genna.mdc, lyna.mdc, benji.mdc, elle.mdc)
+        commands/     (create.mdc, execute.mdc, analyze.mdc, research.mdc, etc.)
+    README.md
+
   vscode/
-    .vscode/
-      [settings and configs]
-  
-  claude/
+    .github/
+      copilot-instructions.md    (master routing for all experts/commands)
+    README.md
+
+  claude-code/
     .claude/
-      commands/
-        [command files]
-  
-  windsurf/
-    .windsurf/
-      workflows/
-        [workflow files]
-  
-  generic/
-    README.md (instructions for generic use)
+      rules/
+        experts/      (denny.md, ada.md, genna.md, lyna.md, benji.md, elle.md)
+        commands/     (create.md, execute.md, analyze.md, research.md, etc.)
+      settings.json
+    README.md
+```
+
+**After installation in user's project:**
+
+```
+your-project/
+  .cursor/rules/           (if Cursor selected)
+  .github/                 (if VS Code selected)
+  .claude/rules/           (if Claude Code selected)
+  .fwdpro/pro-os/          (everyone gets this - core system)
 ```
 
 ---
 
-**Note:** All configs reference the same core `pro-os/` system. IDE configs are just different ways to invoke the same experts and commands.
-
+**Note:** All configs reference the same core `pro-os/` system. IDE configs are
+just different ways to invoke the same experts and commands.

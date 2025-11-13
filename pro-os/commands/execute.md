@@ -1,346 +1,205 @@
 # Execute Command
 
-**Purpose:** Universal command for building, implementing, or running anything - features, campaigns, processes, designs, operations, etc.
-
-**Type:** Flexible workflow (AI adapts execution to context)
-
-**Pattern:** This command follows `pro-os/system/patterns/universal.md` (three-phase workflow with adaptive intelligence)
-
-**Alternative:** For executing technical specs with TDD enforcement, use `@execute-specflow` instead.
+**Command:** `@execute`  
+**Type:** Universal execution/implementation command  
+**Purpose:** Build, implement, or run anything based on context
 
 ---
 
-## When to Use This vs Flow Commands
+## When This Command is Invoked
 
-### Use `@execute` (this command) when:
-- ✅ Flexible execution (campaigns, processes, designs)
-- ✅ No strict TDD requirements
-- ✅ AI should adapt to context
-- ✅ Non-technical implementations
+**Trigger:** User says `@[expert] @execute [thing]`
 
-### Use `@execute-specflow` when:
-- ✅ Technical spec exists (from `@create-specflow`)
-- ✅ Want TDD enforced (tests first, always)
-- ✅ Want mandatory QA phase
-- ✅ Bulletproof quality requirements
+**Examples:**
 
-**Both are valid! Choose based on needs.**
+- `@ada @execute build the login feature`
+- `@lyna @execute launch the fundraising campaign`
+- `@benji @execute run the hiring process`
+- `@denny @execute implement the database schema`
 
 ---
 
-## How This Works
+## AI Instructions
 
-When a user says: `@[expert] @execute [thing]`
+### Step 1: Understand What to Execute
 
-Example:
-- `@ada @execute build the login feature` → Flexible implementation (can also use `@execute-specflow` if spec exists)
-- `@lyna @execute launch the fundraising campaign` → Campaign execution
-- `@benji @execute run the hiring process` → Process execution
-- `@denny @execute implement the new database schema` → Database work
+**Parse the request:**
 
----
+- Feature/code → Technical implementation
+- Campaign → Marketing execution
+- Process → Operational execution
+- Design → Design implementation
+- Plan → Strategic execution
 
-## Process
+**Check for existing spec/plan:**
 
-### 1. Detect What They Want to Execute
+- Look in `roundtable/workspace/` for context
+- Look in `documents/` for specs/plans
+- If spec exists, use it as guide
 
-Listen for keywords:
-- **"feature"** or **"story"** → Load `workflows/execute-feature.yaml`
-- **"campaign"** → Load `workflows/execute-campaign.yaml`
-- **"process"** or **"workflow"** → Load `workflows/execute-process.yaml`
-- **"design"** or **"mockup"** → Load `workflows/execute-design.yaml`
-- **"test"** or **"validation"** → Load `workflows/execute-test.yaml`
-- **Other** → Use generic execution workflow
+### Step 2: Load Context (Token Efficient)
 
-### 2. Load Context (Token Efficiency!)
+**Check what's already in context FIRST!**
 
-**Check what's already in context first!**
+**Load only if NOT in context:**
 
-If NOT in context, read:
 - `project/founder-profile.md`
 - `project/project-kb.md`
 - `roundtable/whiteboards.md`
-- **Relevant workspace files** - `roundtable/workspace/[name].md` (has specs, instructions, handoffs!)
+- Relevant workspace files (contain specs, instructions, handoffs)
 
-### 3. Verify Requirements
+**If spec/plan exists:**
 
-Make sure you have everything needed:
-- [ ] Clear goal - what needs to be done?
-- [ ] Instructions - spec, story, or brief to follow?
-- [ ] Resources - do I have what I need?
-- [ ] Constraints - timeline, budget, limitations?
+- Load and read thoroughly
+- This is your implementation guide
 
-**If anything is missing - ASK before starting!**
+### Step 3: Verify Requirements
 
-### 4. Follow Best Practices
+**Ensure you have:**
 
-**ALWAYS:**
-- **Search current best practices first** (check what year it is!)
-- Update workspace with progress regularly
-- Don't re-invent solutions - search for current standards
+- Clear goal (what needs to be done)
+- Instructions (spec, story, or brief to follow)
+- Resources (everything needed to execute)
+- Constraints (timeline, budget, limitations)
 
-**For CODE execution (Ada):**
-- **Write tests FIRST** (TDD - test-driven development!)
+**If missing - ask before starting!**
+
+### Step 4: Research Current Best Practices
+
+**Before implementing:**
+
+- Check current year
+- Search: "[technology/approach] best practices [year]"
+- Apply latest patterns, not outdated approaches
+
+**For code execution:**
+
 - Search current best practices for the technology
-- Write clean, readable code
-- Document your work
-- Follow project conventions
-- Reference: `system/standards/code-style/`
+- Check security standards
+- Review performance patterns
 
-**For CAMPAIGN execution:**
-- Have clear goals/metrics
-- Know your audience
-- Create timeline/milestones
-- Track progress
-- Document learnings
-
-**For PROCESS execution:**
-- Document each step
-- Track completion
-- Note any blockers
-- Keep stakeholders updated
-
-### 5. Execute Step-by-Step
-
-Follow the workflow file for your specific task type.
+### Step 5: Execute
 
 **General execution pattern:**
-1. Plan the approach
-2. Execute incrementally (don't do everything at once)
-3. Test/validate as you go
-4. Document progress
-5. Handle blockers immediately
-6. Update Roundtable regularly
 
-### 6. Handle Blockers
+1. **Plan approach** (don't just dive in)
+2. **Execute incrementally** (small steps, validate as you go)
+3. **Test/validate continuously** (catch issues early)
+4. **Document progress** (update workspace regularly)
+5. **Handle blockers immediately** (don't hide problems)
 
-If you hit a blocker:
+**For CODE specifically:**
 
-**STOP and report:**
-```markdown
-### [Date] - [Expert]: Blocker on [Task] ⚠️
+- **Write tests FIRST** (TDD - mandatory)
+- Implement to pass tests
+- Run full test suite
+- No skipping tests!
 
-**What I'm blocked on:**
-[Specific issue]
+**For campaigns/content:**
 
-**What I need:**
-[Specific help/input/resource]
+- Clear goals and metrics
+- Know the audience
+- Create timeline
+- Track execution
 
-**Impact:**
-[How this affects the work]
+**For processes:**
 
-**What I'm doing meanwhile:**
-[Other work or waiting]
-```
+- Document each step
+- Track completion
+- Note blockers
+- Keep stakeholders updated
 
-Add to checklist:
-```markdown
-- [ ] [URGENT] Provide [what's needed] - Blocking [task]
-```
+### Step 6: Handle Blockers
 
-### 7. Quality Validation
+**If blocked:**
 
-Before marking complete:
-- [ ] All requirements met
-- [ ] Tests pass (if code)
-- [ ] Works as expected
-- [ ] Documentation updated
-- [ ] No known issues
-- [ ] Ready to ship/use
+**STOP and report clearly:**
 
-Run appropriate checklist from `system/checklists/`
+- What you're blocked on
+- What you need to proceed
+- Impact of the blocker
+- What you're doing meanwhile
 
-### 8. Update Roundtable
+**Add to founder checklist if action needed.**
 
-```markdown
-### [Date] - [Expert]: Completed [Thing] 🎉
+### Step 7: Quality Validation
 
-[2-3 sentence summary]
+**Before marking complete:**
 
-**What I built/executed:**
-- [Key accomplishment 1]
-- [Key accomplishment 2]
+- All requirements met
+- Tests pass (if code)
+- Works as expected
+- No known issues
+- Ready to ship/use
 
-**How it works:**
-- [Brief explanation]
+**Quality standards applied automatically via command .mdc**
 
-**Testing/Validation:**
-- [What was tested/validated]
-- [Results]
+### Step 8: Update Tracking
 
-**Files/Deliverables:**
-- [List of files created/modified]
-- Saved to: `roundtable/workspace/[filename]`
+**Update workspace:**
 
-**Next steps:**
-- **founder:** [What to do - test it? review it? approve it?]
-- **[other expert]:** [If this hands off to someone]
+- What was done
+- Decisions made
+- Issues encountered
+- Status complete
 
-**Status:** [Ready for review / Ready to ship / Needs testing] ✅
-```
+**Update whiteboard:**
 
-### 9. Create/Update Workspace + Deliverable
+- Mark work complete ✅
+- Show what's next (if applicable)
 
-**A. Update Workspace**
-- Open existing workspace: `roundtable/workspace/[feature]-complete.md`
-- Add your execution section with progress, decisions, issues encountered
-- Document what was done and how
+### Step 9: Deliver
 
-**B. Create/Update Deliverable**
-- For code: The code itself is the deliverable (committed to repo)
-- For campaigns: Save as `documents/campaigns/[name]-execution-report.md`
-- For processes: Save as `documents/processes/[name]-implementation.md`
+**Present completed work:**
 
-**Files involved:**
-1. `roundtable/workspace/[feature]-complete.md` - Execution process, issues, decisions
-2. Code (for features) OR execution report (for campaigns/processes)
-
-**Update whiteboards:** Update your section in `roundtable/whiteboards.md` with execution status.
+- What was built/executed
+- How it works
+- Testing/validation done
+- Files/deliverables created
+- Next steps (if any)
 
 ---
 
-## Best Practices
+## Key Behaviors
 
-### ✅ DO:
-- **Plan before executing** - think through the approach
-- **Execute incrementally** - small steps, test as you go
-- **Document as you work** - don't wait until the end
-- **Test thoroughly** - if it's code, write tests; if it's a campaign, validate assumptions
-- **Communicate progress** - update Roundtable at milestones
-- **Handle errors gracefully** - don't hide problems, fix them
-- **Follow standards** - check `system/standards/` for guidelines
+**Follow domain expertise:**
 
-### ❌ DON'T:
-- **Don't skip planning** - diving in without a plan causes problems
-- **Don't work on main** - always branch for code work
-- **Don't skip tests** - untested code = broken code
-- **Don't go silent** - if it takes time, update progress
-- **Don't ignore blockers** - surface them immediately
-- **Don't ship broken work** - quality over speed
+- Code → TDD mandatory, quality standards
+- Campaigns → Metrics, audience targeting
+- Processes → Documentation, step tracking
 
----
+**Incremental execution:**
 
-## Domain-Specific Execution
+- Don't do everything at once
+- Validate as you go
+- Update progress regularly
 
-### For Software (Ada):
-```yaml
-execution_checklist:
-  - Create feature branch
-  - Write failing tests first (TDD)
-  - Implement code
-  - Make tests pass
-  - Refactor for quality
-  - Run full test suite
-  - Update documentation
-  - Create PR / mark ready for review
-```
+**Quality first:**
 
-### For Campaigns (Lyna/Benji):
-```yaml
-execution_checklist:
-  - Set clear goals/metrics
-  - Define target audience
-  - Create content/materials
-  - Set timeline/milestones
-  - Execute launch
-  - Track metrics
-  - Iterate based on results
-  - Document learnings
-```
+- Don't skip validation
+- Test thoroughly
+- Handle errors gracefully
 
-### For Operations (Denny/Benji):
-```yaml
-execution_checklist:
-  - Document current state
-  - Define new process
-  - Test with small group
-  - Gather feedback
-  - Refine process
-  - Roll out fully
-  - Train team
-  - Monitor and iterate
-```
+**Transparency:**
+
+- Surface blockers immediately
+- Document decisions
+- Keep tracking updated
 
 ---
 
-## Graceful Handoffs
+## Routing to Flow Commands
 
-If another expert should handle this:
+**If executing from technical spec with TDD:** Suggest:
+`@execute-specflow [feature]` - enforced TDD with mandatory QA
 
-```markdown
-I can definitely execute this, but [Expert Name] is really the specialist here because [reason].
-
-Would you like me to:
-1. Execute it myself (happy to!)
-2. Collaborate with [Expert]
-3. Hand this to [Expert] completely
-
-Whatever works best for you! 💪
-```
-
----
-
-## Examples
-
-### Example 1: Execute Feature
-
-**User:** `@ada @execute implement the authentication feature`
-
-**Ada:**
-1. Reads `roundtable/workspace/auth-feature-complete.md` (Denny's section)
-2. Creates feature branch
-3. Writes tests for login flow
-4. Implements login UI and logic
-5. Makes tests pass
-6. Tests manually
-7. Updates Roundtable with progress
-8. Marks ready for review
-9. "Auth feature complete and tested! Ready for your review."
-
-### Example 2: Execute Campaign
-
-**User:** `@lyna @execute launch the investor outreach campaign`
-
-**Lyna:**
-1. Reads `roundtable/workspace/investor-campaign-complete.md` (Lyna's section)
-2. Creates investor list (50 VCs)
-3. Crafts personalized outreach emails
-4. Sets up tracking spreadsheet
-5. Schedules send timeline
-6. Sends first batch (10 investors)
-7. Updates Roundtable with metrics
-8. "Campaign launched! First 10 emails sent, tracking responses."
+**Otherwise:** This command handles flexible execution across all domains.
 
 ---
 
 ## Notes
 
-- **This is a router command** - detects what to execute and loads the right workflow
-- **Quality matters most** - don't rush, do it right
-- **Test as you go** - don't wait until the end
-- **Communicate actively** - keep founder informed
-- **Handle problems fast** - blockers compound if ignored
-
----
-
-## Related Commands & Patterns
-
-**Flow Commands (Structured Workflows):**
-- `@execute-specflow [feature]` - Execute technical spec with TDD enforcement and mandatory QA
-- `@create-specflow [feature]` - Create spec before executing
-
-**Patterns (Reference):**
-- `pro-os/system/patterns/universal.md` - Universal command workflow (this command follows this)
-- `pro-os/system/patterns/spec.md` - Comprehensive spec pattern (includes TDD: test → implement → verify)
-- `pro-os/system/patterns/workspace.md` - Simple vs Complex workspaces
-
-**Universal Commands (Flexible Workflows):**
-- `@create` - Create anything
-- `@analyze` - Deep analysis
-- `@review` - Review work
-- `@update` - Modify existing work
-
----
-
-**Remember:** Execution is where ideas become reality. Take it seriously, do it well, and keep everyone informed. You've got this! 💪
-
+- Expert workflow patterns loaded via expert .mdc
+- Quality standards/checklists loaded via command .mdc
+- Adapts to expert's domain automatically
+- Workspace contains all context needed for execution

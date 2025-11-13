@@ -1,146 +1,162 @@
 # Research Command
 
-**Purpose:** Universal command for investigating and gathering information about anything - markets, technologies, competitors, trends, best practices, etc.
+**Command:** `@research`  
+**Type:** Universal research command  
+**Purpose:** Investigate and gather information about anything
 
 ---
 
-## How This Works
+## When This Command is Invoked
 
-When a user says: `@[expert] @research [thing]`
+**Trigger:** User says `@[expert] @research [thing]`
 
-Example:
-- `@lyna @research venture capital firms investing in our space`
+**Examples:**
+
+- `@lyna @research venture capital firms in our space`
 - `@denny @research best database options for our use case`
 - `@benji @research hiring platforms for technical roles`
 - `@genna @research competitor product features`
 
 ---
 
-## Process
+## AI Instructions
 
-### 1. Define Research Scope
+### Step 1: Define Research Scope
 
-Clarify:
+**Clarify:**
+
 - What exactly to research?
-- What's the goal? (make decision, understand landscape, find options?)
-- How deep? (quick overview vs comprehensive analysis?)
-- Any constraints? (budget, timeline, location?)
+- What's the goal? (make decision, understand landscape, find options)
+- How deep? (quick overview vs comprehensive analysis)
+- Any constraints? (budget, timeline, location)
 
-### 2. Assess Research Scope (IMPORTANT)
+### Step 2: Assess Research Scope
 
-**Before starting research, determine if Cursor AI can handle it:**
+**Can Cursor AI handle this?**
 
-#### Can Cursor AI Handle This?
+**Cursor AI is GOOD for:**
 
-**✅ Cursor AI is GOOD for:**
 - Quick overviews and summaries
 - Technical documentation review
 - Best practices research (1-3 sources)
 - Comparing 2-3 known options
-- Specific question with limited scope
 
-**❌ Cursor AI is LIMITED for:**
+**Cursor AI is LIMITED for:**
+
 - Comprehensive market research (10+ sources)
 - Industry benchmark compilation
 - Detailed competitive analysis (5+ competitors)
 - Financial projections requiring extensive verification
 - Paywalled research or industry reports
-- Real-time data aggregation across multiple sites
+- Real-time data aggregation
 
-#### When to Route to Deep Research Tools
+**If too complex for Cursor:** Recommend deep research tools (ChatGPT Deep
+Research, Perplexity Pro) with specific prompt.
 
-**If research requires:**
-- 10+ sources to be comprehensive
-- Paywalled industry reports or academic papers
-- Real-time aggregation across multiple sites
-- Detailed competitive data from many companies
-- Market sizing with multiple data sources
-- Extensive financial benchmark verification
+### Step 3: Conduct Research
 
-**→ STOP and recommend ChatGPT Deep Research or Perplexity Pro**
+**For research within scope:**
 
-**Template for routing:**
-```markdown
-**[Expert]:** This research requires comprehensive data across multiple sources that would be better handled by a deep research tool.
+1. **Web search** for current information
+2. **Document sources** (URLs, dates)
+3. **Verify credibility** of sources
+4. **Cross-reference** key claims
+5. **Mark confidence** (✅ verified / ⚠️ estimate / ❌ unverified)
 
-**I recommend using ChatGPT with Deep Research or Perplexity Pro:**
+**Search patterns:**
 
-**Research prompt to use:**
-"[Specific, detailed prompt with clear scope, sources to prioritize, and format for results]"
+- "[topic] [current year]"
+- "[topic] best practices [current year]"
+- "[topic] comparison [current year]"
 
-**After you get results:**
-- Share the research output back here
-- I'll verify the sources and URLs
-- I'll help synthesize findings into our deliverable
-```
+### Step 4: Document Findings
 
-### 3. Conduct Research (If Within Cursor's Capabilities)
+**Create:** `roundtable/workspace/[name]-research.md`
 
-**Research sources:**
-- Industry reports
-- Competitor analysis
-- Expert opinions
-- Case studies
-- User feedback
-- Technical documentation
-- Market data
+**Include:**
 
-### 4. Organize Findings
+- Research conducted
+- Sources with URLs
+- Key findings
+- Verification status
+- Date researched
 
-Structure: Clear, scannable, well-organized
+**For investor materials:** Follow `standards/investor-materials-standards.md`
+for research-backed content.
 
-**Format:**
-1. **Executive Summary** - Key takeaways (3-5 bullets)
-2. **Detailed Findings** - What you discovered
-3. **Options/Alternatives** - If applicable
-4. **Recommendations** - What to do with this information
-5. **Sources** - Where you got the info
+### Step 5: Create Deliverable
 
-### 5. Create Workspace + Deliverable
+**Save:** `documents/research/[name]-research.md`
 
-**A. Create Workspace**
-- Save as: `roundtable/workspace/[topic]-research-complete.md`
-- Document research process, all sources checked, notes
-- Include raw findings before synthesis
-- Track research decisions and why certain sources were prioritized
-- **If deep research was used:** Include raw output and verification notes
+**Structure:**
 
-**B. Create Clean Deliverable**
-- Save as: `documents/research/[topic]-findings.md` (or appropriate category)
-- Format: Executive Summary, Detailed Findings, Options/Alternatives, Recommendations, Sources
-- This is the clean research report
-- **Mark source verification:** Note which sources were verified vs. provided by deep research tool
+- Executive summary
+- Key findings
+- Detailed research
+- Sources cited
+- Verification notes
 
-**TWO files created:**
-1. `roundtable/workspace/[topic]-research-complete.md` - Research process, all sources, raw notes
-2. `documents/research/[topic]-findings.md` - Clean research report
+### Step 6: Update Tracking
 
-### 6. Update Whiteboards
+**Update whiteboard and checklist.**
 
-Update your section in `roundtable/whiteboards.md` with workspace and deliverable links.
+### Step 7: Deliver
 
-### 7. Update Founder Checklist (If Needed)
+**Present research clearly:**
 
-If founder needs to review findings, add to `roundtable/[founder-name]-checklist.md`.
+- What was found
+- Key insights
+- Source quality
+- Confidence level
+- Next steps
 
 ---
 
-## Best Practices
+## Key Behaviors
 
-### ✅ DO:
-- **Be comprehensive** - cover all relevant angles
-- **Verify sources** - use credible information
-- **Organize clearly** - make it easy to scan
-- **Include sources** - allow for follow-up
-- **Make it actionable** - tie to decisions
+**Citation required:**
 
-### ❌ DON'T:
-- **Don't rely on single source** - cross-reference
-- **Don't just dump info** - organize and synthesize
-- **Don't skip recommendations** - so what? now what?
-- **Don't present outdated info** - check dates
+- Always document sources
+- Include URLs
+- Note when accessed
+- Mark confidence level
+
+**Verify claims:**
+
+- Cross-check important statistics
+- Verify URLs are real
+- Flag unverified estimates
+
+**Know limitations:**
+
+- Route to deep research tools when needed
+- Don't hallucinate sources
+- Be honest about confidence
 
 ---
 
-**Remember:** Good research informs smart decisions. Be thorough, be organized, be useful! 📚
+## Deep Research Routing
 
+**When to recommend external tools:**
+
+- Requires 10+ sources
+- Needs paywalled research
+- Requires real-time data aggregation
+- Complex competitive analysis
+- Financial projections needing verification
+
+**Provide:**
+
+- Specific research prompt
+- What sources to prioritize
+- Format for results
+- How to return findings
+
+---
+
+## Notes
+
+- Research standards loaded via command .mdc
+- Expert domain guides research focus
+- Always cite sources with URLs
+- Verify important claims

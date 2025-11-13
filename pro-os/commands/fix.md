@@ -1,305 +1,158 @@
 # Fix Command
 
-**Purpose:** Universal command for debugging, troubleshooting, and solving problems - bugs, errors, issues, blockers, inefficiencies, etc.
+**Command:** `@fix`  
+**Type:** Universal debugging/troubleshooting command  
+**Purpose:** Debug, troubleshoot, and solve problems
 
 ---
 
-## How This Works
+## When This Command is Invoked
 
-When a user says: `@[expert] @fix [problem]`
+**Trigger:** User says `@[expert] @fix [problem]`
 
-Example:
+**Examples:**
+
 - `@ada @fix the login bug`
 - `@denny @fix the slow database queries`
-- `@lyna @fix the low conversion rate on the landing page`
+- `@lyna @fix the low conversion rate on landing page`
 - `@benji @fix the hiring bottleneck`
 
 ---
 
-## Process
+## AI Instructions
 
-### 1. Understand the Problem
+### Step 1: Understand the Problem
 
-Clarify:
+**Clarify:**
+
 - What's broken or not working?
-- What's the expected behavior vs actual behavior?
+- Expected behavior vs actual behavior?
 - When did it start? What changed?
-- How critical is it? (blocking work vs annoying)
+- How critical? (blocking work vs annoying)
 - Any error messages or symptoms?
 
-### 2. Reproduce the Issue
+### Step 2: Reproduce the Issue
 
 **If possible, verify:**
+
 - Can you replicate the problem?
 - Under what conditions does it occur?
 - Is it consistent or intermittent?
 - What are the steps to trigger it?
 
-### 3. Diagnose Root Cause
+### Step 3: Diagnose Root Cause
 
 **Investigation approach:**
-- **Search online:** "[error message] 2025" or "how to debug [issue]"
-- **Check recent changes:** What was modified recently?
-- **Review logs:** Any error messages or warnings?
-- **Test hypotheses:** Form theories and test them
-- **Isolate the problem:** Narrow down where it's happening
+
+1. **Search online** for error/issue patterns
+   - "[error message] [current year]"
+   - "how to debug [issue] [current year]"
+
+2. **Check recent changes**
+   - What was modified recently?
+   - Review commit history if code
+
+3. **Review logs/errors**
+   - Any error messages or warnings?
+   - Stack traces or debug info?
+
+4. **Test hypotheses**
+   - Form theories about cause
+   - Test each theory systematically
+
+5. **Isolate the problem**
+   - Narrow down where it's happening
+   - Eliminate variables
 
 **Common root causes:**
+
 - Configuration issue
 - Logic error
 - Missing dependency
-- Integration problem
-- Performance bottleneck
-- User misunderstanding
-- External service issue
+- Environment problem
+- Data issue
+- Integration breakage
 
-### 4. Develop Solution
+### Step 4: Implement Fix
 
-**Search for solutions:**
-- Search online for similar problems and fixes
-- Check current best practices for this type of issue
-- Look for proven solutions, not quick hacks
+**Once root cause identified:**
 
-**Solution approaches:**
-- **Quick fix:** Addresses symptoms (temporary)
-- **Proper fix:** Addresses root cause (permanent)
-- **Preventive fix:** Prevents similar issues
-
-**Always aim for proper or preventive fix when possible.**
-
-### 5. Implement the Fix
-
-**Follow workflow standards** (`checklists/patterns/universal.md`)
+1. **Plan the fix** (don't just patch blindly)
+2. **Test the fix** (verify it solves the problem)
+3. **Check for side effects** (didn't break something else)
+4. **Document what was fixed** and why
 
 **For code fixes:**
-- Create a branch
-- Write a test that reproduces the bug
+
+- Write test that reproduces bug first
 - Fix the code
-- Verify test passes
-- Run full test suite (ensure nothing else broke)
-- Document the fix
+- Verify test now passes
+- Run full test suite (no regressions)
 
-**For non-code fixes:**
-- Document current state
-- Apply the fix
-- Verify it solves the problem
-- Document the solution
-- Check for side effects
+### Step 5: Document in Workspace
 
-### 6. Test & Validate
+**Update workspace:**
 
-**Verify the fix:**
-- [ ] Problem is solved
-- [ ] No new problems introduced
-- [ ] Edge cases handled
-- [ ] Performance is acceptable
-- [ ] Solution is maintainable
+- Problem encountered
+- Root cause identified
+- Fix implemented
+- Verification done
 
-**Test thoroughly** - bugs that come back are embarrassing!
+### Step 6: Update Tracking
 
-### 7. Create Workspace + Deliverable
+**Update whiteboard:**
 
-**A. Create Workspace**
-- Save as: `roundtable/workspace/[problem]-fix-complete.md`
-- Document debugging process, all things tried, root cause analysis
-- Include test results and validation steps
-- Track what worked and what didn't
+- Mark issue resolved ✅
+- Note what was fixed
 
-**B. Create Clean Deliverable** (if applicable)
-- For bugs: The fix is in the code itself (no separate doc needed)
-- For process problems: Save as `documents/processes/[problem]-solution.md`
-- Include: Problem, Root Cause, Solution, Testing, Prevention
+**Update checklist if needed:**
 
-**Files created:**
-1. `roundtable/workspace/[problem]-fix-complete.md` - Debugging process, all attempts, full context
-2. Code changes (for code bugs) OR process document (for process problems)
+- Remove blocker items
+- Add follow-up tasks if any
 
-### 8. Update Whiteboards
+### Step 7: Deliver
 
-Update your section in `roundtable/whiteboards.md` with workspace link and fix summary.
+**Report clearly:**
+
+- What was broken
+- Root cause found
+- How it was fixed
+- Verification done
+- Preventive measures (if applicable)
 
 ---
 
-## Original Roundtable Update Example
+## Key Behaviors
 
-**Update Roundtable:**
-```markdown
-### [Date] - [Expert]: Fixed [Problem] 🔧
+**Systematic:**
 
-**The issue:**
-[Brief description of problem]
+- Don't guess and patch
+- Diagnose root cause first
+- Test fixes thoroughly
 
-**Root cause:**
-[What was actually wrong]
+**Research first:**
 
-**The fix:**
-[What was changed to solve it]
+- Search for known issues
+- Check current best practices
+- Learn from others' solutions
 
-**Tested:**
-- [Test 1]
-- [Test 2]
-- No regressions found
+**Prevent recurrence:**
 
-**Prevention:**
-[What we're doing to prevent recurrence]
+- Add tests for bugs
+- Document gotchas
+- Improve error handling
 
-**Status:** Fixed and verified ✅
-```
+**Transparent:**
 
-**Create preventive tasks if needed:**
-```markdown
-- [ ] Add monitoring for [thing that broke]
-- [ ] Document this pattern in standards
-- [ ] Refactor [area] to prevent similar issues
-```
+- Document what you tried
+- Explain root cause
+- Share learnings
 
 ---
 
-## Best Practices
+## Notes
 
-### ✅ DO:
-- **Reproduce first** - Verify you can see the problem
-- **Find root cause** - Don't just patch symptoms
-- **Test thoroughly** - Verify the fix works
-- **Check for regressions** - Make sure nothing else broke
-- **Document everything** - Future you will thank you
-- **Search online** - Someone probably solved this before
-- **Add tests** - Prevent it from coming back
-- **Think prevention** - How do we avoid this in future?
-
-### ❌ DON'T:
-- **Don't guess** - Investigate properly
-- **Don't quick-patch** - Fix the root cause
-- **Don't skip testing** - Verify it's really fixed
-- **Don't forget edge cases** - Test unusual scenarios
-- **Don't leave it undocumented** - Explain what you did
-- **Don't ignore warnings** - They often predict problems
-
----
-
-## Common Fix Scenarios
-
-### Code Bug:
-```markdown
-Problem: "Login fails with 'Invalid token' error"
-
-Process:
-1. Reproduce: Try to login, see error
-2. Investigate: Check token generation, expiration, validation
-3. Root cause: Token expiring too quickly (5 min vs 1 hour)
-4. Fix: Update token expiration to 1 hour
-5. Test: Login works, token persists for 1 hour
-6. Add test: Verify token doesn't expire early
-7. Document: Update security docs with token policy
-```
-
-### Performance Issue:
-```markdown
-Problem: "Database queries are slow"
-
-Process:
-1. Measure: Profile queries, identify bottleneck
-2. Investigate: Check query structure, indexes, data size
-3. Root cause: Missing index on frequently queried column
-4. Fix: Add appropriate index
-5. Test: Query speed improved 10x
-6. Monitor: Set up performance monitoring
-7. Document: Add indexing strategy to standards
-```
-
-### Process Problem:
-```markdown
-Problem: "Hiring is taking too long"
-
-Process:
-1. Analyze: Map current hiring process
-2. Identify: Bottleneck in interview scheduling
-3. Root cause: Too many serial steps, not enough parallel
-4. Fix: Redesign process with parallel interviews
-5. Test: Run next hire through new process
-6. Measure: Time reduced from 6 weeks to 3 weeks
-7. Document: Update hiring process doc
-```
-
----
-
-## Debugging Strategies
-
-### For Code:
-- Add logging at key points
-- Use debugger to step through
-- Simplify to isolate problem
-- Check assumptions (print/log values)
-- Binary search (comment out half, see if it works)
-
-### For Systems:
-- Check each component individually
-- Verify connections/integrations
-- Test with minimal configuration
-- Review recent changes
-- Check external dependencies
-
-### For Processes:
-- Map the current flow
-- Identify handoffs and delays
-- Talk to people involved
-- Measure each step
-- Look for bottlenecks
-
----
-
-## When to Escalate
-
-**Bring in help if:**
-- Outside your expertise
-- Can't reproduce the problem
-- Root cause unclear after reasonable investigation
-- Fix attempts aren't working
-- Critical issue affecting users/business
-- Security concern
-
-**How to escalate:**
-```markdown
-Update Roundtable:
-
-"@[expert] - Need help debugging [issue]
-
-**What I've tried:**
-- [Attempt 1]
-- [Attempt 2]
-
-**What I've learned:**
-- [Finding 1]
-- [Finding 2]
-
-**Where I'm stuck:**
-[Specific question or blocker]
-
-**Impact:**
-[How critical is this]
-
-Can you take a look?"
-```
-
----
-
-## Graceful Handoffs
-
-If another expert should handle this:
-
-```markdown
-I can investigate this, but [Expert Name] has deeper expertise in [area] 
-and might solve this faster.
-
-Would you like me to:
-1. Continue debugging (I'm on it!)
-2. Bring [Expert] in to collaborate
-3. Hand this to [Expert]
-
-Whatever you prefer! 🔧
-```
-
----
-
-**Remember:** Good debugging is methodical, not magical. Reproduce, investigate, fix properly, test thoroughly, and document everything. You've got this! 🔧
-
+- Fix approach adapts to domain (code vs process vs content)
+- Expert domain expertise guides diagnosis
+- Always verify the fix works
+- Document for future reference

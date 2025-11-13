@@ -1,14 +1,18 @@
 # Plan Command
 
-**Purpose:** Universal command for creating strategic plans, roadmaps, timelines, and execution strategies - product plans, launch plans, growth plans, project plans, etc.
+**Command:** `@plan`  
+**Type:** Universal planning command  
+**Purpose:** Create strategic plans, roadmaps, timelines, and execution
+strategies
 
 ---
 
-## How This Works
+## When This Command is Invoked
 
-When a user says: `@[expert] @plan [thing]`
+**Trigger:** User says `@[expert] @plan [thing]`
 
-Example:
+**Examples:**
+
 - `@genna @plan the product roadmap for Q1`
 - `@lyna @plan the fundraising campaign`
 - `@benji @plan the team expansion`
@@ -16,379 +20,153 @@ Example:
 
 ---
 
-## Process
+## AI Instructions
 
-### 1. Understand the Goal
+### Step 1: Understand the Goal
 
-Clarify:
+**Clarify:**
+
 - What are we planning?
 - What's the ultimate goal or outcome?
-- What timeframe? (weeks, months, quarters?)
-- What constraints? (budget, resources, dependencies?)
+- What timeframe? (weeks, months, quarters)
+- What constraints? (budget, resources, dependencies)
 - What's the current situation?
 
-### 2. Research & Context
+### Step 2: Load Context (Token Efficient)
 
-**Load project context:**
-- Read `project/` files (founder-profile, project-kb, mission)
-- Read `roundtable/whiteboards.md` (recent work and decisions)
-- Check `roundtable/workspace/` for relevant expert work
+**Check context first!**
 
-**Search for best practices:**
-- "Best practices for [type of plan] 2025"
+**Load if needed:**
+
+- `project/founder-profile.md`
+- `project/project-kb.md`
+- `project/mission.md`
+- `roundtable/whiteboards.md` (current work and decisions)
+- Relevant workspace files
+
+### Step 3: Research Best Practices
+
+**Before planning:**
+
+- Search: "[type of plan] best practices [current year]"
 - Research similar successful plans
 - Learn from failures (what to avoid)
 - Find planning frameworks or methodologies
 
-### 3. Break Down the Goal
+### Step 4: Break Down the Goal
 
 **Decompose into phases/milestones:**
+
 - What are the major steps?
 - What's the logical sequence?
 - What are the dependencies?
 - What can happen in parallel?
 
-**Example structure:**
-```
-Phase 1: Foundation (Weeks 1-2)
-  - Milestone: X completed
-  - Dependencies: None
-  
-Phase 2: Build (Weeks 3-6)
-  - Milestone: Y shipped
-  - Dependencies: Phase 1 complete
-  
-Phase 3: Launch (Weeks 7-8)
-  - Milestone: Z live
-  - Dependencies: Phase 2 complete
-```
+**Create timeline:**
 
-### 4. Create the Plan
+- Define phases or milestones
+- Estimate durations
+- Identify critical path
+- Build in buffer for unknowns
 
-**Follow workflow standards** (`checklists/patterns/universal.md`)
+### Step 5: Identify Resources
 
-**Plan should include:**
+**What's needed:**
 
-**1. Executive Summary**
-- Goal in one sentence
-- Timeline overview
-- Key milestones
-- Success criteria
-
-**2. Phases/Stages**
-For each phase:
-- Goal of this phase
-- Key activities/tasks
-- Deliverables
-- Timeline
-- Resources needed
-- Dependencies
-- Success criteria
-
-**3. Timeline**
-- Visual timeline (even ASCII is fine)
-- Key dates and milestones
-- Dependencies mapped
-- Buffer time included
-
-**4. Resources Needed**
-- People/skills required
-- Budget if applicable
+- People/team members
+- Budget/funding
 - Tools/technology
+- Time/capacity
 - External dependencies
 
-**5. Risks & Mitigation**
+**What's available:**
+
+- Check current resources
+- Identify gaps
+- Plan for acquisition
+
+### Step 6: Assess Risks
+
+**Identify potential issues:**
+
 - What could go wrong?
-- How likely?
-- Impact if it happens?
-- Mitigation strategies
+- What are the dependencies?
+- What are the blockers?
+- How to mitigate risks?
 
-**6. Success Metrics**
-- How do we know we succeeded?
-- What are we measuring?
-- What are the targets?
+### Step 7: Create the Plan
 
-**7. Contingencies**
-- Plan B if things don't work
-- Decision points
-- When to pivot or adjust
+**Structure:**
 
-### 5. Validate the Plan
+1. **Executive Summary** - Goal, timeline, key milestones
+2. **Current State** - Where we are now
+3. **Goal State** - Where we want to be
+4. **Strategy** - How we'll get there
+5. **Phases/Milestones** - Breakdown with timeline
+6. **Resources** - What's needed
+7. **Risks & Mitigation** - What could go wrong, how to handle
+8. **Success Metrics** - How we measure progress
+9. **Next Steps** - Immediate actions
 
-**Sanity checks:**
-- [ ] Is timeline realistic?
-- [ ] Are dependencies identified?
-- [ ] Are resources sufficient?
-- [ ] Are risks addressed?
-- [ ] Is it actionable (not just aspirational)?
-- [ ] Can we actually execute this?
+**Apply domain expertise:**
 
-**Get input if needed:**
-- Collaborate with relevant experts
-- Check with technical experts on feasibility
-- Validate with founder on priorities
-- Ensure alignment with goals
+- Technical plan → Architecture, migration strategy, technical dependencies
+- Growth plan → Metrics, channels, scaling strategy
+- Fundraising plan → Targets, timeline, preparation requirements
+- Product plan → Features, priorities, user value
 
-### 6. Make It Actionable
+### Step 8: Document
 
-**Break into tasks:**
-- First 2-3 concrete tasks to start
-- Clear owners for each task
-- Specific deadlines
-- Success criteria for each
+**Create workspace:** `roundtable/workspace/[name]-plan.md` **Create
+deliverable:** `documents/[category]/[name]-plan.md`
 
-**Create founder tasks:**
-```markdown
-- [ ] Review and approve plan - `roundtable/workspace/[name]-plan.md`
-  - Focus on: Timeline, resources, priorities
-- [ ] Assign owners for Phase 1 tasks
-- [ ] Kick off planning meeting if needed
-```
+### Step 9: Update Tracking
 
-### 7. Create Workspace + Deliverable
+**Update whiteboard and checklist.**
 
-**A. Create Workspace**
-- Save as: `roundtable/workspace/[name]-plan-complete.md`
-- Document planning process, research, decisions
-- Include all considered options and why you chose this approach
-- Track changes and updates to the plan
+### Step 10: Deliver
 
-**B. Create Clean Deliverable**
-- Save as: `documents/plans/[name]-plan.md` (or appropriate category)
-- Include all sections from Step 4 (Executive Summary, Phases, Timeline, etc.)
-- This is the clean plan the team will follow
+**Present plan clearly:**
 
-**TWO files created:**
-1. `roundtable/workspace/[name]-plan-complete.md` - Planning process, research, decisions
-2. `documents/plans/[name]-plan.md` - Clean final plan
-
-### 8. Update Whiteboards
-
-Update your section in `roundtable/whiteboards.md` with workspace and deliverable links.
-
-### 9. Update Founder Checklist
-
-Add review task to `roundtable/[founder-name]-checklist.md`:
-```markdown
-- [ ] Review and approve [name] plan
-  - Workspace: `roundtable/workspace/[name]-plan-complete.md`
-  - Deliverable: `documents/plans/[name]-plan.md`
-  - Focus on: Timeline, resources, priorities
-```
+- Goal and timeline
+- Key milestones
+- Critical dependencies
+- Resources needed
+- Next immediate steps
 
 ---
 
-## Original Roundtable Update Example
+## Key Behaviors
 
-**Update Roundtable:**
-```markdown
-### [Date] - [Expert]: Created [Thing] Plan 📋
+**Realistic:**
 
-**The Goal:**
-[What we're planning to achieve]
+- Don't over-promise
+- Build in buffers
+- Consider constraints
 
-**Timeline:**
-[High-level overview]
+**Structured:**
 
-**Key Milestones:**
-1. [Milestone 1] - [Date]
-2. [Milestone 2] - [Date]
-3. [Milestone 3] - [Date]
+- Clear phases
+- Dependencies mapped
+- Timeline reasonable
 
-**Resources Needed:**
-- [Resource 1]
-- [Resource 2]
+**Risk-aware:**
 
-**Next Steps:**
-- **founder:** Review and approve plan
-- [First action to take]
+- Identify blockers
+- Plan mitigation
+- Have contingencies
 
-**Plan Details:**
-- `roundtable/workspace/[name]-plan.md`
+**Actionable:**
 
-**Status:** Ready for review 📋
-```
+- Clear next steps
+- Assignments defined
+- Success metrics set
 
 ---
 
-## Best Practices
+## Notes
 
-### ✅ DO:
-- **Start with the end** - Know what success looks like
-- **Be realistic** - Pad timelines, things take longer than expected
-- **Identify dependencies** - What blocks what?
-- **Include buffers** - Things go wrong, plan for it
-- **Think risks** - What could derail this?
-- **Make it actionable** - Clear tasks, owners, deadlines
-- **Collaborate** - Get input from relevant experts
-- **Research** - Learn from similar successful plans
-- **Visualize** - Timeline, roadmap, or diagram helps
-
-### ❌ DON'T:
-- **Don't be overly optimistic** - It always takes longer
-- **Don't skip dependencies** - They'll bite you
-- **Don't ignore risks** - Hope is not a strategy
-- **Don't make it too detailed** - Plans need flexibility
-- **Don't plan in isolation** - Get input from team
-- **Don't forget resources** - Time, people, money all matter
-- **Don't skip metrics** - How do you know if it worked?
-
----
-
-## Planning Frameworks to Consider
-
-### For Product Plans:
-- Now/Next/Later framework
-- Quarterly OKRs
-- Feature prioritization (RICE, MoSCoW)
-- User story mapping
-
-### For Launch Plans:
-- Pre-launch / Launch / Post-launch phases
-- GTM (Go-To-Market) framework
-- Launch checklist approach
-- Soft launch → Full launch
-
-### For Growth Plans:
-- Pirate Metrics (AARRR)
-- Growth loops
-- Experimentation framework
-- Channel strategy
-
-### For Technical Plans:
-- Migration strategy (parallel run → cutover)
-- Phased rollout
-- Feature flags approach
-- Rollback strategy
-
-**Search online for whichever is relevant to your plan!**
-
----
-
-## Common Plan Types
-
-### Product Roadmap:
-```markdown
-Q1 2025: Foundation
-- User auth system
-- Core feature set
-- Basic analytics
-Goal: 100 users, feedback gathered
-
-Q2 2025: Growth
-- Advanced features
-- Mobile app
-- Integrations
-Goal: 1,000 users, revenue started
-
-Q3 2025: Scale
-- Enterprise features
-- API platform
-- Advanced analytics
-Goal: 10,000 users, profitable
-```
-
-### Launch Plan:
-```markdown
-Phase 1: Pre-Launch (4 weeks)
-- Build waitlist
-- Beta testing
-- PR outreach
-- Content creation
-
-Phase 2: Soft Launch (2 weeks)
-- Limited release
-- Gather feedback
-- Fix issues
-- Refine messaging
-
-Phase 3: Full Launch (1 week)
-- Public announcement
-- PR push
-- Community outreach
-- Monitor metrics
-```
-
-### Hiring Plan:
-```markdown
-Month 1: Define & Prepare
-- Define roles needed
-- Create job descriptions
-- Set up hiring process
-- Budget approved
-
-Month 2-3: Recruit
-- Post jobs
-- Source candidates
-- Screen applications
-- First interviews
-
-Month 4: Hire
-- Final interviews
-- Make offers
-- Negotiate
-- Onboard
-```
-
----
-
-## When Plans Need Updating
-
-Plans are living documents. Update when:
-- Priorities change
-- Timeline slips
-- New information emerges
-- Resources change
-- Risks materialize
-
-**Document changes:**
-```markdown
-## Plan Updates
-
-### 2025-10-15 Update
-- Pushed Phase 2 by 2 weeks (technical blocker)
-- Added budget for contractor (resource need)
-- Deprioritized Feature X (founder decision)
-```
-
----
-
-## Collaborative Planning
-
-If multiple experts should contribute:
-
-```markdown
-"This plan would benefit from input from multiple experts:
-
-- @[expert1] for [their area]
-- @[expert2] for [their area]
-
-Want me to:
-1. Draft the plan and then get their input
-2. Bring them in now to plan together
-
-What works better? 📋"
-```
-
----
-
-## Graceful Handoffs
-
-If another expert should own planning:
-
-```markdown
-I can create this plan, but [Expert Name] has more experience with [area]
-and might create a more realistic/effective plan.
-
-Would you like me to:
-1. Create the plan myself (happy to!)
-2. Collaborate with [Expert]
-3. Hand this to [Expert]
-
-Your call! 📋
-```
-
----
-
-**Remember:** Good plans are realistic, actionable, and flexible. Plan for success but prepare for challenges. Keep it simple, keep it clear, and keep it achievable! 📋
-
+- Plan complexity adapts to timeframe and scope
+- Expert domain expertise guides planning methodology
+- Creates both workspace (context) and deliverable (plan)
+- Timeline realistic based on constraints

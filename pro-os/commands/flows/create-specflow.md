@@ -1,14 +1,17 @@
 # @create-specflow Command
 
-**Purpose:** Create a comprehensive technical specification using the FWD PRO spec pattern with TDD enforcement
+**Purpose:** Create a comprehensive technical specification using the FWD PRO
+spec pattern with TDD enforcement
 
 **When to Use:**
+
 - Building a new feature that needs technical specification
 - Want structured spec with mandatory TDD and QA
 - Need bulletproof quality enforcement
 - Implementing code (not content/strategy)
 
 **When NOT to Use:**
+
 - For flexible content creation → use `@create` instead
 - For strategy documents → use `@create` instead
 - For campaigns/pitches → use flow-specific commands or `@create`
@@ -19,6 +22,7 @@
 ## How It Works
 
 **User says:**
+
 ```
 @create-specflow user-authentication
 @create-specflow password-reset
@@ -26,6 +30,7 @@
 ```
 
 **What happens:**
+
 1. Pre-Flight: Load context, clarify requirements, verify readiness
 2. Execution: Create spec using pattern, fill all sections, structure TDD tasks
 3. Post-Flight: Review quality, link workspace, update tracking (MANDATORY)
@@ -39,6 +44,7 @@
 #### Step 1.1: Context Loading (Conditional - Token Efficient!)
 
 **Check what's already in context FIRST:**
+
 - If `project/founder-profile.md` NOT in context → load it
 - If `project/project-kb.md` NOT in context → load it
 - If `project/mission.md` exists and NOT in context → load it
@@ -51,23 +57,24 @@
 **Ask clarifying questions if ANY of these are unclear:**
 
 **Required Information:**
+
 1. **What user problem does this solve?** (for Story)
 2. **What are the acceptance criteria?** (what "done" looks like)
-3. **Any technical constraints or requirements?** (tech stack, performance, security)
+3. **Any technical constraints or requirements?** (tech stack, performance,
+   security)
 
-**Optional but Helpful:**
-4. Related to existing features?
-5. Any dependencies or blockers?
-6. Priority level?
-7. Timeline considerations?
+**Optional but Helpful:** 4. Related to existing features? 5. Any dependencies
+or blockers? 6. Priority level? 7. Timeline considerations?
 
 **Smart Questioning:**
+
 - Don't ask if you can infer from context
 - Don't ask for information already in loaded files
 - DO ask if requirements are ambiguous
 - DO confirm technical approach if unclear
 
 **Example conversation:**
+
 ```
 User: @create-specflow user-authentication
 
@@ -96,6 +103,7 @@ Let me know and I'll structure the complete spec!
 #### Step 1.4: Readiness Verification
 
 **Before proceeding, verify:**
+
 - [ ] Feature purpose is clear
 - [ ] Acceptance criteria defined (or can define them)
 - [ ] Technical approach identified
@@ -111,18 +119,21 @@ Let me know and I'll structure the complete spec!
 #### Step 2.1: Create Folder Structure
 
 **Pattern:**
+
 ```
 documents/tech/specs/[feature-name]/
   └── spec.md
 ```
 
 **Naming:**
+
 - Use descriptive, URL-friendly names
 - Lowercase, hyphens for spaces
 - ❌ NO dates in folder names
 - ❌ NO version numbers
 
 **Examples:**
+
 - ✅ `documents/tech/specs/user-authentication/spec.md`
 - ✅ `documents/tech/specs/password-reset/spec.md`
 - ✅ `documents/tech/specs/therapist-summary-fix/spec.md`
@@ -131,11 +142,12 @@ documents/tech/specs/[feature-name]/
 
 #### Step 2.2: Use Spec Pattern
 
-**Load and follow:** `pro-os/system/patterns/spec.md`
+**Load and follow:** `pro-os/system/standards/spec-standards.md`
 
 **Create spec.md with ALL sections:**
 
 1. **Metadata**
+
    ```yaml
    created: [today's date]
    updated: [today's date]
@@ -239,6 +251,7 @@ documents/tech/specs/[feature-name]/
 ```
 
 **Why this structure:**
+
 - ✅ Enforces TDD (can't implement without writing tests first)
 - ✅ Clear expectations (red → green → verified)
 - ✅ Built-in verification
@@ -337,26 +350,31 @@ documents/tech/specs/[feature-name]/
 **Create or update workspace:**
 
 **If workspace doesn't exist:**
+
 ```markdown
 Create: documents/tech/workspaces/[feature-name]/workspace.md
 
 Use template: pro-os/templates/roundtable/workspace/workspace-template.md
 
 In workspace:
+
 - Link to spec in deliverable
 - Add initial status
 - Document creation in change log
 ```
 
 **If workspace already exists:**
+
 ```markdown
 Update existing workspace:
+
 - Add link to new spec
 - Update status
 - Add to change log
 ```
 
 **In the spec metadata:**
+
 ```yaml
 workspace: documents/tech/workspaces/[workspace-name]/
 ```
@@ -431,6 +449,7 @@ workspace: documents/tech/workspaces/[workspace-name]/
 #### Step 3.2: Documentation Updates
 
 **Update Workspace:**
+
 - Add spec to workspace deliverables
 - Update workspace status
 - Add entry to change log
@@ -440,8 +459,10 @@ workspace: documents/tech/workspaces/[workspace-name]/
 Location: `roundtable/whiteboards.md`
 
 Find your expert section and add:
+
 ```markdown
 ### Active Work
+
 - **[Feature Name] Spec** - ⚪ Draft
   - Workspace: [link](workspace/feature-name-workspace.md)
   - Spec: [link](../documents/tech/specs/feature-name/spec.md)
@@ -454,8 +475,10 @@ Find your expert section and add:
 Location: `roundtable/[founder-name]-checklist.md`
 
 Add if founder needs to review:
+
 ```markdown
-| ☐ | **Review [Feature] Spec** | @denny | Review spec before implementation | [Spec link] | [Date] |
+| ☐ | **Review [Feature] Spec** | @denny | Review spec before implementation |
+[Spec link] | [Date] |
 ```
 
 #### Step 3.3: Completion Summary
@@ -468,6 +491,7 @@ Add if founder needs to review:
 **Location:** documents/tech/specs/[feature-name]/spec.md
 
 **What's included:**
+
 - Clear story and acceptance criteria
 - Comprehensive technical design
 - TDD-structured implementation tasks (X tasks across Y phases)
@@ -478,17 +502,20 @@ Add if founder needs to review:
 **Current Status:** Draft - ready for review
 
 **Next Steps:**
+
 1. [Optional] Review spec and provide feedback
 2. When ready: @execute-specflow [feature-name]
 3. Implementation will follow TDD structure with mandatory QA
 
 **Key Decisions Made:**
+
 - [Decision 1]
 - [Decision 2]
 
 **Timeline Estimate:** [If you can provide one based on task complexity]
 
-Let me know if you'd like me to adjust anything or if you're ready to proceed with implementation!
+Let me know if you'd like me to adjust anything or if you're ready to proceed
+with implementation!
 ```
 
 ---
@@ -498,11 +525,13 @@ Let me know if you'd like me to adjust anything or if you're ready to proceed wi
 **This is critical:** Complete ALL THREE PHASES before finishing.
 
 **Do NOT stop after:**
+
 - ❌ Creating the spec file (need post-flight)
 - ❌ Filling in sections (need quality review)
 - ❌ TDD structure created (need to update whiteboards/workspace)
 
 **MUST complete:**
+
 - ✅ Quality review checklist
 - ✅ Workspace linked and updated
 - ✅ Whiteboards updated
@@ -538,22 +567,26 @@ Let me know if you'd like me to adjust anything or if you're ready to proceed wi
 ## Expert Ownership
 
 **Primary Expert:** @denny (Systems Architect)
+
 - Creates technical specifications
 - Designs system architecture
 - Documents technical decisions
 - This command is in Denny's available commands
 
 **Can Collaborate With:**
+
 - **@ada** - For implementation feasibility review
 - **@elle** - For legal/compliance requirements
 - **@genna** - For strategic alignment
 - Domain experts - For domain-specific requirements
 
 **Availability:**
+
 - **Always available for:** Founders building software/technical products
 - **Always available:** `@rt` (roundtable collaboration)
 
 **Handoff To:**
+
 - **@ada** (or other implementer) - Via `@execute-specflow [feature-name]`
 - Workspace contains full handoff context
 
@@ -644,12 +677,14 @@ Next: Review the spec, then @execute-specflow realtime-chat when ready
 ## Integration with Other Commands
 
 **Works with:**
+
 - `@execute-specflow [feature]` - Implements the spec created by this command
 - `@review [spec]` - For reviewing/refining specs
 - `@update [spec]` - For modifying existing specs
 - `@rt review this spec` - Multi-expert review
 
 **Differs from:**
+
 - `@create` - Universal, flexible creation (this is structured, TDD-enforced)
 - `@plan` - Strategic planning (this is technical specification)
 - `@brainstorm` - Exploration (this is concrete spec)
@@ -659,6 +694,7 @@ Next: Review the spec, then @execute-specflow realtime-chat when ready
 ## Error Handling
 
 ### IF requirements are unclear:
+
 ```markdown
 I need some clarification before creating the spec:
 
@@ -666,14 +702,17 @@ I need some clarification before creating the spec:
 2. [Question about technical approach]
 3. [Question about constraints]
 
-These will help me create a comprehensive, accurate spec that we can execute with confidence.
+These will help me create a comprehensive, accurate spec that we can execute
+with confidence.
 ```
 
 ### IF existing spec found:
+
 ```markdown
 I found an existing spec at documents/tech/specs/[feature]/spec.md
 
 Would you like me to:
+
 1. Update the existing spec
 2. Create a new spec (different feature)
 3. Review what's there first
@@ -682,12 +721,15 @@ Let me know!
 ```
 
 ### IF dependencies missing:
+
 ```markdown
 I can create this spec, but I noticed it depends on:
+
 - [Dependency 1] - [Status]
 - [Dependency 2] - [Status]
 
 Should we:
+
 1. Create the spec now and note the dependencies
 2. Handle the dependencies first
 3. Adjust the scope to remove dependencies
@@ -714,17 +756,20 @@ Your call!
 ## Voice & Communication
 
 **When creating specs (technical):**
+
 - Clear, precise, complete
 - Technical depth appropriate for implementers
 - Think: "What does Ada need to execute this perfectly?"
 
 **When explaining to founder:**
+
 - Accessible language
 - Explain the "why" behind decisions
 - Present trade-offs clearly
 - Think: "How do I help them understand without overwhelming?"
 
 **My personality:**
+
 - Chill but intense when designing systems
 - Think in patterns and connections
 - Excited about elegant solutions
@@ -735,6 +780,7 @@ Your call!
 ## Version History
 
 **v1.0** - October 9, 2025
+
 - Initial flow command created
 - Three-phase workflow defined
 - TDD enforcement mandatory
@@ -743,5 +789,5 @@ Your call!
 
 ---
 
-*This command is part of the FWD PRO flow command system - structured workflows with bulletproof quality enforcement.*
-
+_This command is part of the FWD PRO flow command system - structured workflows
+with bulletproof quality enforcement._
