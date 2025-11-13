@@ -21,11 +21,13 @@ build/
 .env.local
 .env.*.local
 
-# IDE and editor configs
+# IDE and editor configs (ignored for local dev use)
 .vscode/
 .idea/
 .windsurf/
-# .cursor/ - NOW TRACKED (v2.1 recommended settings for users)
+.cursor/
+.github/
+.claude/
 *.swp
 *.swo
 *~

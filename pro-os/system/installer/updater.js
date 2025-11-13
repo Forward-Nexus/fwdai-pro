@@ -157,7 +157,7 @@ export async function updateInstallation() {
     const installedIDEs = await detectInstalledIDEs(projectPath);
     spinner.succeed(chalk.green(`✓ Found: ${installedIDEs.join(', ') || 'none'}`));
 
-    // Step 3: Remove only what we're replacing
+    // Step 3: Remove only what we're replacing (NOT IDE configs - we'll overwrite those)
     spinner.start('Removing old system files...');
 
     // Remove pro-os subdirectories (but NOT project/)
@@ -168,19 +168,6 @@ export async function updateInstallation() {
       const dirPath = path.join(proOsPath, dir);
       if (await fs.pathExists(dirPath)) {
         await fs.remove(dirPath);
-      }
-    }
-
-    // Also remove IDE configs (they'll be reinstalled fresh)
-    const ideConfigDirs = [
-      path.join(projectPath, '.cursor'),
-      path.join(projectPath, '.github', 'copilot-instructions.md'),
-      path.join(projectPath, '.claude'),
-    ];
-
-    for (const configPath of ideConfigDirs) {
-      if (await fs.pathExists(configPath)) {
-        await fs.remove(configPath);
       }
     }
 
@@ -229,11 +216,11 @@ export async function updateInstallation() {
       spinner.warn(chalk.yellow('⚠ Some user directories not found (may be fresh install)'));
     }
 
-    // Step 6: Reinstall IDE configs
+    // Step 6: Update IDE configs (overwrite with fresh versions)
     if (installedIDEs.length > 0) {
-      spinner.start('Reinstalling IDE configs...');
+      spinner.start('Updating IDE configs...');
       await setupIDE(projectPath, installedIDEs);
-      spinner.succeed(chalk.green('✓ IDE configs reinstalled'));
+      spinner.succeed(chalk.green('✓ IDE configs updated'));
     }
 
     // Step 7: Done (no cleanup needed)
