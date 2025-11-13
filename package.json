@@ -1,7 +1,7 @@
 {
   "$schema": "https://json.schemastore.org/package.json",
   "name": "@fwd-ai/pro",
-  "version": "2.3.0",
+  "version": "2.3.1",
   "description": "FWD PRO - Better conversations lead to better outcomes. Universal AI expert collaboration system with verified research, natural expert discussion, and organized collaboration.",
   "type": "module",
   "main": "pro-os/system/installer/index.js",

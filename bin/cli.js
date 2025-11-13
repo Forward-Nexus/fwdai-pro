@@ -2,9 +2,9 @@
 
 /**
  * FWD PRO CLI
- * 
+ *
  * Entry point for npx @fwd-ai/pro commands
- * 
+ *
  * Commands:
  *   npx @fwd-ai/pro install  - Run onboarding and setup
  *   npx @fwd-ai/pro update   - Update FWD PRO system files
@@ -24,18 +24,16 @@ const command = process.argv[2] || 'help';
 switch (command) {
   case 'install':
     // Dynamic import for ESM
-    import('../tools/installer/index.js');
+    import('../pro-os/system/installer/index.js');
     break;
 
   case 'update':
     // Dynamic import for ESM
-    import('../tools/installer/updater.js').then(mod => mod.updateInstallation());
+    import('../pro-os/system/installer/updater.js').then(mod => mod.updateInstallation());
     break;
 
   case 'version': {
-    const pkg = JSON.parse(
-      readFileSync(join(__dirname, '..', 'package.json'), 'utf-8')
-    );
+    const pkg = JSON.parse(readFileSync(join(__dirname, '..', 'package.json'), 'utf-8'));
     console.log(`FWD PRO v${pkg.version}`);
     break;
   }
@@ -58,4 +56,3 @@ Learn more: https://github.com/Forward-Nexus/fwdai-pro
     `);
     break;
 }
-
