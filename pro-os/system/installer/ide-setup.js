@@ -28,15 +28,8 @@ export async function setupIDE(projectPath, ideTools) {
 
 async function setupCursor(projectPath) {
   // Get the path from ide-configs/cursor/.cursor/
-  const packageRoot = path.resolve(__dirname, '../../');
-  const sourceCursor = path.join(
-    packageRoot,
-    'pro-os',
-    'system',
-    'ide-configs',
-    'cursor',
-    '.cursor'
-  );
+  const proOsRoot = path.resolve(__dirname, '../../');
+  const sourceCursor = path.join(proOsRoot, 'system', 'ide-configs', 'cursor', '.cursor');
   const targetCursor = path.join(projectPath, '.cursor');
 
   // Check if source exists
@@ -57,15 +50,8 @@ async function setupCursor(projectPath) {
 
 async function setupVSCode(projectPath) {
   // Get the path from ide-configs/vscode/.github/
-  const packageRoot = path.resolve(__dirname, '../../');
-  const sourceGithub = path.join(
-    packageRoot,
-    'pro-os',
-    'system',
-    'ide-configs',
-    'vscode',
-    '.github'
-  );
+  const proOsRoot = path.resolve(__dirname, '../../');
+  const sourceGithub = path.join(proOsRoot, 'system', 'ide-configs', 'vscode', '.github');
   const targetGithub = path.join(projectPath, '.github');
 
   // Check if source exists
@@ -86,15 +72,8 @@ async function setupVSCode(projectPath) {
 
 async function setupClaudeCode(projectPath) {
   // Get the path from ide-configs/claude-code/.claude/
-  const packageRoot = path.resolve(__dirname, '../../');
-  const sourceClaude = path.join(
-    packageRoot,
-    'pro-os',
-    'system',
-    'ide-configs',
-    'claude-code',
-    '.claude'
-  );
+  const proOsRoot = path.resolve(__dirname, '../../');
+  const sourceClaude = path.join(proOsRoot, 'system', 'ide-configs', 'claude-code', '.claude');
   const targetClaude = path.join(projectPath, '.claude');
 
   // Check if source exists

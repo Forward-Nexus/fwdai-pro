@@ -13,7 +13,7 @@ import { dirname } from 'path';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-const TEMPLATES_DIR = path.join(__dirname, '..', '..', 'pro-os', 'templates', 'project');
+const TEMPLATES_DIR = path.join(__dirname, '..', '..', 'templates', 'project');
 
 /**
  * Format roles for display

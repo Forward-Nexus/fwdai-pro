@@ -180,7 +180,7 @@ export async function getInstalledVersion(projectPath) {
  * Get current package version
  */
 export async function getPackageVersion() {
-  const packagePath = path.join(import.meta.dirname || __dirname, '..', '..', 'package.json');
+  const packagePath = path.join(import.meta.dirname || __dirname, '..', '..', '..', 'package.json');
   const packageJson = await fs.readJson(packagePath);
   return packageJson.version;
 }
