@@ -32,8 +32,8 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 const GLOBAL_PROFILE_DIR = path.join(os.homedir(), '.fwdpro-global');
-const FWD_PRO_SOURCE = path.join(__dirname, '..', '..', 'pro-os');
-const TEMPLATES_SOURCE = path.join(__dirname, '..', '..', 'pro-os', 'templates');
+const FWD_PRO_SOURCE = path.join(__dirname, '..', '..');
+const TEMPLATES_SOURCE = path.join(__dirname, '..', '..', 'templates');
 
 /**
  * Main setup function
@@ -83,14 +83,14 @@ export async function setupProject(answers) {
     await fs.ensureDir(path.join(fwdproDir, 'pro-os', 'project'));
 
     // Copy .cursorignore to project root for performance optimization
-    const cursorignoreSrc = path.join(__dirname, '..', '..', '.cursorignore');
+    const cursorignoreSrc = path.join(__dirname, '..', '..', '..', '.cursorignore');
     const cursorignoreDest = path.join(projectPath, '.cursorignore');
     if (await fs.pathExists(cursorignoreSrc)) {
       await fs.copy(cursorignoreSrc, cursorignoreDest);
     }
 
     // Copy .cursor/ config files to project root
-    const cursorConfigSrc = path.join(__dirname, '..', '..', '.cursor');
+    const cursorConfigSrc = path.join(__dirname, '..', '..', '..', '.cursor');
     const cursorConfigDest = path.join(projectPath, '.cursor');
     if (await fs.pathExists(cursorConfigSrc)) {
       await fs.copy(cursorConfigSrc, cursorConfigDest);
@@ -109,7 +109,7 @@ export async function setupProject(answers) {
     const fwdproDir = path.join(projectPath, '.fwdpro');
 
     // Write version file for update tracking in system folder
-    const packageJson = await fs.readJson(path.join(__dirname, '..', '..', 'package.json'));
+    const packageJson = await fs.readJson(path.join(__dirname, '..', '..', '..', 'package.json'));
     await fs.writeFile(path.join(fwdproDir, 'pro-os', 'system', '.version'), packageJson.version);
 
     // Generate *welcome.md in root .fwdpro folder (sorts to top!)

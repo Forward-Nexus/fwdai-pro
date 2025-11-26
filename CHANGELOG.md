@@ -3,11 +3,21 @@
 All notable changes to FWD PRO will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
-and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+and this project adheres to
+[Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ---
 
 ## [Unreleased]
+
+---
+
+## [2.3.4] - 2025-11-26
+
+### 🐛 Bug Fixes
+
+- **Installer Path Fix:** Fixed a critical path resolution error in `setup.js`
+  that caused installation failures when package was installed from npm.
 
 ---
 
@@ -16,21 +26,28 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### 🔄 Force Update & Folder Renaming
 
 **Breaking Changes:**
-- **Folder Renaming:** `0-roundtable/` → `_roundtable/`, `0-your-experts/` → `_your-experts/`, `0-your-commands/` → `_your-commands/`
-- **Complete System Refresh:** All `pro-os/` system files updated to latest v2.2.0 features
-- **Preserved:** Your `_roundtable/`, `documents/`, and `pro-os/project/` remain untouched
+
+- **Folder Renaming:** `0-roundtable/` → `_roundtable/`, `0-your-experts/` →
+  `_your-experts/`, `0-your-commands/` → `_your-commands/`
+- **Complete System Refresh:** All `pro-os/` system files updated to latest
+  v2.2.0 features
+- **Preserved:** Your `_roundtable/`, `documents/`, and `pro-os/project/` remain
+  untouched
 
 **What's New:**
+
 - ✅ Automatic folder migration (old folders renamed to underscore convention)
 - ✅ All v2.2.0 utilities now properly installed (30+ production tools)
 - ✅ Fresh `.cursor/rules/` with all expert and command `.mdc` files
 - ✅ Cleaned up deprecated files from older versions
 - ✅ Underscore naming for better file sorting and visibility
 
-**Migration:**
-This update will automatically rename your folders and refresh all system files while preserving your work. Run `npx @fwd-ai/pro update` to upgrade.
+**Migration:** This update will automatically rename your folders and refresh
+all system files while preserving your work. Run `npx @fwd-ai/pro update` to
+upgrade.
 
-**Important:** Back up `documents/`, `_roundtable/`, and `pro-os/project/` before updating (though the updater preserves them).
+**Important:** Back up `documents/`, `_roundtable/`, and `pro-os/project/`
+before updating (though the updater preserves them).
 
 ---
 
@@ -41,54 +58,65 @@ This update will automatically rename your folders and refresh all system files 
 **Complete Production Toolkit (30+ Utilities):**
 
 #### Document Processing (Always Installed)
+
 - **PDF handling** - Read and write PDF files (`pdf-lib`, `pdf-parse`)
-- **Word documents** - Convert Word to Markdown, generate Word files (`mammoth`, `docx`)
+- **Word documents** - Convert Word to Markdown, generate Word files (`mammoth`,
+  `docx`)
 - **Excel spreadsheets** - Read and write Excel files (`xlsx`)
 - **Location:** `pro-os/system/tools/document-utils/`
 
 #### Financial & Accounting Utilities
+
 - **Unit economics calculator** - LTV, CAC, payback period, churn rate
 - **ARR/MRR tracking** - Revenue metrics for investor reporting
 - **Burn rate & runway** - Financial planning tools
 - **Location:** `pro-os/system/tools/financial-utils/`
 
 #### Git & Version Control Helpers
+
 - **Commit helper** - Interactive conventional commit generator
 - **PR generator** - Auto-generate PR descriptions from commit history
 - **Changelog automation** - Generate CHANGELOG.md from git history
 - **Location:** `pro-os/system/tools/git-utils/`
 
 #### Testing & QA Tools
+
 - **Test runner** - Universal test runner (Vitest, Jest, Mocha, Ava, Tape)
 - **Quality gates** - Enforce coverage and quality thresholds
 - **Test reports** - Human-readable test coverage reports
 - **Location:** `pro-os/system/tools/testing-utils/`
 
 #### Environment & Secrets Management
+
 - **Environment generator** - Create .env.example templates
 - **Environment validator** - Validate required environment variables
 - **Secret scanner** - Scan for accidentally committed API keys/secrets
 - **Location:** `pro-os/system/tools/env-utils/`
 
 #### Database Utilities
+
 - **Migration runner** - Run migrations (Prisma, Drizzle, Knex, TypeORM)
 - **Database seeder** - Populate database with test data
-- **Backup utility** - Create database backups (PostgreSQL, MySQL, SQLite, MongoDB)
+- **Backup utility** - Create database backups (PostgreSQL, MySQL, SQLite,
+  MongoDB)
 - **Location:** `pro-os/system/tools/database-utils/`
 
 #### API & Integration Tools
+
 - **API client generator** - Generate type-safe clients from OpenAPI specs
 - **Webhook tester** - Local webhook testing and validation
 - **Rate limit monitor** - Track API usage and prevent rate limit errors
 - **Location:** `pro-os/system/tools/api-utils/`
 
 #### Deployment Automation
+
 - **Vercel setup** - Generate optimized vercel.json configuration
 - **Docker generator** - Create Dockerfile and docker-compose.yml
 - **CI/CD generator** - Generate GitHub Actions, GitLab CI, or CircleCI configs
 - **Location:** `pro-os/system/tools/deployment-utils/`
 
 #### Analytics & Monitoring
+
 - **Sentry setup** - Configure error tracking and reporting
 - **PostHog setup** - Privacy-first product analytics and feature flags
 - **Performance monitoring** - Web Vitals tracking and performance monitoring
@@ -97,6 +125,7 @@ This update will automatically rename your folders and refresh all system files 
 ### Enhanced Developer Experience
 
 **NPM Scripts for All Utilities:**
+
 - `npm run tools:commit` - Interactive commit generator
 - `npm run tools:test` - Run tests with coverage
 - `npm run tools:quality` - Check quality gates
@@ -104,15 +133,19 @@ This update will automatically rename your folders and refresh all system files 
 - `npm run tools:migrate` - Run database migrations
 - `npm run tools:docker` - Generate Docker files
 - `npm run tools:sentry` - Setup error tracking
+- `npm run tools:posthog` - Setup product analytics
+- `npm run tools:perf` - Setup performance monitoring
 - And 20+ more utility scripts!
 
 **Cursor IDE Auto-Setup:**
+
 - Automatic `.cursor/rules/` installation during setup
 - All 6 expert `.mdc` files installed
 - All command `.mdc` files installed
 - Works with `npx @fwd-ai/pro install`
 
 **System Improvements:**
+
 - Deep research routing pattern (when to use ChatGPT/Perplexity)
 - AI language audit checklist (detect repetitive AI phrases)
 - Pre-commit hooks for code quality (husky + lint-staged)
@@ -147,6 +180,7 @@ This update will automatically rename your folders and refresh all system files 
 ### Real-World Validation
 
 Battle-tested across multiple project types:
+
 - ✅ Software development (Next.js, Firebase, Clerk, AI SDK)
 - ✅ Investor materials (pitch decks, business plans, financial projections)
 - ✅ Legal work (contracts, verified complaints, evidence organization)
@@ -161,15 +195,21 @@ None! Fully backward compatible with v2.1.x
 ## [2.1.1] - 2025-10-18
 
 ### Enhanced
-- **Complete Cursor Rules Coverage:** Expanded `.cursor/recommended-rules.md` to include ALL critical v2.1 patterns (10 user rules total):
+
+- **Complete Cursor Rules Coverage:** Expanded `.cursor/recommended-rules.md` to
+  include ALL critical v2.1 patterns (10 user rules total):
   - **Rule 4:** Expert Voice Format (`**YourName:**` prefix)
   - **Rule 6:** Source of Truth Principle (trust validated docs)
   - **Rule 7:** Context Loading (read whiteboards first)
   - **Rule 8:** Workspace vs Whiteboard formats (AI-optimized vs human-readable)
   - **Rule 9:** Proactive Expert Behavior (elevate, don't just execute)
-  - **Rule 10:** Pattern Loading (automatically load expert file → collaboration pattern → domain patterns)
-- **Quick Start Guide:** Updated to recommend all 10 rules for full v2.1 experience
-- **Result:** Experts now automatically follow ALL v2.1 patterns AND load their pattern files when Cursor rules are installed, ensuring consistent expert behavior across all threads
+  - **Rule 10:** Pattern Loading (automatically load expert file → collaboration
+    pattern → domain patterns)
+- **Quick Start Guide:** Updated to recommend all 10 rules for full v2.1
+  experience
+- **Result:** Experts now automatically follow ALL v2.1 patterns AND load their
+  pattern files when Cursor rules are installed, ensuring consistent expert
+  behavior across all threads
 
 ---
 
@@ -178,61 +218,83 @@ None! Fully backward compatible with v2.1.x
 ### 🎉 Major Release: The Roundtable Architecture
 
 **Tagline & Philosophy:**
+
 - ✨ **New tagline:** "Better conversations lead to better outcomes"
-- Philosophy rooted in recovery principles: everyone deserves the chance to thrive
-- Human-first design by a psychology major, writer, and theater person (not a developer!)
+- Philosophy rooted in recovery principles: everyone deserves the chance to
+  thrive
+- Human-first design by a psychology major, writer, and theater person (not a
+  developer!)
 
 **The Roundtable Metaphor:**
+
 - 🪑 **Conference room model** - Clear spatial organization
-- **Whiteboards** (on wall) - Project dashboard, human-readable, Monday.com-style
+- **Whiteboards** (on wall) - Project dashboard, human-readable,
+  Monday.com-style
 - **Workspaces** (notebooks) - AI-optimized context, founder never reads
 - **Checklist** (clipboard) - Scannable tickets, minimal text, action-focused
 - **Documents** (folder) - Final deliverables
 
 **v2.1 Core Features:**
-- ✅ **Research Integrity** - 3-tier citation standard, mandatory web search, no made-up stats
+
+- ✅ **Research Integrity** - 3-tier citation standard, mandatory web search, no
+  made-up stats
 - ✅ **Token Efficiency** - Iterate in chat before writing docs, update in place
-- ✅ **Group Chat Pattern** - Experts discuss naturally (not sequential handoffs!)
-- ✅ **Expert Recommendation Pattern** - Experts flag when they need other experts
-- ✅ **Natural Conversation Updates** - Just talk about your project, AI offers to update context
+- ✅ **Group Chat Pattern** - Experts discuss naturally (not sequential
+  handoffs!)
+- ✅ **Expert Recommendation Pattern** - Experts flag when they need other
+  experts
+- ✅ **Natural Conversation Updates** - Just talk about your project, AI offers
+  to update context
 - ✅ **New Thread Context Loading** - Read whiteboards first when context resets
 
 **New Documentation:**
+
 - `patterns/deliverable-types.md` - Document lifecycle & token efficiency
 - `patterns/market-research-workflow.md` - Research-first for investor materials
-- `standards/research-citation-standards.md` - 3-tier citation standard & verification
-- `user-docs/user-guide/personalizing-your-system.md` - Extensive customization capabilities
-- `user-docs/user-guide/recommended-integrations.md` - MCPs, tools, Cursor optimizations
+- `standards/research-citation-standards.md` - 3-tier citation standard &
+  verification
+- `user-docs/user-guide/personalizing-your-system.md` - Extensive customization
+  capabilities
+- `user-docs/user-guide/recommended-integrations.md` - MCPs, tools, Cursor
+  optimizations
 
 **System Architecture Updates:**
-- **Expert Collaboration Pattern (v2.2)** - Roundtable metaphor, AI-optimized workspaces, ticket-style checklist
-- **Workspace Usage Guide (v2.2)** - AI-optimized format clarity, reference not duplicate
+
+- **Expert Collaboration Pattern (v2.2)** - Roundtable metaphor, AI-optimized
+  workspaces, ticket-style checklist
+- **Workspace Usage Guide (v2.2)** - AI-optimized format clarity, reference not
+  duplicate
 - All checklists updated with research integrity requirements
 - All domain patterns updated with research verification
 - Expert voice guidelines updated with document update behavior
 
 **Cursor IDE Optimizations:**
+
 - `.cursorignore` for performance (auto-installed)
 - `.cursor/recommended-rules.md` - Copy/paste templates for v2.1 patterns
 - `.cursor/recommended-mcps.json` - MCP configurations with examples
 - Updated installer to copy Cursor optimizations automatically
 
 **JIRA/Linear Integration Clarity:**
+
 - FWD PRO provides built-in project management (Whiteboards + Checklist)
 - JIRA/Linear integration is OPTIONAL (for teams that already use them)
 - Expert-facilitated manual sync (not automatic)
 - FWD PRO remains source of truth for AI collaboration
 
 **Documentation Updates:**
+
 - All user guides updated with v2.1 features and Roundtable metaphor
 - FAQs updated with v2.1 patterns
 - README updated with tagline, v2.1 features, execution clarity
 - Terminology: "Expert Orchestrators" (not "agents")
 
 **Breaking Changes:**
+
 - None! v2.1 is fully backward compatible
 
 **Migration Notes:**
+
 - Existing projects get v2.1 patterns automatically
 - Cursor optimizations installed on update
 - All user customizations preserved
@@ -244,12 +306,15 @@ None! Fully backward compatible with v2.1.x
 ### 🎯 Conservative Changelog-Based Updater
 
 **Revolutionary Update System:**
-- **Changelog-based updates** - Only touches files that actually changed in each version
+
+- **Changelog-based updates** - Only touches files that actually changed in each
+  version
 - **Version tracking** - Maintains detailed record of what changed when
 - **Smart preservation** - Files not in changelog are completely untouched
 - **Zero data loss** - Your customizations are safe by design
 
 **New Features:**
+
 - ✅ `version-changelog.js` - Tracks file changes per version
 - ✅ Only updates files explicitly listed in the changelog
 - ✅ Preserves ALL user customizations in unchanged files
@@ -259,6 +324,7 @@ None! Fully backward compatible with v2.1.x
 - ✅ Test utility to verify what will be updated
 
 **What This Means:**
+
 - Your personalized documents stay exactly as you made them
 - Your custom experts remain untouched
 - Your workflow configurations are safe
@@ -266,6 +332,7 @@ None! Fully backward compatible with v2.1.x
 - Updates are predictable, transparent, and safe
 
 **Developer Benefits:**
+
 - Clear changelog maintenance workflow
 - Test updates before releasing
 - Document what changed in each version
@@ -278,18 +345,21 @@ None! Fully backward compatible with v2.1.x
 ### 🔧 Surgical Updater (Nuclear → Surgical)
 
 **Changed Update Strategy:**
+
 - **Surgical approach** instead of nuclear (only overwrites files we ship)
 - Preserves ALL custom additions (commands, experts, docs)
 - Explicit cleanup of known deprecated files only
 - Much safer and more predictable
 
 **What's Protected:**
+
 - ✅ Custom domain experts (Bonnie Jo, etc.) - FULLY PRESERVED
 - ✅ Custom commands you create - FULLY PRESERVED
 - ✅ `0-your-commands/` and `0-your-experts/` shortcuts - PRESERVED
 - ✅ All user data and work - PRESERVED
 
 **What Gets Updated:**
+
 - System commands and flows (only files we ship)
 - Core 6 experts: Genna, Denny, Ada, Lyna, Benji, Elle (with smart merge)
 - System patterns, standards, checklists
@@ -302,6 +372,7 @@ None! Fully backward compatible with v2.1.x
 ### 🔧 Three-Way Merge for Expert Customizations
 
 **Major Updater Improvements:**
+
 - **Surgical update approach** (changed from nuclear!)
   - Only overwrites files we ship in the package
   - Preserves ALL custom additions (commands, experts, docs)
@@ -315,13 +386,15 @@ None! Fully backward compatible with v2.1.x
   - Transparent and explicit - no silent data loss!
 
 **Fixes:**
+
 - Fixed updater nuking `0-your-commands/` and `0-your-experts/` folders
 - Fixed updater deleting custom domain experts (like Bonnie Jo!)
 - Only CORE experts get updated (Genna, Denny, Ada, Lyna, Benji, Elle)
 - Your custom domain experts are now fully preserved
 - Symlinks stay intact - no need to regenerate
-  
+
 **Why This Matters:**
+
 - If you customized Ada's personality, commands, or workflow
 - You get updates/bug fixes while keeping your customizations
 - Industry-standard Git merge workflow (familiar to developers)
@@ -335,19 +408,26 @@ None! Fully backward compatible with v2.1.x
 ### 🧹 Installer & Updater Improvements
 
 **Installer Changes:**
-- Removed `.cursor/commands/` and `.cursor/rules/` setup (unnecessary complexity)
+
+- Removed `.cursor/commands/` and `.cursor/rules/` setup (unnecessary
+  complexity)
 - Removed `.mdc` files (confusing and redundant with `.md` files)
-- Removed hardcoded `use-pnpm.mdc` preference (was forcing creator's preference on all users)
+- Removed hardcoded `use-pnpm.mdc` preference (was forcing creator's preference
+  on all users)
 - Removed IDE-specific setup functions (not needed)
-- Fixed outdated command examples in welcome message (`create-feature`, `create-spec` → `create-specflow`)
+- Fixed outdated command examples in welcome message (`create-feature`,
+  `create-spec` → `create-specflow`)
 - Fixed reference to non-existent `@show-projects` command
 
 **Updater Improvements (Major Fix!):**
+
 - **Nuclear update approach:** Completely removes and replaces system folders
-- **Three-way merge with conflict markers:** Professional Git-style merge for customized experts
-  - Automatically merges "Project Context" sections (your project settings preserved)
+- **Three-way merge with conflict markers:** Professional Git-style merge for
+  customized experts
+  - Automatically merges "Project Context" sections (your project settings
+    preserved)
   - Detects if you've customized other parts of expert files
-  - Creates **Git-style conflict markers** (<<<<<<< / ======= / >>>>>>>)  
+  - Creates **Git-style conflict markers** (<<<<<<< / ======= / >>>>>>>)
   - Shows YOUR version vs NEW version side-by-side
   - YOU choose what to keep, update, or merge
   - Clean reference copies saved in `.fwdpro-merge-conflicts/`
@@ -358,6 +438,7 @@ None! Fully backward compatible with v2.1.x
 - Safely preserves all user data (documents, workspace, config)
 
 **Why These Changes:**
+
 - `.mdc` and `.md` files are treated identically by Cursor (caused confusion)
 - Users can `@mention` files in `0-your-commands/` directly (simpler!)
 - Works universally across all IDEs (Cursor, VS Code, Windsurf, etc.)
@@ -366,6 +447,7 @@ None! Fully backward compatible with v2.1.x
 - Nuclear update ensures clean state (no accumulation of old files)
 
 **Impact:**
+
 - Cleaner installation (no hidden `.cursor/` folder)
 - Updates now properly clean up old commands/docs
 - Less confusion for users
@@ -378,11 +460,14 @@ None! Fully backward compatible with v2.1.x
 
 ### 🎉 Major Release: Pattern-Based Expert System & Flow Commands
 
-This is a major architectural upgrade that introduces a pattern-based workflow system, simplifies expert files, and consolidates command structures while maintaining full backward compatibility for universal commands.
+This is a major architectural upgrade that introduces a pattern-based workflow
+system, simplifies expert files, and consolidates command structures while
+maintaining full backward compatibility for universal commands.
 
 ### Added
 
 **Pattern System:**
+
 - Created 5 core workflow patterns in `pro-os/system/patterns/`:
   - `expert-collaboration.md` - Universal workflow for all experts
   - `expert-tech.md` - Technical work patterns (TDD, QA enforcement)
@@ -394,17 +479,20 @@ This is a major architectural upgrade that introduces a pattern-based workflow s
 - `universal.md` - Universal three-phase workflow pattern
 
 **Flow Commands:**
+
 - `@create-specflow` - Create technical specification with TDD structure
 - `@execute-specflow` - Implement spec with TDD enforcement + mandatory QA
 - `@rt` - Multi-expert roundtable collaboration (moved from quick/)
 - `@create-flow` - Create custom flow commands (extensibility)
 
 **System Commands:**
+
 - `@create-expert` - Create new domain experts with auto-assigned patterns
 
 ### Changed
 
 **Expert System:**
+
 - All 6 core experts updated with `primary_patterns` field
 - Removed duplicated workflow sections (~400 lines saved, 12% reduction)
 - Experts now dynamically load patterns based on task type
@@ -412,12 +500,14 @@ This is a major architectural upgrade that introduces a pattern-based workflow s
 - Simplified expert files focus on identity and specialization
 
 **Command Structure:**
+
 - Renamed `commands/quick/` → `commands/flows/` for clarity
 - Updated installer to create correct symlinks to `flows/` commands
 - `.mdc` Cursor rules now reference actual commands in `pro-os/commands/`
 - Universal commands updated to reference pattern system
 
 **Documentation:**
+
 - Updated all user guides to explain pattern system
 - Added comprehensive FAQ sections about patterns
 - Fixed project-specific examples (generic placeholders)
@@ -425,6 +515,7 @@ This is a major architectural upgrade that introduces a pattern-based workflow s
 - Updated customization guide for pattern-based domain experts
 
 **Installer:**
+
 - `favorites.js` - Updated to create symlinks to `flows/` instead of `quick/`
 - `ide-setup.js` - Updated `.mdc` generation to reference actual command paths
 - `generators.js` - Domain experts auto-assigned appropriate patterns
@@ -440,19 +531,24 @@ This is a major architectural upgrade that introduces a pattern-based workflow s
 ### Removed
 
 **Commands:**
+
 - `commands/quick/` folder (replaced by `commands/flows/`)
 - `commands/system/show-projects.md` (premature feature)
 - `commands/system/cross-project-context.md` (over-complicated)
 
 **Checklists:**
+
 - `checklists/handoff-checklist.md` (now handled in workspace stories)
 - `checklists/workspace-complete-checklist.md` (covered by universal pattern)
 
 **Standards (Consolidated into Patterns):**
+
 - `standards/workflow-standards.md` → Merged into `patterns/universal.md`
-- `standards/roundtable-standards.md` → Merged into `patterns/expert-collaboration.md`
+- `standards/roundtable-standards.md` → Merged into
+  `patterns/expert-collaboration.md`
 - Content preserved and enhanced with better examples and organization
-- Clear folder boundaries: patterns (workflow), standards (formatting), checklists (validation)
+- Clear folder boundaries: patterns (workflow), standards (formatting),
+  checklists (validation)
 
 ### Fixed
 
@@ -465,12 +561,14 @@ This is a major architectural upgrade that introduces a pattern-based workflow s
 ### Migration Notes
 
 **For existing projects:**
+
 - Old commands still work (universal commands unchanged)
 - New flow commands available immediately
 - Expert shortcuts in `0-your-experts/` unchanged
 - Command shortcuts in `0-your-commands/` will update to new paths
 
 **No breaking changes for users:**
+
 - Universal commands (`@create`, `@execute`, etc.) work exactly the same
 - Expert @mentions work the same
 - All existing work preserved
@@ -480,7 +578,9 @@ This is a major architectural upgrade that introduces a pattern-based workflow s
 ## [1.0.6] - 2025-10-08
 
 ### Fixed
-- Fixed template path resolution - templates are now correctly located in `pro-os/templates/`
+
+- Fixed template path resolution - templates are now correctly located in
+  `pro-os/templates/`
 - Fixed installer crash when generating project-kb files
 
 ---
@@ -488,6 +588,7 @@ This is a major architectural upgrade that introduces a pattern-based workflow s
 ## [1.0.5] - 2025-10-08
 
 ### Added
+
 - Complete CLI installer with progressive disclosure onboarding (Q1-16)
 - Existing project scanner (auto-fills tech stack, project info)
 - Global founder profile system (reusable across projects)
@@ -497,10 +598,12 @@ This is a major architectural upgrade that introduces a pattern-based workflow s
 - Favorites system (symlinks to active experts/commands)
 - 6 core universal experts (Genna, Denny, Ada, Lyna, Benji, Elle)
 - 10 universal commands (create, execute, analyze, research, review, etc.)
-- 5 quick commands (create-spec, create-feature, create-pitch-deck, rt, rt-update)
+- 5 quick commands (create-spec, create-feature, create-pitch-deck, rt,
+  rt-update)
 - Domain expert template for custom industry experts
 - Smart work-type detection (activates relevant experts)
-- Communication style customization (5 styles: professional, friendly, casual, direct, supportive)
+- Communication style customization (5 styles: professional, friendly, casual,
+  direct, supportive)
 - Complete documentation system (11 user guides, 3 FAQs)
 - Project templates (founder-profile, project-kb, mission, people)
 - Workflow standards (3-phase: Preparation, Execution, Completion)
@@ -508,18 +611,23 @@ This is a major architectural upgrade that introduces a pattern-based workflow s
 - Beautiful CLI with colors, spinners, and progress indicators
 
 ### Changed
+
 - N/A (first release)
 
 ### Deprecated
+
 - N/A
 
 ### Removed
+
 - N/A
 
 ### Fixed
+
 - N/A
 
 ### Security
+
 - N/A
 
 ---
@@ -530,9 +638,11 @@ This is a major architectural upgrade that introduces a pattern-based workflow s
 
 **First public release of FWD PRO!**
 
-Universal AI expert collaboration system for founders building ANY type of business.
+Universal AI expert collaboration system for founders building ANY type of
+business.
 
 **Key Features:**
+
 - Progressive disclosure onboarding (14-19 questions based on work type)
 - Reusable global profiles
 - Smart project scanning
@@ -542,6 +652,7 @@ Universal AI expert collaboration system for founders building ANY type of busin
 - Comprehensive documentation
 
 **Inspired by:**
+
 - BMAD-METHOD™ - Quality systems and workflow patterns
 - Agent-OS - Context management and three-phase workflows
 
@@ -549,4 +660,3 @@ Universal AI expert collaboration system for founders building ANY type of busin
 
 [Unreleased]: https://github.com/wardbox/fwdpro-build/compare/v1.0.0...HEAD
 [1.0.0]: https://github.com/wardbox/fwdpro-build/releases/tag/v1.0.0
-
